@@ -1,0 +1,1 @@
+{"version":3,"sources":["../assets/scripts/customizer.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"customizer.js","sourcesContent":["(function($) {\n  // Site title\n  wp.customize('blogname', function(value) {\n    value.bind(function(to) {\n      $('.brand').text(to);\n    });\n  });\n})(jQuery);\n"],"sourceRoot":"assets/scripts/"}
