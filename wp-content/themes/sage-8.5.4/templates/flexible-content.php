@@ -4,6 +4,7 @@
 		<?php $background_image_styles = ''; ?>
 		<?php $background_color_styles = ''; ?>
 		<?php $content_color_styles = ''; ?>
+		<?php $classes = ''; ?>
 
     	<?php $background_image = get_sub_field('background_image'); ?>
     	<?php if($background_image): ?>	
@@ -23,7 +24,15 @@
     	<?php if(get_sub_field('background_opacity')): ?>
     		<?php $background_opacity = get_sub_field('background_opacity'); ?>
     		<?php $background_color_styles .= ' opacity: '.$background_opacity.';'; ?>
-    	<?php endif; ?>       	 	
+    	<?php endif; ?>    
+
+    	<?php if(get_sub_field('no_padding')): ?>
+    		<?php $classes .= 'no-padding'; ?>
+    	<?php endif; ?>
+    	<?php if(get_sub_field('full_width')): ?>
+    		<?php $classes .= 'full-width'; ?>
+    	<?php endif; ?>    	
+
 
 		<?php $link = get_sub_field('section_link'); ?>	
 

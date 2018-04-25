@@ -733,6 +733,44 @@
                                 "id": ""
                             },
                             "default_value": ""
+                        },
+                        {
+                            "key": "field_5ae095e49abbc",
+                            "label": "Full Width",
+                            "name": "full_width",
+                            "type": "true_false",
+                            "instructions": "Include this if you want to embed something like a map without having a border.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5ae095f09abbd",
+                            "label": "No Padding",
+                            "name": "no_padding",
+                            "type": "true_false",
+                            "instructions": "Include this if you want something to take up the full dimensions of the screen.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -768,5 +806,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1524614757
+    "modified": 1524668405
 }
