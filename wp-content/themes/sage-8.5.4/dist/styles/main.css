@@ -7299,13 +7299,17 @@ main.main {
   height: 100%; }
 
 .background-type__pattern .content-section__bg--image {
-  background-size: 50% !important; }
+  background-size: 50% !important;
+  background-attachment: fixed !important; }
 
 .background-type__pattern .content-section__bg--image {
   z-index: 5; }
 
 .background-type__pattern .content-section__bg--color {
   z-index: 0; }
+
+.content-section__bg--image {
+  /*background-attachment: fixed !important;*/ }
 
 .background-type__stretch .content-section__bg--image {
   background-size: cover !important;
