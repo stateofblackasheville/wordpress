@@ -1,0 +1,151 @@
+{
+    "key": "group_5adf8d0bad5ae",
+    "title": "Page Banner",
+    "fields": [
+        {
+            "key": "field_5adfc97bc49fa",
+            "label": "Lead paragraph",
+            "name": "lead_paragraph",
+            "type": "textarea",
+            "instructions": "A few short sentences that provides context.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5adf8d62c7b10",
+            "label": "Background Type",
+            "name": "background_type",
+            "type": "select",
+            "instructions": "Select pattern for a repeatable pattern, select stretch to make the image take up the full frame.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "pattern": "Pattern",
+                "stretch": "Stretch"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5adf8d70c7b11",
+            "label": "Background Image",
+            "name": "background_image",
+            "type": "image",
+            "instructions": "The image to be used in the background.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5adf8d72c7b12",
+            "label": "Background Color",
+            "name": "background_color",
+            "type": "color_picker",
+            "instructions": "If selected, this will add a background color to the section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_5adf8d76c7b13",
+            "label": "Background Opacity",
+            "name": "background_opacity",
+            "type": "number",
+            "instructions": "This will be the opacity of the transparent background.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": ".01",
+            "max": 1,
+            "step": ".01"
+        },
+        {
+            "key": "field_5adfc21b6dee2",
+            "label": "Content Color",
+            "name": "content_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1524615658
+}

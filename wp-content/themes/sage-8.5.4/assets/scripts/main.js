@@ -22,6 +22,16 @@
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
+        $('.content-section__slider').slick({
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                arrows: false
+              }
+            }
+          ]          
+        });
       }
     },
     // Home page

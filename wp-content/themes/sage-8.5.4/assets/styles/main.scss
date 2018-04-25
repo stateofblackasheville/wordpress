@@ -3,6 +3,7 @@
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/bootstrap/scss/bootstrap.scss";
+@import "../../bower_components/slick-carousel/slick/slick.scss";
 // endbower
 
 @import "common/global";
@@ -18,6 +19,299 @@
 @import "layouts/posts";
 @import "layouts/tinymce";
 
+@import "../../bower_components/slick-carousel/slick/slick-theme.scss"; 
+
 body{
 	/*background: red;*/
+	/*font-family: 'Playfair Display'; */
+	font-family: 'Montserrat';
+}
+
+h1, h2{
+	/*font-family: 'Montserrat';*/
+}
+
+.home{
+	.page-header{
+		display: none;
+	}
+}
+
+.wrap.container{
+	max-width: none;
+	padding: 0;
+	.content.row{
+		margin: 0;
+	}
+}
+
+main.main{
+	padding: 0;
+}
+
+
+/*HEADER STYLES*/
+.navbar.nav-primary{
+	a.brand{
+		padding: .5rem;
+		img{
+			max-width: 150px;
+		}
+	}
+	.navbar-collapse{
+		@extend .justify-content-end;
+		a{
+			color: #7c8492;
+		}
+	}
+}
+
+/*FLEX CONTENT*/
+.content-section{
+	position: relative;
+	/*background: ;*/
+	&.content-section__grid_content,
+	&.content-section__banner_content{
+		padding: 5rem 0;
+	}
+}
+
+.content-section__header{
+	@extend .col-md-6;
+	@extend .offset-md-3;
+	@extend .text-center;
+	padding-bottom: 1rem;
+	/*margin-bottom: 3rem;*/
+	/*border-bottom: 1px solid #eee;*/
+	z-index: 10;
+	position: relative;
+}
+.content-section__grid{
+	@extend .d-flex;
+	@extend .flex-wrap;
+	@extend .container;
+	@extend .justify-content-center;
+	flex-flow: row-wrap;
+	z-index: 10;
+	position: relative;
+	/*@extend .row;*/
+	.content-section__item{
+		@extend .p-4;
+		@extend .col;
+		@extend .col-md-4;
+		@extend .col-lg-4;
+		@extend .col-xl-2;
+		text-align: center;
+		margin-bottom: 1rem;
+		h3{
+			font-size: 1.25rem;
+			text-transform: uppercase;
+		}
+		img{
+			max-height: 100px;
+		}
+	}
+}
+
+.content-section__item{
+	position: relative;
+}
+
+.content-section__bg{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.background-type__pattern{
+	.content-section__bg--image{
+		background-size: 50% !important;
+	}	
+	.content-section__bg--image{
+		z-index: 5;
+	}
+	.content-section__bg--color{
+		z-index: 0;
+	}		
+}
+
+.background-type__stretch{
+	.content-section__bg--image{
+		background-size: cover !important;
+		background-position: center !important;	
+	}
+	.content-section__bg--image{
+		z-index: 0;
+	}
+	.content-section__bg--color{
+		z-index: 5;
+	}		
+}
+
+/*FLEX CONTENT SLIDER*/
+.content-section__slider_content{
+	.slider-content{
+		/*padding: 15rem 5rem;*/
+		padding-left: 5rem;
+		padding-right: 5rem;
+		z-index: 10;
+		position: relative;
+		min-height: 750px !important;
+		@extend .d-flex;
+		@extend .flex-column;
+		@extend .justify-content-center;
+		@extend .align-items-start;
+		p{
+			max-width: 400px;
+		}
+		/*text-align: center;*/
+		h3{
+			font-size: 3rem;
+			text-transform: uppercase;
+		}
+		.button{
+			/*@include button-variant($background, $border, $active-background: darken($background, 7.5%), $active-border: darken($border, 10%));*/
+			@extend .btn;
+			@extend .btn-lg;
+			@include button-variant(#DE3831, lighten(#DE3831, 10%), darken(#DE3831, 10%), lighten(#DE3831, 20%));
+		}
+	}
+	.content-section__item{
+		vertical-align: top;
+		&.image-position__left{
+			.slider__inner{
+				@extend .d-flex;
+				@extend .flex-wrap;
+				/*@extend .container;*/
+				@extend .justify-content-center;
+				@extend .align-items-stretch; 
+				.slider-image,
+				.slider-content{
+					/*@extend .p-4;*/
+					@extend .col-sm-12;
+					@extend .col-md-6;	
+					background-size: cover !important;	
+					background-position: center !important;		
+				}
+				.slider-image{
+					@extend .p-0;
+				}
+				.slider-content{
+					padding-left: 3rem !important;
+					padding-right: 3rem !important;
+				}
+			}
+		}
+	}
+	@include media-breakpoint-down(sm){
+		.slider-content{
+			min-height: 0 !important;
+			padding: 0;
+			margin: 1rem;
+			min-height: 300px !important;
+			h3{
+				font-size: 1.75rem;
+			}
+		}
+		.background-type__stretch .content-section__bg--image,
+		.slider-image{
+			min-height: 300px !important;
+			position: relative !important;
+		}		
+	}	
+
+}
+
+.content-section__grid_content{
+	.section__link{
+		@extend .col-12;
+		@extend .text-center;
+		.button{
+			/*@include button-variant($background, $border, $active-background: darken($background, 7.5%), $active-border: darken($border, 10%));*/
+			@extend .btn;
+			@extend .btn-lg;
+			@include button-variant(#DE3831, lighten(#DE3831, 10%), darken(#DE3831, 10%), lighten(#DE3831, 20%));
+		}		
+		z-index: 10;
+		position: relative;
+	}
+}
+
+
+/*SLIDER MODS*/
+.slick-slider{
+	.slick-arrow{
+		z-index: 100;
+	}
+	.slick-prev{
+		left: 20px;
+	}
+	.slick-next{
+		right: 20px;
+	}
+	.slick-next,
+	.slick-prev{
+		z-index: 100;
+	}
+	@include media-breakpoint-up(md){
+		.slick-arrow:before{
+			font-size: 2rem;
+		}
+	}
+}
+
+/*MAILCHIMP*/
+.mc4wp-form-fields{
+	.form-group{
+		margin: auto;
+		max-width: 400px;
+		margin-bottom: 1rem;
+		input{
+			width: 100%;
+		}
+	}
+}
+
+/*PAGE HEADER*/
+.page-header__content{
+	z-index: 100;
+	position: relative;
+	padding-top: 20rem;
+	padding-bottom: 2rem;
+	p{
+		max-width: 400px;
+	}
+}
+
+/*MAIN CONTENT*/
+.main-content{
+	@extend .container;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+/*FOOTER*/
+footer.content-info{
+	padding: 5rem 0;
+	background: #333;
+	h3, a{
+		color: white;
+	}
+	h3{
+		font-size: 1.25rem;
+		padding-bottom: .75rem;
+		border-bottom: 1px solid #666;
+	}
+	ul{
+		list-style-type: none;
+		padding-left: 0;
+		line-height: 2rem;
+	}
+	a{
+		font-size: 1rem;
+	}
 }
