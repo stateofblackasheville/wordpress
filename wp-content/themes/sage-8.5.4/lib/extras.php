@@ -51,6 +51,10 @@ function render_acf_image_url($field, $size = false, $options = false){
   echo $image_url;
 }
 
+function render_content_grid_item($post_item, $index = 0){
+  include(locate_template('templates/'.get_post_type($post_item).'-grid-item.php'));
+}
+
 function render_acf_image_alt($field, $options = false){
   if($options){
     $image = get_field($field, 'options');

@@ -7,13 +7,15 @@ class easyFancyBox {
 
 	private static $plugin_url;
 
-	protected static $plugin_basename;
+	public static $plugin_basename;
 
 	private static $inline_script;
 
 	private static $inline_style;
 
 	private static $inline_style_ie;
+
+	public static $priority = 10;
 
 	public static $onready_auto = false;
 
@@ -24,24 +26,22 @@ class easyFancyBox {
 	public static $events = array( 'post-load' );
 
 	/**********************
-	   MAIN SCRIPT OUTPUT
+	   MAIN INLINE SCRIPT
 	 **********************/
 
-	public static function main() {
-
-		if ( empty(self::$options) )
-			return;
+	private static function main() {
 
 		// check for any enabled sections
-		foreach ( self::$options['Global']['options']['Enable']['options'] as $value )
+		foreach ( self::$options['Global']['options']['Enable']['options'] as $value ) {
 			if ( isset($value['id']) && '1' == get_option($value['id'],$value['default']) ) {
 				self::$add_scripts = true;
 				break;
 			}
+		}
 
 		// and abort when none are active
 		if ( !self::$add_scripts )
-			return;
+			return false;
 
 		// begin building output FancyBox settings
 		$script = 'var fb_timeout, fb_opts={';
@@ -81,7 +81,7 @@ class easyFancyBox {
 		$script .= ' };
 if(typeof easy_fancybox_handler===\'undefined\'){
 var easy_fancybox_handler=function(){
-jQuery(\'.nofancybox,a.pin-it-button,a[href*="pinterest.com/pin/create"]\').addClass(\'nolightbox\');';
+jQuery(\'.nofancybox,a.wp-block-file__button,a.pin-it-button,a[href*="pinterest.com/pin/create"]\').addClass(\'nolightbox\');';
 
 		foreach (self::$options as $key => $value) {
 			// check if not enabled or hide=true then skip
@@ -248,32 +248,31 @@ var easy_fancybox_auto=function(){setTimeout(function(){jQuery(\'a[class*="'.$tr
 
 		// customized styles
 		$styles = '';
-		if ( isset($overlaySpotlight) && 'true' == $overlaySpotlight ) {
+		if ( isset($overlaySpotlight) && 'true' == $overlaySpotlight )
 			$styles .= '#fancybox-overlay{background-attachment:fixed;background-image:url("' . self::$plugin_url . 'images/light-mask.png");background-position:center;background-repeat:no-repeat;background-size:100% 100%}';
-		}
-		if ( !empty($borderRadius) ) {
+
+		if ( !empty($borderRadius) )
 			$styles .= '#fancybox-outer,#fancybox-content{border-radius:'.$borderRadius.'px}.fancybox-title-inside{padding-top:'.$borderRadius.'px;margin-top:-'.$borderRadius.'px !important;border-radius: 0 0 '.$borderRadius.'px '.$borderRadius.'px}';
-		}
+
 		$content_style = '';
-		if ( !empty($backgroundColor) ) {
+		if ( !empty($backgroundColor) )
 			$content_style .= 'background:'.$backgroundColor.';';
-		}
-		if ( !empty($paddingColor) ) {
+
+		if ( !empty($paddingColor) )
 			$content_style .= 'border-color:'.$paddingColor.';';
-		}
+
 		if ( !empty($textColor) ) {
 			$content_style .= 'color:'.$textColor.';';
 			$styles .= '#fancybox-outer{background:'.$paddingColor.'}'; //.fancybox-title-inside{background-color:'.$paddingColor.';margin-left:0 !important;margin-right:0 !important;width:100% !important;}
 		}
-		if ( !empty($content_style) ) {
+		if ( !empty($content_style) )
 			$styles .= '#fancybox-content{'.$content_style.'}';
-		}
-		if ( !empty($titleColor) ) {
+
+		if ( !empty($titleColor) )
 			$styles .= '#fancybox-title,#fancybox-title-float-main{color:'.$titleColor.'}';
-		}
-		if ( !empty($styles) ) {
+
+		if ( !empty($styles) )
 			self::$inline_style = $styles;
-		}
 
 		// running our IE alphaimageloader relative path styles here
 		if ( isset($compatIE8) && 'true' == $compatIE8 ) {
@@ -300,8 +299,9 @@ var easy_fancybox_auto=function(){setTimeout(function(){jQuery(\'a[class*="'.$tr
 			if ( isset($overlaySpotlight) && 'true' == $overlaySpotlight )
 				self::$inline_style_ie .= '
 #fancybox-overlay{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="'.self::$plugin_url.'images/light-mask.png",sizingMethod="scale")}';
-
 		}
+
+		return true;
 	}
 
 	/***********************
@@ -309,26 +309,27 @@ var easy_fancybox_auto=function(){setTimeout(function(){jQuery(\'a[class*="'.$tr
 	 ***********************/
 
 	public static function enqueue_scripts() {
+
 		// make sure whe actually need to do anything
 		if ( !self::$add_scripts )
 			return;
 
 		global $wp_styles;
-		$min = ( defined('WP_DEBUG') && true == WP_DEBUG ) ? '' : '.min';
+		$min = ( defined('WP_DEBUG') && WP_DEBUG ) ? '' : '.min';
 
 		// ENQUEUE STYLE
-		wp_enqueue_style( 'fancybox', self::$plugin_url.'fancybox/jquery.fancybox'.$min.'.css', false, FANCYBOX_VERSION, 'screen' );
+		wp_enqueue_style( 'fancybox', self::$plugin_url.'fancybox/jquery.fancybox.'.FANCYBOX_VERSION.$min.'.css', false, null, 'screen' );
 		if ( !empty(self::$inline_style_ie) ) {
-			wp_enqueue_style( 'fancybox-ie', self::$plugin_url.'fancybox/jquery.fancybox-ie'.$min.'.css', false, FANCYBOX_VERSION, 'screen' );
+			wp_enqueue_style( 'fancybox-ie', self::$plugin_url.'fancybox/jquery.fancybox-ie.'.FANCYBOX_VERSION.$min.'.css', false, null, 'screen' );
 			$wp_styles->add_data( 'fancybox-ie', 'conditional', 'lt IE 9' );
 		}
 
 		// ENQUEUE SCRIPTS
-		$footer = get_option( 'fancybox_noFooter', false ) ? false : true;
 		$dep = get_option( 'fancybox_nojQuery', false ) ? array() : array('jquery');
+		$footer = get_option( 'fancybox_noFooter', false ) ? false : true;
 
 		// register main fancybox script
-		wp_enqueue_script( 'jquery-fancybox', self::$plugin_url.'fancybox/jquery.fancybox'.$min.'.js', $dep, FANCYBOX_VERSION, $footer );
+		wp_enqueue_script( 'jquery-fancybox', self::$plugin_url.'fancybox/jquery.fancybox.'.FANCYBOX_VERSION.$min.'.js', $dep, null, $footer );
 
 		// jQuery Easing, which is ot needed if jQueryUI Core Effects are loaded
 		if ( !wp_script_is( 'jquery-effects-core', 'enqueued' ) ) {
@@ -345,29 +346,28 @@ var easy_fancybox_auto=function(){setTimeout(function(){jQuery(\'a[class*="'.$tr
 				$add_easing = true;
 			// enqueue easing?
 			if ( $add_easing ) {
-				wp_enqueue_script( 'jquery-easing', self::$plugin_url.'js/jquery.easing'.$min.'.js', $dep, EASING_VERSION, $footer );
+				wp_enqueue_script( 'jquery-easing', self::$plugin_url.'js/jquery.easing.'.EASING_VERSION.$min.'.js', $dep, null, $footer );
 			}
 		}
 
 		// jQuery Mousewheel, which is not needed if jQueryUI Mouse is loaded
 		if ( get_option( 'fancybox_mouseWheel', true ) && !wp_script_is( 'jquery-ui-mouse', 'enqueued' ) ) {
-			wp_enqueue_script( 'jquery-mousewheel', self::$plugin_url.'js/jquery.mousewheel'.$min.'.js', $dep, MOUSEWHEEL_VERSION, $footer );
+			wp_enqueue_script( 'jquery-mousewheel', self::$plugin_url.'js/jquery.mousewheel.'.MOUSEWHEEL_VERSION.$min.'.js', $dep, null, $footer );
 		}
 
 		// metadata in Miscellaneous settings?
 		if ( get_option( 'fancybox_metaData' ) ) {
-			wp_enqueue_script( 'jquery-metadata',self::$plugin_url.'js/jquery.metadata'.$min.'.js', $dep, METADATA_VERSION, $footer );
+			wp_enqueue_script( 'jquery-metadata',self::$plugin_url.'js/jquery.metadata.'.METADATA_VERSION.$min.'.js', $dep, null, $footer );
 		}
 
 		if ( get_option( 'fancybox_pre45Compat', false ) || !function_exists( 'wp_add_inline_script' ) ) {
 			// do it the old way
-			$priority = intval( get_option( 'fancybox_scriptPriority', 10 ) ) + 1;
 			if ( !empty(self::$inline_style) )
 				add_action( 'wp_head', array(__CLASS__, 'print_inline_style'), 11 );
 			if ( !empty(self::$inline_style_ie) )
 				add_action( 'wp_head', array(__CLASS__, 'print_inline_style_ie'), 12 );
 			if ( !empty(self::$inline_script) )
-				add_action( $footer ? 'wp_footer' : 'wp_head', array(__CLASS__, 'print_inline_script'), $priority );
+				add_action( $footer ? 'wp_footer' : 'wp_head', array(__CLASS__, 'print_inline_script'), self::$priority + 1 );
 		} else {
 			if ( !empty(self::$inline_style) )
 				wp_add_inline_style( 'fancybox', self::$inline_style );
@@ -376,6 +376,8 @@ var easy_fancybox_auto=function(){setTimeout(function(){jQuery(\'a[class*="'.$tr
 			if ( !empty(self::$inline_script) )
 				wp_add_inline_script( 'jquery-fancybox', self::$inline_script );
 		}
+
+		do_action( 'easy_fancybox_enqueue_scripts', array($min,$dep,$footer) );
 	}
 
 	// fallback methods for WordPress pre-4.5
@@ -394,7 +396,7 @@ var easy_fancybox_auto=function(){setTimeout(function(){jQuery(\'a[class*="'.$tr
 	// Hack to fix missing wmode in Youtube oEmbed code based on David C's code in the comments on
 	// http://www.mehigh.biz/wordpress/adding-wmode-transparent-to-wordpress-3-media-embeds.html
 	// without the wmode, videos will float over the light box no matter what z-index is set.
-	public static function add_video_wmode_opaque($html, $url, $attr) {
+	public static function add_video_wmode_opaque($html) {
 		if ( strpos($html, "<embed src=" ) !== false ) {
 			$html = str_replace('</param><embed', '</param><param name="wmode" value="opaque"></param><embed wmode="opaque"', $html);
 		} elseif ( strpos($html, 'youtube' ) !== false && strpos($html, 'wmode' ) == false ) {
@@ -427,24 +429,31 @@ var easy_fancybox_auto=function(){setTimeout(function(){jQuery(\'a[class*="'.$tr
 		update_option('easy_fancybox_version', EASY_FANCYBOX_VERSION);
 	}
 
-	public static function init() {
+	public static function load_defaults() {
+		if ( empty(self::$options) ) {
+			include 'easyfancybox-options.php';
+			self::$options = $efb_options;
+		}
+	}
+
+	public static function maybe_upgrade() {
 		$version = get_option('easy_fancybox_version', 0);
 
-		if ( version_compare( EASY_FANCYBOX_VERSION, $version, '>' ) ) {
+		if ( version_compare( EASY_FANCYBOX_VERSION, $version, '>' ) )
 			self::upgrade($version);
+	}
+
+	public static function load_main() {
+		// Treat settings and prepare inline scripts and styles, or log debug message
+		if ( self::main() ) {
+			$priority = get_option( 'fancybox_scriptPriority' );
+			if ( is_numeric($priority) ) self::$priority = $priority;
+
+			add_action( 'wp_enqueue_scripts', array(__CLASS__,'enqueue_scripts'), self::$priority );
+			add_filter( 'embed_oembed_html', array(__CLASS__,'add_video_wmode_opaque'), 10 );
+		} elseif ( defined('WP_DEBUG') && WP_DEBUG ) {
+			error_log('No active Easy FancyBox media types set.');
 		}
-
-		easyFancyBox_Options::load_defaults();
-
-		$priority = intval( get_option( 'fancybox_scriptPriority', 11 ) );
-
-		// HOOKS
-		add_action( 'wp_loaded', array(__CLASS__, 'main') );
-		add_action( 'wp_enqueue_scripts', array(__CLASS__, 'enqueue_scripts'), $priority );
-
-		// FILTERS
-		add_filter( 'embed_oembed_html', array(__CLASS__,'add_video_wmode_opaque'), 10, 3 );
-		add_filter( 'easy_fancybox_inline_script', array(__CLASS__,'onready_callback') );
 	}
 
 	/**********************
@@ -456,8 +465,10 @@ var easy_fancybox_auto=function(){setTimeout(function(){jQuery(\'a[class*="'.$tr
 		self::$plugin_url = plugins_url( '/', $file );
 		self::$plugin_basename = plugin_basename( $file );
 
-		require_once dirname(__FILE__) . '/class-easyfancybox-options.php';
+		add_action( 'init', array(__CLASS__, 'maybe_upgrade') );
+		add_action( 'init', array(__CLASS__, 'load_defaults') );
+		add_action( 'init', array(__CLASS__, 'load_main'), 12 );
 
-		add_action( 'plugins_loaded', array(__CLASS__, 'init') );
+		add_filter( 'easy_fancybox_inline_script', array(__CLASS__,'onready_callback') );
 	}
 }

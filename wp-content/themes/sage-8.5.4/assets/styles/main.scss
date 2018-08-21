@@ -21,6 +21,12 @@
 
 @import "../../bower_components/slick-carousel/slick/slick-theme.scss"; 
 
+/*VARIABLES*/
+$red: #b21823;
+$purple: #662d91;
+$text-grey: #4d4d4d;
+/*END*/
+
 body{
 	/*background: red;*/
 	/*font-family: 'Playfair Display'; */
@@ -31,13 +37,33 @@ h1, h2{
 	/*font-family: 'Montserrat';*/
 }
 
+.rte{
+	font-family: Georgia;
+	p{
+		font-size: 1rem;
+		color: $text-grey;
+		line-height: 1.5em;
+	}
+	&.rte--georgia{
+		font-family: Georgia;
+	}
+	&.rte--small{
+		h4{
+			font-size: 1rem;
+		}
+		p{
+			font-size: .85em;
+		}
+	}
+}
+
 .home{
 	.page-header{
 		display: none;
 	}
 }
 
-.wrap.container{
+.home .wrap.container{
 	max-width: none;
 	padding: 0;
 	.content.row{
@@ -47,6 +73,30 @@ h1, h2{
 
 main.main{
 	padding: 0;
+}
+
+.soba-btn{
+	display: inline-block;
+	padding: 1rem 2rem;
+	min-width: 300px;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	/*transition: all .2s;*/
+	color: $red;
+	border: 3px solid $red;
+	&.soba-btn--white{
+		color: white;
+		border: 3px solid white;
+		&:hover{
+			/*background: rgba(255, 255, 255, .1);*/
+			color: white;
+		}
+	}
+	&:hover{
+		text-decoration: none;
+		opacity: .8;
+		color: $red;
+	}
 }
 
 
@@ -73,6 +123,36 @@ main.main{
 	&.content-section__grid_content,
 	&.content-section__banner_content{
 		padding: 5rem 0;
+	}
+	&.padding--small{
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+	&.padding--medium{
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+	&.padding--large{
+		padding-top: 10rem;
+		padding-bottom: 10rem;
+	}
+	&.padding--xlarge{
+		padding-top: 15rem;
+		padding-bottom: 15rem;
+	}	
+	&.padding--none{
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.home{
+	.content-section__inner{
+		/*width: 1200px;*/
+		@include make-container();
+		@include media-breakpoint-up(lg){
+			width: 1200px;
+		}
 	}
 }
 
@@ -126,6 +206,26 @@ main.main{
 	bottom: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.content-section__banner_content.content-section{
+	/*padding: 15rem 0;*/
+	display: block;
+	.content-section__bg--image{
+		background-attachment: fixed;
+	}
+	h2{
+		font-size: 3rem;
+		line-height: 1.5em;
+		margin-bottom: 2rem;
+	}
+	.rte{
+		margin-bottom: 2rem;
+		p{
+			font-size: 1.25rem;
+			line-height: 1.5em;
+		}
+	}
 }
 
 .background-type__pattern{
@@ -319,5 +419,30 @@ footer.content-info{
 	}
 	a{
 		font-size: 1rem;
+	}
+}
+
+/*CONTENT GRID*/
+.grid-item{
+	@include make-col-ready();
+	iframe{
+		width: 100%;
+		min-height: 350px;
+		border: 1px solid #eee;
+	}
+	&.grid-item--width-one-third{
+		@include make-col(4);
+	}	
+	&.grid-item--width-one-half{
+		@include make-col(6);
+	}
+	&.grid-item--width-one-half,
+	&.grid-item--width-one-third{
+		@include media-breakpoint-only(md){
+			@include make-col(6);
+		}
+		@include media-breakpoint-down(sm){
+			@include make-col(12);
+		}
 	}
 }

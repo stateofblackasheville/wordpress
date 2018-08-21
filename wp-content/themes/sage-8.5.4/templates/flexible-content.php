@@ -19,15 +19,22 @@
     	<?php $content_color = get_sub_field('content_color'); ?>
     	<?php if($content_color): ?>
     		<?php $content_color_styles .= ' color: '.$content_color.';'; ?>
-    	<?php endif; ?>       	
+    	<?php endif; ?>  
+
+    	<?php $header_color = get_sub_field('header_color'); ?>
+    	<?php if($header_color): ?>
+    		<?php $header_color_styles = ' color: '.$header_color.';'; ?>
+    	<?php else: ?>
+    		<?php $header_color_styles = ' color: '.$content_color.';'; ?>
+    	<?php endif; ?>      	     	
 
     	<?php if(get_sub_field('background_opacity')): ?>
     		<?php $background_opacity = get_sub_field('background_opacity'); ?>
     		<?php $background_color_styles .= ' opacity: '.$background_opacity.';'; ?>
     	<?php endif; ?>    
 
-    	<?php if(get_sub_field('no_padding')): ?>
-    		<?php $classes .= 'no-padding'; ?>
+    	<?php if(get_sub_field('padding_amount')): ?>
+    		<?php $classes .= get_sub_field('padding_amount').'--padding '; ?>
     	<?php endif; ?>
     	<?php if(get_sub_field('full_width')): ?>
     		<?php $classes .= 'full-width'; ?>
@@ -36,7 +43,7 @@
 
 		<?php $link = get_sub_field('section_link'); ?>	
 
-		<div class="content-section background-type__<?php the_sub_field('background_type'); ?> content-section__<?php echo get_row_layout(); ?>">
+		<div class="content-section background-type__<?php the_sub_field('background_type'); ?> content-section__<?php echo get_row_layout(); ?> padding--<?php the_sub_field('padding_amount'); ?>">
 			<?php if($background_image): ?>
 				<div class="content-section__bg content-section__bg--image" style="<?php echo $background_image_styles; ?>">
 				</div>
@@ -47,12 +54,18 @@
 			<?php endif; ?>		
 			<?php if(get_sub_field('title') || get_sub_field('description')): ?>
 				<div class="content-section__header">
-					<h2 style="<?php echo $content_color_styles; ?>">
+					<h2 style="<?php echo $header_color_styles; ?>">
 						<?php the_sub_field('title'); ?>
 					</h2>
-					<p style="<?php echo $content_color_styles; ?>">
+					<div style="<?php echo $content_color_styles; ?>" class="rte rte--georgia">
 						<?php the_sub_field('description'); ?>
-					</p>
+					</div>
+					<?php if(get_sub_field('call_to_action')): ?>
+						<?php $link = get_sub_field('call_to_action'); ?>
+						<a href="<?php echo $link['url'] ?>" class="soba-btn <?php if(get_sub_field('button_color') == 'white'): ?>soba-btn--white<?php endif; ?>">
+							<?php echo $link['title'] ?>
+						</a>					
+					<?php endif; ?>
 				</div>
 			<?php endif; ?>	
 			<!-- END COMMON CONTENT SECTION STUFF -->
@@ -87,8 +100,54 @@
 					<?php echo $link['title']; ?>
 				</a>
 			</div>
-			<?php endif; ?>				       	
-        	
+			<?php endif; ?>	
+
+        <?php elseif( get_row_layout() == 'content_section' ): ?>
+        	<div class="content-section__inner">
+	        	<?php $content_section_type = get_sub_field('type'); ?>
+
+	        	<!-- TEST TEST -->
+
+	        	<?php //echo get_sub_field('type'); ?>
+
+	        	<?php if($content_section_type == 'Custom'): ?>
+	        		<?php the_sub_field('content'); ?>
+	        	<?php elseif($content_section_type == 'Relational Dynamic'): ?>
+	        		<?php 
+
+	        		$dynamic_content = get_sub_field('dynamic_content');
+
+	        		if(get_sub_field('limit')):
+	        			$post_limit = get_sub_field('limit');
+	        		else:
+	        			$post_limit = 3;
+	        		endif; 
+
+	        		$content_arr = get_posts(array(
+	        			'post_type' => $dynamic_content,
+	        			'numberposts' => $post_limit
+	        		));
+
+	        		// var_dump($dynamic_content);
+
+	        		?>
+
+	        		<?php if($content_arr): ?>
+	        			<?php foreach($content_arr as $content): ?>
+							<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
+	        			<?php endforeach; ?>
+	        		<?php endif; ?>
+	        	<?php elseif( $content_section_type == 'Relational Curated'): ?>
+	        		<?php $content_arr = get_sub_field('curated_content'); ?>
+	        		<?php if($content_arr): ?>
+	        			<?php foreach($content_arr as $content): ?>
+	        				<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
+	        			<?php endforeach; ?>
+	        		<?php endif; ?>
+	        	<?php endif; ?>
+
+	        	<?php //var_dump($content_section_type); ?>						       	
+        	</div>
         <?php elseif( get_row_layout() == 'slider_content' ): ?>
 			<?php if( have_rows('slider_content__items') ): ?>
 				<div class="content-section__slider slick-slider">

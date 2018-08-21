@@ -46,8 +46,8 @@
 			</div>			
 		</div>
 	<?php else: ?>
-	<div class="container">
+	<!-- <div class="container"> -->
 	  	<h1><?= Titles\title(); ?></h1>
-	</div>
+	<!-- </div> -->
 	<?php endif; ?>
 </div>
