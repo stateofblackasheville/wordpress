@@ -1,4 +1,4 @@
-@import "common/variables";
+ @import "common/variables";
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
@@ -25,7 +25,15 @@
 $red: #b21823;
 $purple: #662d91;
 $text-grey: #4d4d4d;
+$off-white: #efebee;
 /*END*/
+
+a{
+	color: $red;
+	&:hover{
+		color: darken($red, 10%);
+	}
+}
 
 body{
 	/*background: red;*/
@@ -208,16 +216,21 @@ main.main{
 	height: 100%;
 }
 
+.content-section__header{
+	@include make-col(8);
+	@include make-col-offset(2);
+	h2{
+		font-size: 3rem;
+		line-height: 1.5em;
+		margin-bottom: 2rem;
+	}	
+}
+
 .content-section__banner_content.content-section{
 	/*padding: 15rem 0;*/
 	display: block;
 	.content-section__bg--image{
 		background-attachment: fixed;
-	}
-	h2{
-		font-size: 3rem;
-		line-height: 1.5em;
-		margin-bottom: 2rem;
 	}
 	.rte{
 		margin-bottom: 2rem;
@@ -425,21 +438,41 @@ footer.content-info{
 /*CONTENT GRID*/
 .grid-item{
 	@include make-col-ready();
+	h3{
+		font-size: 1.25rem;
+		color: #666;
+		font-weight: normal;
+		padding-bottom: .5rem;
+		border-bottom: 1px solid #ccc;
+		a{
+			float: right;
+		}
+		ion-icon{
+			/*color: $red;*/
+			font-size: 1.5em;
+			margin-right: .25rem;
+			vertical-align: bottom;
+		}
+	}
 	iframe{
 		width: 100%;
 		min-height: 350px;
 		border: 1px solid #eee;
+		background: white;
 	}
 	&.grid-item--width-one-third{
 		@include make-col(4);
 	}	
+	&.grid-item--width-two-thirds{
+		@include make-col(8);
+	}		
 	&.grid-item--width-one-half{
 		@include make-col(6);
 	}
 	&.grid-item--width-one-half,
 	&.grid-item--width-one-third{
 		@include media-breakpoint-only(md){
-			@include make-col(6);
+			@include make-col(6);  
 		}
 		@include media-breakpoint-down(sm){
 			@include make-col(12);

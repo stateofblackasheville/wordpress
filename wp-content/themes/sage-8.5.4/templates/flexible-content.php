@@ -102,8 +102,9 @@
 			</div>
 			<?php endif; ?>	
 
-        <?php elseif( get_row_layout() == 'content_section' ): ?>
+        <?php elseif( get_row_layout() == 'content_grid' ): ?>
         	<div class="content-section__inner">
+        		<div class="row">
 	        	<?php $content_section_type = get_sub_field('type'); ?>
 
 	        	<!-- TEST TEST -->
@@ -146,7 +147,8 @@
 	        		<?php endif; ?>
 	        	<?php endif; ?>
 
-	        	<?php //var_dump($content_section_type); ?>						       	
+	        	<?php //var_dump($content_section_type); ?>	
+	        	</div>					       	
         	</div>
         <?php elseif( get_row_layout() == 'slider_content' ): ?>
 			<?php if( have_rows('slider_content__items') ): ?>

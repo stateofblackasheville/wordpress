@@ -16,272 +16,10 @@
                 "id": ""
             },
             "layouts": {
-                "5ade2c29c7096": {
-                    "key": "5ade2c29c7096",
-                    "name": "grid_content",
-                    "label": "Grid Content",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5ade6b0afd397",
-                            "label": "Title",
-                            "name": "title",
-                            "type": "text",
-                            "instructions": "Title for this content section.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5ade6b1dfd398",
-                            "label": "Description",
-                            "name": "description",
-                            "type": "text",
-                            "instructions": "Description for this content section.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5ade2c3b2c3b1",
-                            "label": "Content Grid",
-                            "name": "grid_content__items",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 0,
-                            "layout": "table",
-                            "button_label": "",
-                            "sub_fields": [
-                                {
-                                    "key": "field_5ade2c732c3b2",
-                                    "label": "Title",
-                                    "name": "title",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_5ade2c892c3b3",
-                                    "label": "Icon",
-                                    "name": "icon",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "preview_size": "thumbnail",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": ""
-                                },
-                                {
-                                    "key": "field_5ade2c942c3b4",
-                                    "label": "Description",
-                                    "name": "description",
-                                    "type": "textarea",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "maxlength": "",
-                                    "rows": "",
-                                    "new_lines": ""
-                                },
-                                {
-                                    "key": "field_5ade2ca32c3b5",
-                                    "label": "Link",
-                                    "name": "link",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_5adf78aae9ad0",
-                            "label": "Background Type",
-                            "name": "background_type",
-                            "type": "select",
-                            "instructions": "Select pattern for a repeatable pattern, select stretch to make the image take up the full frame.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "none": "None",
-                                "pattern": "Pattern",
-                                "stretch": "Stretch"
-                            },
-                            "default_value": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "return_format": "value",
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_5adf38f98403e",
-                            "label": "Background Image",
-                            "name": "background_image",
-                            "type": "image",
-                            "instructions": "The image to be used in the background.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_5adf3a0378aed",
-                            "label": "Background Color",
-                            "name": "background_color",
-                            "type": "color_picker",
-                            "instructions": "If selected, this will add a background color to the section.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": ""
-                        },
-                        {
-                            "key": "field_5adf3a4578aee",
-                            "label": "Background Opacity",
-                            "name": "background_opacity",
-                            "type": "number",
-                            "instructions": "This will be the opacity of the transparent background.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": 1,
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "min": ".01",
-                            "max": 1,
-                            "step": ".01"
-                        },
-                        {
-                            "key": "field_5adf49c637d2f",
-                            "label": "Section Link",
-                            "name": "section_link",
-                            "type": "link",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array"
-                        },
-                        {
-                            "key": "field_5adfc28568c06",
-                            "label": "Content Color",
-                            "name": "content_color",
-                            "type": "color_picker",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "5b6b6b0eeb023": {
                     "key": "5b6b6b0eeb023",
-                    "name": "content_section",
-                    "label": "Content Section",
+                    "name": "content_grid",
+                    "label": "Content Grid",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -474,6 +212,72 @@
                             "min": "",
                             "max": "",
                             "return_format": "object"
+                        },
+                        {
+                            "key": "field_5b7c78df77b51",
+                            "label": "Background Color",
+                            "name": "background_color",
+                            "type": "color_picker",
+                            "instructions": "If selected, this will add a background color to the section.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_5b7c78b877b4f",
+                            "label": "Background Opacity",
+                            "name": "background_opacity",
+                            "type": "number",
+                            "instructions": "This will be the opacity of the transparent background.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 1,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": ".01",
+                            "max": 1,
+                            "step": ".01"
+                        },
+                        {
+                            "key": "field_5b7c810c2cb9f",
+                            "label": "Padding",
+                            "name": "padding_amount",
+                            "type": "select",
+                            "instructions": "Include this if you want something to take up the full dimensions of the screen.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "xlarge": "Xlarge",
+                                "large": "Large",
+                                "medium": "Medium",
+                                "small": "Small",
+                                "none": "None"
+                            },
+                            "default_value": [
+                                "large"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -1061,5 +865,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1534803913
+    "modified": 1534886211
 }
