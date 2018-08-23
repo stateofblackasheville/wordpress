@@ -139,12 +139,17 @@
 	        			<?php endforeach; ?>
 	        		<?php endif; ?>
 	        	<?php elseif( $content_section_type == 'Relational Curated'): ?>
-	        		<?php $content_arr = get_sub_field('curated_content'); ?>
-	        		<?php if($content_arr): ?>
-	        			<?php foreach($content_arr as $content): ?>
-	        				<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
-	        			<?php endforeach; ?>
-	        		<?php endif; ?>
+	        		<?php if( have_rows('curated_content_custom') ): ?>
+		        		<?php while ( have_rows('curated_content_custom') ) : the_row(); ?>
+		        			<?php $content = get_sub_field('content'); ?>
+			        		<?php //$content_arr = get_sub_field('curated_content'); ?>
+			        		<?php //if($content_arr): ?>
+			        			<?php //foreach($content_arr as $content): ?>
+			        				<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
+			        			<?php //endforeach; ?>
+			        		<?php //endif; ?>
+			        	<?php endwhile; ?>
+		        	<?php endif; ?>
 	        	<?php endif; ?>
 
 	        	<?php //var_dump($content_section_type); ?>	

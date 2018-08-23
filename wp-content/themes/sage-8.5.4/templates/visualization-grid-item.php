@@ -1,5 +1,7 @@
 <?php
-	if(get_field('width', $post_item->ID)):
+	if(get_sub_field('width')):
+		$width = get_sub_field('width');
+	elseif(get_field('width', $post_item->ID)):
 		$width = get_field('width', $post_item->ID);
 	else:
 		$width = 'one-third';
@@ -14,8 +16,14 @@
 	if($categories):
 		$category_name = $categories[0]->slug;
 	endif;
+
+	$fast_fact = false;
+
+	if(get_field('fast_fact') == true):
+		$fast_fact = true;
+	endif;
 ?>
-<div class="grid-item visualization grid-item--width-<?php echo $width; ?>">
+<div class="grid-item visualization grid-item--width-<?php echo $width; ?><?php if($fast_fact): ?> visualization--fast-fact<?php endif; ?>">
 	<h3>
 		<?php if($categories): ?>
 			<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_name; ?>.svg"></ion-icon>
@@ -36,7 +44,7 @@
 	</div>
 	<div class="sources rte rte--small">
 		<h4>
-			Sources
+			Sources:
 		</h4>
 		<?php
 
@@ -50,7 +58,7 @@
 		    	$source_file = get_sub_field('source_file');
 		?>
 		  	<?php if($source_title): ?>
-		  		<p>
+		  		<div>
 		  			<?php echo $source_title; ?>
 		  			<?php if($source_link): ?>
 		  				<a href="<?php echo $source_link['url']; ?>">
@@ -66,7 +74,7 @@
 		  					Download files <ion-icon name="document"></ion-icon>
 		  				</a>
 		  			<?php endif; ?>
-		  		</p>
+		  		</div>
 		  	<?php endif; ?>
 
 		<?php 

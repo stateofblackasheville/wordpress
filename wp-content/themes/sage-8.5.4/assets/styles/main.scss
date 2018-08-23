@@ -56,12 +56,13 @@ h1, h2{
 		font-family: Georgia;
 	}
 	&.rte--small{
+		font-size: .8em;
 		h4{
 			font-size: 1rem;
 		}
-		p{
+/*		p{
 			font-size: .85em;
-		}
+		}*/
 	}
 }
 
@@ -105,6 +106,11 @@ main.main{
 		opacity: .8;
 		color: $red;
 	}
+	@include media-breakpoint-down(sm){
+		font-size: 1rem;
+		padding: .5rem 0;
+		width: 100%;
+	}	
 }
 
 
@@ -128,30 +134,35 @@ main.main{
 .content-section{
 	position: relative;
 	/*background: ;*/
-	&.content-section__grid_content,
-	&.content-section__banner_content{
-		padding: 5rem 0;
+	@include media-breakpoint-up(md){
+		&.content-section__grid_content,
+		&.content-section__banner_content{
+			padding: 5rem 0;
+		}
+		&.padding--small{
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
+		&.padding--medium{
+			padding-top: 5rem;
+			padding-bottom: 5rem;
+		}
+		&.padding--large{
+			padding-top: 10rem;
+			padding-bottom: 10rem;
+		}
+		&.padding--xlarge{
+			padding-top: 15rem;
+			padding-bottom: 15rem;
+		}	
+		&.padding--none{
+			padding-top: 0;
+			padding-bottom: 0;
+		}
 	}
-	&.padding--small{
-		padding-top: 2rem;
-		padding-bottom: 2rem;
-	}
-	&.padding--medium{
-		padding-top: 5rem;
-		padding-bottom: 5rem;
-	}
-	&.padding--large{
-		padding-top: 10rem;
-		padding-bottom: 10rem;
-	}
-	&.padding--xlarge{
-		padding-top: 15rem;
-		padding-bottom: 15rem;
+	@include media-breakpoint-down(sm){
+		padding: 4rem 0;
 	}	
-	&.padding--none{
-		padding-top: 0;
-		padding-bottom: 0;
-	}
 }
 
 .home{
@@ -159,20 +170,32 @@ main.main{
 		/*width: 1200px;*/
 		@include make-container();
 		@include media-breakpoint-up(lg){
-			width: 1200px;
+			width: 1200px; 
 		}
 	}
 }
 
 .content-section__header{
-	@extend .col-md-6;
-	@extend .offset-md-3;
+	@extend .col-lg-8;
+	@extend .offset-lg-2;
+	@extend .offset-sm-0;
+	@extend .col-sm-12;
 	@extend .text-center;
 	padding-bottom: 1rem;
 	/*margin-bottom: 3rem;*/
 	/*border-bottom: 1px solid #eee;*/
 	z-index: 10;
 	position: relative;
+	h2{
+		font-size: 3rem;
+		line-height: 1.5em;
+		margin-bottom: 2rem;
+	}	
+	@include media-breakpoint-down(sm){
+		h2{
+			font-size: 2rem;
+		}
+	}	
 }
 .content-section__grid{
 	@extend .d-flex;
@@ -217,13 +240,8 @@ main.main{
 }
 
 .content-section__header{
-	@include make-col(8);
-	@include make-col-offset(2);
-	h2{
-		font-size: 3rem;
-		line-height: 1.5em;
-		margin-bottom: 2rem;
-	}	
+/*	@include make-col(8);
+	@include make-col-offset(2);*/
 }
 
 .content-section__banner_content.content-section{
@@ -438,6 +456,7 @@ footer.content-info{
 /*CONTENT GRID*/
 .grid-item{
 	@include make-col-ready();
+	margin-bottom: 3rem;
 	h3{
 		font-size: 1.25rem;
 		color: #666;
@@ -464,7 +483,7 @@ footer.content-info{
 		@include make-col(4);
 	}	
 	&.grid-item--width-two-thirds{
-		@include make-col(8);
+		@extend .col-md-8;
 	}		
 	&.grid-item--width-one-half{
 		@include make-col(6);
@@ -478,4 +497,8 @@ footer.content-info{
 			@include make-col(12);
 		}
 	}
+	.sources{
+		margin-top: 1rem;
+	}
+	@extend .col-sm-12;
 }
