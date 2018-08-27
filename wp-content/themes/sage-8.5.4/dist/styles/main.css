@@ -670,7 +670,7 @@ pre {
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .content-section__grid_content .section__link, .col,
 .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .content-section__header, .content-section__grid .content-section__item, .content-section__slider_content .content-section__item.image-position__left .slider__inner .slider-image,
-.content-section__slider_content .content-section__item.image-position__left .slider__inner .slider-content, .grid-item, .col-sm,
+.content-section__slider_content .content-section__item.image-position__left .slider__inner .slider-content, .grid-item, .page-template .page-content-container .main-page-content, .page-template .page-content-container .sidebar-content, .col-sm,
 .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .grid-item.grid-item--width-two-thirds, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
 .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
 .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
@@ -860,7 +860,7 @@ pre {
     flex: 0 0 91.6666666667%;
     max-width: 91.6666666667%; }
   .col-sm-12, .content-section__header, .content-section__grid .content-section__item, .content-section__slider_content .content-section__item.image-position__left .slider__inner .slider-image,
-  .content-section__slider_content .content-section__item.image-position__left .slider__inner .slider-content, .grid-item {
+  .content-section__slider_content .content-section__item.image-position__left .slider__inner .slider-content, .grid-item, .page-template .page-content-container .main-page-content, .page-template .page-content-container .sidebar-content {
     flex: 0 0 100%;
     max-width: 100%; }
   .order-sm-first {
@@ -933,7 +933,7 @@ pre {
   .col-md-2 {
     flex: 0 0 16.6666666667%;
     max-width: 16.6666666667%; }
-  .col-md-3 {
+  .col-md-3, .page-template .page-content-container .sidebar-content {
     flex: 0 0 25%;
     max-width: 25%; }
   .col-md-4, .content-section__grid .content-section__item {
@@ -952,7 +952,7 @@ pre {
   .col-md-8, .grid-item.grid-item--width-two-thirds {
     flex: 0 0 66.6666666667%;
     max-width: 66.6666666667%; }
-  .col-md-9 {
+  .col-md-9, .page-template .page-content-container .main-page-content {
     flex: 0 0 75%;
     max-width: 75%; }
   .col-md-10 {
@@ -7611,3 +7611,37 @@ footer.content-info {
       max-width: 100%; } }
   .grid-item .sources {
     margin-top: 1rem; }
+  @media (max-width: 767.98px) {
+    .grid-item h3 a {
+      float: none;
+      display: block;
+      font-size: 1rem;
+      margin-top: .25rem; } }
+
+/*DATA FOCUS*/
+.page-template .page-content-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px; }
+  .page-template .page-content-container .main-page-content .content-section__header {
+    text-align: left;
+    margin: 0; }
+    .page-template .page-content-container .main-page-content .content-section__header h2 {
+      text-align: left; }
+  .page-template .page-content-container .main-page-content .content-section__inner {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 100%;
+    max-width: 100%; }
+  .page-template .page-content-container .main-page-content .content-section {
+    /*@include make-row();*/ }
+  .page-template .page-content-container .sidebar-content {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; }
