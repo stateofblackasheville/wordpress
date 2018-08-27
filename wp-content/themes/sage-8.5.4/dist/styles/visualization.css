@@ -8,6 +8,10 @@
     #like_button_container .soba-table table td {
       padding: .5rem 1rem;
       border: 1px solid #ccc; }
+    #like_button_container .soba-table table input {
+      margin-left: .25rem; }
+  #like_button_container .soba-table .subTable {
+    display: none; }
   #like_button_container .inputs label {
     width: 150px; }
   #like_button_container .react-tabs__tab-list {

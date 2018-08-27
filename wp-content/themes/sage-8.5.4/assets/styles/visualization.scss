@@ -11,7 +11,13 @@
 				padding: .5rem 1rem;
 				border: 1px solid #ccc;
 			}
+			input{
+				margin-left: .25rem;
+			}
 		}
+		.subTable{
+			display: none;
+		}		
 	}
 
 	.inputs{
@@ -45,6 +51,7 @@
 		&:first-child{
 			border-left-width: 1px;
 		}
-	}	
+	}
+
 }
 
