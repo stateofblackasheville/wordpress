@@ -1,0 +1,28 @@
+#like_button_container {
+  width: 100%; }
+  #like_button_container select {
+    min-height: 2rem;
+    margin-bottom: 1rem; }
+  #like_button_container .soba-table table {
+    width: 100%; }
+    #like_button_container .soba-table table td {
+      padding: .5rem 1rem;
+      border: 1px solid #ccc; }
+  #like_button_container .inputs label {
+    width: 150px; }
+  #like_button_container .react-tabs__tab-list {
+    display: flex;
+    margin-top: 1rem;
+    padding-left: 0; }
+    #like_button_container .react-tabs__tab-list li {
+      display: inline-block;
+      padding: .5rem 1rem;
+      cursor: pointer; }
+  #like_button_container .react-tabs__tab {
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    border-color: #c5c5c5; }
+    #like_button_container .react-tabs__tab.react-tabs__tab--selected {
+      background: #c5c5c5; }
+    #like_button_container .react-tabs__tab:first-child {
+      border-left-width: 1px; }

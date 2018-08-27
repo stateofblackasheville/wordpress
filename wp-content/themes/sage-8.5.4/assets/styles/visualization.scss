@@ -1,0 +1,50 @@
+#like_button_container{
+	width: 100%;
+	select{
+		min-height: 2rem;
+		margin-bottom: 1rem;
+	}
+	.soba-table{
+		table{
+			width: 100%;
+			td{
+				padding: .5rem 1rem;
+				border: 1px solid #ccc;
+			}
+		}
+	}
+
+	.inputs{
+		label{
+			width: 150px;
+			
+		}
+	}
+
+	.react-tabs__tab-list{
+		display: flex;
+		margin-top: 1rem;
+		padding-left: 0;
+		li{
+			display: inline-block;
+			padding: .5rem 1rem;	
+			cursor: pointer;	
+			a{
+
+			}
+		}
+	}
+
+	.react-tabs__tab{
+		border-width: 1px 1px 1px 0px;
+		border-style: solid;
+		border-color: #c5c5c5;
+		&.react-tabs__tab--selected{
+			background: #c5c5c5;
+		}
+		&:first-child{
+			border-left-width: 1px;
+		}
+	}	
+}
+
