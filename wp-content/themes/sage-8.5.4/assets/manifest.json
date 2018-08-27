@@ -17,6 +17,11 @@
         "scripts/customizer.js"
       ]
     },
+    "visualization.js": {
+      "files": [
+        "scripts/visualization.js"
+      ]
+    },    
     "jquery.js": {
       "bower": ["jquery"]
     }

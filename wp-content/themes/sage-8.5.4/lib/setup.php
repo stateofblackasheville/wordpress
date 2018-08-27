@@ -96,7 +96,7 @@ function display_sidebar() {
   return apply_filters('sage/display_sidebar', $display);
 }
 
-/**
+/** 
  * Theme assets
  */
 function assets() {
@@ -107,6 +107,17 @@ function assets() {
   }
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+
+  // IONICONS
   wp_enqueue_script('ionicons', 'https://unpkg.com/ionicons@4.2.2/dist/ionicons.js', ['jquery'], null, true);
+
+  // REACT JS
+  wp_enqueue_script('react', 'https://unpkg.com/react@16/umd/react.development.js', ['jquery'], null, true);
+  wp_enqueue_script('react_dom', 'https://unpkg.com/react-dom@16/umd/react-dom.development.js', ['jquery'], null, true);
+  wp_enqueue_script('react_soba', 'https://unpkg.com/soba-visualization@1.2.0/umd/soba-visualization.js', ['jquery'], null, true);
+  wp_enqueue_script('visualization', Assets\asset_path('scripts/visualization.js'),['react_soba'], null, true);
+
+  // REACT CSS
+  wp_enqueue_style('sage/css', 'https://unpkg.com/soba-visualization@1.2.0/umd/main.a96e0308.css', false, null);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
