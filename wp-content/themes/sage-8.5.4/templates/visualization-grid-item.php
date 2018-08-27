@@ -59,7 +59,9 @@
 		?>
 		  	<?php if($source_title): ?>
 		  		<div>
-		  			<?php echo $source_title; ?>
+		  			<span>
+		  				<?php echo $source_title; ?> –
+		  			</span>
 		  			<?php if($source_link): ?>
 		  				<a href="<?php echo $source_link['url']; ?>">
 		  					<?php echo $source_link['title']; ?>

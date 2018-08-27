@@ -1,3 +1,3 @@
 const domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(<SobaVisualization/>, domContainer); 
+ReactDOM.render(React.createElement(SobaVisualization), domContainer);
 //# sourceMappingURL=visualization.js.map
