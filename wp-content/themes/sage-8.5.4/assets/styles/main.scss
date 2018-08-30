@@ -320,10 +320,8 @@ main.main{
 	}			
 }
 
-.sidebar-item{
-	.content-section__call-to-action{
+.call-to-action--sidebar{
 		@include make-col-ready();
-	}
 }
 
 

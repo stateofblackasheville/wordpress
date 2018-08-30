@@ -7444,7 +7444,7 @@ main.main {
       padding-top: 5rem;
       padding-bottom: 5rem; } }
 
-.sidebar-item .content-section__call-to-action {
+.call-to-action--sidebar {
   position: relative;
   width: 100%;
   min-height: 1px;

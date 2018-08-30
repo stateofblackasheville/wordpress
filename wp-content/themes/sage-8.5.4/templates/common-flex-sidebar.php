@@ -105,7 +105,7 @@
 
 			<?php endif; ?> 
 			<?php if(get_sub_field('call_to_action')): ?>
-				<div class="content-section__call-to-action">
+				<div class="content-section__call-to-action call-to-action--sidebar">
 					<?php $link = get_sub_field('call_to_action'); ?>
 					<a href="<?php echo $link['url'] ?>" class="soba-btn <?php if(get_sub_field('button_color') == 'white'): ?>soba-btn--white<?php endif; ?>">
 						<?php echo $link['title'] ?> <ion-icon name="ios-arrow-forward"></ion-icon>
