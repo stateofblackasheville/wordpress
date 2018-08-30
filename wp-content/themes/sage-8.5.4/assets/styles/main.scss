@@ -320,8 +320,10 @@ main.main{
 	}			
 }
 
-.content-section__call-to-action{
-	@include make-col-ready();
+.sidebar-item{
+	.content-section__call-to-action{
+		@include make-col-ready();
+	}
 }
 
 
