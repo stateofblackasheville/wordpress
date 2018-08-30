@@ -55,7 +55,7 @@
 <?php $link = get_sub_field('section_link'); ?>	
 
 
-<div class="content-section background-type__<?php the_sub_field('background_type'); ?> content-section__<?php echo get_row_layout(); ?> <?php echo $classes; ?>">
+<div class="content-section background-type__<?php the_sub_field('background_type'); ?> content-section--<?php echo get_row_layout(); ?> <?php echo $classes; ?>">
 	<div class="content-section__inner-container">
 		<div class="content-section__row">
 			<?php if($background_image): ?>
@@ -77,7 +77,7 @@
 					<?php if(get_sub_field('call_to_action')): ?>
 						<?php $link = get_sub_field('call_to_action'); ?>
 						<a href="<?php echo $link['url'] ?>" class="soba-btn <?php if(get_sub_field('button_color') == 'white'): ?>soba-btn--white<?php endif; ?>">
-							<?php echo $link['title'] ?>
+							<?php echo $link['title'] ?> <ion-icon name="ios-arrow-forward"></ion-icon>
 						</a>					
 					<?php endif; ?>
 				</div>

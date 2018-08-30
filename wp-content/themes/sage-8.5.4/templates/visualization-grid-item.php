@@ -51,7 +51,7 @@
 		</h3>
 	</div>
 	<div class="visualization__content">
-		<div class="content">
+		<div class="content rte rte--georgia">
 			<?php echo $post_item->post_content; ?>
 		</div>
 		<div class="sources rte rte--small">

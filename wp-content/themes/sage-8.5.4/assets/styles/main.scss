@@ -61,9 +61,6 @@ h1, h2{
 		h4{
 			font-size: 1rem;
 		}
-/*		p{
-			font-size: .85em;
-		}*/
 	}
 }
 
@@ -87,13 +84,14 @@ main.main{
 
 .soba-btn{
 	display: inline-block;
-	padding: 1rem 2rem;
+	padding: .75rem 1rem;
 	min-width: 300px;
 	font-size: 1.25rem;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	/*transition: all .2s;*/
 	color: $red;
 	border: 3px solid $red;
+	text-align: center;
 	&.soba-btn--white{
 		color: white;
 		border: 3px solid white;
@@ -101,6 +99,10 @@ main.main{
 			/*background: rgba(255, 255, 255, .1);*/
 			color: white;
 		}
+	}
+	ion-icon{
+		font-size: 2rem;
+		vertical-align: middle; 
 	}
 	&:hover{
 		text-decoration: none;
@@ -147,35 +149,43 @@ main.main{
 		align-items: center;
 		justify-content: center;
 		img{
-			width: 400px;
-			max-width: 100%;
+			width: 100%;
+			max-width: 400px;
 		}
 	}
-	&.header-width--one-third{
-		.content-section__header{
-			@include make-col(4);
+	@include media-breakpoint-up(md){
+		&.header-width--one-third{
+			.content-section__header{
+				@include make-col(4);
+			}
+			.content-section__inner,
+			.content-section__image{
+				@include make-col(8);
+			}		
 		}
-		.content-section__inner,
-		.content-section__image{
-			@include make-col(8);
-		}		
-	}
-	&.header-width--one-half{
-		.content-section__header{
-			@include make-col(6);
+		&.header-width--one-half{
+			.content-section__header{
+				@include make-col(6);
+			}
+			.content-section__inner,
+			.content-section__image{
+				@include make-col(6);
+			}		
 		}
-		.content-section__inner,
-		.content-section__image{
-			@include make-col(6);
-		}		
-	}
-	&.header-width--two-thirds{
-		.content-section__header{
-			@include make-col(8);
+		&.header-width--two-thirds{
+			.content-section__header{
+				@include make-col(8);
+			}
+			.content-section__inner,
+			.content-section__image{
+				@include make-col(4);
+			}		
 		}
-		.content-section__inner,
-		.content-section__image{
-			@include make-col(4);
+		&.content-align--left,
+		&.content-align--right{
+			.content-section__header{
+				@include make-col(6);
+			}	
 		}		
 	}
 	&.header-width--one-whole{
@@ -187,15 +197,6 @@ main.main{
 			@include make-col(12);
 		}		
 	}				
-	&.header-align--left,
-	&.header-align--right{
-		.content-section__header,
-		.content-section__inner{
-			@include media-breakpoint-up(lg){
-				/*@include make-col(6);*/
-			}
-		}	
-	}
 	&.content-align--center{
 		text-align: center;
 		.content-section__header{
@@ -204,21 +205,40 @@ main.main{
 				@include make-col-offset(2);
 			}
 		}	
-	}	
-	&.content-align--left,
-	&.content-align--right{
-		.content-section__header{
-			@include media-breakpoint-up(lg){
-				@include make-col(6);
-			}
-		}	
 	}
+	&.header-align--top{
+		.content-section__header{
+			@include make-col(12);
+		}
+	}	
 	&.content-align--right{
 		flex-flow: row-reverse;
+	}	
+	@include media-breakpoint-down(sm){
+		padding: 4rem 0;
+		.content-section__header,
+		.content-section__image{
+			@include make-col(12);		
+		}
+		.content-section__inner{
+			margin-top: 4rem;
+		}		
+		.content-section__image{
+			margin-bottom: 2rem;
+			justify-content: center;
+			order: -2;
+		}
 	}
-	@include media-breakpoint-up(md){
-		&.content-section__grid_content,
-		&.content-section__banner_content{
+	@include media-breakpoint-down(sm){
+		.content-section__image{
+			img{
+				max-width: 250px;
+			}
+		}
+	}	
+	@include media-breakpoint-up(lg){
+		&.content-section--grid-content,
+		&.content-section--banner-content{
 			padding: 5rem 0;
 		}
 		&.padding--small{
@@ -241,25 +261,54 @@ main.main{
 			padding-top: 0;
 			padding-bottom: 0;
 		}
-	}	
-	@include media-breakpoint-down(md){
-		padding: 4rem 0;
-		.content-section__header,
-		.content-section__image{
-			@include make-col(12);		
+	}
+	@include media-breakpoint-only(md){
+		&.content-section--grid-content,
+		&.content-section--banner-content{
+			padding: 3.5rem 0;
 		}
-		.content-section__image{
-			margin-bottom: 2rem;
-			justify-content: center;
-			order: -2;
-			img{
-				/*max-width: 250px;*/
-				/*padding: 2rem 0;*/
-			}
+		&.padding--small{
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
 		}
-	}	
-
+		&.padding--medium{
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
+		&.padding--large{
+			padding-top: 6rem;
+			padding-bottom: 6rem;
+		}
+		&.padding--xlarge{
+			padding-top: 10rem;
+			padding-bottom: 10rem;
+		}	
+	}
+	@include media-breakpoint-down(sm){
+		&.content-section--grid-content,
+		&.content-section--banner-content{
+			padding: 2.5rem 0;
+		}
+		&.padding--small{
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+		}
+		&.padding--medium{
+			padding-top: 2.5rem;
+			padding-bottom: 2.5rem;
+		}
+		&.padding--large{
+			padding-top: 3.5rem;
+			padding-bottom: 3.5rem;
+		}
+		&.padding--xlarge{
+			padding-top: 5rem;
+			padding-bottom: 5rem;
+		}	
+	}			
 }
+
+
 
 .content-section__row{
 	@include make-row();
@@ -272,22 +321,29 @@ main.main{
 }
 
 .content-section__header{
-/*	@extend .col-lg-8;
-	@extend .offset-lg-2;
-	@extend .offset-sm-0;
-	@extend .col-sm-12;
-	@extend .text-center;*/
-	/*padding-bottom: 1rem;*/
-	/*margin-bottom: 3rem;*/
-	/*border-bottom: 1px solid #eee;*/
 	z-index: 10;
 	position: relative;
+	h2, h3{
+		line-height: 1.25em;
+	}
 	h2{
 		font-size: 3rem;
-		line-height: 1.5em;
 		margin-bottom: 2rem;
+	}
+	h3{
+		font-size: 2rem;
+		margin-bottom: 1.5rem;		
 	}	
-	@include media-breakpoint-down(sm){
+	.rte{
+		margin-bottom: 2rem;
+		line-height: 1.5em;
+		@include media-breakpoint-up(lg){
+			p{
+				font-size: 1.25rem;			
+			}
+		}
+	}	
+	@include media-breakpoint-down(md){
 		h2{
 			font-size: 2rem;
 		}
@@ -313,7 +369,7 @@ main.main{
 		margin-bottom: 1rem;
 		h3{
 			font-size: 1.25rem;
-			text-transform: uppercase;
+			/*text-transform: uppercase;*/
 		}
 		img{
 			max-height: 100px;
@@ -340,20 +396,6 @@ main.main{
 	@include make-col-offset(2);*/
 }
 
-.content-section__banner_content.content-section{
-	/*padding: 15rem 0;*/
-	display: block;
-	.content-section__bg--image{
-		background-attachment: fixed;
-	}
-	.rte{
-		margin-bottom: 2rem;
-		p{
-			font-size: 1.25rem;
-			line-height: 1.5em;
-		}
-	}
-}
 
 .background-type__pattern{
 	.content-section__bg--image{
@@ -404,7 +446,7 @@ main.main{
 		/*text-align: center;*/
 		h3{
 			font-size: 3rem;
-			text-transform: uppercase;
+			/*text-transform: uppercase;*/
 		}
 		.button{
 			/*@include button-variant($background, $border, $active-background: darken($background, 7.5%), $active-border: darken($border, 10%));*/

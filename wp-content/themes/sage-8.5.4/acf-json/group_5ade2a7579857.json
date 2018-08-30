@@ -23,6 +23,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5b6b6db3eb025",
+                            "label": "Top Level Section?",
+                            "name": "top_level_section",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_5b6b6e0feb027",
                             "label": "Type",
                             "name": "type",
@@ -87,10 +106,10 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_5b6b6db3eb025",
-                            "label": "Top Level Section?",
-                            "name": "top_level_section",
-                            "type": "true_false",
+                            "key": "field_5b8821680e84e",
+                            "label": "Call to Action",
+                            "name": "call_to_action",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -99,16 +118,12 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
+                            "return_format": "array"
                         },
                         {
-                            "key": "field_5b6b6df0eb026",
+                            "key": "field_5b882912341f7",
                             "label": "Content",
-                            "name": "content",
+                            "name": "description_copy",
                             "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
@@ -169,35 +184,6 @@
                             "placeholder": ""
                         },
                         {
-                            "key": "field_5b6b7187321fc",
-                            "label": "limit",
-                            "name": "limit",
-                            "type": "number",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5b6b6e0feb027",
-                                        "operator": "==",
-                                        "value": "Relational Dynamic"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "min": "",
-                            "max": "",
-                            "step": ""
-                        },
-                        {
                             "key": "field_5b7debc0e306a",
                             "label": "Curated Content Custom",
                             "name": "curated_content_custom",
@@ -245,25 +231,6 @@
                                     "ui": 1
                                 },
                                 {
-                                    "key": "field_5b871f4ace99b",
-                                    "label": "Use Display Mode?",
-                                    "name": "use_display_mode",
-                                    "type": "true_false",
-                                    "instructions": "Good for things you want to call attention to.",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "message": "",
-                                    "default_value": 0,
-                                    "ui": 0,
-                                    "ui_on_text": "",
-                                    "ui_off_text": ""
-                                },
-                                {
                                     "key": "field_5b7debe6e306b",
                                     "label": "Width",
                                     "name": "width",
@@ -301,6 +268,35 @@
                                     "placeholder": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_5b6b7187321fc",
+                            "label": "limit",
+                            "name": "limit",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b6b6e0feb027",
+                                        "operator": "==",
+                                        "value": "Relational Dynamic"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": ""
                         },
                         {
                             "key": "field_5b7c78df77b51",
@@ -880,21 +876,6 @@
                             "step": ".01"
                         },
                         {
-                            "key": "field_5adf79234b2b0",
-                            "label": "Section Link",
-                            "name": "section_link",
-                            "type": "link",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array"
-                        },
-                        {
                             "key": "field_5b7b3bcbec25c",
                             "label": "Header Color",
                             "name": "header_color",
@@ -1091,5 +1072,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1535590544
+    "modified": 1535650136
 }
