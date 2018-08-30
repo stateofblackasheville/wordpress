@@ -58,7 +58,7 @@
 			<?php endif; ?>
 			<div class="container page-header__content">
 			  	<h1 style="<?php echo $content_color_styles; ?>">
-			  		<?php if($data_focus): ?>
+			  		<?php if($data_focus && $categories): ?>
 			  			<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_name; ?>.svg"></ion-icon>&nbsp;
 			  		<?php endif; ?>
 			  		<span>

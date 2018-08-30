@@ -38,6 +38,16 @@ function get_page_template(){
   return $template;
 }
 
+function render_tags($post_item){
+    $tags = get_the_tags($post_item->ID);
+    if($tags):
+      echo '<h4>Tags:</h4>';
+      foreach($tags as $tag):
+        echo '<span class="tag">'.$tag->name.'</span>';
+      endforeach;
+    endif;
+}
+
 function render_acf_image_url($field, $size = false, $options = false){
   if($options){
     $image = get_field($field, 'options');
@@ -57,7 +67,9 @@ function render_acf_image_url($field, $size = false, $options = false){
 }
 
 function render_content_grid_item($post_item, $index = 0){
-  include(locate_template('templates/'.get_post_type($post_item).'-grid-item.php'));
+  if($post_item):
+    include(locate_template('templates/'.get_post_type($post_item).'-grid-item.php'));
+  endif;
 }
 
 function render_template($template = null, $args = null){

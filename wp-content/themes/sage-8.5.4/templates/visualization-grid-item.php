@@ -21,6 +21,7 @@
 
 	$categories = get_the_category($post_item->ID);
 
+
 	if($categories):
 		$category_name = $categories[0]->slug;
 	endif;
@@ -54,6 +55,12 @@
 		<div class="content rte rte--georgia">
 			<?php echo $post_item->post_content; ?>
 		</div>
+		<?php if(get_field('embed', $post_item->ID)): ?>
+		<div class="visualization__container">
+			<?php the_field('embed', $post_item->ID); ?> 	
+		</div>
+		<?php endif; ?>
+
 		<div class="sources rte rte--small">
 			<h4>
 				Sources:
@@ -103,4 +110,7 @@
 			?>	
 		</div>
 	</div>
+	<div class="tags rte rte--small">		
+		<?php Roots\Sage\Extras\render_tags($post_item); ?>
+	</div>	
 </div>

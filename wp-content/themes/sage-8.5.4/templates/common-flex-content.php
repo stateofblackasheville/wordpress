@@ -31,12 +31,16 @@
 	<?php $background_color_styles .= ' opacity: '.$background_opacity.';'; ?>
 <?php endif; ?>    
 
-
+<?php if(get_sub_field('top_level_section')): ?>
+	<?php $classes .= 'level--top'.get_sub_field('top_level'); ?>
+<?php else: ?>
+	<?php $classes .= 'level--sub'.get_sub_field('top_level'); ?>	
+<?php endif; ?>
 <?php if(get_sub_field('image_alignment')): ?>
-	<?php $classes .= 'image-align--'.get_sub_field('image_alignment'); ?>
+	<?php $classes .= ' image-align--'.get_sub_field('image_alignment'); ?>
 <?php endif; ?>
 <?php if(get_sub_field('header_width')): ?>
-	<?php $classes .= 'header-width--'.get_sub_field('header_width'); ?>
+	<?php $classes .= ' header-width--'.get_sub_field('header_width'); ?>
 <?php endif; ?>
 <?php if(get_sub_field('header_alignment')): ?>
 	<?php $classes .= ' header-align--'.get_sub_field('header_alignment'); ?>
@@ -68,9 +72,17 @@
 			<?php endif; ?>		
 			<?php if(get_sub_field('title') || get_sub_field('description')): ?>
 				<div class="content-section__header">
-					<h2 style="<?php echo $header_color_styles; ?>">
+					<?php if(get_sub_field('top_level_section')): ?>
+						<h2 style="<?php echo $header_color_styles; ?>">
+					<?php else: ?>
+						<h3 style="<?php echo $header_color_styles; ?>">
+					<?php endif; ?>
 						<?php the_sub_field('title'); ?>
-					</h2>
+					<?php if(get_sub_field('top_level_section')): ?>						
+						</h2>
+					<?php else: ?>
+						</h3>
+					<?php endif; ?>	
 					<div style="<?php echo $content_color_styles; ?>" class="rte rte--georgia">
 						<?php the_sub_field('description'); ?>
 					</div>

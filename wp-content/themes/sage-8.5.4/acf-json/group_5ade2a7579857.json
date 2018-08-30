@@ -27,7 +27,7 @@
                             "label": "Top Level Section?",
                             "name": "top_level_section",
                             "type": "true_false",
-                            "instructions": "",
+                            "instructions": "If deselected, this will show a smaller header (good if you want to group content together in a section).",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -36,7 +36,7 @@
                                 "id": ""
                             },
                             "message": "",
-                            "default_value": 0,
+                            "default_value": 1,
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
@@ -399,7 +399,15 @@
                             "type": "select",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b87348a23d3c",
+                                        "operator": "!=",
+                                        "value": "top"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -1072,5 +1080,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1535650136
+    "modified": 1535651687
 }

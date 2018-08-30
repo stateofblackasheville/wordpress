@@ -42,6 +42,10 @@ body{
 	font-family: 'Montserrat';
 }
 
+.georgia{
+	font-family: Georgia;
+}
+
 h1, h2{
 	/*font-family: 'Montserrat';*/
 }
@@ -207,21 +211,25 @@ main.main{
 		}	
 	}
 	&.header-align--top{
-		.content-section__header{
+		.content-section__header,
+		.content-section__inner{
 			@include make-col(12);
 		}
 	}	
 	&.content-align--right{
 		flex-flow: row-reverse;
 	}	
+	&.level--sub{
+
+	}
 	@include media-breakpoint-down(sm){
-		padding: 4rem 0;
+		/*padding: 4rem 0;*/
 		.content-section__header,
 		.content-section__image{
 			@include make-col(12);		
 		}
 		.content-section__inner{
-			margin-top: 4rem;
+			margin-top: 1rem;
 		}		
 		.content-section__image{
 			margin-bottom: 2rem;
@@ -314,10 +322,11 @@ main.main{
 	@include make-row();
 }
 
-
-.content-section__inner-container{
-	@include make-container(); 	
-	@include make-container-max-widths();	
+body.home{
+	.content-section__inner-container{
+		@include make-container(); 	
+		@include make-container-max-widths();	
+	}
 }
 
 .content-section__header{
@@ -581,6 +590,22 @@ footer.content-info{
 	}
 }
 
+/*TAGS*/
+.tags{
+	display: block;
+	@extend .georgia;
+	.tag{
+		font-size: .75rem; 
+		background: $off-white;
+		color: $text-grey;
+		padding: .25rem;
+		margin-right: .5rem;
+		margin-bottom: .5rem;
+		display: inline-block;
+		border-radius: 2px;
+	}
+}
+
 /*CONTENT GRID*/
 .grid-item{
 	@include make-col-ready();
@@ -599,6 +624,11 @@ footer.content-info{
 			font-size: 1.5em;
 			margin-right: .25rem;
 			vertical-align: bottom;
+			color: $red;
+		}
+		.grid-item__title{
+			display: block;
+			clear: both;
 		}
 	}
 	iframe{
@@ -638,7 +668,19 @@ footer.content-info{
 				margin-top: .25rem;
 			}
 		}
+	}
+	.tags{
+		margin-top: 1rem;
 	}	
+	.visualization__container{
+		margin-top: 2rem;
+	}
+}
+
+.soba-visualization{
+	h1{
+		display: none;
+	}
 }
 
 /*PAGE HEADER*/
@@ -647,6 +689,11 @@ footer.content-info{
 	position: relative;
 	padding-top: 10rem;
 	padding-bottom: 10rem;
+	h1{
+		span{
+			display: block;
+		}
+	}
 	p{
 		max-width: 600px;
 	}
