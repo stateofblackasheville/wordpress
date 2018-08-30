@@ -39,7 +39,7 @@
 <?php if(get_sub_field('image_alignment')): ?>
 	<?php $classes .= ' image-align--'.get_sub_field('image_alignment'); ?>
 <?php endif; ?>
-<?php if(get_sub_field('header_width')): ?>
+<?php if(get_sub_field('header_width') && is_string(get_sub_field('header_width'))): ?>
 	<?php $classes .= ' header-width--'.get_sub_field('header_width'); ?>
 <?php endif; ?>
 <?php if(get_sub_field('header_alignment')): ?>
@@ -87,10 +87,12 @@
 						<?php the_sub_field('description'); ?>
 					</div>
 					<?php if(get_sub_field('call_to_action')): ?>
-						<?php $link = get_sub_field('call_to_action'); ?>
-						<a href="<?php echo $link['url'] ?>" class="soba-btn <?php if(get_sub_field('button_color') == 'white'): ?>soba-btn--white<?php endif; ?>">
-							<?php echo $link['title'] ?> <ion-icon name="ios-arrow-forward"></ion-icon>
-						</a>					
+						<div class="content-section__call-to-action">
+							<?php $link = get_sub_field('call_to_action'); ?>
+							<a href="<?php echo $link['url'] ?>" class="soba-btn <?php if(get_sub_field('button_color') == 'white'): ?>soba-btn--white<?php endif; ?>">
+								<?php echo $link['title'] ?> <ion-icon name="ios-arrow-forward"></ion-icon>
+							</a>
+						</div>					
 					<?php endif; ?>
 				</div>
 				<?php if(get_sub_field('content_image')): ?>

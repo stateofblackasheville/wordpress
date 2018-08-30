@@ -123,7 +123,7 @@
                         {
                             "key": "field_5b882912341f7",
                             "label": "Content",
-                            "name": "description_copy",
+                            "name": "content",
                             "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
@@ -1080,5 +1080,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1535651687
+    "modified": 1535669988
 }

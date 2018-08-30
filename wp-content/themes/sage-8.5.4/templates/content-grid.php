@@ -3,7 +3,9 @@
 	<?php $content_section_type = get_sub_field('type'); ?>
 
 	<?php if($content_section_type == 'Custom'): ?>
-		<?php the_sub_field('content'); ?>
+		<div class="content-section__custom-container">
+			<?php the_sub_field('content'); ?>
+		</div>
 	<?php //elseif($content_section_type == 'Relational Dynamic'): ?>
 		<?php 
 

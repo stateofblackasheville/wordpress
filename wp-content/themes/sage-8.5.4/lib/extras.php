@@ -72,6 +72,13 @@ function render_content_grid_item($post_item, $index = 0){
   endif;
 }
 
+
+function render_content_sidebar($post_item, $index = 0){
+  if($post_item):
+    include(locate_template('templates/'.get_post_type($post_item).'-sidebar.php'));
+  endif;
+}
+
 function render_template($template = null, $args = null){
     include(locate_template('templates/'.$template.'.php'));
 }
@@ -85,6 +92,7 @@ function flex_content_title( $title, $field, $layout, $i ) {
     endif; 
 }
 add_filter('acf/fields/flexible_content/layout_title/name=content', __NAMESPACE__.'\\flex_content_title', 10, 4);
+add_filter('acf/fields/flexible_content/layout_title/name=sidebar_content', __NAMESPACE__.'\\flex_content_title', 10, 4);
 
 function render_acf_image_alt($field, $options = false){
   if($options){

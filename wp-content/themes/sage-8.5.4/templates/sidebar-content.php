@@ -1,12 +1,7 @@
-<?php if($template = 'page-data-focus.php'): ?>
-	<?php 
-
-	$args = array(
-	    'post_type'=> 'visualization',
-	    'actor'    => get_the_tag_list(),
-	    'order'    => 'ASC'
-	);
-	$posts_array = get_posts( $args ); 
-
-	?>
+<?php if( have_rows('sidebar_content') ): ?>
+	<?php while ( have_rows('sidebar_content') ) : the_row(); ?>
+			<?php Roots\Sage\Extras\render_template('common-flex-sidebar'); ?>
+    <?php endwhile; ?>
+	<?php else : ?>
+	<!-- NOTHINGNESS -->
 <?php endif; ?>

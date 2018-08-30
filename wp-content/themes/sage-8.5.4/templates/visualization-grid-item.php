@@ -62,13 +62,15 @@
 		<?php endif; ?>
 
 		<div class="sources rte rte--small">
-			<h4>
-				Sources:
-			</h4>
 			<?php
 
 			// check if the repeater field has rows of data
 			if( have_rows('sources', $post_item->ID) ):
+			?>
+			<h4>
+				Sources:
+			</h4>
+			<?php
 
 			 	// loop through the rows of data
 			    while ( have_rows('sources', $post_item->ID) ) : the_row();
@@ -110,7 +112,9 @@
 			?>	
 		</div>
 	</div>
-	<div class="tags rte rte--small">		
-		<?php Roots\Sage\Extras\render_tags($post_item); ?>
-	</div>	
+	<?php //if(false): ?>
+		<div class="tags rte rte--small">		
+			<?php Roots\Sage\Extras\render_tags($post_item); ?>
+		</div>	
+	<?php //endif; ?>
 </div>
