@@ -33,6 +33,11 @@ function excerpt_more() {
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 
+function get_page_template(){
+  $template = get_page_template_slug();
+  return $template;
+}
+
 function render_acf_image_url($field, $size = false, $options = false){
   if($options){
     $image = get_field($field, 'options');
@@ -54,6 +59,20 @@ function render_acf_image_url($field, $size = false, $options = false){
 function render_content_grid_item($post_item, $index = 0){
   include(locate_template('templates/'.get_post_type($post_item).'-grid-item.php'));
 }
+
+function render_template($template = null, $args = null){
+    include(locate_template('templates/'.$template.'.php'));
+}
+
+function flex_content_title( $title, $field, $layout, $i ) {
+    if(get_sub_field('title')):
+        $title = '';
+        return get_sub_field('title');
+    else:
+        return $title;
+    endif; 
+}
+add_filter('acf/fields/flexible_content/layout_title/name=content', __NAMESPACE__.'\\flex_content_title', 10, 4);
 
 function render_acf_image_alt($field, $options = false){
   if($options){

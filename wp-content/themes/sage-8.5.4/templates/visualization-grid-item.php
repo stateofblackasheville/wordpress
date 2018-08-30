@@ -1,13 +1,21 @@
 <?php
+	$classes = 'grid-item visualization';
+
 	if(get_sub_field('width')):
-		$width = get_sub_field('width');
+		$classes .= ' grid-item--width-'.get_sub_field('width');
 	elseif(get_field('width', $post_item->ID)):
-		$width = get_field('width', $post_item->ID);
+		$classes .= ' grid-item--width-'.get_field('width', $post_item->ID);
 	else:
-		$width = 'one-third';
+		$classes .= ' grid-item--width-one-third';
 	endif;
 
-	$title_link = get_field('title_link', $post_item->ID);
+	$display_mode = false;
+
+	if(get_sub_field('use_display_mode')):
+		$classes .= ' display-mode';
+	endif;
+
+	$title_link = get_field('call_to_action', $post_item->ID);
 
 	$sources = get_field('sources', $post_item->ID);
 
@@ -21,73 +29,78 @@
 
 	if(get_field('fast_fact') == true):
 		$fast_fact = true;
+		$classes .= ' visualization--fast-fact';
 	endif;
 ?>
-<div class="grid-item visualization grid-item--width-<?php echo $width; ?><?php if($fast_fact): ?> visualization--fast-fact<?php endif; ?>">
-	<h3>
-		<?php if($categories): ?>
-			<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_name; ?>.svg"></ion-icon>
-		<?php endif; ?>
-		<span class="grid-item__title">
-			<?php echo get_the_title($post_item->ID); ?>
-		</span>
-		<?php if($title_link): ?>
-			<a href="<?php echo $title_link['url']; ?>">
-				<span class="title-link">
-					<?php echo $title_link['title']; ?>
-				</span>
-			</a>
-		<?php endif; ?>
-	</h3>
-	<div class="content">
-		<?php echo $post_item->post_content; ?>
+<div class="<?php echo $classes; ?>">
+	<div class="visualization__header">
+		<h3>
+			<?php if($categories): ?>
+				<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_name; ?>.svg"></ion-icon>
+			<?php endif; ?>
+			<span class="grid-item__title">
+				<?php echo get_the_title($post_item->ID); ?>
+			</span>
+			<?php if($title_link): ?>
+				<a href="<?php echo $title_link['url']; ?>">
+					<span class="title-link">
+						<?php echo $title_link['title']; ?>
+					</span>
+				</a>
+			<?php endif; ?>
+		</h3>
 	</div>
-	<div class="sources rte rte--small">
-		<h4>
-			Sources:
-		</h4>
-		<?php
+	<div class="visualization__content">
+		<div class="content">
+			<?php echo $post_item->post_content; ?>
+		</div>
+		<div class="sources rte rte--small">
+			<h4>
+				Sources:
+			</h4>
+			<?php
 
-		// check if the repeater field has rows of data
-		if( have_rows('sources', $post_item->ID) ):
+			// check if the repeater field has rows of data
+			if( have_rows('sources', $post_item->ID) ):
 
-		 	// loop through the rows of data
-		    while ( have_rows('sources', $post_item->ID) ) : the_row();
-		    	$source_title = get_sub_field('source_title');
-		    	$source_link = get_sub_field('source_link');
-		    	$source_file = get_sub_field('source_file');
-		?>
-		  	<?php if($source_title): ?>
-		  		<div>
-		  			<span>
-		  				<?php echo $source_title; ?> –
-		  			</span>
-		  			<?php if($source_link): ?>
-		  				<a href="<?php echo $source_link['url']; ?>">
-		  					<?php echo $source_link['title']; ?>
-		  				</a>
-		  			<?php endif; ?>
-		  			<?php if($source_file): ?>
-		  				<span class="divider">
-		  					&nbsp;|&nbsp;
-		  				</span>
-		  				<?php //var_dump($source_file); ?>
-		  				<a href="<?php echo $source_file['url']; ?>">
-		  					Download files <ion-icon name="document"></ion-icon>
-		  				</a>
-		  			<?php endif; ?>
-		  		</div>
-		  	<?php endif; ?>
+			 	// loop through the rows of data
+			    while ( have_rows('sources', $post_item->ID) ) : the_row();
+			    	$source_title = get_sub_field('source_title');
+			    	$source_link = get_sub_field('source_link');
+			    	$source_file = get_sub_field('source_file');
+			?>
+			  	<?php if($source_title): ?>
+			  		<div>
+			  			<span>
+			  				<?php echo $source_title; ?> –
+			  			</span>
+			  			<?php if($source_link): ?>
+			  				<a href="<?php echo $source_link['url']; ?>">
+			  					<?php echo $source_link['title']; ?>
+			  				</a>
+			  			<?php endif; ?>
+			  			<?php if($source_file): ?>
+			  				<span class="divider">
+			  					&nbsp;|&nbsp;
+			  				</span>
+			  				<?php //var_dump($source_file); ?>
+			  				<a href="<?php echo $source_file['url']; ?>">
+			  					Download files <ion-icon name="document"></ion-icon>
+			  				</a>
+			  			<?php endif; ?>
+			  		</div>
+			  	<?php endif; ?>
 
-		<?php 
-			endwhile;
+			<?php 
+				endwhile;
 
-		else :
+			else :
 
-		    // no rows found
+			    // no rows found
 
-		endif;
+			endif;
 
-		?>	
+			?>	
+		</div>
 	</div>
 </div>

@@ -22,25 +22,6 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5b6b690dc0872",
-            "label": "Data Source",
-            "name": "data_source",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5b6b7a20ef1b4",
             "label": "Width",
             "name": "width",
@@ -71,8 +52,8 @@
         },
         {
             "key": "field_5b6b7e42f7c96",
-            "label": "Title Link",
-            "name": "title_link",
+            "label": "Call to Action",
+            "name": "call_to_action",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -102,5 +83,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1534971701
+    "modified": 1535590268
 }

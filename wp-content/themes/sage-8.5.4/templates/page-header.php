@@ -25,8 +25,28 @@
 	<?php $content_color_styles .= ' color: '.$content_color.';'; ?>
 <?php endif; ?>  
 
+<?php
+	$categories = get_field('data_focus_category');
+
+	if($categories):
+		$category = get_category($categories[0]);
+
+		$category_name = $category->slug;
+	endif;
+?>
+
+<?php
+	$page_template = Roots\Sage\Extras\get_page_template();
+
+	$data_focus = false;
+
+	if($page_template == 'page-data-focus.php'):
+		$data_focus = true;
+	endif;
+?>
+
 <div class="page-header">
-	<?php if(is_single() && has_post_thumbnail() || is_page() && has_post_thumbnail()): ?>
+	<?php if(is_single() && has_post_thumbnail() || is_page() && $background_image): ?>
 		<div class="content-section background-type__<?php the_field('background_type'); ?> content-section__<?php echo get_row_layout(); ?>">
 			<?php if($background_image): ?>
 				<div class="content-section__bg content-section__bg--image" style="<?php echo $background_image_styles; ?>">
@@ -35,9 +55,16 @@
 			<?php if($background_color): ?>
 				<div class="content-section__bg content-section__bg--color" style="<?php echo $background_color_styles; ?>">
 				</div>
-			<?php endif; ?>	
+			<?php endif; ?>
 			<div class="container page-header__content">
-			  	<h1 style="<?php echo $content_color_styles; ?>"><?= Titles\title(); ?></h1>
+			  	<h1 style="<?php echo $content_color_styles; ?>">
+			  		<?php if($data_focus): ?>
+			  			<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_name; ?>.svg"></ion-icon>&nbsp;
+			  		<?php endif; ?>
+			  		<span>
+			  			<?= Titles\title(); ?>
+			  		</span>
+			  	</h1>
 			  	<?php if(get_field('lead_paragraph')): ?>
 				  	<p style="<?php echo $content_color_styles; ?>">
 				  		<?php the_field('lead_paragraph'); ?>
