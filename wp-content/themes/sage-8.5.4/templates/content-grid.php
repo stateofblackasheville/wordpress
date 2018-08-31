@@ -3,7 +3,7 @@
 	<?php $content_section_type = get_sub_field('type'); ?>
 
 	<?php if($content_section_type == 'Custom'): ?>
-		<div class="content-section__custom-container">
+		<div class="content-section__custom-container rte georgia">
 			<?php the_sub_field('content'); ?>
 		</div>
 	<?php //elseif($content_section_type == 'Relational Dynamic'): ?>

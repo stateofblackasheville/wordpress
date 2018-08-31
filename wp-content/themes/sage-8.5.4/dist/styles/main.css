@@ -7482,7 +7482,7 @@ body.home .content-section__inner-container {
   .content-section__header h2, .content-section__header h3 {
     line-height: 1.25em; }
   .content-section__header h2 {
-    font-size: 3rem;
+    /*font-size: 3rem;*/
     margin-bottom: 2rem; }
   .content-section__header h3 {
     font-size: 2rem;
