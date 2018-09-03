@@ -86,9 +86,9 @@
 			    	$source_title = get_sub_field('source_title');
 			    	$source_link = get_sub_field('source_link');
 			    	$source_file = get_sub_field('source_file');
-			    	$student_paper = get_sub_field('source_student_paper');
+			    	$student_papers = get_sub_field('source_student_paper');
 			?>
-			  	<?php if($source_title): ?>
+			  	<?php //if($source_title): ?>
 			  		<div>
 			  			<span>
 			  				<?php echo $source_title; ?>
@@ -114,19 +114,21 @@
 			  					<?php echo $source_file['title']; ?> <ion-icon name="document"></ion-icon>
 			  				</a>
 			  			<?php endif; ?>
-			  			<?php if($student_paper): ?>
-			  				<br>
-			  				<br>
+			  			<?php if($student_papers): ?>
+			  				<?php //var_dump($student_papers); ?>
+			  				<br>	  				
 			  				<span>
 			  					Student Paper:&nbsp;
 			  				</span>
-			  				<?php //var_dump($source_file); ?>
-			  				<a href="<?php echo get_the_permalink($student_paper->ID); ?>">
-			  					<?php echo $student_paper->post_title; ?>
-			  				</a>
+			  				<?php foreach($student_papers as $student_paper): ?>
+				  				<?php //var_dump($source_file); ?>
+				  				<a href="<?php echo get_the_permalink($student_paper->ID); ?>">
+				  					<?php echo $student_paper->post_title; ?>
+				  				</a>
+			  				<?php endforeach; ?>
 			  			<?php endif; ?>			  			
 			  		</div>
-			  	<?php endif; ?>
+			  	<?php //endif; ?>
 
 			<?php 
 				endwhile;
