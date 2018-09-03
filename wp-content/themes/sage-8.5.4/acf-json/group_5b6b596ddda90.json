@@ -73,6 +73,29 @@
                     "min_size": "",
                     "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_5b8d5e706bff4",
+                    "label": "Source Student Paper",
+                    "name": "source_student_paper",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "student_paper"
+                    ],
+                    "taxonomy": [],
+                    "filters": "",
+                    "elements": "",
+                    "min": "",
+                    "max": 1,
+                    "return_format": "object"
                 }
             ]
         }
@@ -84,6 +107,13 @@
                 "operator": "==",
                 "value": "visualization"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "student_paper"
+            }
         ]
     ],
     "menu_order": 0,
@@ -94,5 +124,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1534805872
+    "modified": 1535997093
 }

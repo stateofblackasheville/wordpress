@@ -117,6 +117,9 @@ function assets() {
   wp_enqueue_script('react_soba', 'https://unpkg.com/soba-visualization@1.3.1/umd/soba-visualization.js', ['jquery'], null, true);
   wp_enqueue_script('visualization', Assets\asset_path('scripts/visualization.js'),['react_soba'], null, true);
 
+  // INTERCOM
+  wp_enqueue_script('intercom', Assets\asset_path('scripts/intercom.js'), ['jquery'], null, true);
+
   // REACT CSS
   // wp_enqueue_style('soba_visualization', 'https://unpkg.com/soba-visualization@1.3.1/umd/main.a96e0308.css', false, null);
   wp_enqueue_style('visualization', Assets\asset_path('styles/visualization.css'), false, null);

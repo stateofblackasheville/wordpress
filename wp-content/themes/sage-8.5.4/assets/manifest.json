@@ -26,7 +26,12 @@
       "files": [
         "scripts/visualization.js"
       ]
-    },       
+    }, 
+    "intercom.js": {
+      "files": [
+        "scripts/intercom.js"
+      ]
+    },           
     "jquery.js": {
       "bower": ["jquery"]
     }

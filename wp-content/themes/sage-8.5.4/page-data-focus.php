@@ -8,6 +8,9 @@
   	<div class="container">
 	  	<div class="page-content-container">
 		  <div class="main-page-content"> 
+		  	<div class="main-page-content__content rte rte--georgia rte--large">
+		  		<?php the_content(); ?>
+		  	</div>
 		  	<?php get_template_part('templates/flexible-content'); ?>
 		  </div>
 		  <div class="page-sidebar">
