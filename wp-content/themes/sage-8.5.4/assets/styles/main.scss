@@ -694,13 +694,22 @@ footer.content-info{
 	.grid-item-content__image{
 		margin: .5rem 0;
 	    margin: 1rem 0;
-	    border: 1px solid #eee;		
+	    border: 1px solid #eee;		 
 		a{
 			display: block;
 		}
 		img{
 			max-width: 100%;
 			height: auto;
+		}
+	}
+	.sources-list{
+		padding-left: 1rem; 
+		li{
+			margin-top: .5rem;
+			/*padding-bottom: .5rem;*/
+			padding-bottom: .5rem;
+			border-bottom: 1px solid #eee;
 		}
 	}
 }

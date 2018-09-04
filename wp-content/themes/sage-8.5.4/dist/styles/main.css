@@ -7773,6 +7773,13 @@ footer.content-info {
     .grid-item .grid-item-content__image img {
       max-width: 100%;
       height: auto; }
+  .grid-item .sources-list {
+    padding-left: 1rem; }
+    .grid-item .sources-list li {
+      margin-top: .5rem;
+      /*padding-bottom: .5rem;*/
+      padding-bottom: .5rem;
+      border-bottom: 1px solid #eee; }
 
 .soba-visualization h1 {
   display: none; }

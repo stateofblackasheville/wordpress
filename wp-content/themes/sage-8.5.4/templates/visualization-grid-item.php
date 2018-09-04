@@ -79,60 +79,56 @@
 			<h4>
 				Sources:
 			</h4>
+			<ol class="sources-list">
 			<?php
 
 			 	// loop through the rows of data
+				$count = 0;
+
 			    while ( have_rows('sources', $post_item->ID) ) : the_row();
 			    	$source_title = get_sub_field('source_title');
 			    	$source_link = get_sub_field('source_link');
 			    	$source_file = get_sub_field('source_file');
 			    	$student_papers = get_sub_field('source_student_paper');
+			    	$count++;
 			?>
-			  	<?php //if($source_title): ?>
-			  		<div>
-			  			<span>
+			  	
+			  		<li class="sources-list__item">
+<!-- 		  				<span class="source-item__count">
+		  					(<?php //echo $count; ?>)
+		  				</span>	 -->		  			
+			  			<?php if($source_title): ?>
+			  			<span class="item__title">
 			  				<?php echo $source_title; ?>
 			  			</span>
+			  			<?php endif; ?>
 			  			<?php if($source_link): ?>
-			  				<br>
-			  				<br>
-			  				<span>
-			  					Link:&nbsp;
-			  				</span>
 			  				<a href="<?php echo $source_link['url']; ?>" target="<?php echo $source_link['target']; ?>">
 			  					<?php echo $source_link['title']; ?>
 			  				</a>
 			  			<?php endif; ?>
 			  			<?php if($source_file): ?>
-			  				<br>
-			  				<br>
-			  				<span>
-			  					Downloads:&nbsp;
-			  				</span>
-			  				<?php //var_dump($source_file); ?>
 			  				<a href="<?php echo $source_file['url']; ?>">
 			  					<?php echo $source_file['title']; ?> <ion-icon name="document"></ion-icon>
 			  				</a>
 			  			<?php endif; ?>
 			  			<?php if($student_papers): ?>
-			  				<?php //var_dump($student_papers); ?>
-			  				<br>	  				
-			  				<span>
-			  					Student Paper:&nbsp;
-			  				</span>
 			  				<?php foreach($student_papers as $student_paper): ?>
-				  				<?php //var_dump($source_file); ?>
-				  				<a href="<?php echo get_the_permalink($student_paper->ID); ?>">
-				  					<?php echo $student_paper->post_title; ?>
+			  					<?php $student_paper_download = get_field('files', $student_paper->ID); ?>
+			  					<?php //var_dump($student_paper_download); ?>
+				  				<a href="<?php echo $student_paper_download['url']; ?>">
+				  					<?php echo $student_paper->post_title; ?> (download)
 				  				</a>
 			  				<?php endforeach; ?>
 			  			<?php endif; ?>			  			
-			  		</div>
+			  		</li>
 			  	<?php //endif; ?>
 
 			<?php 
 				endwhile;
-
+			?>
+			</ol>
+			<?php
 			else :
 
 			    // no rows found

@@ -114,7 +114,7 @@ function assets() {
   // REACT JS
   wp_enqueue_script('react', 'https://unpkg.com/react@16/umd/react.development.js', ['jquery'], null, true);
   wp_enqueue_script('react_dom', 'https://unpkg.com/react-dom@16/umd/react-dom.development.js', ['jquery'], null, true);
-  wp_enqueue_script('react_soba', 'https://unpkg.com/soba-visualization@1.3.1/umd/soba-visualization.js', ['jquery'], null, true);
+  wp_enqueue_script('react_soba', 'https://unpkg.com/soba-visualization@latest/umd/soba-visualization.js', ['jquery'], null, true);
   wp_enqueue_script('visualization', Assets\asset_path('scripts/visualization.js'),['react_soba'], null, true);
 
   // INTERCOM
