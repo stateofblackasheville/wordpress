@@ -1,32 +1,32 @@
-#like_button_container {
+#like_button_container, .soba-visualization {
   width: 100%; }
-  #like_button_container select {
+  #like_button_container select, .soba-visualization select {
     min-height: 2rem;
     margin-bottom: 1rem; }
-  #like_button_container .soba-table table {
+  #like_button_container .soba-table table, .soba-visualization .soba-table table {
     width: 100%; }
-    #like_button_container .soba-table table td {
+    #like_button_container .soba-table table td, .soba-visualization .soba-table table td {
       padding: .5rem 1rem;
       border: 1px solid #ccc; }
-    #like_button_container .soba-table table input {
+    #like_button_container .soba-table table input, .soba-visualization .soba-table table input {
       margin-left: .25rem; }
-  #like_button_container .soba-table .subTable {
+  #like_button_container .soba-table .subTable, .soba-visualization .soba-table .subTable {
     display: none; }
-  #like_button_container .inputs label {
+  #like_button_container .inputs label, .soba-visualization .inputs label {
     width: 150px; }
-  #like_button_container .react-tabs__tab-list {
+  #like_button_container .react-tabs__tab-list, .soba-visualization .react-tabs__tab-list {
     display: flex;
     margin-top: 1rem;
     padding-left: 0; }
-    #like_button_container .react-tabs__tab-list li {
+    #like_button_container .react-tabs__tab-list li, .soba-visualization .react-tabs__tab-list li {
       display: inline-block;
       padding: .5rem 1rem;
       cursor: pointer; }
-  #like_button_container .react-tabs__tab {
+  #like_button_container .react-tabs__tab, .soba-visualization .react-tabs__tab {
     border-width: 1px 1px 1px 0px;
     border-style: solid;
     border-color: #c5c5c5; }
-    #like_button_container .react-tabs__tab.react-tabs__tab--selected {
+    #like_button_container .react-tabs__tab.react-tabs__tab--selected, .soba-visualization .react-tabs__tab.react-tabs__tab--selected {
       background: #c5c5c5; }
-    #like_button_container .react-tabs__tab:first-child {
+    #like_button_container .react-tabs__tab:first-child, .soba-visualization .react-tabs__tab:first-child {
       border-left-width: 1px; }
