@@ -672,7 +672,14 @@ footer.content-info{
 		}
 	}
 	.sources{
-		margin-top: 1rem;
+		margin-top: .5rem;
+	}
+	.content{
+		padding-top: .5rem;
+		margin-top: .5rem;
+		padding-bottom: .5rem;
+		border-top: 1px solid #eee;
+		border-bottom: 1px solid #eee;
 	}
 	@extend .col-sm-12;
 	@include media-breakpoint-down(sm){
@@ -810,4 +817,18 @@ footer.content-info{
 /* CUSTOM CONTENT */
 .content-section__custom-container{
 	@include make-col-ready();
+}
+
+/*LIGHTBOX STUFF*/
+.visualization__container{
+	/*transition: all .2s;*/
+}
+
+.fancybox-content{
+	width: 80%;
+}
+
+
+.grid-item .visualization__inner{
+	display: block !important;
 }

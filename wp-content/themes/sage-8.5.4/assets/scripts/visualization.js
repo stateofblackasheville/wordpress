@@ -1,5 +1,5 @@
 jQuery('.soba-visualization').each(function(){
-	console.log(jQuery(this));
+	//console.log(jQuery(this));
 	var title = jQuery(this).attr('data-title');
 	var spreadsheetID = jQuery(this).attr('data-spreadsheetid');
 	var dataset = jQuery(this).attr('data-dataset');

@@ -7753,7 +7753,13 @@ footer.content-info {
       flex: 0 0 100%;
       max-width: 100%; } }
   .grid-item .sources {
-    margin-top: 1rem; }
+    margin-top: .5rem; }
+  .grid-item .content {
+    padding-top: .5rem;
+    margin-top: .5rem;
+    padding-bottom: .5rem;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee; }
   @media (max-width: 767.98px) {
     .grid-item h3 a {
       float: none;
@@ -7867,3 +7873,13 @@ footer.content-info {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px; }
+
+/*LIGHTBOX STUFF*/
+.visualization__container {
+  /*transition: all .2s;*/ }
+
+.fancybox-content {
+  width: 80%; }
+
+.grid-item .visualization__inner {
+  display: block !important; }

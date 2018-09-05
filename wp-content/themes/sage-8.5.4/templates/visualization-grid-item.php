@@ -54,22 +54,25 @@
 		</h3>
 	</div>
 	<div class="visualization__content grid-item-content">
-		<?php if(has_post_thumbnail($post_item->ID)): ?>
-		<div class="grid-item-content__image rte rte--georgia">
-			<a href="<?php echo get_the_post_thumbnail_url($post_item->ID, 'large'); ?>" data-fancybox data-caption="<?php echo $post_item->post_content; ?>">
-				<?php echo get_the_post_thumbnail($post_item->ID); ?>
-			</a>
-		</div>
+		<?php if(get_field('embed', $post_item->ID)): ?>
+			<div class="visualization__container">
+				<div class="visualization__inner" id="visualization-<?php echo $post_item->ID; ?>">
+					<?php the_field('embed', $post_item->ID); ?> 	
+				</div>
+			</div>
+			<a data-fancybox data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
+				[+] Expand
+			</a>					
+		<?php elseif(has_post_thumbnail($post_item->ID)): ?>
+			<div class="grid-item-content__image rte rte--georgia">
+				<a href="<?php echo get_the_post_thumbnail_url($post_item->ID, 'large'); ?>" data-fancybox data-caption="<?php echo $post_item->post_content; ?>">
+					<?php echo get_the_post_thumbnail($post_item->ID); ?>
+				</a>
+			</div>
 		<?php endif; ?>
 		<div class="content rte rte--georgia">
 			<?php echo $post_item->post_content; ?>
 		</div>
-		<?php if(get_field('embed', $post_item->ID)): ?>
-		<div class="visualization__container">
-			<?php the_field('embed', $post_item->ID); ?> 	
-		</div>
-		<?php endif; ?>
-
 		<div class="sources rte rte--small">
 			<?php
 
