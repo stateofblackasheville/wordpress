@@ -630,7 +630,7 @@ footer.content-info{
 		color: #666;
 		font-weight: normal;
 		padding-bottom: .5rem;
-		border-bottom: 1px solid #ccc;
+		/*border-bottom: 1px solid #eee;*/
 		a{
 			/*float: right;*/
 			font-size: 1rem;
@@ -670,6 +670,10 @@ footer.content-info{
 		@include media-breakpoint-down(sm){
 			@include make-col(12);
 		}
+/*		.visualization__container{
+			max-height: 500px;
+			overflow: hidden;
+		}*/
 	}
 	.sources{
 		margin-top: .5rem;
@@ -696,7 +700,7 @@ footer.content-info{
 		margin-top: 1rem; 
 	}	
 	.visualization__container{
-		margin-top: 2rem;
+		/*margin-top: 2rem;*/
 	}
 	.grid-item-content__image{
 		margin: .5rem 0;
@@ -822,10 +826,15 @@ footer.content-info{
 /*LIGHTBOX STUFF*/
 .visualization__container{
 	/*transition: all .2s;*/
+	overflow: hidden;
+	.visualization__inner{
+
+	}
 }
 
 .fancybox-content{
-	width: 80%;
+	width: 800px;
+	/*height: 75%;*/
 }
 
 

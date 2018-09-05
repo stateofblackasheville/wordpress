@@ -60,7 +60,7 @@
 					<?php the_field('embed', $post_item->ID); ?> 	
 				</div>
 			</div>
-			<a data-fancybox data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
+			<a data-fancybox data-options='{"caption" : "<?php echo $post_item->post_content; ?>" }' data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
 				[+] Expand
 			</a>					
 		<?php elseif(has_post_thumbnail($post_item->ID)): ?>

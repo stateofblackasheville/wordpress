@@ -30,3 +30,5 @@
       background: #c5c5c5; }
     #like_button_container .react-tabs__tab:first-child, .soba-visualization .react-tabs__tab:first-child {
       border-left-width: 1px; }
+  #like_button_container canvas, .soba-visualization canvas {
+    border: 1px solid #eee; }
