@@ -60,15 +60,16 @@
 					<?php the_field('embed', $post_item->ID); ?> 	
 				</div>
 			</div>
-			<a data-fancybox data-options='{"caption" : "<?php echo $post_item->post_content; ?>" }' data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
+			<a class="rte rte--georgia" data-fancybox data-options='{"caption" : "<?php echo $post_item->post_content; ?>" }' data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
 				[+] Expand
 			</a>					
 		<?php elseif(has_post_thumbnail($post_item->ID)): ?>
 			<div class="grid-item-content__image rte rte--georgia">
-				<a href="<?php echo get_the_post_thumbnail_url($post_item->ID, 'large'); ?>" data-fancybox data-caption="<?php echo $post_item->post_content; ?>">
-					<?php echo get_the_post_thumbnail($post_item->ID); ?>
-				</a>
+				<?php echo get_the_post_thumbnail($post_item->ID); ?>
 			</div>
+			<a class="rte rte--georgia" href="<?php echo get_the_post_thumbnail_url($post_item->ID, 'large'); ?>" data-fancybox data-caption="<?php echo $post_item->post_content; ?>">
+				[+] Expand
+			</a>			
 		<?php endif; ?>
 		<div class="content rte rte--georgia">
 			<?php echo $post_item->post_content; ?>
@@ -111,7 +112,7 @@
 			  				</a>
 			  			<?php endif; ?>
 			  			<?php if($source_file): ?>
-			  				<a href="<?php echo $source_file['url']; ?>">
+			  				<a href="<?php echo $source_file['url']; ?>" target="_blank">
 			  					<?php echo $source_file['title']; ?> <ion-icon name="document"></ion-icon>
 			  				</a>
 			  			<?php endif; ?>
@@ -119,7 +120,7 @@
 			  				<?php foreach($student_papers as $student_paper): ?>
 			  					<?php $student_paper_download = get_field('files', $student_paper->ID); ?>
 			  					<?php //var_dump($student_paper_download); ?>
-				  				<a href="<?php echo $student_paper_download['url']; ?>">
+				  				<a href="<?php echo $student_paper_download['url']; ?>" target="_blank">
 				  					<?php echo $student_paper->post_title; ?> (download)
 				  				</a>
 			  				<?php endforeach; ?>

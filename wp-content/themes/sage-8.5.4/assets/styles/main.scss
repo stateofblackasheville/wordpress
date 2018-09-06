@@ -76,6 +76,14 @@ h1, h2{
 	}	
 }
 
+.custom-content-color{
+	.rte{
+		*{
+			color: inherit;
+		}
+	}
+}
+
 .home{
 	.page-header{
 		display: none;
@@ -168,11 +176,22 @@ main.main{
 	}
 	.content-section__call-to-action{
 		margin-bottom: 2rem;
+	}
+	&.header-border{
+		h2, h3{
+			border-bottom: 1px solid #eee;
+		}
 	}	
 	@include media-breakpoint-up(md){
+		&.content-align--left,
+		&.content-align--right{
+			.content-section__header{
+				@include make-col(6);
+			}	
+		}		
 		&.header-width--one-third{
 			.content-section__header{
-				@include make-col(4);
+				@include make-col(4); 
 			}
 			.content-section__inner,
 			.content-section__image{
@@ -196,12 +215,6 @@ main.main{
 			.content-section__image{
 				@include make-col(4);
 			}		
-		}
-		&.content-align--left,
-		&.content-align--right{
-			.content-section__header{
-				@include make-col(6);
-			}	
 		}		
 	}
 	&.header-width--one-whole{
@@ -225,7 +238,7 @@ main.main{
 	&.header-align--top{
 		.content-section__header,
 		.content-section__inner{
-			@include make-col(12);
+			/*@include make-col(12);*/
 		}
 	}	
 	&.content-align--right{
@@ -259,72 +272,98 @@ main.main{
 	@include media-breakpoint-up(lg){
 		&.content-section--grid-content,
 		&.content-section--banner-content{
-			padding: 5rem 0;
+			/*padding: 5rem 0;*/
 		}
-		&.padding--small{
+		&.padding-top--small{
 			padding-top: 2rem;
+		}
+		&.padding-top--medium{
+			padding-top: 5rem;
+		}
+		&.padding-top--large{
+			padding-top: 10rem;
+		}
+		&.padding-top--xlarge{
+			padding-top: 15rem;
+		}	
+		&.padding-top--none{
+			padding-top: 0;
+		}
+		&.padding-bottom--small{
 			padding-bottom: 2rem;
 		}
-		&.padding--medium{
-			padding-top: 5rem;
+		&.padding-bottom--medium{
 			padding-bottom: 5rem;
 		}
-		&.padding--large{
-			padding-top: 10rem;
+		&.padding-bottom--large{
 			padding-bottom: 10rem;
 		}
-		&.padding--xlarge{
-			padding-top: 15rem;
+		&.padding-bottom--xlarge{
 			padding-bottom: 15rem;
 		}	
-		&.padding--none{
-			padding-top: 0;
+		&.padding-bottom--none{
 			padding-bottom: 0;
-		}
+		}		
 	}
 	@include media-breakpoint-only(md){
 		&.content-section--grid-content,
 		&.content-section--banner-content{
-			padding: 3.5rem 0;
+			/*padding: 3.5rem 0;*/
 		}
-		&.padding--small{
+		&.padding-top--small{
 			padding-top: 1.5rem;
+		}
+		&.padding-top--medium{
+			padding-top: 3rem;
+		}
+		&.padding-top--large{
+			padding-top: 6rem;
+		}
+		&.padding-top--xlarge{
+			padding-top: 10rem;
+		}
+		&.padding-bottom--small{
 			padding-bottom: 1.5rem;
 		}
-		&.padding--medium{
-			padding-top: 3rem;
+		&.padding-bottom--medium{
 			padding-bottom: 3rem;
 		}
-		&.padding--large{
-			padding-top: 6rem;
+		&.padding-bottom--large{
 			padding-bottom: 6rem;
 		}
-		&.padding--xlarge{
-			padding-top: 10rem;
+		&.padding-bottom--xlarge{
 			padding-bottom: 10rem;
-		}	
+		}			
 	}
 	@include media-breakpoint-down(sm){
 		&.content-section--grid-content,
 		&.content-section--banner-content{
 			padding: 2.5rem 0;
 		}
-		&.padding--small{
+		&.padding-top--small{
 			padding-top: 1rem;
+		}
+		&.padding-top--medium{
+			padding-top: 2.5rem;
+		}
+		&.padding-top--large{
+			padding-top: 3.5rem;
+		}
+		&.padding-top--xlarge{
+			padding-top: 5rem;
+		}
+		&.padding-bottom--small{
 			padding-bottom: 1rem;
 		}
-		&.padding--medium{
-			padding-top: 2.5rem;
+		&.padding-bottom--medium{
 			padding-bottom: 2.5rem;
 		}
-		&.padding--large{
-			padding-top: 3.5rem;
+		&.padding-bottom--large{
 			padding-bottom: 3.5rem;
 		}
-		&.padding--xlarge{
-			padding-top: 5rem;
+		&.padding-bottom--xlarge{
 			padding-bottom: 5rem;
-		}	
+		}			
 	}			
 }
 
@@ -352,11 +391,15 @@ body.home{
 	}
 	h2{
 		/*font-size: 3rem;*/ 
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
 	}
 	h3{
 		/*font-size: 2rem; */ 
-		margin-bottom: 1.5rem;		
+		font-size: 1.5rem;
+		margin-bottom: .5rem;
+		padding-bottom: .5rem;
+		/*margin-bottom: .5rem;  		*/
 	}	
 	.rte{
 		margin-bottom: 2rem;
@@ -373,6 +416,9 @@ body.home{
 		}
 	}	
 }
+
+
+
 .content-section__grid{
 	@extend .d-flex;
 	@extend .flex-wrap;
@@ -679,10 +725,10 @@ footer.content-info{
 		margin-top: .5rem;
 	}
 	.content{
-		padding-top: .5rem;
-		margin-top: .5rem;
+/*		padding-top: .5rem;
+		margin-top: .5rem;*/
 		padding-bottom: .5rem;
-		border-top: 1px solid #eee;
+		/*border-top: 1px solid #eee;*/
 		border-bottom: 1px solid #eee;
 	}
 	@extend .col-sm-12;
@@ -703,8 +749,8 @@ footer.content-info{
 		/*margin-top: 2rem;*/
 	}
 	.grid-item-content__image{
-		margin: .5rem 0;
-	    margin: 1rem 0;
+		/*margin: .5rem 0;*/
+	    margin-bottom: .5rem;
 	    border: 1px solid #eee;		 
 		a{
 			display: block;

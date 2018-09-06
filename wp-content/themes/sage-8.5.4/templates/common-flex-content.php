@@ -17,6 +17,7 @@
 <?php $content_color = get_sub_field('content_color'); ?>
 <?php if($content_color): ?>
 	<?php $content_color_styles .= ' color: '.$content_color.';'; ?>
+	<?php $classes .= ' custom-content-color '; ?>
 <?php endif; ?>  
 
 <?php $header_color = get_sub_field('header_color'); ?>
@@ -31,28 +32,34 @@
 	<?php $background_color_styles .= ' opacity: '.$background_opacity.';'; ?>
 <?php endif; ?>    
 
-<?php if(get_sub_field('top_level_section')): ?>
+<?php if(get_sub_field('top_level_section') && is_string(get_sub_field('header_width'))): ?>
 	<?php $classes .= 'level--top'.get_sub_field('top_level'); ?>
 <?php else: ?>
 	<?php $classes .= 'level--sub'.get_sub_field('top_level'); ?>	
 <?php endif; ?>
-<?php if(get_sub_field('image_alignment')): ?>
+<?php if(get_sub_field('image_alignment') && is_string(get_sub_field('image_alignment'))): ?>
 	<?php $classes .= ' image-align--'.get_sub_field('image_alignment'); ?>
 <?php endif; ?>
 <?php if(get_sub_field('header_width') && is_string(get_sub_field('header_width'))): ?>
 	<?php $classes .= ' header-width--'.get_sub_field('header_width'); ?>
 <?php endif; ?>
-<?php if(get_sub_field('header_alignment')): ?>
+<?php if(get_sub_field('header_alignment') && is_string(get_sub_field('header_alignment'))): ?>
 	<?php $classes .= ' header-align--'.get_sub_field('header_alignment'); ?>
 <?php endif; ?>
-<?php if(get_sub_field('content_alignment')): ?>
+<?php if(get_sub_field('content_alignment') && is_string(get_sub_field('content_alignment'))): ?>
 	<?php $classes .= ' content-align--'.get_sub_field('content_alignment'); ?>
 <?php endif; ?>
-<?php if(get_sub_field('padding_amount')): ?>
-	<?php $classes .= ' padding--'.get_sub_field('padding_amount'); ?>
+<?php if(get_sub_field('padding_top') && is_string(get_sub_field('padding_top'))): ?>
+	<?php $classes .= ' padding-top--'.get_sub_field('padding_top'); ?>
 <?php endif; ?>
-<?php if(get_sub_field('full_width')): ?>
+<?php if(get_sub_field('padding_bottom') && is_string(get_sub_field('padding_bottom'))): ?>
+	<?php $classes .= ' padding-bottom--'.get_sub_field('padding_bottom'); ?>
+<?php endif; ?>
+<?php if(get_sub_field('full_width') && is_string(get_sub_field('full_width'))): ?>
 	<?php $classes .= ' full-width'; ?>
+<?php endif; ?>  
+<?php if(get_sub_field('header_border') && is_string(get_sub_field('header_border'))): ?>
+	<?php $classes .= ' header-border'; ?> 
 <?php endif; ?>    	
 
 
@@ -72,7 +79,7 @@
 			<?php endif; ?>		
 			<?php if(get_sub_field('title') || get_sub_field('description')): ?>
 				<div class="content-section__header">
-					<?php if(get_sub_field('top_level_section')): ?>
+					<?php if(get_sub_field('top_level_section') || get_row_layout() == 'banner_content'): ?>
 						<h2 style="<?php echo $header_color_styles; ?>">
 					<?php else: ?>
 						<h3 style="<?php echo $header_color_styles; ?>">
@@ -83,9 +90,11 @@
 					<?php else: ?>
 						</h3>
 					<?php endif; ?>	
-					<div style="<?php echo $content_color_styles; ?>" class="rte rte--georgia">
-						<?php the_sub_field('description'); ?>
-					</div>
+					<?php if(get_sub_field('description')): ?>
+						<div style="<?php echo $content_color_styles; ?>" class="rte rte--georgia">
+							<?php the_sub_field('description'); ?>
+						</div>
+					<?php endif; ?>
 					<?php if(get_sub_field('call_to_action')): ?>
 						<div class="content-section__call-to-action">
 							<?php $link = get_sub_field('call_to_action'); ?>
