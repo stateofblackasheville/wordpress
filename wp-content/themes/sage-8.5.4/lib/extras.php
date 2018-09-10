@@ -41,10 +41,12 @@ function get_page_template(){
 function render_tags($post_item){
     $tags = get_the_tags($post_item->ID);
     if($tags):
+      echo '<div class="tags rte rte--small">';
       echo '<h4>Tags:</h4>';
       foreach($tags as $tag):
         echo '<span class="tag">'.$tag->name.'</span>';
       endforeach;
+      echo '</div>';
     endif;
 }
 
@@ -80,6 +82,10 @@ function render_content_sidebar($post_item, $index = 0){
 }
 
 function render_template($template = null, $args = null){
+    include(locate_template('templates/'.$template.'.php'));
+}
+
+function render_sources($template, $post_item = null){
     include(locate_template('templates/'.$template.'.php'));
 }
 

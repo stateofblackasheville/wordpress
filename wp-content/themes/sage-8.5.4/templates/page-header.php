@@ -35,6 +35,14 @@
 	endif;
 ?>
 
+<?php 
+$featured_image = false;
+if(is_single() && has_post_thumbnail() || is_page() && $background_image):
+	$featured_image = true;
+endif;
+
+?>
+
 <?php
 	$page_template = Roots\Sage\Extras\get_page_template();
 
@@ -45,36 +53,30 @@
 	endif;
 ?>
 
-<div class="page-header">
-	<?php if(is_single() && has_post_thumbnail() || is_page() && $background_image): ?>
-		<div class="content-section background-type__<?php the_field('background_type'); ?> content-section__<?php echo get_row_layout(); ?>">
-			<?php if($background_image): ?>
-				<div class="content-section__bg content-section__bg--image" style="<?php echo $background_image_styles; ?>">
-				</div>
-			<?php endif; ?>
-			<?php if($background_color): ?>
-				<div class="content-section__bg content-section__bg--color" style="<?php echo $background_color_styles; ?>">
-				</div>
-			<?php endif; ?>
-			<div class="container page-header__content">
-			  	<h1 style="<?php echo $content_color_styles; ?>">
-			  		<?php if($data_focus && $categories): ?>
-			  			<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_name; ?>.svg"></ion-icon>&nbsp;
-			  		<?php endif; ?>
-			  		<span>
-			  			<?= Titles\title(); ?>
-			  		</span>
-			  	</h1>
-			  	<?php if(get_field('lead_paragraph')): ?>
-				  	<p style="<?php echo $content_color_styles; ?>">
-				  		<?php the_field('lead_paragraph'); ?>
-				  	</p>
-			  	<?php endif; ?>
-			</div>			
-		</div>
-	<?php else: ?>
-	<!-- <div class="container"> -->
-	  	<h1><?= Titles\title(); ?></h1>
-	<!-- </div> -->
-	<?php endif; ?>
+<div class="page-header <?php if($featured_image): ?>page-header--featured<?php else: ?>page-header--basic<?php endif; ?>">
+	<div class="content-section background-type__<?php the_field('background_type'); ?> content-section__<?php echo get_row_layout(); ?>">
+		<?php if($background_image): ?>
+			<div class="content-section__bg content-section__bg--image" style="<?php echo $background_image_styles; ?>">
+			</div>
+		<?php endif; ?>
+		<?php if($background_color): ?>
+			<div class="content-section__bg content-section__bg--color" style="<?php echo $background_color_styles; ?>">
+			</div>
+		<?php endif; ?>
+		<div class="container page-header__content">
+		  	<h1 style="<?php echo $content_color_styles; ?>">
+		  		<?php if($data_focus && $categories): ?>
+		  			<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_name; ?>.svg"></ion-icon>&nbsp;
+		  		<?php endif; ?>
+		  		<span>
+		  			<?= Titles\title(); ?>
+		  		</span>
+		  	</h1>
+		  	<?php if(get_field('lead_paragraph')): ?>
+			  	<p style="<?php echo $content_color_styles; ?>">
+			  		<?php the_field('lead_paragraph'); ?>
+			  	</p>
+		  	<?php endif; ?>
+		</div>			
+	</div>
 </div>

@@ -109,7 +109,8 @@ function assets() {
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js?v=1.0.0'), ['jquery'], null, true);
 
   // IONICONS
-  wp_enqueue_script('ionicons', 'https://unpkg.com/ionicons@4.2.2/dist/ionicons.js', ['jquery'], null, true);
+  wp_enqueue_script('ionicons', 'https://unpkg.com/ionicons@4.4.2/dist/ionicons.js', ['jquery'], null, true);
+  wp_enqueue_style('ionicons_css', 'https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css', false, null);
 
   // REACT JS
   wp_enqueue_script('react', 'https://unpkg.com/react@16/umd/react.development.js', ['jquery'], null, true);

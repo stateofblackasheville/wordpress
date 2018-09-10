@@ -33,11 +33,13 @@
           ]          
         });
 
+        $('[data-toggle="tooltip"]').tooltip();
+
       }
     },
     // Home page
     'home': {
-      init: function() {
+      init: function() { 
         // JavaScript to be fired on the home page
       },
       finalize: function() {

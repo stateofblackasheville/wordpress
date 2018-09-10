@@ -36,115 +36,59 @@
 	endif;
 ?>
 <div class="<?php echo $classes; ?>">
-	<div class="visualization__header grid-item-header">
-		<h3>
-			<?php if($categories): ?>
-				<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_name; ?>.svg"></ion-icon>
-			<?php endif; ?>
-			<span class="grid-item__title">
-				<?php echo get_the_title($post_item->ID); ?>
-			</span>
-			<?php if($title_link): ?>
-				<a href="<?php echo $title_link['url']; ?>" target="<?php echo $title_link['target']; ?>">
-					<span class="title-link">
-						<?php echo $title_link['title']; ?>
+	<div class="grid-item__inner">
+		<div class="visualization__header grid-item-header">		
+			<h3>
+				<?php if($categories): ?>
+					<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_name; ?>.svg"></ion-icon>
+				<?php endif; ?>
+				<span class="grid-item__title">
+					<?php echo get_the_title($post_item->ID); ?>
+				</span>
+				<?php if($title_link): ?>
+					<a href="<?php echo $title_link['url']; ?>" target="<?php echo $title_link['target']; ?>">
+						<span class="title-link">
+							<?php echo $title_link['title']; ?>
+						</span>
+					</a>
+				<?php endif; ?>
+			</h3>
+			<?php if(!get_field('embed', $post_item->ID)): ?>
+				<div class="rte rte--georgia rte--small">
+					<span class="link" data-toggle="tooltip" title="This visualization hasn't been made dynamic yet, but is in the works!">
+						<span>
+							Work in progress (?)
+						</span> 						
 					</span>
-				</a>
-			<?php endif; ?>
-		</h3>
-	</div>
-	<div class="visualization__content grid-item-content">
-		<?php if(get_field('embed', $post_item->ID)): ?>
-			<div class="visualization__container">
-				<div class="visualization__inner" id="visualization-<?php echo $post_item->ID; ?>">
-					<?php the_field('embed', $post_item->ID); ?> 	
 				</div>
-			</div>
-			<a class="rte rte--georgia" data-fancybox data-options='{"caption" : "<?php echo $post_item->post_content; ?>" }' data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
-				[+] Expand
-			</a>					
-		<?php elseif(has_post_thumbnail($post_item->ID)): ?>
-			<div class="grid-item-content__image rte rte--georgia">
-				<?php echo get_the_post_thumbnail($post_item->ID); ?>
-			</div>
-			<a class="rte rte--georgia" href="<?php echo get_the_post_thumbnail_url($post_item->ID, 'large'); ?>" data-fancybox data-caption="<?php echo $post_item->post_content; ?>">
-				[+] Expand
-			</a>			
-		<?php endif; ?>
-		<div class="content rte rte--georgia">
-			<?php echo $post_item->post_content; ?>
+			<?php endif; ?>				
 		</div>
-		<div class="sources rte rte--small">
-			<?php
-
-			// check if the repeater field has rows of data
-			if( have_rows('sources', $post_item->ID) ):
-			?>
-			<h4>
-				Sources:
-			</h4>
-			<ol class="sources-list">
-			<?php
-
-			 	// loop through the rows of data
-				$count = 0;
-
-			    while ( have_rows('sources', $post_item->ID) ) : the_row();
-			    	$source_title = get_sub_field('source_title');
-			    	$source_link = get_sub_field('source_link');
-			    	$source_file = get_sub_field('source_file');
-			    	$student_papers = get_sub_field('source_student_paper');
-			    	$count++;
-			?>
-			  	
-			  		<li class="sources-list__item">
-<!-- 		  				<span class="source-item__count">
-		  					(<?php //echo $count; ?>)
-		  				</span>	 -->		  			
-			  			<?php if($source_title): ?>
-			  			<span class="item__title">
-			  				<?php echo $source_title; ?>
-			  			</span>
-			  			<?php endif; ?>
-			  			<?php if($source_link): ?>
-			  				<a href="<?php echo $source_link['url']; ?>" target="<?php echo $source_link['target']; ?>">
-			  					<?php echo $source_link['title']; ?>
-			  				</a>
-			  			<?php endif; ?>
-			  			<?php if($source_file): ?>
-			  				<a href="<?php echo $source_file['url']; ?>" target="_blank">
-			  					<?php echo $source_file['title']; ?> <ion-icon name="document"></ion-icon>
-			  				</a>
-			  			<?php endif; ?>
-			  			<?php if($student_papers): ?>
-			  				<?php foreach($student_papers as $student_paper): ?>
-			  					<?php $student_paper_download = get_field('files', $student_paper->ID); ?>
-			  					<?php //var_dump($student_paper_download); ?>
-				  				<a href="<?php echo $student_paper_download['url']; ?>" target="_blank">
-				  					<?php echo $student_paper->post_title; ?> (download)
-				  				</a>
-			  				<?php endforeach; ?>
-			  			<?php endif; ?>			  			
-			  		</li>
-			  	<?php //endif; ?>
-
-			<?php 
-				endwhile;
-			?>
-			</ol>
-			<?php
-			else :
-
-			    // no rows found
-
-			endif;
-
-			?>	
+		<div class="visualization__content grid-item-content">
+			<?php if(get_field('embed', $post_item->ID)): ?>
+				<div class="visualization__container">
+					<div class="visualization__inner" id="visualization-<?php echo $post_item->ID; ?>">
+						<?php the_field('embed', $post_item->ID); ?> 	
+					</div>
+				</div>
+				<a class="rte rte--georgia rte--small" data-fancybox data-options='{"caption" : "<?php echo $post_item->post_content; ?>" }' data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
+					[+] Expand Visualization
+				</a>					
+			<?php elseif(has_post_thumbnail($post_item->ID)): ?>
+				<div class="grid-item-content__image rte rte--georgia">
+					<?php echo get_the_post_thumbnail($post_item->ID); ?>
+				</div>
+				<a class="rte rte--georgia rte--small" href="<?php echo get_the_post_thumbnail_url($post_item->ID, 'large'); ?>" data-fancybox data-caption="<?php echo $post_item->post_content; ?>">
+					[+] Expand Visualization
+				</a>			
+			<?php endif; ?>
+			<div class="content rte rte--georgia">
+				<?php echo $post_item->post_content; ?>
+			</div>
+			<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>
 		</div>
-	</div>
-	<?php //if(false): ?>
-		<div class="tags rte rte--small">		
+		<?php //if(false): ?>		
 			<?php Roots\Sage\Extras\render_tags($post_item); ?>
-		</div>	
-	<?php //endif; ?>
+				
+		<?php //endif; ?>
+	</div>
 </div>

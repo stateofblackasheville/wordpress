@@ -9492,11 +9492,13 @@ var o=e.current,i=(new Date).getTime();e.group.length<2||o.opts.wheel===!1||"aut
           ]          
         });
 
+        $('[data-toggle="tooltip"]').tooltip();
+
       }
     },
     // Home page
     'home': {
-      init: function() {
+      init: function() { 
         // JavaScript to be fired on the home page
       },
       finalize: function() {
