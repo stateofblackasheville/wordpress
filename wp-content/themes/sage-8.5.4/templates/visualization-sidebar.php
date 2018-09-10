@@ -28,19 +28,21 @@
 	endif;
 ?>
 <div class="<?php echo $classes; ?>">
-	<div class="visualization__content">
-		<div class="content rte rte--georgia">
-			<?php echo $post_item->post_content; ?>
-		</div>
-		<?php if(get_field('embed', $post_item->ID)): ?>
-		<div class="visualization__container">
-			<?php the_field('embed', $post_item->ID); ?> 	
-		</div>
-		<?php endif; ?>
+	<div class="grid-item__inner">
+		<div class="visualization__content">
+			<div class="content rte rte--georgia">
+				<?php echo $post_item->post_content; ?>
+			</div>
+			<?php if(get_field('embed', $post_item->ID)): ?>
+			<div class="visualization__container">
+				<?php the_field('embed', $post_item->ID); ?> 	
+			</div>
+			<?php endif; ?>
 
-		<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>
+			<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>
+		</div>
+		<div class="tags rte rte--small">		
+			<?php Roots\Sage\Extras\render_tags($post_item); ?>
+		</div>	
 	</div>
-	<div class="tags rte rte--small">		
-		<?php Roots\Sage\Extras\render_tags($post_item); ?>
-	</div>	
 </div>

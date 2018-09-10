@@ -83,9 +83,11 @@
 					<?php else: ?>
 						</h3>
 					<?php endif; ?>	
-					<div style="<?php echo $content_color_styles; ?>" class="rte rte--georgia">
-						<?php the_sub_field('description'); ?>
-					</div>
+					<?php if(get_sub_field('description')): ?>
+						<div style="<?php echo $content_color_styles; ?>" class="rte rte--georgia">
+							<?php the_sub_field('description'); ?>
+						</div>
+					<?php endif; ?>
 				</div>
 				<?php if(get_sub_field('content_image')): ?>
 					<?php $content_image = get_sub_field('content_image'); ?>

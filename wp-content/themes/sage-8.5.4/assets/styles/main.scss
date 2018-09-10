@@ -802,9 +802,7 @@ footer.content-info{
 
 /*SIDEBAR ITEM*/ 
 .sidebar-item{
-	background: $off-white;
 	margin-bottom: .5rem;
-	padding: 2rem;
 	.sources{
 		margin: 0;
 	}
@@ -812,6 +810,11 @@ footer.content-info{
 		font-style: italic;
 		color: #666;
 		font-size: 1.25rem;
+	}
+	.grid-item__inner{
+		background: $off-white;
+		margin-bottom: .5rem;
+		padding: 2rem;
 	}
 }
 
@@ -848,6 +851,7 @@ footer.content-info{
 		@include make-row();
 		.main-page-content{
 			@include make-col-ready();
+			margin-top: 1rem;
 			/*@include make-col(8);*/
 			.content-section__header{
 				text-align: left;
@@ -902,7 +906,7 @@ footer.content-info{
 
 .main-page-content{
 	.main-page-content__content{
-		margin-top: 2rem;
+		/*margin-top: 1rem;*/
 	}
 }
 

@@ -7833,15 +7833,17 @@ footer.content-info {
 
 /*SIDEBAR ITEM*/
 .sidebar-item {
-  background: #efebee;
-  margin-bottom: .5rem;
-  padding: 2rem; }
+  margin-bottom: .5rem; }
   .sidebar-item .sources {
     margin: 0; }
   .sidebar-item .rte {
     font-style: italic;
     color: #666;
     font-size: 1.25rem; }
+  .sidebar-item .grid-item__inner {
+    background: #efebee;
+    margin-bottom: .5rem;
+    padding: 2rem; }
 
 /*PAGE HEADER*/
 .page-header--basic .page-header__content {
@@ -7883,6 +7885,7 @@ footer.content-info {
       min-height: 1px;
       padding-right: 15px;
       padding-left: 15px;
+      margin-top: 1rem;
       /*@include make-col(8);*/ }
       .page-template-page-data-focus .page-content-container .main-page-content .content-section__header {
         text-align: left;
@@ -7923,7 +7926,7 @@ footer.content-info {
       /*@include make-col-offset(0);*/ } }
 
 .main-page-content .main-page-content__content {
-  margin-top: 2rem; }
+  /*margin-top: 1rem;*/ }
 
 /* CUSTOM CONTENT */
 .content-section__custom-container {
