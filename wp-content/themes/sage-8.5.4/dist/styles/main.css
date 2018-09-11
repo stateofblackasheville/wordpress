@@ -7854,7 +7854,7 @@ footer.content-info {
   padding-right: 15px;
   padding-left: 15px; }
 
-.page-header .content-section {
+.page-header .content-section__bg {
   background-attachment: fixed;
   background-size: cover; }
 
