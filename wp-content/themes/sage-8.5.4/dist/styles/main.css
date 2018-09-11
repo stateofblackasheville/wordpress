@@ -7760,15 +7760,18 @@ footer.content-info {
     .grid-item h3 a {
       /*float: right;*/
       font-size: 1rem; }
-    .grid-item h3 ion-icon {
+    .grid-item h3 .grid-item__title {
+      display: block;
+      clear: both; }
+  .grid-item .grid-item__category {
+    color: #b21823;
+    /*font-size: .8rem;*/ }
+    .grid-item .grid-item__category ion-icon {
       /*color: $red;*/
       font-size: 1.5em;
       margin-right: .25rem;
       vertical-align: bottom;
       color: #b21823; }
-    .grid-item h3 .grid-item__title {
-      display: block;
-      clear: both; }
   .grid-item iframe {
     width: 100%;
     min-height: 350px;
@@ -7867,6 +7870,9 @@ footer.content-info {
     display: block; }
   .page-header__content p {
     max-width: 600px; }
+
+ion-icon {
+  vertical-align: middle; }
 
 /*DATA FOCUS*/
 .page-template-page-data-focus {

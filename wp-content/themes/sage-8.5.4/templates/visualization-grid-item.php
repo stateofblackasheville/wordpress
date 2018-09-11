@@ -23,9 +23,11 @@
 
 	$student_papers = get_field('student_papers', $post_item->ID);
 
+	// var_dump($categories);
 
 	if($categories):
-		$category_name = $categories[0]->slug;
+		$category_slug = $categories[0]->slug;
+		$category_title = $categories[0]->name;
 	endif;
 
 	$fast_fact = false;
@@ -38,10 +40,13 @@
 <div class="<?php echo $classes; ?>">
 	<div class="grid-item__inner">
 		<div class="visualization__header grid-item-header">		
+			<?php if($categories): ?>
+				<span class="grid-item__category">
+					<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_slug; ?>.svg"></ion-icon>
+					<?php echo $category_title; ?>
+				</span>
+			<?php endif; ?>			
 			<h3>
-				<?php if($categories): ?>
-					<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_name; ?>.svg"></ion-icon>
-				<?php endif; ?>
 				<span class="grid-item__title">
 					<?php echo get_the_title($post_item->ID); ?>
 				</span>
@@ -57,7 +62,7 @@
 				<div class="rte rte--georgia rte--small">
 					<span class="link" data-toggle="tooltip" title="This visualization hasn't been made dynamic yet, but is in the works!">
 						<span>
-							Work in progress (?)
+							Work in progress <ion-icon name="information-circle"></ion-icon>
 						</span> 						
 					</span>
 				</div>
