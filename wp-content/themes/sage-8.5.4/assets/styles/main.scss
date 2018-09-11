@@ -882,7 +882,7 @@ footer.content-info{
 		@include make-col(4);
 		/*padding-top: 2rem;*/
 		/*background: $off-white;*/
-		padding: 1rem;
+		margin-top: 2rem;
 	}
 	@include media-breakpoint-up(lg){
 		.main-page-content{

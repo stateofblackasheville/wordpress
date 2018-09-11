@@ -7912,7 +7912,7 @@ footer.content-info {
     max-width: 33.3333333333%;
     /*padding-top: 2rem;*/
     /*background: $off-white;*/
-    padding: 1rem; }
+    margin-top: 2rem; }
   @media (min-width: 992px) {
     .page-template-page-data-focus .main-page-content {
       flex: 0 0 100%;
