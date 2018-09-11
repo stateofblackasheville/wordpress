@@ -7854,6 +7854,10 @@ footer.content-info {
   padding-right: 15px;
   padding-left: 15px; }
 
+.page-header .content-section {
+  background-attachment: fixed;
+  background-size: cover; }
+
 .page-header__content {
   z-index: 100;
   position: relative;
