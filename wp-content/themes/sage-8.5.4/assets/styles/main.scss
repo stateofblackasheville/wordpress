@@ -683,6 +683,7 @@ footer.content-info{
 		margin-bottom: .5rem;
 		display: inline-block;
 		border-radius: 2px;
+		border: 1px solid #ccc; 
 	}
 }
 
@@ -809,7 +810,7 @@ footer.content-info{
 	.rte{
 		font-style: italic;
 		color: #666;
-		font-size: 1.25rem;
+		/*font-size: 1.25rem;*/
 	}
 	.grid-item__inner{
 		background: $off-white;
