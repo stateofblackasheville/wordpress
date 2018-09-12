@@ -17,7 +17,13 @@
 		<div class="main-page-content"> 
 			<?php if(get_the_content()): ?>
 			<div class="main-page-content__content rte rte--georgia rte--large">
-				<?php the_content(); ?>
+				<div class="container">
+					<div class="row">
+						<div class="main-page-content__inner">
+							<?php the_content(); ?>
+						</div>
+					</div>
+				</div>
 			</div>
 			<?php endif; ?>
 			<?php get_template_part('templates/flexible-content'); ?>

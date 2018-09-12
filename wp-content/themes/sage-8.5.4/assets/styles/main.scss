@@ -85,7 +85,7 @@ h1, h2{
 	}
 	&.rte--large{
 		*{
-			font-size: 1.25em;
+			font-size: 1.25rem;
 		}
 		h4{
 			/*font-size: rem;*/
@@ -939,6 +939,13 @@ body.home,
 .main-page-content{
 	.main-page-content__content{
 		/*margin-top: 1rem;*/
+	}
+}
+
+.page-template-page-borderless-sections{
+	.main-page-content__inner{
+		margin-top: 2rem;
+		@include make-col(12);
 	}
 }
 

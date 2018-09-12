@@ -7272,7 +7272,7 @@ h1, h2 {
     .rte.rte--small p {
       font-size: inherit; }
   .rte.rte--large * {
-    font-size: 1.25em; }
+    font-size: 1.25rem; }
   .rte.rte--large h4 {
     /*font-size: rem;*/ }
   .rte.rte--large p {
@@ -7956,6 +7956,11 @@ body.home .content-section__inner-container,
 
 .main-page-content .main-page-content__content {
   /*margin-top: 1rem;*/ }
+
+.page-template-page-borderless-sections .main-page-content__inner {
+  margin-top: 2rem;
+  flex: 0 0 100%;
+  max-width: 100%; }
 
 /* CUSTOM CONTENT */
 .content-section__custom-container {
