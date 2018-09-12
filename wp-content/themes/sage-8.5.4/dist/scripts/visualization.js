@@ -9,7 +9,7 @@ jQuery('.soba-visualization').each(function(){
 	var showChartTypeSelect = jQuery(this).attr('data-showcharttypeselect');
 	var filters = jQuery(this).attr('data-filters');
 
-	console.log('test', title);
+	filters = JSON.parse(filters);
 	var props = {
 		title: title, 
 		spreadsheetId: spreadsheetID,

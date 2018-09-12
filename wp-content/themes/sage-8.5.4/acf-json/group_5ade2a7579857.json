@@ -127,7 +127,7 @@
                                 "center": "Center"
                             },
                             "default_value": [
-                                "left"
+                                "center"
                             ],
                             "allow_null": 0,
                             "multiple": 0,
@@ -238,14 +238,14 @@
                             "collapsed": "",
                             "min": 0,
                             "max": 0,
-                            "layout": "table",
-                            "button_label": "",
+                            "layout": "row",
+                            "button_label": "Add Content",
                             "sub_fields": [
                                 {
                                     "key": "field_5b7dec30e306c",
                                     "label": "Content",
                                     "name": "content",
-                                    "type": "post_object",
+                                    "type": "relationship",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -254,14 +254,17 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "post_type": [
-                                        "visualization"
-                                    ],
+                                    "post_type": [],
                                     "taxonomy": [],
-                                    "allow_null": 0,
-                                    "multiple": 0,
-                                    "return_format": "object",
-                                    "ui": 1
+                                    "filters": [
+                                        "search",
+                                        "post_type",
+                                        "taxonomy"
+                                    ],
+                                    "elements": "",
+                                    "min": "",
+                                    "max": 1,
+                                    "return_format": "object"
                                 },
                                 {
                                     "key": "field_5b7debe6e306b",
@@ -592,10 +595,10 @@
                         },
                         {
                             "key": "field_5b87348a23d3c",
-                            "label": "Header Placement",
+                            "label": "Header Alignment",
                             "name": "header_alignment",
                             "type": "select",
-                            "instructions": "Choose if you want the header to appear to the left, above, or to the right of the content.",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -750,5 +753,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1536782468
+    "modified": 1536784092
 }
