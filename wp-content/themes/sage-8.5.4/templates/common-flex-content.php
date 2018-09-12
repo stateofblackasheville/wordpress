@@ -60,6 +60,9 @@
 <?php endif; ?>  
 <?php if(get_sub_field('header_border') && is_string(get_sub_field('header_border'))): ?>
 	<?php $classes .= ' header-border'; ?> 
+<?php endif; ?>    
+<?php if(get_sub_field('additional_classes') && is_string(get_sub_field('additional_classes'))): ?>
+	<?php $classes .= ' '.get_sub_field('additional_classes'); ?> 
 <?php endif; ?>    	
 
 
