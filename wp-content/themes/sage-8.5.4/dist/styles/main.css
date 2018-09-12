@@ -7796,6 +7796,8 @@ footer.content-info {
       .grid-item.grid-item--width-one-half, .grid-item.grid-item--width-one-third {
         flex: 0 0 100%;
         max-width: 100%; } }
+  .grid-item .work-in-progress {
+    margin-top: .5rem; }
   .grid-item .sources {
     margin-top: .5rem; }
   .grid-item .content {

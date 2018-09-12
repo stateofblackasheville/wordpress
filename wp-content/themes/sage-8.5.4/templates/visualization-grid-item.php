@@ -57,16 +57,7 @@
 						</span>
 					</a>
 				<?php endif; ?>
-			</h3>
-			<?php if(!get_field('embed', $post_item->ID)): ?>
-				<div class="rte rte--georgia rte--small">
-					<span class="link" data-toggle="tooltip" title="This visualization hasn't been made dynamic yet, but is in the works!">
-						<span>
-							Work in progress <ion-icon name="information-circle"></ion-icon>
-						</span> 						
-					</span>
-				</div>
-			<?php endif; ?>				
+			</h3>			
 		</div>
 		<div class="visualization__content grid-item-content">
 			<?php if(get_field('embed', $post_item->ID)): ?>
@@ -89,6 +80,15 @@
 			<div class="content rte rte--georgia">
 				<?php echo $post_item->post_content; ?>
 			</div>
+			<?php if(!get_field('embed', $post_item->ID)): ?>
+				<div class="rte rte--georgia rte--small work-in-progress">
+					<span class="link" data-toggle="tooltip" title="This visualization hasn't been made dynamic yet, but is in the works!">
+						<span>
+							Work in progress <ion-icon name="information-circle"></ion-icon>
+						</span> 						
+					</span>
+				</div>
+			<?php endif; ?>				
 			<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>
 		</div>
 		<?php //if(false): ?>		
