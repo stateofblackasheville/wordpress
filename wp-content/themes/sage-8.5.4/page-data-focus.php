@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Data Focus
+ * Template Name: Section Page
  */
 ?>
 

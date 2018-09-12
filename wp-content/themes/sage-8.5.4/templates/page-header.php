@@ -7,7 +7,7 @@
 
 <?php $background_image = get_field('background_image'); ?>
 <?php if($background_image): ?>	
-	<?php $background_image_styles.= 'background-image: url('.$background_image['url'].');'; ?>
+	<?php $background_image_styles.= 'background-image: url('.$background_image['sizes']['featured'].');'; ?>
 <?php endif; ?>
 
 <?php $background_color = get_field('background_color'); ?>

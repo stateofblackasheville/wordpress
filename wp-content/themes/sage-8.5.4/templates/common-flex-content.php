@@ -65,6 +65,8 @@
 
 <?php $link = get_sub_field('section_link'); ?>	
 
+<?php $content_image = get_sub_field('content_image'); ?>
+
 
 <div class="content-section background-type__<?php the_sub_field('background_type'); ?> content-section--<?php echo get_row_layout(); ?> <?php echo $classes; ?>">
 	<div class="content-section__inner-container">
@@ -104,8 +106,7 @@
 						</div>					
 					<?php endif; ?>
 				</div>
-				<?php if(get_sub_field('content_image')): ?>
-					<?php $content_image = get_sub_field('content_image'); ?>
+				<?php if($content_image): ?>
 					<div class="content-section__image">
 						<img src="<?php echo $content_image['url']; ?>"/>
 					</div>
