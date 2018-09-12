@@ -743,8 +743,8 @@
                         },
                         {
                             "key": "field_5b995e88633d5",
-                            "label": "Content Image",
-                            "name": "content_image",
+                            "label": "Use Content Image",
+                            "name": "use_content_image",
                             "type": "true_false",
                             "instructions": "",
                             "required": 0,
@@ -862,5 +862,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1536778160
+    "modified": 1536778497
 }
