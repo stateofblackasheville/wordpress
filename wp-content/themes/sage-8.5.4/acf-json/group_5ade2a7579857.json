@@ -754,6 +754,25 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b997ec51f087",
+                            "label": "Section Description Classes",
+                            "name": "section_description_classes",
+                            "type": "text",
+                            "instructions": "These classes will only wrap the content of the section description.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -789,5 +808,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1536785810
+    "modified": 1536786203
 }

@@ -3,6 +3,7 @@
 <?php $background_color_styles = ''; ?>
 <?php $content_color_styles = ''; ?>
 <?php $classes = ''; ?>
+<?php $section_description_classes = ''; ?>
 
 <?php $background_image = get_sub_field('background_image'); ?>
 <?php if($background_image): ?>	
@@ -63,6 +64,10 @@
 <?php endif; ?>    
 <?php if(get_sub_field('additional_classes') && is_string(get_sub_field('additional_classes'))): ?>
 	<?php $classes .= ' '.get_sub_field('additional_classes'); ?> 
+<?php endif; ?>  
+
+<?php if(get_sub_field('section_description_classes') && is_string(get_sub_field('section_description_classes'))): ?>
+	<?php $section_description_classes .= ' '.get_sub_field('section_description_classes'); ?> 
 <?php endif; ?>    	
 
 
@@ -94,7 +99,7 @@
 						</h3>
 					<?php endif; ?>	
 					<?php if(get_sub_field('description')): ?>
-						<div style="<?php echo $content_color_styles; ?>" class="rte rte--georgia">
+						<div style="<?php echo $content_color_styles; ?>" class="rte rte--georgia <?php echo $section_description_classes; ?>">
 							<?php the_sub_field('description'); ?>
 						</div>
 					<?php endif; ?>
