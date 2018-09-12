@@ -35,7 +35,8 @@
 		<?php if( have_rows('curated_content_custom') ): ?>
     		<?php while ( have_rows('curated_content_custom') ) : the_row(); ?>
 				<?php $content = get_sub_field('content'); ?>
-				<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
+				<?php //var_dump($content); ?>
+				<?php Roots\Sage\Extras\render_content_grid_item($content[0]); ?>
         	<?php endwhile; ?>
     	<?php endif; ?>
 	<?php endif; ?>
