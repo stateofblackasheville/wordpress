@@ -8005,3 +8005,8 @@ body.home .content-section__inner-container,
   max-width: 25%; }
   #page-gallery .gallery-item img {
     width: 100%; }
+
+@media (max-width: 767.98px) {
+  #page-gallery .gallery-item {
+    flex: 0 0 50%;
+    max-width: 50%; } }

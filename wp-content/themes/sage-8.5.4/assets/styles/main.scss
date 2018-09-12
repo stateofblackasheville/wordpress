@@ -987,4 +987,9 @@ body.home,
 			width: 100%;
 		}
 	}
+	@include media-breakpoint-down(sm){
+		.gallery-item{
+			@include make-col(6);
+		}
+	}
 }
