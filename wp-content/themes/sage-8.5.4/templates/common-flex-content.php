@@ -106,7 +106,6 @@
 				</div>
 				<?php if(get_sub_field('content_image')): ?>
 					<?php $content_image = get_sub_field('content_image'); ?>
-					<?php var_dump($content_image); ?>
 					<div class="content-section__image">
 						<img src="<?php echo $content_image['url']; ?>"/>
 					</div>
