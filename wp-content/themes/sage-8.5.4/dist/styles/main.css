@@ -7394,10 +7394,16 @@ main.main {
     max-width: 100%; }
   .content-section.content-align--center {
     text-align: center; }
-    .content-section.content-align--center.header-width--two-thirds {
+    .content-section.content-align--center.header-width--two-thirds .content-section__header {
       margin-left: 16.6666666667%; }
-    .content-section.content-align--center.header-width--one-half {
+      @media (max-width: 991.98px) {
+        .content-section.content-align--center.header-width--two-thirds .content-section__header {
+          margin-left: 0; } }
+    .content-section.content-align--center.header-width--one-half .content-section__header {
       margin-left: 25%; }
+      @media (max-width: 991.98px) {
+        .content-section.content-align--center.header-width--one-half .content-section__header {
+          margin-left: 0; } }
   .content-section.header-align--top .content-section__header,
   .content-section.header-align--top .content-section__inner {
     /*@include make-col(12);*/ }

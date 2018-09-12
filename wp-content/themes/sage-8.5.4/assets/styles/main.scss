@@ -250,10 +250,20 @@ main.main{
 	&.content-align--center{
 		text-align: center;
 		&.header-width--two-thirds{
-			@include make-col-offset(2);
+			.content-section__header{
+				@include make-col-offset(2);
+				@include media-breakpoint-down(md){
+					@include make-col-offset(0);
+				}				
+			}
 		}
 		&.header-width--one-half{
-			@include make-col-offset(3);
+			.content-section__header{
+				@include make-col-offset(3);
+				@include media-breakpoint-down(md){
+					@include make-col-offset(0);
+				}
+			}
 		}			
 	}
 	&.header-align--top{
