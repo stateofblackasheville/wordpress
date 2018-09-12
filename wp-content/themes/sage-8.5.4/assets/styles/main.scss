@@ -31,6 +31,7 @@ $green: #007a4d;
 
 a{
 	color: $red;
+	word-wrap: break-word;
 	&:hover{
 		color: darken($red, 10%);
 	}
@@ -735,10 +736,10 @@ footer.content-info{
 	&.grid-item--width-one-half{
 		@include make-col(6);
 	}
-	&.grid-item--width-one-half,
+	&.grid-item--width-one-half, 
 	&.grid-item--width-one-third{
 		@include media-breakpoint-only(md){
-			@include make-col(6);  
+			@include make-col(12);  
 		}
 		@include media-breakpoint-down(sm){
 			@include make-col(12);
@@ -835,8 +836,11 @@ footer.content-info{
 
 .page-header{
 	.content-section__bg{
-		background-attachment: fixed;
+		/*background-attachment: fixed;*/
 		background-size: cover;
+	}
+	.content-section__bg--fixed{
+		/*background-attachment: fixed;*/
 	}
 }
 

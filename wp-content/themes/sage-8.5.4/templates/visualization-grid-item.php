@@ -60,6 +60,9 @@
 			</h3>			
 		</div>
 		<div class="visualization__content grid-item-content">
+			<div class="content rte rte--georgia">
+				<?php echo $post_item->post_content; ?>
+			</div>			
 			<?php if(get_field('embed', $post_item->ID)): ?>
 				<div class="visualization__container">
 					<div class="visualization__inner" id="visualization-<?php echo $post_item->ID; ?>">
@@ -77,9 +80,6 @@
 					[+] Expand Visualization
 				</a>			
 			<?php endif; ?>
-			<div class="content rte rte--georgia">
-				<?php echo $post_item->post_content; ?>
-			</div>
 			<?php if(!get_field('embed', $post_item->ID)): ?>
 				<div class="rte rte--georgia rte--small work-in-progress">
 					<span class="link" data-toggle="tooltip" title="This visualization hasn't been made dynamic yet, but is in the works!">
