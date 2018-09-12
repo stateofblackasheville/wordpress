@@ -396,13 +396,6 @@ main.main{
 	@include make-row();
 }
 
-body.home{
-	.content-section__inner-container{
-		@include make-container(); 	
-		@include make-container-max-widths();	
-	}
-}
-
 .content-section__header{
 	z-index: 10;
 	position: relative;
@@ -863,6 +856,22 @@ ion-icon{
 	vertical-align: middle;
 }
 
+
+.page-template-page-data-focus,
+.page-template-page-borderless-sections{
+	.wrap.container{
+		width: 100%;
+		max-width: none; 
+	}
+}
+
+body.home,
+.page-template-page-borderless-sections{
+	.content-section__inner-container{
+		@include make-container(); 	
+		@include make-container-max-widths();	
+	}
+}
 
 /*DATA FOCUS*/
 .page-template-page-data-focus{

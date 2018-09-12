@@ -7493,25 +7493,6 @@ main.main {
   margin-right: -15px;
   margin-left: -15px; }
 
-body.home .content-section__inner-container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto; }
-  @media (min-width: 576px) {
-    body.home .content-section__inner-container {
-      max-width: 540px; } }
-  @media (min-width: 768px) {
-    body.home .content-section__inner-container {
-      max-width: 720px; } }
-  @media (min-width: 992px) {
-    body.home .content-section__inner-container {
-      max-width: 960px; } }
-  @media (min-width: 1200px) {
-    body.home .content-section__inner-container {
-      max-width: 1140px; } }
-
 .content-section__header {
   z-index: 10;
   position: relative; }
@@ -7879,6 +7860,37 @@ footer.content-info {
 
 ion-icon {
   vertical-align: middle; }
+
+.page-template-page-data-focus .wrap.container, .page-template-page-data-focus .wrap.content-section__grid, .page-template-page-data-focus .wrap.main-content,
+.page-template-page-borderless-sections .wrap.container,
+.page-template-page-borderless-sections .wrap.content-section__grid,
+.page-template-page-borderless-sections .wrap.main-content {
+  width: 100%;
+  max-width: none; }
+
+body.home .content-section__inner-container,
+.page-template-page-borderless-sections .content-section__inner-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media (min-width: 576px) {
+    body.home .content-section__inner-container,
+    .page-template-page-borderless-sections .content-section__inner-container {
+      max-width: 540px; } }
+  @media (min-width: 768px) {
+    body.home .content-section__inner-container,
+    .page-template-page-borderless-sections .content-section__inner-container {
+      max-width: 720px; } }
+  @media (min-width: 992px) {
+    body.home .content-section__inner-container,
+    .page-template-page-borderless-sections .content-section__inner-container {
+      max-width: 960px; } }
+  @media (min-width: 1200px) {
+    body.home .content-section__inner-container,
+    .page-template-page-borderless-sections .content-section__inner-container {
+      max-width: 1140px; } }
 
 /*DATA FOCUS*/
 .page-template-page-data-focus {
