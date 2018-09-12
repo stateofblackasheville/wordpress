@@ -317,6 +317,9 @@ main.main{
 		&.padding-top--xlarge{
 			padding-top: 10rem;
 		}	
+		&.padding-top--huge{
+			padding-top: 15rem;
+		}			
 		&.padding-top--none{
 			padding-top: 0;
 		}
@@ -331,7 +334,10 @@ main.main{
 		}
 		&.padding-bottom--xlarge{
 			padding-bottom: 10rem;
-		}	
+		}
+		&.padding-bottom--huge{
+			padding-bottom: 15rem;
+		}			
 		&.padding-bottom--none{
 			padding-bottom: 0;
 		}		
@@ -353,6 +359,9 @@ main.main{
 		&.padding-top--xlarge{
 			padding-top: 7rem;
 		}
+		&.padding-top--huge{
+			padding-top: 10rem;
+		}		
 		&.padding-bottom--small{
 			padding-bottom: 1rem;
 		}
@@ -364,7 +373,10 @@ main.main{
 		}
 		&.padding-bottom--xlarge{
 			padding-bottom: 7rem;
-		}			
+		}
+		&.padding-bottom--huge{
+			padding-bottom: 10rem;
+		}					
 	}
 	@include media-breakpoint-down(sm){
 		&.content-section--grid-content,
@@ -383,6 +395,9 @@ main.main{
 		&.padding-top--xlarge{
 			padding-top: 4rem;
 		}
+		&.padding-top--huge{
+			padding-top: 5rem;
+		}		
 		&.padding-bottom--small{
 			padding-bottom: 1rem;
 		}
@@ -394,7 +409,10 @@ main.main{
 		}
 		&.padding-bottom--xlarge{
 			padding-bottom: 4rem;
-		}			
+		}
+		&.padding-top--huge{
+			padding-top: 5rem;
+		}					
 	}			
 }
 
