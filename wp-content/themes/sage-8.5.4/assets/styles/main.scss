@@ -249,12 +249,12 @@ main.main{
 	}				
 	&.content-align--center{
 		text-align: center;
-		.content-section__header{
-			@include media-breakpoint-up(lg){
-				@include make-col(8);
-				@include make-col-offset(2);
-			}
-		}	
+		&.header-width--two-thirds{
+			@include make-col-offset(2);
+		}
+		&.header-width--one-half{
+			@include make-col-offset(3);
+		}			
 	}
 	&.header-align--top{
 		.content-section__header,
@@ -973,4 +973,18 @@ body.home,
 
 .grid-item .visualization__inner{
 	display: block !important;
+}
+
+/*TEMPORARY GALLERY*/
+#page-gallery{
+	.gallery{
+		@include make-row();
+	}
+	.gallery-item{
+		@include make-col-ready();
+		@include make-col(3);
+		img{
+			width: 100%;
+		}
+	}
 }
