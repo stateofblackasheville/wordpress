@@ -32,7 +32,11 @@
 	  			<?php endif; ?>
 	  			<?php if($source_link): ?>
 	  				<a href="<?php echo $source_link['url']; ?>" target="<?php echo $source_link['target']; ?>">
-	  					<?php echo $source_link['title']; ?>
+	  					<?php if(!empty($source_link['title'])): ?>
+	  						<?php echo $source_link['title']; ?>
+	  					<?php else: ?>
+	  						<?php echo $source_link['url']; ?>
+	  					<?php endif; ?>
 	  				</a>
 	  			<?php endif; ?>
 	  			<?php if($source_file): ?>
