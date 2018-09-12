@@ -7,6 +7,7 @@ jQuery('.soba-visualization').each(function(){
 	var groupBy = jQuery(this).attr('data-groupby');
 	var chartType = jQuery(this).attr('data-charttype');
 	var showChartTypeSelect = jQuery(this).attr('data-showcharttypeselect');
+	var filters = jQuery(this).attr('data-filters');
 
 	console.log('test', title);
 	var props = {
@@ -18,6 +19,7 @@ jQuery('.soba-visualization').each(function(){
 		groupBy: groupBy,
 		chartType: chartType,
 		showChartTypeSelect: showChartTypeSelect,
+		filters: filters
 	};
 
 	var elm = jQuery(this)[0];
