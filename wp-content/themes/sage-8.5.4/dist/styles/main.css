@@ -7826,10 +7826,10 @@ footer.content-info {
     padding: .5rem 0;
     border-bottom: 1px solid #eee; }
   .grid-item .sources {
-    /*margin-top: .5rem;*/
-    border-bottom: 1px solid #eee; }
+    /*margin-top: .5rem;*/ }
   .grid-item .tags {
-    /*margin-top: 1rem; */ }
+    /*margin-top: 1rem; */
+    border-top: 1px solid #eee; }
   .grid-item .sources,
   .grid-item .tags,
   .grid-item .visualization__student-paper {
