@@ -101,13 +101,13 @@ function display_sidebar() {
  * Theme assets
  */
 function assets() {
-  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css?v=1.0.3'), false, null);
+  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css?v=1.0.4'), false, null);
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js?v=1.0.2'), ['jquery'], null, true);
+  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js?v=1.0.3'), ['jquery'], null, true);
 
   // IONICONS
   wp_enqueue_script('ionicons', 'https://unpkg.com/ionicons@4.4.2/dist/ionicons.js', ['jquery'], null, true);

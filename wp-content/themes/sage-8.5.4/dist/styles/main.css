@@ -7826,13 +7826,13 @@ footer.content-info {
     padding: .5rem 0;
     border-bottom: 1px solid #eee; }
   .grid-item .sources {
-    /*margin-top: .5rem;*/ }
+    /*margin-top: .5rem;*/
+    border-bottom: 1px solid #eee; }
   .grid-item .tags {
     /*margin-top: 1rem; */ }
   .grid-item .sources,
   .grid-item .tags,
   .grid-item .visualization__student-paper {
-    border-bottom: 1px solid #eee;
     padding: .5rem 0; }
     .grid-item .sources h4,
     .grid-item .tags h4,
@@ -7876,7 +7876,8 @@ footer.content-info {
   margin-left: -15px; }
 
 .grid-item.visualization .grid-item-header,
-.grid-item.visualization .grid-item-content {
+.grid-item.visualization .grid-item-content,
+.grid-item.visualization .grid-item-notes {
   position: relative;
   width: 100%;
   min-height: 1px;
@@ -7905,6 +7906,20 @@ footer.content-info {
 .grid-item.visualization.visualization--stacked .grid-item-content {
   flex: 0 0 100%;
   max-width: 100%; }
+
+.grid-item.visualization.visualization--stacked .visualization__notes--side {
+  display: none; }
+
+.grid-item.visualization.visualization--stacked .visualization__notes--stacked {
+  display: block; }
+
+@media (max-width: 991.98px) {
+  .visualization__notes--side {
+    display: none; } }
+
+@media (min-width: 992px) {
+  .visualization__notes--stacked {
+    display: none; } }
 
 .visualization__student-paper-inner a {
   margin-top: .5rem;

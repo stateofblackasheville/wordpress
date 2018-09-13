@@ -799,6 +799,7 @@ footer.content-info{
 	}
 	.sources{
 		/*margin-top: .5rem;*/
+		border-bottom: 1px solid #eee;
 	}
 	.tags{
 		/*margin-top: 1rem; */
@@ -806,7 +807,7 @@ footer.content-info{
 	.sources,
 	.tags,
 	.visualization__student-paper{
-		border-bottom: 1px solid #eee;
+		
 		h4{
 			margin: .5rem 0;
 		}
@@ -857,9 +858,10 @@ footer.content-info{
 		@include make-row();
 	}
 	.grid-item-header,
-	.grid-item-content{
+	.grid-item-content,
+	.grid-item-notes{
 		@include make-col-ready();
-		@include make-col(6);
+		@include make-col(6); 
 	}
 	.grid-item__inner{
 	    padding: 1rem; 
@@ -869,7 +871,7 @@ footer.content-info{
 	    background: #fbfbfb;
 	    border-radius: 3px;		
 	}
-	@include media-breakpoint-down(md){
+	@include media-breakpoint-down(md){ 
 		.grid-item__row{
 			flex-direction: column;
 		}
@@ -884,6 +886,28 @@ footer.content-info{
 			@include make-col(12);
 		}		
 	}	
+}
+
+
+.grid-item.visualization.visualization--stacked{
+	.visualization__notes--side{
+		display: none;
+	}
+	.visualization__notes--stacked{
+		display: block;
+	}	
+}
+
+.visualization__notes--side{
+	@include media-breakpoint-down(md){ 
+		display: none;
+	}
+}
+
+.visualization__notes--stacked{
+	@include media-breakpoint-up(lg){ 
+		display: none; 
+	}
 }
 
 .visualization__student-paper-inner{
