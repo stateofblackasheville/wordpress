@@ -11,12 +11,14 @@
 	$background_color = get_field('student_paper_archive_header_background_color', 'options');
 	$background_opacity = get_field('student_paper_archive_header_background_opacity', 'options');
 	$content_color = get_field('student_paper_archive_header_content_color', 'options');
+	$lead_paragraph = get_field('student_paper_archive_header_lead_paragraph', 'options');
 else: 
 	$background_image = get_field('background_image'); 
 	$background_color = get_field('background_color');
 	$background_opacity = get_field('background_opacity');
 	$categories = get_field('data_focus_category');
 	$content_color = get_field('content_color');
+	$lead_paragraph = get_field('lead_paragraph');
 endif; 
 ?>
 
@@ -78,9 +80,9 @@ endif;
 		  			<?= Titles\title(); ?>
 		  		</span>
 		  	</h1>
-		  	<?php if(get_field('lead_paragraph')): ?>
+		  	<?php if($lead_paragraph): ?>
 			  	<p style="<?php echo $content_color_styles; ?>">
-			  		<?php the_field('lead_paragraph'); ?>
+			  		<?php echo $lead_paragraph; ?>
 			  	</p>
 		  	<?php endif; ?>
 		</div>			
