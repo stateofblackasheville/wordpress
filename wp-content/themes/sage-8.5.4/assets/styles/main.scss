@@ -51,8 +51,33 @@ body{
 	font-family: Georgia;
 }
 
+.montserrat{ 
+	font-family: Georgia;
+}
+
 h1, h2{
 	/*font-family: 'Montserrat';*/
+}
+
+h1{
+	font-size: 2.5rem;
+	@include media-breakpoint-down(md){
+		font-size: 2rem;
+	} 
+}
+
+h2{
+	font-size: 2rem;
+	@include media-breakpoint-down(md){
+		font-size: 1.5rem;
+	} 
+}
+
+h3{
+	font-size: 1.5rem;
+	@include media-breakpoint-down(md){
+		font-size: 1.25rem;
+	} 	
 }
 
 .link{
@@ -133,6 +158,7 @@ main.main{
 	color: $red;
 	border: 3px solid $red;
 	text-align: center;
+	font-family: 'Montserrat' !important;
 	&.soba-btn--white{
 		color: white;
 		border: 3px solid white;
@@ -932,8 +958,9 @@ ion-icon{
 
 
 .page-template-page-data-focus,
-.page-template-page-borderless-sections{
-	.wrap.container{
+.page-template-page-borderless-sections,
+.post-type-archive{
+	.wrap.container{ 
 		width: 100%;
 		max-width: none; 
 	}
@@ -1092,3 +1119,48 @@ body.home,
 [data-drop-target]{
 	display: none;
 }
+
+/*ARCHIVE*/
+.archive-listings{
+	/*margin-top: 5rem;*/
+	@include make-col-ready();
+	@include make-col-offset(2);
+	@include make-col(8);
+	text-align: center;
+	h2{
+		/*font-size: 1rem;*/
+	}
+	@include media-breakpoint-down(sm){
+		@include make-col-offset(0);
+		@include make-col(12);
+	}	
+}
+
+/*STUDENT PAPER*/
+.student-paper-content{
+	padding-top: 3rem;
+	padding-bottom: 3rem; 
+	text-align: center;
+	.soba-btn{
+		margin-top: .5rem;
+	}	
+}
+
+.single-student_paper{
+	.student-paper-content{
+		padding: 5rem 0;
+	}
+	.student_paper{
+		/*@include make-row();*/
+		.student-paper-content{
+			@include make-col-ready();
+			@include make-col-offset(2);
+			@include make-col(8);
+			@include media-breakpoint-down(sm){
+				@include make-col-offset(0);
+				@include make-col(12);
+			}							
+		}
+	}
+}
+

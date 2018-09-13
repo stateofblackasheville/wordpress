@@ -7247,8 +7247,29 @@ body {
 .georgia, .tags {
   font-family: Georgia; }
 
+.montserrat {
+  font-family: Georgia; }
+
 h1, h2 {
   /*font-family: 'Montserrat';*/ }
+
+h1 {
+  font-size: 2.5rem; }
+  @media (max-width: 991.98px) {
+    h1 {
+      font-size: 2rem; } }
+
+h2 {
+  font-size: 2rem; }
+  @media (max-width: 991.98px) {
+    h2 {
+      font-size: 1.5rem; } }
+
+h3 {
+  font-size: 1.5rem; }
+  @media (max-width: 991.98px) {
+    h3 {
+      font-size: 1.25rem; } }
 
 .link {
   color: #b21823;
@@ -7304,7 +7325,8 @@ main.main {
   /*transition: all .2s;*/
   color: #b21823;
   border: 3px solid #b21823;
-  text-align: center; }
+  text-align: center;
+  font-family: 'Montserrat' !important; }
   .soba-btn.soba-btn--white {
     color: white;
     border: 3px solid white; }
@@ -7937,7 +7959,10 @@ ion-icon {
 .page-template-page-data-focus .wrap.container, .page-template-page-data-focus .wrap.content-section__grid, .page-template-page-data-focus .wrap.main-content,
 .page-template-page-borderless-sections .wrap.container,
 .page-template-page-borderless-sections .wrap.content-section__grid,
-.page-template-page-borderless-sections .wrap.main-content {
+.page-template-page-borderless-sections .wrap.main-content,
+.post-type-archive .wrap.container,
+.post-type-archive .wrap.content-section__grid,
+.post-type-archive .wrap.main-content {
   width: 100%;
   max-width: none; }
 
@@ -8098,3 +8123,51 @@ body.home .content-section__inner-container,
 
 [data-drop-target] {
   display: none; }
+
+/*ARCHIVE*/
+.archive-listings {
+  /*margin-top: 5rem;*/
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: 16.6666666667%;
+  flex: 0 0 66.6666666667%;
+  max-width: 66.6666666667%;
+  text-align: center; }
+  .archive-listings h2 {
+    /*font-size: 1rem;*/ }
+  @media (max-width: 767.98px) {
+    .archive-listings {
+      margin-left: 0;
+      flex: 0 0 100%;
+      max-width: 100%; } }
+
+/*STUDENT PAPER*/
+.student-paper-content {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center; }
+  .student-paper-content .soba-btn {
+    margin-top: .5rem; }
+
+.single-student_paper .student-paper-content {
+  padding: 5rem 0; }
+
+.single-student_paper .student_paper {
+  /*@include make-row();*/ }
+  .single-student_paper .student_paper .student-paper-content {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: 16.6666666667%;
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%; }
+    @media (max-width: 767.98px) {
+      .single-student_paper .student_paper .student-paper-content {
+        margin-left: 0;
+        flex: 0 0 100%;
+        max-width: 100%; } }
