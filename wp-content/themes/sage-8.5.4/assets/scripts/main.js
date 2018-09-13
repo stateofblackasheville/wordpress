@@ -28,6 +28,11 @@ var PRC = {};
           return check;
         };
 
+        PRC.dropToggle = function(el, target){
+          el.toggleClass('active');
+          target.slideToggle().toggleClass('active');
+        };
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired 
@@ -41,6 +46,15 @@ var PRC = {};
             } 
           ]          
         });
+
+        $(document).on('click', '[data-drop-container] a', function(e){
+          e.preventDefault();
+          el = $(this);
+          container = el.closest('[data-drop-container]');
+          target = container.siblings('[data-drop-target]');
+          console.log(el);
+          PRC.dropToggle(el, target); 
+        });        
 
         if(!PRC.mobileDevice()){
           $('.content-section__bg').addClass('content-section__bg--fixed');

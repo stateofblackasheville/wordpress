@@ -41,8 +41,6 @@
 
 			<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>
 		</div>
-		<div class="tags rte rte--small">		
-			<?php Roots\Sage\Extras\render_tags($post_item); ?>
-		</div>	
+		<?php Roots\Sage\Extras\render_tags($post_item); ?>	
 	</div>
 </div>

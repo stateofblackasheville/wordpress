@@ -268,40 +268,22 @@
                                 },
                                 {
                                     "key": "field_5b7debe6e306b",
-                                    "label": "Width",
-                                    "name": "width",
-                                    "type": "select",
-                                    "instructions": "",
+                                    "label": "Stacked",
+                                    "name": "stacked",
+                                    "type": "true_false",
+                                    "instructions": "Stack the visualization text on top of the visualization.",
                                     "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_5b871f4ace99b",
-                                                "operator": "!=",
-                                                "value": "1"
-                                            }
-                                        ]
-                                    ],
+                                    "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
                                         "id": ""
                                     },
-                                    "choices": {
-                                        "one-third": "One Third",
-                                        "one-half": "One Half",
-                                        "two-thirds": "Two Thirds",
-                                        "one-whole": "One Whole"
-                                    },
-                                    "default_value": [
-                                        "one-third"
-                                    ],
-                                    "allow_null": 0,
-                                    "multiple": 0,
+                                    "message": "",
+                                    "default_value": 0,
                                     "ui": 0,
-                                    "ajax": 0,
-                                    "return_format": "value",
-                                    "placeholder": ""
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
                                 }
                             ]
                         },
@@ -810,5 +792,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1536789821
+    "modified": 1536862678
 }

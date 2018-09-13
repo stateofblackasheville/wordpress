@@ -42,10 +42,13 @@ function render_tags($post_item){
     $tags = get_the_tags($post_item->ID);
     if($tags):
       echo '<div class="tags rte rte--small">';
-      echo '<h4>Tags:</h4>';
+      echo '<h4 data-drop-container><a href="#">Tags <ion-icon name="ios-arrow-down"></ion-icon>
+      <ion-icon name="ios-arrow-up"></ion-icon></a></h4>';
+      echo '<div data-drop-target class="tags__inner">';
       foreach($tags as $tag):
         echo '<span class="tag">'.$tag->name.'</span>';
       endforeach;
+      echo '</div>';
       echo '</div>';
     endif;
 }
@@ -86,6 +89,11 @@ function render_template($template = null, $args = null){
 }
 
 function render_sources($template, $post_item = null){
+    include(locate_template('templates/'.$template.'.php'));
+}
+
+
+function render_student_paper($template, $post_item = null){
     include(locate_template('templates/'.$template.'.php'));
 }
 
