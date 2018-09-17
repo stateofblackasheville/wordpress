@@ -782,7 +782,7 @@ footer.content-info{
 		@include make-col(12);
 	}		
 	&.grid-item--width-one-half{
-		@include make-col(12);
+		@include make-col(6);
 	}
 	&.grid-item--width-one-half, 
 	&.grid-item--width-one-third{
@@ -863,6 +863,11 @@ footer.content-info{
 	.grid-item-notes{
 		@include make-col-ready();
 		@include make-col(6); 
+	}
+	&.no-visual{
+		.visualization__header{
+			@include make-col(12); 
+		}
 	}
 	.grid-item__inner{
 	    padding: 1rem; 
@@ -1147,11 +1152,10 @@ body.home,
 
 /*ARCHIVE*/
 .archive-listings{
-	/*margin-top: 5rem;*/
+	margin-top: 3rem;
 	@include make-col-ready();
 	@include make-col-offset(2);
 	@include make-col(8);
-	text-align: center;
 	h2{
 		/*font-size: 1rem;*/
 	}
@@ -1169,6 +1173,10 @@ body.home,
 	.soba-btn{
 		margin-top: .5rem;
 	}	
+}
+
+.archive-listings--student-paper{
+	text-align: center;	
 }
  
 .single-student_paper{

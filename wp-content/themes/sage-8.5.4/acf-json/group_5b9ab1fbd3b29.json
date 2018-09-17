@@ -39,6 +39,44 @@
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 1
+        },
+        {
+            "key": "field_5ba00eb6e6396",
+            "label": "Visualization Archive Banner",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ba00ec9e6397",
+            "label": "Visualizations Archive Header",
+            "name": "visualizations_archive_header",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5adf8d0bad5ae"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -58,5 +96,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1536865372
+    "modified": 1537216303
 }

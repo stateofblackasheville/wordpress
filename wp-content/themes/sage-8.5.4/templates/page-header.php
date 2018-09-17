@@ -5,14 +5,22 @@
 <?php $background_color_styles = ''; ?>
 <?php $content_color_styles = ''; ?>
 
-<?php if(is_archive()):
+<?php 
+if(is_archive() && get_post_type() == 'student_paper'):
 	$post_type = get_post_type();
 	$background_image = get_field('student_paper_archive_header_background_image', 'options'); 
 	$background_color = get_field('student_paper_archive_header_background_color', 'options');
 	$background_opacity = get_field('student_paper_archive_header_background_opacity', 'options');
 	$content_color = get_field('student_paper_archive_header_content_color', 'options');
 	$lead_paragraph = get_field('student_paper_archive_header_lead_paragraph', 'options');
-else: 
+else if(is_archive() && get_post_type() == 'visualization'):
+	$post_type = get_post_type();
+	$background_image = get_field('visualization_header_background_image', 'options'); 
+	$background_color = get_field('visualization_header_background_color', 'options');
+	$background_opacity = get_field('visualization_header_background_opacity', 'options');
+	$content_color = get_field('visualization_header_content_color', 'options');
+	$lead_paragraph = get_field('visualization_header_lead_paragraph', 'options');
+else: 	
 	$background_image = get_field('background_image'); 
 	$background_color = get_field('background_color');
 	$background_opacity = get_field('background_opacity');

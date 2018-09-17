@@ -1,11 +1,18 @@
 <?php
+	if(is_archive()):
+		$post_item = $post;
+	endif;
+
 	$classes = 'grid-item visualization';
 
-	if(has_post_thumbnail($post_item->ID) || get_field('embed', $post_item->ID)):
-		$classes .= ' grid-item--width-one-whole';
-	else:
-		$classes .= ' grid-item--width-one-half';
-	endif;
+	$no_visual = false;
+
+	if(!has_post_thumbnail($post_item->ID) && !get_field('embed', $post_item->ID)):
+		$no_visual = true;
+		$classes .= ' no-visual';
+	endif;	
+
+	$classes .= ' grid-item--width-one-whole';
 
 	$display_mode = false;
 
@@ -84,6 +91,7 @@
 					</div>
 				<?php endif; ?>
 			</div>
+			<?php if(!$no_visual): ?>
 			<div class="visualization__content grid-item-content">		
 				<?php if(get_field('embed', $post_item->ID)): ?>
 					<div class="visualization__container">
@@ -110,6 +118,7 @@
 					<?php //endif; ?>
 				</div>							
 			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>

@@ -73,7 +73,7 @@ function render_acf_image_url($field, $size = false, $options = false){
 
 function render_content_grid_item($post_item, $index = 0){
   if($post_item):
-    include(locate_template('templates/'.get_post_type($post_item).'-grid-item.php'));
+    include(locate_template('templates/content-'.get_post_type($post_item).'.php'));
   endif;
 }
 
