@@ -63,7 +63,7 @@
       <?php else: ?>
         <div class="visualization-no-results rte rte--large">
           This <?php echo $post_type_name->labels->singular_name ?> does not currently have any associated visualizations, but you can help us by indexing them! It's not super hard and it will make important research information more accessible.<br>
-          <a href="#intercom">I'd like to index this paper</a>
+          <a href="#intercom">Help us index this paper.</a>
         </div>
       <?php endif; ?>
 
