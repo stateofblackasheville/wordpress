@@ -30,15 +30,18 @@
           <span>by <?php the_field('author'); ?></span>
           <br>
           <?php endif; ?>
-          <a href="<?php echo $file['url']; ?>" class="soba-btn">
-            Download Paper
-          </a>
         </div>
       </header>
 
       <div class="entry-content rte">
         <?php the_content(); ?>
       </div>
+      <br>
+      <div>
+        <a href="<?php echo $file['url']; ?>" class="soba-btn">
+          Download Paper
+        </a>
+      </div>        
 
       <?php if($related_visualizations): ?>
         <div class="visualization-listings">
