@@ -40,25 +40,32 @@
         <?php the_content(); ?>
       </div>
 
-      <div class="visualization-listings">
-        <div class="visualization-listings__header">
-          <h2>
-            Visualizations within this <?php echo $post_type_name->labels->singular_name ?>
-          </h2>
-        </div>
-        <div class="visulizations-listings__listings">
-          <?php foreach($related_visualizations as $visualization): ?>
-            <div class="visualization-listings__item">
-              <div class="visualization-listings__page-number">
-                <h3>
-                  Page <?php the_field('page_number', $visualization->ID); ?>
-                </h3>
+      <?php if($related_visualizations): ?>
+        <div class="visualization-listings">
+          <div class="visualization-listings__header">
+            <h2>
+              Visualizations within this <?php echo $post_type_name->labels->singular_name ?>
+            </h2>
+          </div>
+          <div class="visulizations-listings__listings">
+            <?php foreach($related_visualizations as $visualization): ?>
+              <div class="visualization-listings__item">
+                <div class="visualization-listings__page-number">
+                  <h3>
+                    Page <?php the_field('page_number', $visualization->ID); ?>
+                  </h3>
+                </div>
+                <?php Roots\Sage\Extras\render_content_grid_item($visualization); ?>
               </div>
-              <?php Roots\Sage\Extras\render_content_grid_item($visualization); ?>
-            </div>
-          <?php endforeach; ?>
+            <?php endforeach; ?>
+          </div>
         </div>
-      </div>
+      <?php else: ?>
+        <div class="rte rte--large">
+          This <?php echo $post_type_name; ?> does not currently have any associated visualizations, but you can help us by indexing them! It's not super hard and it will make important research information more accessible.<br>
+          <a href="#intercom">I'd like to index this paper</a>
+        </div>
+      <?php endif; ?>
 
       <footer>
         <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
