@@ -54,9 +54,11 @@
             <?php foreach($related_visualizations as $visualization): ?>
               <div class="visualization-listings__item">
                 <div class="visualization-listings__page-number">
+                  <?php if(get_field('page_number', $visualization->ID)): ?>
                   <h3>
                     Page <?php the_field('page_number', $visualization->ID); ?>
                   </h3>
+                  <?php endif; ?>
                 </div>
                 <?php Roots\Sage\Extras\render_content_grid_item($visualization); ?>
               </div>
