@@ -1200,6 +1200,11 @@ body.home,
 		margin-top: 2rem;
 		@include make-row(); 
 	}
+	.visualization-no-results{
+		margin-top: 1rem;
+		@extend .alert;
+		@include alert-variant($off-white, darken($off-white, 10%), darken($off-white, 50%));
+	}
 	.visualization-listings__header,
 	.visualization-listings__page-number{
 		@include make-col-ready();

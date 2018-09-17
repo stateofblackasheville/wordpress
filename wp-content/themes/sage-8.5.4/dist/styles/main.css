@@ -4127,7 +4127,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   border-radius: 0; }
 
-.alert {
+.alert, .single-student_paper .visualization-no-results {
   position: relative;
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
@@ -8200,6 +8200,16 @@ body.home .content-section__inner-container,
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px; }
+
+.single-student_paper .visualization-no-results {
+  margin-top: 1rem;
+  color: #7a6174;
+  background-color: #efebee;
+  border-color: #d8cfd6; }
+  .single-student_paper .visualization-no-results hr {
+    border-top-color: #cdc1ca; }
+  .single-student_paper .visualization-no-results .alert-link {
+    color: #5d4b59; }
 
 .single-student_paper .visualization-listings__header,
 .single-student_paper .visualization-listings__page-number {
