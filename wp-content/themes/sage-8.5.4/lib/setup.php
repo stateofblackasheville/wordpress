@@ -109,6 +109,9 @@ function assets() {
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js?v=1.0.5'), ['jquery'], null, true);
 
+  // TYPEKIT
+   wp_enqueue_style('typekit_proxima_nova', 'https://use.typekit.net/trp1etg.css', false, null);
+
   // IONICONS
   wp_enqueue_script('ionicons', 'https://unpkg.com/ionicons@4.4.2/dist/ionicons.js', ['jquery'], null, true);
   wp_enqueue_style('ionicons_css', 'https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css', false, null);

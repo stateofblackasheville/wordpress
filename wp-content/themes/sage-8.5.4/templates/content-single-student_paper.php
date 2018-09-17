@@ -2,6 +2,23 @@
 
 <?php
   $file = get_field('files');
+
+  $related_visualizations = get_posts(array(
+    'post_type' => 'visualization',
+    'meta_key'      => 'page_number',
+    'orderby'     => 'meta_value',
+    'order'       => 'ASC',    
+    'meta_query' => array(
+      array(
+        'key' => 'document_reference', // name of custom field
+        'value' => '"' . get_the_ID() . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
+        'compare' => 'LIKE'
+      )
+    )
+  ));
+
+  $post_type_name = get_post_type_object(get_post_type());
+
 ?>
 
   <article <?php post_class(); ?>>
@@ -22,6 +39,27 @@
       <div class="entry-content rte">
         <?php the_content(); ?>
       </div>
+
+      <div class="visualization-listings">
+        <div class="visualization-listings__header">
+          <h2>
+            Visualizations within this <?php echo $post_type_name->labels->singular_name ?>
+          </h2>
+        </div>
+        <div class="visulizations-listings__listings">
+          <?php foreach($related_visualizations as $visualization): ?>
+            <div class="visualization-listings__item">
+              <div class="visualization-listings__page-number">
+                <h3>
+                  Page <?php the_field('page_number', $visualization->ID); ?>
+                </h3>
+              </div>
+              <?php Roots\Sage\Extras\render_content_grid_item($visualization); ?>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+
       <footer>
         <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
       </footer>

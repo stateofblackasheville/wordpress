@@ -7242,13 +7242,13 @@ ul {
 body {
   /*background: red;*/
   /*font-family: 'Playfair Display'; */
-  font-family: 'Montserrat'; }
+  font-family: 'proxima-nova'; }
 
 .georgia, .tags {
   font-family: Georgia; }
 
-.montserrat {
-  font-family: Georgia; }
+.proxima-nova {
+  font-family: 'proxima-nova'; }
 
 h1, h2 {
   /*font-family: 'Montserrat';*/ }
@@ -7326,7 +7326,7 @@ main.main {
   color: #b21823;
   border: 3px solid #b21823;
   text-align: center;
-  font-family: 'Montserrat' !important; }
+  font-family: 'proxima-nova' !important; }
   .soba-btn.soba-btn--white {
     color: white;
     border: 3px solid white; }
@@ -8163,7 +8163,7 @@ body.home .content-section__inner-container,
 .student-paper-content {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  text-align: center; }
+  /*text-align: center;*/ }
   .student-paper-content .soba-btn {
     margin-top: .5rem; }
 
@@ -8186,3 +8186,18 @@ body.home .content-section__inner-container,
         margin-left: 0;
         flex: 0 0 100%;
         max-width: 100%; } }
+
+.single-student_paper .visualization-listings {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px; }
+
+.single-student_paper .visualization-listings__header,
+.single-student_paper .visualization-listings__page-number {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; }

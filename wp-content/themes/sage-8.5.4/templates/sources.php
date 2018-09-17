@@ -68,6 +68,7 @@
 		<?php if(get_field('student_paper', $post_item->ID)): ?>
 			<?php
 				$paper = get_field('student_paper', $post_item->ID);
+				$paper = get_post($paper);
 				$file = get_field('file', $paper->ID);
 			?>
 

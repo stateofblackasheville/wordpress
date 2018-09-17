@@ -18,7 +18,7 @@
             "collapsed": "",
             "min": 0,
             "max": 0,
-            "layout": "block",
+            "layout": "table",
             "button_label": "",
             "sub_fields": [
                 {
@@ -73,29 +73,6 @@
                     "min_size": "",
                     "max_size": "",
                     "mime_types": ""
-                },
-                {
-                    "key": "field_5b8d5e706bff4",
-                    "label": "Source Student Paper",
-                    "name": "source_student_paper",
-                    "type": "relationship",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "student_paper"
-                    ],
-                    "taxonomy": [],
-                    "filters": "",
-                    "elements": "",
-                    "min": "",
-                    "max": 1,
-                    "return_format": "object"
                 }
             ]
         }
@@ -124,5 +101,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1536000943
+    "modified": 1537210903
 }

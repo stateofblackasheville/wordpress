@@ -1,30 +1,11 @@
 {
     "key": "group_5b6b6906a6652",
-    "title": "Visualization",
+    "title": "Visualization Embed",
     "fields": [
         {
-            "key": "field_5b7dcf2396f98",
-            "label": "Fast Fact",
-            "name": "fast_fact",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5b6b7a20ef1b4",
-            "label": "Width",
-            "name": "width",
+            "key": "field_5b9ffa58f751d",
+            "label": "Visualization Type",
+            "name": "visualization_type",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -35,13 +16,11 @@
                 "id": ""
             },
             "choices": {
-                "one-third": "One Third",
-                "one-half": "One Half",
-                "two-thirds": "Two Thirds",
-                "one-whole": "One Whole"
+                "Embed": "Embed",
+                "Google Spreadsheet": "Google Spreadsheet"
             },
             "default_value": [
-                "one-third"
+                "Embed"
             ],
             "allow_null": 0,
             "multiple": 0,
@@ -51,19 +30,31 @@
             "placeholder": ""
         },
         {
-            "key": "field_5b6b7e42f7c96",
-            "label": "Call to Action",
-            "name": "call_to_action",
-            "type": "link",
+            "key": "field_5b9ffa36f751c",
+            "label": "Visualization Sheet ID",
+            "name": "visualization_sheet_id",
+            "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b9ffa58f751d",
+                        "operator": "==",
+                        "value": "Google Spreadsheet"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5b884d372ee8c",
@@ -72,7 +63,15 @@
             "type": "wysiwyg",
             "instructions": "If your visualization contains code you need to embed, you may place it here.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b9ffa58f751d",
+                        "operator": "==",
+                        "value": "Embed"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -83,28 +82,6 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
-        },
-        {
-            "key": "field_5b8d551c8e478",
-            "label": "Student Paper",
-            "name": "student_paper",
-            "type": "post_object",
-            "instructions": "Assign a student paper if this visualization came from one.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "student_paper"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "object",
-            "ui": 1
         }
     ],
     "location": [
@@ -124,5 +101,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1535995494
+    "modified": 1537211084
 }
