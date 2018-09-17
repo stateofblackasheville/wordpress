@@ -33,6 +33,38 @@ function excerpt_more() {
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 
+function filter_visualizations_archive( $query ) {
+  
+  // do not modify queries in the admin
+  if( is_admin() ) {
+    
+    return $query;
+    
+  }
+  
+  
+  // only modify queries for 'event' post type
+  if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'visualization' ) {
+    
+    // allow the url to alter the query
+    if(isset($_GET['visualization_needed']) ) {
+      $meta_query[] = array(
+          'key'   => 'embed',
+          'value' => '',
+          'compare' => '='
+      );
+      $query->set('meta_query', $meta_query);
+    } 
+    
+  }
+  
+  
+  // return
+  return $query;
+
+}
+add_action('pre_get_posts', __NAMESPACE__ . '\\filter_visualizations_archive');
+
 function get_page_template(){
   $template = get_page_template_slug();
   return $template;

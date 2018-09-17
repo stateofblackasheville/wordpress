@@ -151,7 +151,7 @@ main.main{
 .soba-btn{
 	display: inline-block;
 	padding: .75rem 1rem;
-	min-width: 300px;
+	width: 300px;
 	font-size: 1.25rem;
 	/*text-transform: uppercase;*/
 	/*transition: all .2s;*/
@@ -159,6 +159,7 @@ main.main{
 	border: 3px solid $red;
 	text-align: center;
 	font-family: 'proxima-nova' !important;
+	max-width: 100%;
 	&.soba-btn--white{
 		color: white;
 		border: 3px solid white;
@@ -1192,7 +1193,7 @@ body.home,
 			@include media-breakpoint-down(sm){
 				@include make-col-offset(0);
 				@include make-col(12);
-			}							
+			}							 
 		}
 	}
 	.visualization-listings{
@@ -1204,5 +1205,26 @@ body.home,
 		@include make-col-ready();
 	}
 
+}
+
+/*VISUALIZATION ARCHIVE*/
+.archive-listings-filters{
+	@include make-col-ready();
+	@include make-col(3);
+	margin-top: 3rem;
+	.soba-btn{
+		margin-top: 1rem;
+	}
+}
+.archive-listings--visualization{
+	@include make-col-offset(0);
+	@include make-col(9);
+}
+
+.archive-listings-filters,
+.archive-listings--visualization{
+	@include media-breakpoint-down(md){
+		@include make-col(12);
+	}
 }
 

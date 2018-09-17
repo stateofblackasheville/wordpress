@@ -59,8 +59,8 @@
         },
         {
             "key": "field_5ba00ec9e6397",
-            "label": "Visualizations Archive Header",
-            "name": "visualizations_archive_header",
+            "label": "Visualization Archive Header",
+            "name": "visualization_archive_header",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -96,5 +96,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537216303
+    "modified": 1537217745
 }

@@ -7319,14 +7319,15 @@ main.main {
 .soba-btn {
   display: inline-block;
   padding: .75rem 1rem;
-  min-width: 300px;
+  width: 300px;
   font-size: 1.25rem;
   /*text-transform: uppercase;*/
   /*transition: all .2s;*/
   color: #b21823;
   border: 3px solid #b21823;
   text-align: center;
-  font-family: 'proxima-nova' !important; }
+  font-family: 'proxima-nova' !important;
+  max-width: 100%; }
   .soba-btn.soba-btn--white {
     color: white;
     border: 3px solid white; }
@@ -8207,3 +8208,27 @@ body.home .content-section__inner-container,
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px; }
+
+/*VISUALIZATION ARCHIVE*/
+.archive-listings-filters {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 25%;
+  max-width: 25%;
+  margin-top: 3rem; }
+  .archive-listings-filters .soba-btn {
+    margin-top: 1rem; }
+
+.archive-listings--visualization {
+  margin-left: 0;
+  flex: 0 0 75%;
+  max-width: 75%; }
+
+@media (max-width: 991.98px) {
+  .archive-listings-filters,
+  .archive-listings--visualization {
+    flex: 0 0 100%;
+    max-width: 100%; } }
