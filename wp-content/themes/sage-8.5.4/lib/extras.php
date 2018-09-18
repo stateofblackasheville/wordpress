@@ -40,8 +40,7 @@ function filter_visualizations_archive( $query ) {
     
     return $query;
     
-  }
-  
+  } 
   
   // only modify queries for 'event' post type
   if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'visualization' ) {
@@ -55,6 +54,13 @@ function filter_visualizations_archive( $query ) {
       );
       $query->set('meta_query', $meta_query);
     } 
+
+    if(isset($_GET['category']) ) {
+      $current_cat = get_category_by_slug($_GET['category']);
+      if($current_cat):
+        $query->set('cat', $current_cat->term_id);
+      endif;
+    }     
     
   }
   
@@ -158,6 +164,10 @@ if( function_exists('acf_add_options_page') ) {
     'page_title'  => 'Theme General Settings',
     'menu_title'  => 'Theme Settings'
   ));
+  acf_add_options_page(array(
+    'page_title'  => 'Site Messages',
+    'menu_title'  => 'Site Messages'
+  ));  
 }
 
 /**

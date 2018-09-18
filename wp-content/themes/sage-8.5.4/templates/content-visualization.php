@@ -3,6 +3,10 @@
 		$post_item = $post;
 	endif;
 
+	if(is_single() && get_post_type() == 'visualization'):
+		$post_item = $post;
+	endif;	
+
 	$classes = 'grid-item visualization';
 
 	$no_visual = false;
@@ -92,32 +96,34 @@
 				<?php endif; ?>
 			</div>
 			<?php if(!$no_visual): ?>
-			<div class="visualization__content grid-item-content">		
-				<?php if(get_field('embed', $post_item->ID)): ?>
-					<div class="visualization__container">
-						<div class="visualization__inner" id="visualization-<?php echo $post_item->ID; ?>">
-							<?php the_field('embed', $post_item->ID); ?> 	
+				<div class="visualization__content grid-item-content">		
+					<?php if(get_field('embed', $post_item->ID)): ?>
+						<div class="visualization__container">
+							<div class="visualization__inner" id="visualization-<?php echo $post_item->ID; ?>">
+								<?php the_field('embed', $post_item->ID); ?> 	
+							</div>
 						</div>
-					</div>
-					<a class="rte rte--georgia rte--small" data-fancybox data-options='{"caption" : "<?php echo wp_strip_all_tags($post_item->post_content); ?>" }' data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
-						[+] Expand Visualization
-					</a>					
-				<?php elseif(has_post_thumbnail($post_item->ID)): ?>
-					<div class="grid-item-content__image rte rte--georgia">
-						<?php echo get_the_post_thumbnail($post_item->ID); ?>
-					</div>
-					<a class="rte rte--georgia rte--small" href="<?php echo get_the_post_thumbnail_url($post_item->ID, 'large'); ?>" data-fancybox data-caption="<?php echo wp_strip_all_tags($post_item->post_content); ?>">
-						[+] Expand Visualization
-					</a>			
-				<?php endif; ?>
-				<div class="visualization__notes visualization__notes--stacked">		
-					<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>	
-					<?php Roots\Sage\Extras\render_tags($post_item); ?>	
-					<?php //if(get_field('student_paper', $post_item->ID)): ?>
-						<?php //Roots\Sage\Extras\render_student_paper('visualization-student-paper', $post_item); ?>							
-					<?php //endif; ?>
-				</div>							
-			</div>
+						<a class="rte rte--georgia rte--small" data-fancybox data-options='{"caption" : "<?php echo wp_strip_all_tags($post_item->post_content); ?>" }' data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
+							[+] Expand Visualization
+						</a>					
+					<?php elseif(has_post_thumbnail($post_item->ID)): ?>
+						<div class="grid-item-content__image rte rte--georgia">
+							<?php echo get_the_post_thumbnail($post_item->ID); ?>
+						</div>
+						<a class="rte rte--georgia rte--small" href="<?php echo get_the_post_thumbnail_url($post_item->ID, 'large'); ?>" data-fancybox data-caption="<?php echo wp_strip_all_tags($post_item->post_content); ?>">
+							[+] Expand Visualization
+						</a>			
+					<?php endif; ?>
+					<div class="visualization__notes visualization__notes--stacked">		
+						<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>	
+						<?php Roots\Sage\Extras\render_tags($post_item); ?>	
+						<?php //if(get_field('student_paper', $post_item->ID)): ?>
+							<?php //Roots\Sage\Extras\render_student_paper('visualization-student-paper', $post_item); ?>							
+						<?php //endif; ?>
+					</div>							
+				</div>
+			<?php else: ?>
+				<?php the_field('contribute_visualization_message', 'options'); ?>
 			<?php endif; ?>
 		</div>
 	</div>

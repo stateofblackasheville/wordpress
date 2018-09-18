@@ -1076,11 +1076,15 @@ body.home,
 }
 
 .page-template-page-borderless-sections{
+	.page-header__content{ 
+		text-align: center;
+	}
 	.main-page-content__inner{
 		margin-top: 2rem;
-		@include make-col(12);
+		@include make-col(8);
+		@include make-col-offset(2);
 		@include make-col-ready();
-	}
+	} 
 }
 
 /* CUSTOM CONTENT */
@@ -1231,5 +1235,10 @@ body.home,
 	@include media-breakpoint-down(md){
 		@include make-col(12);
 	}
+}
+
+/*VISUALIZATION SINGLE*/
+.single-visualization{
+
 }
 

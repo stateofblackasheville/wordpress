@@ -8076,10 +8076,14 @@ body.home .content-section__inner-container,
 .main-page-content .main-page-content__content {
   /*margin-top: 1rem;*/ }
 
+.page-template-page-borderless-sections .page-header__content {
+  text-align: center; }
+
 .page-template-page-borderless-sections .main-page-content__inner {
   margin-top: 2rem;
-  flex: 0 0 100%;
-  max-width: 100%;
+  flex: 0 0 66.6666666667%;
+  max-width: 66.6666666667%;
+  margin-left: 16.6666666667%;
   position: relative;
   width: 100%;
   min-height: 1px;
@@ -8242,3 +8246,5 @@ body.home .content-section__inner-container,
   .archive-listings--visualization {
     flex: 0 0 100%;
     max-width: 100%; } }
+
+/*VISUALIZATION SINGLE*/

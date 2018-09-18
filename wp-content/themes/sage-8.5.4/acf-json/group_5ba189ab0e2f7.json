@@ -1,0 +1,43 @@
+{
+    "key": "group_5ba189ab0e2f7",
+    "title": "No Visualization Message",
+    "fields": [
+        {
+            "key": "field_5ba189b3381e2",
+            "label": "Contribute Visualization Message",
+            "name": "no_visualization_message",
+            "type": "wysiwyg",
+            "instructions": "Message that will engage the user and ask that they add a visualization.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-site-messages"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1537313250
+}
