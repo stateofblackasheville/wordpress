@@ -55,13 +55,13 @@
               <div class="visualization-listings__item">
                 <div class="visualization-listings__page-number">
                   <?php if(get_field('page_number', $visualization->ID)): ?>
-                  <h3>
+                  <span class="rte rte--georgia">
                     Page <?php the_field('page_number', $visualization->ID); ?>
-                  </h3>
+                  </span>
                   <?php else: ?>
-                  <h3>
+                  <span class="rte rte--georgia">
                     Page number not specified (<a href="#intercom">help us specify the page number</a>).
-                  </h3>
+                  </span>
                   <?php endif; ?>
                 </div>
                 <?php Roots\Sage\Extras\render_content_grid_item($visualization); ?>
