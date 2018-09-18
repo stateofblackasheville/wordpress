@@ -58,6 +58,10 @@
                   <h3>
                     Page <?php the_field('page_number', $visualization->ID); ?>
                   </h3>
+                  <?php else: ?>
+                  <h3>
+                    Page number not specified (<a href="#intercom">help us specify the page number</a>).
+                  </h3>
                   <?php endif; ?>
                 </div>
                 <?php Roots\Sage\Extras\render_content_grid_item($visualization); ?>
