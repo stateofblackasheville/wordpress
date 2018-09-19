@@ -4127,7 +4127,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   border-radius: 0; }
 
-.alert, .single-student_paper .visualization-no-results {
+.alert, .soba-alert, .single-student_paper .visualization-no-results {
   position: relative;
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
@@ -7271,6 +7271,15 @@ h3 {
     h3 {
       font-size: 1.25rem; } }
 
+.soba-alert {
+  color: #7a6174;
+  background-color: #efebee;
+  border-color: #d8cfd6; }
+  .soba-alert hr {
+    border-top-color: #cdc1ca; }
+  .soba-alert .alert-link {
+    color: #5d4b59; }
+
 .link {
   color: #b21823;
   cursor: pointer; }
@@ -8272,13 +8281,13 @@ body.home .content-section__inner-container,
   padding-right: 15px;
   padding-left: 15px; }
 
-.single-visualization .contribute-visualization-message .alert, .single-visualization .contribute-visualization-message .single-student_paper .visualization-no-results, .single-student_paper .single-visualization .contribute-visualization-message .visualization-no-results {
+.single-visualization .contribute-visualization-message .alert, .single-visualization .contribute-visualization-message .soba-alert, .single-visualization .contribute-visualization-message .single-student_paper .visualization-no-results, .single-student_paper .single-visualization .contribute-visualization-message .visualization-no-results {
   color: #7a6174;
   background-color: #efebee;
   border-color: #d8cfd6; }
-  .single-visualization .contribute-visualization-message .alert hr, .single-visualization .contribute-visualization-message .single-student_paper .visualization-no-results hr, .single-student_paper .single-visualization .contribute-visualization-message .visualization-no-results hr {
+  .single-visualization .contribute-visualization-message .alert hr, .single-visualization .contribute-visualization-message .soba-alert hr, .single-visualization .contribute-visualization-message .single-student_paper .visualization-no-results hr, .single-student_paper .single-visualization .contribute-visualization-message .visualization-no-results hr {
     border-top-color: #cdc1ca; }
-  .single-visualization .contribute-visualization-message .alert .alert-link, .single-visualization .contribute-visualization-message .single-student_paper .visualization-no-results .alert-link, .single-student_paper .single-visualization .contribute-visualization-message .visualization-no-results .alert-link {
+  .single-visualization .contribute-visualization-message .alert .alert-link, .single-visualization .contribute-visualization-message .soba-alert .alert-link, .single-visualization .contribute-visualization-message .single-student_paper .visualization-no-results .alert-link, .single-student_paper .single-visualization .contribute-visualization-message .visualization-no-results .alert-link {
     color: #5d4b59; }
 
 .single-visualization .grid-item.visualization {

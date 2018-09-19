@@ -44,7 +44,32 @@
         <a href="<?php echo $file['url']; ?>" class="soba-btn">
           Download Paper
         </a>
-      </div>        
+      </div>
+      <?php if(get_field('status') == 'Needs Index'): ?> 
+        <br>
+        <div class="rte soba-alert">
+          <p>
+            This paper has not yet been indexed. You can help us bring the visualizations within this paper to the public by indexing it!
+          </p>
+          <?php if(get_field('index_document')): ?>
+            <a href="<?php the_field('index_document'); ?>">
+              Start indexing 
+            </a>
+            – or –
+            <a href="/how-to-index-student-papers">
+              Learn how to index student papers
+            </a>
+          <?php else: ?>
+            <a href="#intercom">Contact us</a> to index this document. 
+            <br>
+            <br>
+            You can also
+            <a href="/how-to-index-student-papers">
+              learn how to index our documents
+            </a>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>              
 
       <?php if($related_visualizations): ?>
         <div class="visualization-listings">
@@ -71,11 +96,6 @@
               </div>
             <?php endforeach; ?>
           </div>
-        </div>
-      <?php else: ?>
-        <div class="visualization-no-results rte rte--large">
-          This <?php echo $post_type_name->labels->singular_name ?> does not currently have any associated visualizations, but you can help us by indexing them! It's not super hard and it will make important research information more accessible.<br>
-          <a href="#intercom">Help us index this paper.</a>
         </div>
       <?php endif; ?>
 

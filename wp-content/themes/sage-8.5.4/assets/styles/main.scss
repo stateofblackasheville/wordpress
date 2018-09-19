@@ -80,6 +80,11 @@ h3{
 	} 	
 }
 
+.soba-alert{
+	@extend .alert;
+	@include alert-variant($off-white, darken($off-white, 10%), darken($off-white, 50%));
+}
+
 .link{
 	color: $red;
 	cursor: pointer;
