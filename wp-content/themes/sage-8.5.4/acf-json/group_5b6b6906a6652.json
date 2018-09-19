@@ -3,6 +3,34 @@
     "title": "Visualization Embed",
     "fields": [
         {
+            "key": "field_5ba288fd3a7bb",
+            "label": "Status",
+            "name": "status",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "No Visualization": "No Visualization",
+                "Static Visualization": "Static Visualization",
+                "Dynamic Visualization": "Dynamic Visualization"
+            },
+            "default_value": [
+                "No Visualization"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
             "key": "field_5b9ffa58f751d",
             "label": "Visualization Type",
             "name": "visualization_type",
@@ -101,5 +129,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537211084
+    "modified": 1537378642
 }

@@ -423,6 +423,10 @@
     display: none; }
   #like_button_container .inputs label, .soba-visualization .inputs label {
     width: 150px; }
+  #like_button_container .react-tabs__tab-panel--selected, .soba-visualization .react-tabs__tab-panel--selected {
+    position: relative;
+    min-height: 400px;
+    background: white; }
   #like_button_container .react-tabs__tab-list, .soba-visualization .react-tabs__tab-list {
     display: flex;
     margin-top: 1rem;
@@ -439,5 +443,3 @@
       background: #c5c5c5; }
     #like_button_container .react-tabs__tab:first-child, .soba-visualization .react-tabs__tab:first-child {
       border-left-width: 1px; }
-  #like_button_container canvas, .soba-visualization canvas {
-    border: 1px solid #eee; }

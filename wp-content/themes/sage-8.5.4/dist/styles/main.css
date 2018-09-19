@@ -8175,14 +8175,22 @@ body.home .content-section__inner-container,
 
 /*STUDENT PAPER*/
 .student-paper-content {
-  padding-top: 3rem;
+  /*padding-top: 3rem;*/
   padding-bottom: 3rem;
   /*text-align: center;*/ }
   .student-paper-content .soba-btn {
     margin-top: .5rem; }
 
-.archive-listings--student-paper {
-  text-align: center; }
+.archive-listings--student-papers {
+  /*text-align: center;	*/
+  margin-left: 8.3333333333%;
+  flex: 0 0 66.6666666667%;
+  max-width: 66.6666666667%; }
+  @media (max-width: 991.98px) {
+    .archive-listings--student-papers {
+      margin-left: 0;
+      flex: 0 0 100%;
+      max-width: 100%; } }
 
 .single-student_paper .student-paper-content {
   padding: 5rem 0; }

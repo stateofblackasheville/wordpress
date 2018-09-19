@@ -33,7 +33,7 @@ function excerpt_more() {
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 
-function filter_visualizations_archive( $query ) {
+function filter_archive( $query ) {
   
   // do not modify queries in the admin
   if( is_admin() ) {
@@ -43,33 +43,45 @@ function filter_visualizations_archive( $query ) {
   } 
   
   // only modify queries for 'event' post type
-  if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'visualization' ) {
+  if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'visualization' ):
     
     // allow the url to alter the query
-    if(isset($_GET['visualization_needed']) ) {
+    if(isset($_GET['visualization_needed']) ):
       $meta_query[] = array(
           'key'   => 'embed',
           'value' => '',
           'compare' => '='
       );
       $query->set('meta_query', $meta_query);
-    } 
+    endif; 
 
-    if(isset($_GET['category']) ) {
+    if(isset($_GET['category']) ):
       $current_cat = get_category_by_slug($_GET['category']);
       if($current_cat):
         $query->set('cat', $current_cat->term_id);
       endif;
-    }     
+    endif;     
     
-  }
+  endif;
+
+  if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'student_paper' ):
+    // allow the url to alter the query
+    if(isset($_GET['index_needed']) ):
+      $meta_query[] = array(
+          'key'   => 'status',
+          'value' => 'Needs Index',
+          'compare' => '='
+      );
+      $query->set('meta_query', $meta_query);
+    endif; 
+  endif;  
   
   
   // return
   return $query;
 
 }
-add_action('pre_get_posts', __NAMESPACE__ . '\\filter_visualizations_archive');
+add_action('pre_get_posts', __NAMESPACE__ . '\\filter_archive');
 
 function get_page_template(){
   $template = get_page_template_slug();
