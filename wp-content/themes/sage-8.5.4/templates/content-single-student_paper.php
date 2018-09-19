@@ -52,11 +52,11 @@
             This paper has not yet been indexed. You can help us bring the visualizations within this paper to the public by indexing it!
           </p>
           <?php if(get_field('index_document')): ?>
-            <a href="<?php the_field('index_document'); ?>">
+            <a href="<?php the_field('index_document'); ?>" target="_blank">
               Start indexing 
             </a>
             – or –
-            <a href="/how-to-index-student-papers">
+            <a href="/how-to-index-student-papers" target="_blank">
               Learn how to index student papers
             </a>
           <?php else: ?>
