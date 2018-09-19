@@ -24,6 +24,9 @@
   <article <?php post_class(); ?>>
     <div class="student-paper-content">
       <header class="rte">
+        <?php if ( function_exists('yoast_breadcrumb') ): ?>
+          <?php yoast_breadcrumb('<div class="breadcrumbs rte rte--georgia">','</div>'); ?>
+        <?php endif; ?>        
         <h1 class="entry-title"><?php the_title(); ?></h1>
         <div class="student-paper-content__inner">
           <?php if(get_field('author')): ?>

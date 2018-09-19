@@ -8281,3 +8281,13 @@ body.home .content-section__inner-container,
     flex: 0 0 66.6666666667%;
     max-width: 66.6666666667%;
     margin-left: 16.6666666667%; } }
+
+/*BREADCRUMBS*/
+.breadcrumbs a {
+  text-decoration: underline; }
+  .breadcrumbs a:hover {
+    /*color: #eee;*/
+    text-decoration: none; }
+
+.breadcrumbs * {
+  /*color: white;*/ }

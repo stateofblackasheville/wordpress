@@ -42,17 +42,12 @@ endif;
 		$category = get_category($categories[0]);
 		$category_name = $category->slug;
 	endif;
-?>
 
-<?php 
-$featured_image = false;
-if(is_single() && has_post_thumbnail() || is_page() && $background_image):
-	$featured_image = true;
-endif;
+	$featured_image = false;
+	if(is_single() && has_post_thumbnail() || is_page() && $background_image):
+		$featured_image = true;
+	endif;
 
-?>
-
-<?php
 	$page_template = Roots\Sage\Extras\get_page_template();
 
 	$data_focus = false;
@@ -73,6 +68,9 @@ endif;
 			</div>
 		<?php endif; ?>
 		<div class="container page-header__content">
+			<?php if ( function_exists('yoast_breadcrumb') ): ?>
+				<?php yoast_breadcrumb('<div class="breadcrumbs rte rte--georgia" style="color:'.$content_color_styles.';">','</div>'); ?>
+			<?php endif; ?>
 		  	<h1 style="<?php echo $content_color_styles; ?>">
 		  		<?php if($data_focus && $categories): ?>
 		  			<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_name; ?>.svg"></ion-icon>&nbsp;
