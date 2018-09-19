@@ -1261,6 +1261,10 @@ body.home,
 	.grid-item.visualization{
 		padding: 0;
 	}
+	.grid-item.visualization .grid-item-header, 
+	.grid-item.visualization .grid-item-content{
+		@include make-col(12);
+	}
 	@include media-breakpoint-up(md){ 
 		.visualization-single-content{
 			@include make-col(8);
@@ -1273,6 +1277,7 @@ body.home,
 .breadcrumbs{
 	a{
 		text-decoration: underline;
+		color: inherit;
 		&:hover{
 			/*color: #eee;*/
 			text-decoration:none;

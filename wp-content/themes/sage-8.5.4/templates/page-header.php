@@ -69,7 +69,7 @@ endif;
 		<?php endif; ?>
 		<div class="container page-header__content">
 			<?php if ( function_exists('yoast_breadcrumb') ): ?>
-				<?php yoast_breadcrumb('<div class="breadcrumbs rte rte--georgia" style="color:'.$content_color_styles.';">','</div>'); ?>
+				<?php yoast_breadcrumb('<div class="breadcrumbs rte rte--georgia" style="'.$content_color_styles.';">','</div>'); ?>
 			<?php endif; ?>
 		  	<h1 style="<?php echo $content_color_styles; ?>">
 		  		<?php if($data_focus && $categories): ?>

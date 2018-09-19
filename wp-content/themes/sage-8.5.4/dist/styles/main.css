@@ -8276,6 +8276,11 @@ body.home .content-section__inner-container,
 .single-visualization .grid-item.visualization {
   padding: 0; }
 
+.single-visualization .grid-item.visualization .grid-item-header,
+.single-visualization .grid-item.visualization .grid-item-content {
+  flex: 0 0 100%;
+  max-width: 100%; }
+
 @media (min-width: 768px) {
   .single-visualization .visualization-single-content {
     flex: 0 0 66.6666666667%;
@@ -8284,7 +8289,8 @@ body.home .content-section__inner-container,
 
 /*BREADCRUMBS*/
 .breadcrumbs a {
-  text-decoration: underline; }
+  text-decoration: underline;
+  color: inherit; }
   .breadcrumbs a:hover {
     /*color: #eee;*/
     text-decoration: none; }
