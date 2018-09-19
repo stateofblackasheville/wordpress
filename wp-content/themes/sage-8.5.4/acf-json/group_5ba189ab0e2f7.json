@@ -5,7 +5,7 @@
         {
             "key": "field_5ba189b3381e2",
             "label": "Contribute Visualization Message",
-            "name": "no_visualization_message",
+            "name": "contribute_visualization_message",
             "type": "wysiwyg",
             "instructions": "Message that will engage the user and ask that they add a visualization.",
             "required": 0,
@@ -39,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537313250
+    "modified": 1537314304
 }

@@ -51,6 +51,13 @@
 		$classes .= ' visualization--stacked';
 	endif;	
 ?>
+<?php if(is_single() && get_post_type() == 'visualization' && $no_visual): ?>
+	<div class="rte rte--large rte--georgia contribute-visualization-message">
+		<div class="alert">
+			<?php the_field('contribute_visualization_message', 'options'); ?>
+		</div>
+	</div>
+<?php endif; ?>
 <div class="<?php echo $classes; ?>">
 	<div class="grid-item__inner">
 		<div class="grid-item__row"> 
@@ -62,16 +69,18 @@
 					</span>
 				<?php endif; ?>			
 				<h3>
+					<a href="<?php echo get_the_permalink($post_item->ID); ?>">
 					<span class="grid-item__title">
 						<?php echo get_the_title($post_item->ID); ?>
 					</span>
-					<?php if($title_link): ?>
+					<?php if($title_link && false): ?>
 						<a href="<?php echo $title_link['url']; ?>" target="<?php echo $title_link['target']; ?>">
 							<span class="title-link">
 								<?php echo $title_link['title']; ?>
 							</span>
 						</a>
 					<?php endif; ?>
+					</a>
 				</h3>
 				<div class="content rte rte--georgia">
 					<?php echo $post_item->post_content; ?>
@@ -123,7 +132,7 @@
 					</div>							
 				</div>
 			<?php else: ?>
-				<?php the_field('contribute_visualization_message', 'options'); ?>
+
 			<?php endif; ?>
 		</div>
 	</div>

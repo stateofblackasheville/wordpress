@@ -7869,6 +7869,12 @@ footer.content-info {
     padding-left: 1rem;
     margin-bottom: 0; }
 
+.visualization__header h3 {
+  padding-top: .5rem; }
+  .visualization__header h3 a {
+    color: #666;
+    /*text-decoration: underline; */ }
+
 /*VISUALIZATION GRID ITEMS*/
 .grid-item.visualization .grid-item__row {
   display: flex;
@@ -7895,7 +7901,7 @@ footer.content-info {
   padding: 1rem;
   margin-bottom: 2rem;
   box-shadow: 0 3px 5px #eee;
-  border: 1px solid white;
+  border: 1px solid #ddd;
   background: #fbfbfb;
   border-radius: 3px; }
 
@@ -8248,3 +8254,30 @@ body.home .content-section__inner-container,
     max-width: 100%; } }
 
 /*VISUALIZATION SINGLE*/
+.single-visualization .visualization-single-content {
+  padding: 5rem 0; }
+
+.single-visualization .visualization-single-content {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; }
+
+.single-visualization .contribute-visualization-message .alert, .single-visualization .contribute-visualization-message .single-student_paper .visualization-no-results, .single-student_paper .single-visualization .contribute-visualization-message .visualization-no-results {
+  color: #7a6174;
+  background-color: #efebee;
+  border-color: #d8cfd6; }
+  .single-visualization .contribute-visualization-message .alert hr, .single-visualization .contribute-visualization-message .single-student_paper .visualization-no-results hr, .single-student_paper .single-visualization .contribute-visualization-message .visualization-no-results hr {
+    border-top-color: #cdc1ca; }
+  .single-visualization .contribute-visualization-message .alert .alert-link, .single-visualization .contribute-visualization-message .single-student_paper .visualization-no-results .alert-link, .single-student_paper .single-visualization .contribute-visualization-message .visualization-no-results .alert-link {
+    color: #5d4b59; }
+
+.single-visualization .grid-item.visualization {
+  padding: 0; }
+
+@media (min-width: 768px) {
+  .single-visualization .visualization-single-content {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+    margin-left: 16.6666666667%; } }
