@@ -845,6 +845,7 @@ footer.content-info{
 	.grid-item-content__image{
 	    margin-bottom: .5rem;
 	    border: 1px solid #eee;		 
+	    background: white;
 		a{
 			display: block;
 		}
@@ -876,7 +877,7 @@ footer.content-info{
 	.grid-item-content,
 	.grid-item-notes{
 		@include make-col-ready();
-		@include make-col(6); 
+		@include make-col(12); 
 	}
 	&.no-visual{
 		.visualization__header{ 

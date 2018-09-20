@@ -7868,7 +7868,8 @@ footer.content-info {
       margin-top: .25rem; } }
   .grid-item .grid-item-content__image {
     margin-bottom: .5rem;
-    border: 1px solid #eee; }
+    border: 1px solid #eee;
+    background: white; }
     .grid-item .grid-item-content__image a {
       display: block; }
     .grid-item .grid-item-content__image img {
@@ -7899,8 +7900,8 @@ footer.content-info {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-  flex: 0 0 50%;
-  max-width: 50%; }
+  flex: 0 0 100%;
+  max-width: 100%; }
 
 .grid-item.visualization.no-visual .visualization__header {
   flex: 0 0 100%;
