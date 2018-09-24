@@ -52,7 +52,7 @@
             This paper has not yet been indexed. You can help us bring the visualizations within this paper to the public by indexing it!
           </p>
           <?php if(get_field('index_document')): ?>
-            <a href="<?php the_field('index_document'); ?>" target="_blank">
+            <a href="https://docs.google.com/document/d/1LpRhfBXEQQvLR8ceq-QfXhvKLkgerAf_5fsOxmugBQY/edit?usp=sharing" target="_blank">
               Start indexing 
             </a>
             – or –
