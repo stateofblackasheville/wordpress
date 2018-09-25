@@ -65,6 +65,9 @@ function filter_archive( $query ) {
   endif;
 
   if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'student_paper' ):
+
+    $query->set('posts_per_page', 50);
+
     // allow the url to alter the query
     if(isset($_GET['index_needed']) ):
       $meta_query[] = array(
