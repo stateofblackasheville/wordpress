@@ -1,6 +1,6 @@
 {
     "key": "group_5ba189ab0e2f7",
-    "title": "No Visualization Message",
+    "title": "Messages",
     "fields": [
         {
             "key": "field_5ba189b3381e2",
@@ -8,6 +8,25 @@
             "name": "contribute_visualization_message",
             "type": "wysiwyg",
             "instructions": "Message that will engage the user and ask that they add a visualization.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5baabbc515643",
+            "label": "Index Student Paper Message",
+            "name": "index_student_paper_message",
+            "type": "wysiwyg",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -39,5 +58,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537314304
+    "modified": 1537915861
 }

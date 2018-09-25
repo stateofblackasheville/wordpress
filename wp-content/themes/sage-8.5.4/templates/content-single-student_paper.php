@@ -48,26 +48,7 @@
       <?php if(get_field('status') == 'Needs Index'): ?> 
         <br>
         <div class="rte soba-alert">
-          <p>
-            This paper has not yet been indexed. You can help us bring the visualizations within this paper to the public by indexing it!
-          </p>
-          <?php if(get_field('index_document')): ?>
-            <a href="https://docs.google.com/document/d/1LpRhfBXEQQvLR8ceq-QfXhvKLkgerAf_5fsOxmugBQY/edit?usp=sharing" target="_blank">
-              Start indexing 
-            </a>
-            – or –
-            <a href="/how-to-index-student-papers" target="_blank">
-              Learn how to index student papers
-            </a>
-          <?php else: ?>
-            <a href="#intercom">Contact us</a> to index this document. 
-            <br>
-            <br>
-            You can also
-            <a href="/how-to-index-student-papers">
-              learn how to index our documents
-            </a>
-          <?php endif; ?>
+          <?php the_field('index_student_paper_message', 'options'); ?>
         </div>
       <?php endif; ?>              
 
