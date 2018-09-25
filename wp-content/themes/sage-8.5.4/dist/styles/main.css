@@ -8107,7 +8107,7 @@ body.home .content-section__inner-container,
   padding-left: 15px; }
 
 @media (max-width: 991.98px) {
-  .page-template-page-borderless-sections {
+  .page-template-page-borderless-sections .main-page-content__inner {
     flex: 0 0 100%;
     max-width: 100%;
     margin-left: 0; } }
