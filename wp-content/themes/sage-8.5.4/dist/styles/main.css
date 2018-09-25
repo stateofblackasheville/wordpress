@@ -8106,6 +8106,12 @@ body.home .content-section__inner-container,
   padding-right: 15px;
   padding-left: 15px; }
 
+@media (max-width: 991.98px) {
+  .page-template-page-borderless-sections {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-left: 0; } }
+
 /* CUSTOM CONTENT */
 .content-section__custom-container {
   position: relative;
