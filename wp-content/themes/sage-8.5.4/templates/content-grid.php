@@ -49,7 +49,8 @@
 			$args = array(
 				'post_type' => 'visualization',
 			    'post__in' => $content,
-			    'tag' => $data_year
+			    'tag' => $data_year,
+			    'orderby' => 'post__in'
 			); 
 
 			$content_filtered = get_posts($args);
