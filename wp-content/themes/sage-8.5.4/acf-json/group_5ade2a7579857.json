@@ -179,9 +179,9 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_5b6b6ebb87ef5",
-                            "label": "Dynamic Content",
-                            "name": "dynamic_content",
+                            "key": "field_5babd04f374ea",
+                            "label": "Dynamic Content Type",
+                            "name": "dynamic_content_category_copy",
                             "type": "select",
                             "instructions": "",
                             "required": 0,
@@ -200,9 +200,9 @@
                                 "id": ""
                             },
                             "choices": {
-                                "visualization": "Visualizations",
-                                "student_paper": "Student Papers",
-                                "post": "Post"
+                                "visualization": "Visualization",
+                                "student_paper": "Student Paper",
+                                "cultural_article": "Cultural Article"
                             },
                             "default_value": [
                                 "visualization"
@@ -215,10 +215,70 @@
                             "placeholder": ""
                         },
                         {
+                            "key": "field_5b6b6ebb87ef5",
+                            "label": "Dynamic Content Category",
+                            "name": "dynamic_content_category",
+                            "type": "taxonomy",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b6b6e0feb027",
+                                        "operator": "==",
+                                        "value": "Relational Dynamic"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "category",
+                            "field_type": "checkbox",
+                            "allow_null": 0,
+                            "add_term": 1,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "id",
+                            "multiple": 0
+                        },
+                        {
+                            "key": "field_5babcf88374e9",
+                            "label": "Dynamic Content Tag",
+                            "name": "dynamic_content_tag",
+                            "type": "taxonomy",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b6b6e0feb027",
+                                        "operator": "==",
+                                        "value": "Relational Dynamic"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "post_tag",
+                            "field_type": "checkbox",
+                            "allow_null": 0,
+                            "add_term": 1,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "id",
+                            "multiple": 0
+                        },
+                        {
                             "key": "field_5b7debc0e306a",
                             "label": "Curated Content Custom",
                             "name": "curated_content_custom",
-                            "type": "repeater",
+                            "type": "relationship",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
@@ -235,57 +295,17 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 0,
-                            "layout": "row",
-                            "button_label": "Add Content",
-                            "sub_fields": [
-                                {
-                                    "key": "field_5b7dec30e306c",
-                                    "label": "Content",
-                                    "name": "content",
-                                    "type": "relationship",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "post_type": [],
-                                    "taxonomy": [],
-                                    "filters": [
-                                        "search",
-                                        "post_type",
-                                        "taxonomy"
-                                    ],
-                                    "elements": "",
-                                    "min": "",
-                                    "max": 1,
-                                    "return_format": "object"
-                                },
-                                {
-                                    "key": "field_5b7debe6e306b",
-                                    "label": "Stacked",
-                                    "name": "stacked",
-                                    "type": "true_false",
-                                    "instructions": "Stack the visualization text on top of the visualization.",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "message": "",
-                                    "default_value": 0,
-                                    "ui": 0,
-                                    "ui_on_text": "",
-                                    "ui_off_text": ""
-                                }
-                            ]
+                            "post_type": [],
+                            "taxonomy": [],
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
                         },
                         {
                             "key": "field_5b6b7187321fc",
@@ -792,5 +812,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1536862678
+    "modified": 1537988628
 }

@@ -8048,7 +8048,7 @@ body.home .content-section__inner-container,
       min-height: 1px;
       padding-right: 15px;
       padding-left: 15px;
-      margin-top: 1rem;
+      margin-top: 2rem;
       /*@include make-col(8);*/ }
       .page-template-page-data-focus .page-content-container .main-page-content .content-section__header {
         text-align: left;

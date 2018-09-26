@@ -1029,7 +1029,7 @@ body.home,
 		@include make-row();
 		.main-page-content{
 			@include make-col-ready();
-			margin-top: 1rem;
+			margin-top: 2rem;
 			/*@include make-col(8);*/
 			.content-section__header{
 				text-align: left;

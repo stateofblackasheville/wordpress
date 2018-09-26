@@ -9,20 +9,24 @@
 	<?php //elseif($content_section_type == 'Relational Dynamic'): ?>
 		<?php 
 
-		// $dynamic_content = get_sub_field('dynamic_content');
+		$dynamic_content_type = get_sub_field('dynamic_content_type');
+		$dynamic_content_category = get_sub_field('dynamic_content_category');
+		$dynamic_content_tag = get_sub_field('dynamic_content_tag');
 
-		// if(get_sub_field('limit')):
-		// 	$post_limit = get_sub_field('limit');
-		// else:
-		// 	$post_limit = 3;
-		// endif; 
+		if(get_sub_field('limit')):
+			$post_limit = get_sub_field('limit');
+		else:
+			$post_limit = 3;
+		endif; 
 
-		// $content_arr = get_posts(array(
-		// 	'post_type' => $dynamic_content,
-		// 	'numberposts' => $post_limit
-		// ));
+		$content_arr = get_posts(array(
+			'post_type' => $dynamic_content_type,
+			'cat'	=> $dynamic_content_category,
+			'tag__and' => $dynamic_content_tag,
+			'numberposts' => $post_limit
+		));
 
-		// var_dump($dynamic_content);
+		//var_dump($content_arr);
 
 		?>
 
@@ -32,13 +36,40 @@
 			<?php //endforeach; ?>
 		<?php //endif; ?>
 	<?php elseif( $content_section_type == 'Relational Curated'): ?>
-		<?php if( have_rows('curated_content_custom') ): ?>
-    		<?php while ( have_rows('curated_content_custom') ) : the_row(); ?>
-				<?php $content = get_sub_field('content'); ?>
+		<?php $content = get_sub_field('curated_content_custom', false, false); ?>
+
+		<?php 	
+
+			if(isset($_GET['data_year'])):
+				$data_year = $_GET['data_year'];
+			else:
+				$data_year = '';
+			endif;
+
+			$args = array(
+				'post_type' => 'visualization',
+			    'post__in' => $content,
+			    'tag' => $data_year
+			); 
+
+			$content_filtered = get_posts($args);
+
+			//var_dump($content); 
+
+		?>
+
+		<?php foreach($content_filtered as $content): ?>
+			<?php //var_dump($content['post_title']); ?>
+			<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
+		<?php endforeach; ?>
+
+		<?php //if( have_rows('curated_content_custom') ): ?>
+    		<?php //while ( have_rows('curated_content_custom') ) : the_row(); ?>
+				<?php //$content = get_sub_field('content'); ?>
 				<?php //var_dump($content); ?>
-				<?php Roots\Sage\Extras\render_content_grid_item($content[0]); ?>
-        	<?php endwhile; ?>
-    	<?php endif; ?>
+				<?php //Roots\Sage\Extras\render_content_grid_item($content[0]); ?>
+        	<?php //endwhile; ?>
+    	<?php //endif; ?>
 	<?php endif; ?>
 	</div>				       	
 </div>

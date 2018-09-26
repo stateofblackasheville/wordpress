@@ -55,6 +55,10 @@ function filter_archive( $query ) {
       $query->set('meta_query', $meta_query);
     endif; 
 
+    if(isset($_GET['year']) ):
+      $query->set('tag', $_GET['year']);
+    endif;     
+
     if(isset($_GET['category']) ):
       $current_cat = get_category_by_slug($_GET['category']);
       if($current_cat):
