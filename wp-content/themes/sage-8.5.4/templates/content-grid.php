@@ -30,11 +30,11 @@
 
 		?>
 
-		<?php //if($content_arr): ?>
-			<?php //foreach($content_arr as $content): ?>
-				<?php //Roots\Sage\Extras\render_content_grid_item($content); ?>
-			<?php //endforeach; ?>
-		<?php //endif; ?>
+		<?php if($content_arr): ?>
+			<?php foreach($content_arr as $content): ?>
+				<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
+			<?php endforeach; ?>
+		<?php endif; ?>
 	<?php elseif( $content_section_type == 'Relational Curated'): ?>
 		<?php $content = get_sub_field('curated_content_custom', false, false); ?>
 
@@ -46,7 +46,7 @@
 				$data_year = '';
 			endif;
 
-			$curated_args = array(
+			$args = array(
 				'post_type' => 'any',
 			    'post__in' => $content,
 			    'tag' => $data_year,
