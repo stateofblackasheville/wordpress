@@ -7885,6 +7885,10 @@ footer.content-info {
     color: #666;
     /*text-decoration: underline; */ }
 
+.page-content-container.no-sidebar .grid-item.visualization.grid-item--width-one-whole {
+  flex: 0 0 50%;
+  max-width: 50%; }
+
 /*VISUALIZATION GRID ITEMS*/
 .grid-item.visualization .grid-item__row {
   display: flex;

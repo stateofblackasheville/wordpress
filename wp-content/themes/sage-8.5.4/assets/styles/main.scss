@@ -868,6 +868,12 @@ footer.content-info{
 	}
 }
 
+.page-content-container.no-sidebar{
+	.grid-item.visualization.grid-item--width-one-whole{
+		@include make-col(6);
+	}
+}
+
 /*VISUALIZATION GRID ITEMS*/
 .grid-item.visualization{
 	.grid-item__row{
@@ -1064,7 +1070,7 @@ body.home,
 		}
 		.page-content-container.has-sidebar{
 			.main-page-content{
-				@include make-col(8); 
+				@include make-col(8);  
 			}
 		}
 	}		 
