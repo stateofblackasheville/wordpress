@@ -1307,3 +1307,16 @@ body.home,
 	}
 }
 
+/*CONTENT TABS*/
+.tab-container{
+	@include make-col-ready();
+	@include make-col(12);
+	.tab-description{
+		@include make-col-ready();
+		@include make-col(12);
+	}
+	.tab-pane__inner{
+		@include make-row();
+	}
+}
+

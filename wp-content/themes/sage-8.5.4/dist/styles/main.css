@@ -8321,3 +8321,26 @@ body.home .content-section__inner-container,
 
 .breadcrumbs * {
   /*color: white;*/ }
+
+/*CONTENT TABS*/
+.tab-container {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 100%;
+  max-width: 100%; }
+  .tab-container .tab-description {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 100%;
+    max-width: 100%; }
+  .tab-container .tab-pane__inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px; }

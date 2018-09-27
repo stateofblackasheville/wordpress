@@ -39,7 +39,8 @@
                                 "Basic": "Basic",
                                 "Custom": "Custom",
                                 "Relational Dynamic": "Relational Dynamic",
-                                "Relational Curated": "Relational Curated"
+                                "Relational Curated": "Relational Curated",
+                                "Tabs": "Tabs"
                             },
                             "default_value": [
                                 "Custom"
@@ -177,6 +178,98 @@
                             "toolbar": "full",
                             "media_upload": 1,
                             "delay": 0
+                        },
+                        {
+                            "key": "field_5babebadf7755",
+                            "label": "Tabs",
+                            "name": "tabs",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b6b6e0feb027",
+                                        "operator": "==",
+                                        "value": "Tabs"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "field_5babec1b2f0c3",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5babec0e2f0c2",
+                                    "label": "Tab Title",
+                                    "name": "tab_title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5babec1b2f0c3",
+                                    "label": "Tab Description",
+                                    "name": "tab_description",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
+                                    "key": "field_5babec2e2f0c4",
+                                    "label": "Tab Content",
+                                    "name": "tab_content",
+                                    "type": "relationship",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [],
+                                    "taxonomy": [],
+                                    "filters": [
+                                        "search",
+                                        "post_type",
+                                        "taxonomy"
+                                    ],
+                                    "elements": "",
+                                    "min": "",
+                                    "max": "",
+                                    "return_format": "object"
+                                }
+                            ]
                         },
                         {
                             "key": "field_5babd04f374ea",
@@ -812,5 +905,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537988628
+    "modified": 1537994858
 }

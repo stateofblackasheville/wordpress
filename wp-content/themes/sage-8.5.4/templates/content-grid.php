@@ -60,17 +60,64 @@
 		?>
 
 		<?php foreach($content_filtered as $content): ?>
-			<?php //var_dump($content['post_title']); ?>
 			<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
 		<?php endforeach; ?>
+	<?php elseif( $content_section_type == 'Tabs'): ?>
+		<div class="tab-container">
+			<?php if( have_rows('tabs') ): ?>
+				<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+			    <?php while ( have_rows('tabs') ) : the_row(); ?>
+					<?php $content = get_sub_field('tab_content', false, false); ?>
+					<?php $tab_id = sanitize_title(get_sub_field('tab_title')); ?>
+				  	<li class="nav-item">
+				  		<a class="nav-link <?php if(get_row_index() == 1): ?>active<?php endif; ?>" id="tab_<?php echo $tab_id; ?>" data-toggle="pill" href="#tab_content_<?php echo $tab_id; ?>" role="tab" aria-controls="tab_<?php echo $tab_id; ?>" <?php if(get_row_index() == 1): ?>aria-selected="true"<?php endif; ?>>
+				    		<?php the_sub_field('tab_title'); ?>
+				    	</a> 
+				  	</li>			
+			    <?php endwhile; ?>
+				</ul>
+				<div class="tab-content" id="pills-tabContent">
+			    <?php while ( have_rows('tabs') ) : the_row(); ?>
+					<?php $content = get_sub_field('tab_content', false, false); ?>
+					<?php $tab_id = sanitize_title(get_sub_field('tab_title')); ?>
+					<?php 	
 
-		<?php //if( have_rows('curated_content_custom') ): ?>
-    		<?php //while ( have_rows('curated_content_custom') ) : the_row(); ?>
-				<?php //$content = get_sub_field('content'); ?>
-				<?php //var_dump($content); ?>
-				<?php //Roots\Sage\Extras\render_content_grid_item($content[0]); ?>
-        	<?php //endwhile; ?>
-    	<?php //endif; ?>
+						if(isset($_GET['data_year'])):
+							$data_year = $_GET['data_year'];
+						else:
+							$data_year = '';
+						endif;
+
+						$args = array(
+							'post_type' => 'visualization',
+						    'post__in' => $content,
+						    'tag' => $data_year,
+						    'orderby' => 'post__in'
+						); 
+
+						$content_filtered = get_posts($args);
+						// var_dump($content_filtered);
+
+					?>		    	
+			    	<div class="tab-pane fade show<?php if(get_row_index() == 1): ?> active<?php endif; ?>" id="tab_content_<?php echo $tab_id; ?>" role="tabpanel" aria-labelledby="pills-home-tab">
+			    		<div class="tab-pane__inner">
+				    		<div class="tab-description rte">
+				    			<h3>
+				    				<?php the_sub_field('tab_title'); ?>
+				    			</h3>				    			
+				    			<?php the_sub_field('tab_description'); ?>
+				    			<hr>
+				    		</div>
+							<?php foreach($content_filtered as $content): ?>
+								<?php //var_dump($content['post_title']); ?>
+								<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
+							<?php endforeach; ?>
+						</div>
+					</div>				
+				<?php endwhile; ?>	
+				</div>		
+			<?php endif; ?>
+		</div>
 	<?php endif; ?>
 	</div>				       	
 </div>
