@@ -46,7 +46,7 @@
 				$data_year = '';
 			endif;
 
-			$args = array(
+			$curated_args = array(
 				'post_type' => 'any',
 			    'post__in' => $content,
 			    'tag' => $data_year,
