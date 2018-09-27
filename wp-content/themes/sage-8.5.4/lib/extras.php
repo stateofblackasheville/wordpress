@@ -128,6 +128,14 @@ function render_acf_image_url($field, $size = false, $options = false){
   echo $image_url;
 }
 
+function check_sidebar(){
+  if( have_rows('sidebar_content') ): 
+    return true;
+  else: 
+    return false;
+  endif; 
+}
+
 function render_content_grid_item($post_item, $index = 0){
   if($post_item):
     include(locate_template('templates/content-'.get_post_type($post_item).'.php'));

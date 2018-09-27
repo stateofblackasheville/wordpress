@@ -8322,6 +8322,29 @@ body.home .content-section__inner-container,
 .breadcrumbs * {
   /*color: white;*/ }
 
+/*SUBNAVIGATION*/
+.subnavigation {
+  background: #efebee; }
+  .subnavigation .subnavigation__inner {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; }
+    .subnavigation .subnavigation__inner ul {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0; }
+      .subnavigation .subnavigation__inner ul li {
+        list-style-type: none; }
+        .subnavigation .subnavigation__inner ul li a {
+          display: block;
+          padding: .5rem 1rem; }
+        .subnavigation .subnavigation__inner ul li.active a {
+          background: #d8cfd6; }
+
 /*CONTENT TABS*/
 .tab-container {
   position: relative;

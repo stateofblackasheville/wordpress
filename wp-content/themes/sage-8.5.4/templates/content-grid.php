@@ -47,7 +47,7 @@
 			endif;
 
 			$args = array(
-				'post_type' => 'visualization',
+				'post_type' => 'any',
 			    'post__in' => $content,
 			    'tag' => $data_year,
 			    'orderby' => 'post__in'
@@ -89,7 +89,7 @@
 						endif;
 
 						$args = array(
-							'post_type' => 'visualization',
+							'post_type' => 'any',
 						    'post__in' => $content,
 						    'tag' => $data_year,
 						    'orderby' => 'post__in'
@@ -109,7 +109,6 @@
 				    			<hr>
 				    		</div>
 							<?php foreach($content_filtered as $content): ?>
-								<?php //var_dump($content['post_title']); ?>
 								<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
 							<?php endforeach; ?>
 						</div>

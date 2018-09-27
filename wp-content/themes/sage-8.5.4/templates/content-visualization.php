@@ -16,7 +16,11 @@
 		$classes .= ' no-visual';
 	endif;	
 
-	$classes .= ' grid-item--width-one-whole';
+	if(Roots\Sage\Extras\check_sidebar()):
+		$classes .= ' grid-item--width-one-whole';
+	else:
+		$classes .= ' grid-item--width-one-half';
+	endif;
 
 	$display_mode = false;
 

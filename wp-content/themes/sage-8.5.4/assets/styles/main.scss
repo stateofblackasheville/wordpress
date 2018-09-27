@@ -1307,6 +1307,32 @@ body.home,
 	}
 }
 
+/*SUBNAVIGATION*/ 
+.subnavigation{
+	background: $off-white;
+	.subnavigation__inner{
+		@include make-col(12);
+		@include make-col-ready();
+		ul{
+			display: flex;
+			justify-content: center;
+			margin-bottom: 0;
+			li{
+				list-style-type: none;
+				a{
+					display: block;
+					padding: .5rem 1rem;
+				}
+				&.active{ 
+					a{
+						background: darken($off-white, 10%);
+					}
+				}
+			}
+		}
+	}
+}
+
 /*CONTENT TABS*/
 .tab-container{
 	@include make-col-ready();

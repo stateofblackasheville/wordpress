@@ -14,7 +14,7 @@
 <?php while (have_posts()) : the_post(); ?>
   <?php get_template_part('templates/page', 'header'); ?>
   	<div class="container">
-	  	<div class="page-content-container<?php if($has_sidebar): ?> has-sidebar<?php endif; ?>">
+	  	<div class="page-content-container<?php if($has_sidebar): ?> has-sidebar<?php else: ?> no-sidebar<?php endif; ?>">
 			<div class="main-page-content"> 
 				<?php if(get_the_content()): ?>
 				<div class="main-page-content__content rte rte--georgia rte--large">

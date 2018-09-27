@@ -38,16 +38,20 @@ endif;
 <?php endif; ?>  
 
 <?php
+
+	// DETERMINE PAGE CAT
 	if(!empty($categories)):
 		$category = get_category($categories[0]);
 		$category_name = $category->slug;
 	endif;
 
+	// CHECK FEATURED IMAGE
 	$featured_image = false;
 	if(is_single() && has_post_thumbnail() || is_page() && $background_image):
 		$featured_image = true;
 	endif;
 
+	// PAGE TEMPLATE CHECK
 	$page_template = Roots\Sage\Extras\get_page_template();
 
 	$data_focus = false;
@@ -55,6 +59,26 @@ endif;
 	if($page_template == 'page-data-focus.php'):
 		$data_focus = true;
 	endif;
+
+	// SUBNAVIGATION
+	$parent_page_id = wp_get_post_parent_id(get_the_ID());
+
+	if($parent_page_id == 0):
+		$parent_page_id = get_the_ID();
+	endif;
+
+	$section_pages = get_posts(array(
+	    'post_type'      => 'page',
+	    'posts_per_page' => -1,
+	    'post_parent'    => $parent_page_id,
+	    'order'          => 'ASC',
+	    'orderby'        => 'menu_order'
+	 ));	
+
+	// var_dump($section_pages);
+
+	// var_dump($parent_page_id);
+
 ?>
 
 <div class="page-header <?php if($featured_image): ?>page-header--featured<?php else: ?>page-header--basic<?php endif; ?>">
@@ -85,5 +109,25 @@ endif;
 			  	</p>
 		  	<?php endif; ?>
 		</div>			
-	</div>
+	</div> 
 </div>
+<?php if($data_focus && !empty($section_pages)): ?>
+<nav class="subnavigation">
+	<div class="container">
+		<div class="row">
+			<div class="subnavigation__inner">
+				<ul>
+				<?php foreach($section_pages as $section_page): ?>
+					<?php //var_dump($section_page); ?>
+					<li <?php if($section_page->ID == get_the_ID()): ?>class="active"<?php endif; ?>>
+						<a href="<?php the_permalink($section_page->ID); ?>">
+							<?php echo get_the_title($section_page->ID); ?>
+						</a>
+					</li>
+				<?php endforeach; ?>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+<?php endif; ?>
