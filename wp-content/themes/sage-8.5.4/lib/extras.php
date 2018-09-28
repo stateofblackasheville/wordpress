@@ -53,18 +53,7 @@ function filter_archive( $query ) {
           'compare' => '='
       );
       $query->set('meta_query', $meta_query);
-    endif; 
-
-    if(isset($_GET['year']) ):
-      $query->set('tag', $_GET['year']);
-    endif;     
-
-    if(isset($_GET['category']) ):
-      $current_cat = get_category_by_slug($_GET['category']);
-      if($current_cat):
-        $query->set('cat', $current_cat->term_id);
-      endif;
-    endif;     
+    endif;              
     
   endif;
 
@@ -73,16 +62,42 @@ function filter_archive( $query ) {
     $query->set('posts_per_page', 50);
 
     // allow the url to alter the query
-    if(isset($_GET['index_needed']) ):
+    if(isset($_GET['index_needed'])):
       $meta_query[] = array(
           'key'   => 'status',
           'value' => 'Needs Index',
           'compare' => '='
       );
       $query->set('meta_query', $meta_query);
-    endif; 
-  endif;  
+    endif;   
   
+  endif;  
+
+  if( isset($query->query_vars['post_type']) && ($query->query_vars['post_type'] == 'student_paper' || $query->query_vars['post_type'] == 'visualization')):
+    if(isset($_GET['archive_search'] )):
+      // $meta_query[] = array(
+      //     'key'   => 'author',
+      //     'value' => $_GET['archive_search'],
+      //     'compare' => 'LIKE'
+      // );
+      // $query->set('meta_query', $meta_query);
+      $query->set('s', $_GET['archive_search']);
+    endif;     
+    
+    if(isset($_GET['tags'])):
+      $query->set('tag__in', $_GET['tags']);
+    endif;    
+    
+    if(isset($_GET['category']) ):
+      $current_cat = get_category_by_slug($_GET['category']);
+      if($current_cat):
+        $query->set('cat', $current_cat->term_id);
+      endif;
+    endif;
+
+    // var_dump($query);
+
+  endif;
   
   // return
   return $query;

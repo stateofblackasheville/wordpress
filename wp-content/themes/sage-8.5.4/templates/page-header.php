@@ -7,12 +7,14 @@
 
 <?php 
 if(is_archive()):
-	$post_type = get_post_type();
-	$background_image = get_field(get_post_type().'_archive_header_background_image', 'options'); 
-	$background_color = get_field(get_post_type().'_archive_header_background_color', 'options');
-	$background_opacity = get_field(get_post_type().'_archive_header_background_opacity', 'options');
-	$content_color = get_field(get_post_type().'_archive_header_content_color', 'options');
-	$lead_paragraph = get_field(get_post_type().'_archive_header_lead_paragraph', 'options');
+	$archive_query = get_queried_object();
+	$post_type = $archive_query->name;
+	
+	$background_image = get_field($post_type.'_archive_header_background_image', 'options'); 
+	$background_color = get_field($post_type.'_archive_header_background_color', 'options');
+	$background_opacity = get_field($post_type.'_archive_header_background_opacity', 'options');
+	$content_color = get_field($post_type.'_archive_header_content_color', 'options');
+	$lead_paragraph = get_field($post_type.'_archive_header_lead_paragraph', 'options');
 else: 	
 	$background_image = get_field('background_image'); 
 	$background_color = get_field('background_color');
@@ -21,6 +23,7 @@ else:
 	$content_color = get_field('content_color');
 	$lead_paragraph = get_field('lead_paragraph');
 endif; 
+
 ?>
 
 <?php if($background_image): ?>	
