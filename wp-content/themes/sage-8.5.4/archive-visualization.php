@@ -16,7 +16,9 @@
 
 	// $available_tags = wp_get_object_terms($all_content_ids, 'post_tag');
 
-	$available_tags = get_terms();
+	$available_tags = get_terms(array(
+		'taxonomy' => 'post_tag'
+	));
 ?>
 
 <?php get_template_part('templates/page', 'header'); ?>
