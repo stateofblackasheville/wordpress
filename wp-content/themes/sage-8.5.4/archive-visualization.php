@@ -10,9 +10,13 @@
 	    'posts_per_page'        => -1
 	));	
 
+	// var_dump($all_content);
+
 	$all_content_ids = wp_list_pluck($all_content->posts, 'ID'); 
 
-	$available_tags = wp_get_object_terms($all_content_ids, 'post_tag');
+	// $available_tags = wp_get_object_terms($all_content_ids, 'post_tag');
+
+	$available_tags = get_terms();
 ?>
 
 <?php get_template_part('templates/page', 'header'); ?>

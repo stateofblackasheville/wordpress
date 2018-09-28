@@ -74,7 +74,7 @@ function filter_archive( $query ) {
   endif;  
 
   if( isset($query->query_vars['post_type']) && ($query->query_vars['post_type'] == 'student_paper' || $query->query_vars['post_type'] == 'visualization')):
-    if(isset($_GET['archive_search'] )):
+    if(isset($_GET['archive_search']) && $_GET['archive_search'] !== null):
       // $meta_query[] = array(
       //     'key'   => 'author',
       //     'value' => $_GET['archive_search'],
@@ -85,7 +85,7 @@ function filter_archive( $query ) {
     endif;     
     
     if(isset($_GET['tags'])):
-      $query->set('tag__in', $_GET['tags']);
+      $query->set('tag__and', $_GET['tags']);
     endif;    
     
     if(isset($_GET['category']) ):
