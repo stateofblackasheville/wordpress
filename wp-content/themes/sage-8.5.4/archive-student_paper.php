@@ -54,6 +54,10 @@
 						</label>
 					</div>						
 					<?php endforeach; ?>	
+				<?php else: ?>
+					<small class="form-text text-muted">
+						No tags available based on search and filters.
+					</small>
 				<?php endif; ?>		
 				<input type="submit" class="soba-btn" value="Search">
 				<br><br>

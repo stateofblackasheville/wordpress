@@ -58,10 +58,10 @@
 					</select>
 				<?php endif; ?>
 				<br>
-				<?php if(is_array($available_tags)): ?>
-					<h3 class="rte">
-						Tags:
-					</h3>					
+				<h3 class="rte">
+					Tags:
+				</h3>				
+				<?php if(!empty($available_tags)): ?>					
 					<?php foreach($available_tags as $tag): ?>
 						<div class="form-check">
 							<input type="checkbox" class="form-check-input" id="<?php echo sanitize_title($tag->name); ?>" name="tags[]" value="<?php echo $tag->term_id; ?>" 
@@ -71,6 +71,10 @@
 							</label>
 						</div>
 					<?php endforeach; ?>
+				<?php else: ?>
+					<small class="form-text text-muted">
+						No tags available based on search and filters.
+					</small>
 				<?php endif; ?>				
 				<input type="submit" class="soba-btn" value="Search">
 				<br><br>
