@@ -40,7 +40,7 @@
                                 "Custom": "Custom",
                                 "Relational Dynamic": "Relational Dynamic",
                                 "Relational Curated": "Relational Curated",
-                                "Tabs": "Tabs"
+                                "Content Totals": "Content Totals"
                             },
                             "default_value": [
                                 "Custom"
@@ -180,101 +180,9 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_5babebadf7755",
-                            "label": "Tabs",
-                            "name": "tabs",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5b6b6e0feb027",
-                                        "operator": "==",
-                                        "value": "Tabs"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "collapsed": "field_5babec1b2f0c3",
-                            "min": 0,
-                            "max": 0,
-                            "layout": "block",
-                            "button_label": "",
-                            "sub_fields": [
-                                {
-                                    "key": "field_5babec0e2f0c2",
-                                    "label": "Tab Title",
-                                    "name": "tab_title",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_5babec1b2f0c3",
-                                    "label": "Tab Description",
-                                    "name": "tab_description",
-                                    "type": "wysiwyg",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 0
-                                },
-                                {
-                                    "key": "field_5babec2e2f0c4",
-                                    "label": "Tab Content",
-                                    "name": "tab_content",
-                                    "type": "relationship",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "post_type": [],
-                                    "taxonomy": [],
-                                    "filters": [
-                                        "search",
-                                        "post_type",
-                                        "taxonomy"
-                                    ],
-                                    "elements": "",
-                                    "min": "",
-                                    "max": "",
-                                    "return_format": "object"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_5babd04f374ea",
-                            "label": "Dynamic Content Type",
-                            "name": "dynamic_content_category_copy",
+                            "key": "field_5b6b6ebb87ef5",
+                            "label": "Dynamic Content",
+                            "name": "dynamic_content",
                             "type": "select",
                             "instructions": "",
                             "required": 0,
@@ -293,9 +201,9 @@
                                 "id": ""
                             },
                             "choices": {
-                                "visualization": "Visualization",
-                                "student_paper": "Student Paper",
-                                "cultural_article": "Cultural Article"
+                                "visualization": "Visualizations",
+                                "student_paper": "Student Papers",
+                                "post": "Post"
                             },
                             "default_value": [
                                 "visualization"
@@ -308,70 +216,10 @@
                             "placeholder": ""
                         },
                         {
-                            "key": "field_5b6b6ebb87ef5",
-                            "label": "Dynamic Content Category",
-                            "name": "dynamic_content_category",
-                            "type": "taxonomy",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5b6b6e0feb027",
-                                        "operator": "==",
-                                        "value": "Relational Dynamic"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "taxonomy": "category",
-                            "field_type": "checkbox",
-                            "allow_null": 0,
-                            "add_term": 1,
-                            "save_terms": 0,
-                            "load_terms": 0,
-                            "return_format": "id",
-                            "multiple": 0
-                        },
-                        {
-                            "key": "field_5babcf88374e9",
-                            "label": "Dynamic Content Tag",
-                            "name": "dynamic_content_tag",
-                            "type": "taxonomy",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5b6b6e0feb027",
-                                        "operator": "==",
-                                        "value": "Relational Dynamic"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "taxonomy": "post_tag",
-                            "field_type": "checkbox",
-                            "allow_null": 0,
-                            "add_term": 1,
-                            "save_terms": 0,
-                            "load_terms": 0,
-                            "return_format": "id",
-                            "multiple": 0
-                        },
-                        {
                             "key": "field_5b7debc0e306a",
                             "label": "Curated Content Custom",
                             "name": "curated_content_custom",
-                            "type": "relationship",
+                            "type": "repeater",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
@@ -388,17 +236,57 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "post_type": [],
-                            "taxonomy": [],
-                            "filters": [
-                                "search",
-                                "post_type",
-                                "taxonomy"
-                            ],
-                            "elements": "",
-                            "min": "",
-                            "max": "",
-                            "return_format": "id"
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "row",
+                            "button_label": "Add Content",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5b7dec30e306c",
+                                    "label": "Content",
+                                    "name": "content",
+                                    "type": "relationship",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [],
+                                    "taxonomy": [],
+                                    "filters": [
+                                        "search",
+                                        "post_type",
+                                        "taxonomy"
+                                    ],
+                                    "elements": "",
+                                    "min": "",
+                                    "max": 1,
+                                    "return_format": "object"
+                                },
+                                {
+                                    "key": "field_5b7debe6e306b",
+                                    "label": "Stacked",
+                                    "name": "stacked",
+                                    "type": "true_false",
+                                    "instructions": "Stack the visualization text on top of the visualization.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
+                                }
+                            ]
                         },
                         {
                             "key": "field_5b6b7187321fc",
@@ -905,5 +793,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537994858
+    "modified": 1538436414
 }

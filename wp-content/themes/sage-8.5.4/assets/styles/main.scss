@@ -27,13 +27,14 @@ $purple: #662d91;
 $text-grey: #4d4d4d;
 $off-white: #efebee;
 $green: #007a4d;
+$earth: #6d280b;
 /*END*/
 
 a{
-	color: $red;
+	color: $earth;
 	word-wrap: break-word;
 	&:hover{
-		color: darken($red, 10%);
+		color: darken($earth, 10%);
 	}
 }
 
@@ -86,7 +87,7 @@ h3{
 }
 
 .link{
-	color: $red;
+	color: $earth;
 	cursor: pointer;
 }
 
@@ -745,7 +746,7 @@ footer.content-info{
 /*CONTENT GRID*/
 .grid-item{
 	@include make-col-ready();
-	/*margin-bottom: 3rem;*/
+	margin-bottom: 2rem;
 	.grid-item__inner{
 
 	}
@@ -765,14 +766,14 @@ footer.content-info{
 		}
 	}
 	.grid-item__category{
-		color: $red;
+		color: $earth;
 		/*font-size: .8rem;*/
 		ion-icon{
 			/*color: $red;*/
 			font-size: 1.5em;
 			margin-right: .25rem;
 			vertical-align: bottom;
-			color: $red;
+			color: $earth;
 		}		
 	}
 	iframe{
@@ -1411,8 +1412,19 @@ body.home,
 	&.badge--stage-two{
 		@include badge-variant(lighten($green, 5%));
 	}
-	&.badge--stage-three{
+	&.badge--stage-three{ 
 		@include badge-variant(lighten($green, 10%));
+	}
+}
+
+/*CONTENT TOTALS*/
+.content-totals{
+	font-size: 2rem;
+	line-height: 1.5em;
+	color: $earth;
+	span.content-total{
+		/*font-weight: bold;*/
+		font-size: 2em;
 	}
 }
 

@@ -206,6 +206,52 @@ function render_acf_image_alt($field, $options = false){
   echo $image_alt;
 }
 
+
+// TALLY STUFF
+// if (!wp_next_scheduled('check_stats')) {
+//   wp_schedule_event( time(), 'daily', 'check_stats' );
+// }
+
+// add_action('check_stats', __NAMESPACE__.'\\tally_stats');
+
+function content_totals() {
+  $all_visualizations = get_posts(array(
+    'post_type' =>  'visualization',
+    'posts_per_page'  => -1,
+  ));
+  $visualizations_complete = get_posts(array(
+    'post_type' =>  'visualization',
+    'posts_per_page'  => -1,
+    'meta_query' => array(
+      array(
+        'key'     => 'embed',
+        'compare' => '!=',
+        'value'   => ''        
+      )
+    )    
+  ));  
+  $all_student_papers = get_posts(array(
+    'post_type' =>  'student_paper',
+    'posts_per_page'  => -1,
+  ));
+  $student_papers_with_index = get_posts(array(
+    'post_type' =>  'student_paper',
+    'posts_per_page'  => -1,
+    'meta_query' => array(
+      // 'relation' => 'OR',
+      array(
+        'key'     => 'index_document',
+        'compare' => '!=',
+        'value'   => ''
+      )
+    )    
+  ));
+  include(locate_template('templates/content-totals.php'));
+} 
+
+// add_action( 'wp_loaded', __NAMESPACE__.'\\tally_stats' );
+// 
+
 // CREATE OPTIONS PAGE
 if( function_exists('acf_add_options_page') ) {
   acf_add_options_page(array(

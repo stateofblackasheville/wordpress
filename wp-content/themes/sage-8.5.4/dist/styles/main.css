@@ -7231,10 +7231,10 @@ body#tinymce {
 /*VARIABLES*/
 /*END*/
 a {
-  color: #b21823;
+  color: #6d280b;
   word-wrap: break-word; }
   a:hover {
-    color: #85121a; }
+    color: #3f1706; }
 
 ul {
   padding-left: 1rem; }
@@ -7281,7 +7281,7 @@ h3 {
     color: #5d4b59; }
 
 .link {
-  color: #b21823;
+  color: #6d280b;
   cursor: pointer; }
 
 .highcharts-container {
@@ -7788,7 +7788,7 @@ footer.content-info {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-  /*margin-bottom: 3rem;*/ }
+  margin-bottom: 2rem; }
   .grid-item h3 {
     /*font-size: 1.25rem;*/
     color: #666;
@@ -7802,14 +7802,14 @@ footer.content-info {
       display: block;
       clear: both; }
   .grid-item .grid-item__category {
-    color: #b21823;
+    color: #6d280b;
     /*font-size: .8rem;*/ }
     .grid-item .grid-item__category ion-icon {
       /*color: $red;*/
       font-size: 1.5em;
       margin-right: .25rem;
       vertical-align: bottom;
-      color: #b21823; }
+      color: #6d280b; }
   .grid-item iframe {
     width: 100%;
     min-height: 350px;
@@ -8447,3 +8447,12 @@ body.home .content-section__inner-container,
     color: #fff;
     text-decoration: none;
     background-color: #007a4d; }
+
+/*CONTENT TOTALS*/
+.content-totals {
+  font-size: 2rem;
+  line-height: 1.5em;
+  color: #6d280b; }
+  .content-totals span.content-total {
+    /*font-weight: bold;*/
+    font-size: 2em; }

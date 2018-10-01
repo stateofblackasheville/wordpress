@@ -6,7 +6,9 @@
 		<div class="content-section__custom-container rte georgia">
 			<?php the_sub_field('content'); ?>
 		</div>
-	<?php //elseif($content_section_type == 'Relational Dynamic'): ?>
+	<?php elseif($content_section_type == 'Content Totals'): ?>
+		<?php Roots\Sage\Extras\content_totals(); ?> 		
+	<?php elseif($content_section_type == 'Relational Dynamic'): ?>
 		<?php 
 
 		$dynamic_content_type = get_sub_field('dynamic_content_type');
