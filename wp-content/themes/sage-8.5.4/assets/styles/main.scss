@@ -915,7 +915,7 @@ footer.content-info{
 	    /*margin-bottom: 2rem;*/
 	    box-shadow: 0 3px 5px #eee;
 	    border: 1px solid #ddd;  
-	    /*background: #fbfbfb;*/
+	    background: white;
 	    /*border-radius: 3px;		*/
 	}
 }
@@ -1393,6 +1393,9 @@ body.home,
 .badge{
 	@extend .proxima-nova;
 	@extend .badge;	
+	ion-icon{
+		vertical-align: bottom;
+	}
 }
 
 .badge--inactive{
@@ -1402,6 +1405,14 @@ body.home,
 }
  
 .badge--active{
-	@include badge-variant($red);
+	&.badge--stage-one{
+		@include badge-variant(lighten($green, 0%));
+	}
+	&.badge--stage-two{
+		@include badge-variant(lighten($green, 5%));
+	}
+	&.badge--stage-three{
+		@include badge-variant(lighten($green, 10%));
+	}
 }
 

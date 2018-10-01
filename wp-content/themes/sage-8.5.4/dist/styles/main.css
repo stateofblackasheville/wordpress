@@ -7932,7 +7932,7 @@ footer.content-info {
   /*margin-bottom: 2rem;*/
   box-shadow: 0 3px 5px #eee;
   border: 1px solid #ddd;
-  /*background: #fbfbfb;*/
+  background: white;
   /*border-radius: 3px;		*/ }
 
 .grid-item.visualization.visualization--stacked .visualization__notes--side {
@@ -8411,6 +8411,9 @@ body.home .content-section__inner-container,
   color: #ccc;
   margin-bottom: 1rem; }
 
+.badge ion-icon {
+  vertical-align: bottom; }
+
 .badge--inactive {
   color: #212529;
   background-color: #ddd;
@@ -8421,10 +8424,26 @@ body.home .content-section__inner-container,
     text-decoration: none;
     background-color: #c4c4c4; }
 
-.badge--active {
+.badge--active.badge--stage-one {
   color: #fff;
-  background-color: #b21823; }
-  .badge--active[href]:hover, .badge--active[href]:focus {
+  background-color: #007a4d; }
+  .badge--active.badge--stage-one[href]:hover, .badge--active.badge--stage-one[href]:focus {
     color: #fff;
     text-decoration: none;
-    background-color: #85121a; }
+    background-color: #00472d; }
+
+.badge--active.badge--stage-two {
+  color: #fff;
+  background-color: #00945d; }
+  .badge--active.badge--stage-two[href]:hover, .badge--active.badge--stage-two[href]:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #00613d; }
+
+.badge--active.badge--stage-three {
+  color: #fff;
+  background-color: #00ad6d; }
+  .badge--active.badge--stage-three[href]:hover, .badge--active.badge--stage-three[href]:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #007a4d; }
