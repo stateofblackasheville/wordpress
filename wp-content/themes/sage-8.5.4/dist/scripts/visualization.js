@@ -17,7 +17,7 @@ jQuery('.soba-visualization').each(function(){
 	}
 
 	if(datasetLabels){
-		filters = JSON.parse(datasetLabels);	
+		datasetLabels = JSON.parse(datasetLabels);	
 	}
 
 	var props = {
@@ -39,5 +39,4 @@ jQuery('.soba-visualization').each(function(){
 
 	ReactDOM.render(React.createElement(SobaVisualization, props), elm);
 });
-//# sourceMappingURL=visualization.js.map
 //# sourceMappingURL=visualization.js.map
