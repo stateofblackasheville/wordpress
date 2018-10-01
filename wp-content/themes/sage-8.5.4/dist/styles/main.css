@@ -8305,6 +8305,8 @@ body.home .content-section__inner-container,
   margin-left: 0;
   flex: 0 0 75%;
   max-width: 75%; }
+  .archive-listings--visualization .grid-item.visualization {
+    margin-bottom: 2rem; }
 
 @media (max-width: 991.98px) {
   .archive-listings-filters,

@@ -1284,6 +1284,9 @@ body.home,
 .archive-listings--visualization{
 	@include make-col-offset(0);
 	@include make-col(9);
+	.grid-item.visualization{
+		margin-bottom: 2rem;
+	}
 }
 
 .archive-listings-filters,
