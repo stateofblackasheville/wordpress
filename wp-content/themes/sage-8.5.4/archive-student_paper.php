@@ -20,15 +20,8 @@
 
 <?php get_template_part('templates/page', 'header'); ?>
 <div class="container">
-	<?php //if (!have_posts()) : ?>
-	  <!-- <div class="alert alert-warning"> -->
-	    <?php //_e('Sorry, no results were found.', 'sage'); ?>
-	  <!-- </div> -->
-	  <?php //get_search_form(); ?>
-	<?php //endif; ?>	
 	<div class="row">
 		<div class="archive-listings-filters archive-listings-filters--student-papers">
-			<?php //get_search_form(); ?>
 			<form action="/student-papers" method="get">
 				<div class="form-group">
 					<input type="text" class="form-control" name="archive_search" value="<?php if(isset($_GET['archive_search'])): ?><?php echo $_GET['archive_search']; ?><?php endif; ?>" placeholder="Search by title or content...">

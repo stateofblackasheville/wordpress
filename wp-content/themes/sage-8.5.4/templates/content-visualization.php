@@ -61,7 +61,8 @@
 <div class="<?php echo $classes; ?>">
 	<div class="grid-item__inner">
 		<div class="grid-item__row"> 
-			<div class="visualization__header grid-item-header">		
+			<div class="visualization__header grid-item-header">
+				<?php Roots\Sage\Extras\render_badges($post_item); ?>		
 				<?php if($categories): ?>
 					<span class="grid-item__category">
 						<ion-icon src="<?= get_template_directory_uri(); ?>/dist/images/<?php echo $category_slug; ?>.svg"></ion-icon>

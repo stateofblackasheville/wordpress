@@ -110,6 +110,12 @@ function get_page_template(){
   return $template;
 }
 
+function render_badges($post_item){
+  if($post_item):
+    include(locate_template('templates/badges.php'));
+  endif;  
+}
+
 function render_tags($post_item){
     $tags = get_the_tags($post_item->ID);
     if($tags):
