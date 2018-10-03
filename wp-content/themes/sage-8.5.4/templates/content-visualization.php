@@ -135,6 +135,14 @@
 			<?php else: ?>
 
 			<?php endif; ?>
+			<?php if(get_field('call_to_action', $post_item->ID)): ?>
+				<div class="visualization__call-to-action">
+					<?php $visualization_cta = get_field('call_to_action', $post_item->ID); ?>
+					<a href="<?php echo $visualization_cta['url']; ?>" target="<?php echo $visualization_cta['target']; ?>">
+						<?php echo $visualization_cta['title']; ?> <ion-icon name="arrow-forward"></ion-icon> 
+					</a>
+				</div>
+			<?php endif; ?>			
 		</div>
 	</div>
 </div>

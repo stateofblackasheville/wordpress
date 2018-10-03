@@ -101,17 +101,17 @@
 			</form>
 		</div>
 		<div class="archive-listings archive-listings--visualization rte">
-			<div class="row">
-				<?php if(have_posts()): ?>
+			<?php if(have_posts()): ?>
+				<div class="row">
 					<?php while (have_posts()) : the_post(); ?>
 					  <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
 					<?php endwhile; ?>
-				<?php else: ?>
-					<div class="alert soba-alert">
-						Sorry! We couln't find any visualizations with this search and filter applied. Try adjusting the search or filters, or <a href="/visualizations">reset</a>.
-					</div>
-				<?php endif; ?>
-			</div>
+				</div>
+			<?php else: ?>
+				<div class="alert soba-alert">
+					Sorry! We couln't find any visualizations with this search and filter applied. Try adjusting the search or filters, or <a href="/visualizations">reset</a>.
+				</div>
+			<?php endif; ?>
 		</div>
 	</div>
 	<?php the_posts_navigation(); ?>	

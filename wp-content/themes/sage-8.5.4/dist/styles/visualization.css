@@ -408,7 +408,15 @@
   user-select: none; }
 
 #like_button_container, .soba-visualization {
-  width: 100%; }
+  width: 100%;
+  /*	.react-tabs{
+		min-height: 400px;
+		position: relative;
+	}
+	.soba-visualization{
+		min-height: 400px;
+		position: relative;
+	}*/ }
   #like_button_container select, .soba-visualization select {
     min-height: 2rem;
     margin-bottom: 1rem; }
@@ -427,14 +435,8 @@
     margin-left: .5rem; }
   #like_button_container .react-tabs__tab-panel--selected, .soba-visualization .react-tabs__tab-panel--selected {
     position: relative;
-    height: 400px;
+    min-height: 300px;
     background: white; }
-  #like_button_container .react-tabs, .soba-visualization .react-tabs {
-    min-height: 400px;
-    position: relative; }
-  #like_button_container .soba-visualization, .soba-visualization .soba-visualization {
-    min-height: 400px;
-    position: relative; }
   #like_button_container .react-tabs__tab-list, .soba-visualization .react-tabs__tab-list {
     display: flex;
     margin-top: 1rem;

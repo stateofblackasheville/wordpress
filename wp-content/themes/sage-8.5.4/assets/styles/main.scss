@@ -126,6 +126,9 @@ h3{
 			font-size: inherit;
 		}		
 	}	
+	a{
+		color: $red;
+	}
 }
 
 .custom-content-color{
@@ -861,10 +864,11 @@ footer.content-info{
 	}
 }
 
-.visualization__header h3{
+.visualization__header h3,
+.student-paper-content__inner h2.entry-title{
 	padding-top: .5rem;
 	a{
-		color: #666;
+		color: $earth;
 		/*text-decoration: underline; */
 	}
 }
@@ -903,9 +907,18 @@ footer.content-info{
 	&.visualization--stacked{
 		.grid-item-header,
 		.grid-item-content{
-			@include make-col(12);
+			@include make-col(12); 
 		}		
 	}	
+}
+
+.visualization__call-to-action{
+	padding-top: 1rem;
+	margin-top: 1rem;
+	border-top: 1px solid $off-white;
+	@include make-col(12);
+	@include make-col-ready();
+	text-align: right;
 }
 
 .grid-item.visualization,

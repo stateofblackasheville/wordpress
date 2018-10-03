@@ -35,17 +35,17 @@
 	}
 	.react-tabs__tab-panel--selected{
 		position: relative;
-		height: 400px;
-		background: white;
+		min-height: 300px;
+		background: white; 
 	}
-	.react-tabs{
+/*	.react-tabs{
 		min-height: 400px;
 		position: relative;
 	}
 	.soba-visualization{
 		min-height: 400px;
 		position: relative;
-	}
+	}*/
 	.react-tabs__tab-list{
 		display: flex;
 		margin-top: 1rem;
