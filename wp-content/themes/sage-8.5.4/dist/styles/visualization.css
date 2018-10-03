@@ -423,6 +423,8 @@
     display: none; }
   #like_button_container .inputs label, .soba-visualization .inputs label {
     width: 150px; }
+  #like_button_container .user-controls select, .soba-visualization .user-controls select {
+    margin-left: .5rem; }
   #like_button_container .react-tabs__tab-panel--selected, .soba-visualization .react-tabs__tab-panel--selected {
     position: relative;
     height: 400px;

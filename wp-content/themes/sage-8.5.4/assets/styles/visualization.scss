@@ -28,6 +28,11 @@
 			
 		}
 	}
+	.user-controls{
+		select{
+			margin-left: .5rem;
+		}
+	}
 	.react-tabs__tab-panel--selected{
 		position: relative;
 		height: 400px;

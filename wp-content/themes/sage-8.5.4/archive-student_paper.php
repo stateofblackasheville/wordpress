@@ -12,16 +12,18 @@
 
 	$all_content_ids = wp_list_pluck($all_content->posts, 'ID'); 
 
-	// $available_tags = wp_get_object_terms($all_content_ids, 'post_tag');
-	$available_tags = get_terms(array(
-		'taxonomy' => 'post_tag'
-	));	
+	$available_tags = wp_get_object_terms($all_content_ids, 'post_tag');
+
+	// $available_tags = get_terms(array(
+	// 	'taxonomy' => 'post_tag'
+	// ));	
 ?>
 
 <?php get_template_part('templates/page', 'header'); ?>
 <div class="container">
 	<div class="row">
-		<div class="archive-listings-filters archive-listings-filters--student-papers">
+		<?php Roots\Sage\Extras\content_totals(); ?>		
+		<div class="archive-listings-filters archive-listings-filters--student-papers">			
 			<form action="/student-papers" method="get">
 				<div class="form-group">
 					<input type="text" class="form-control" name="archive_search" value="<?php if(isset($_GET['archive_search'])): ?><?php echo $_GET['archive_search']; ?><?php endif; ?>" placeholder="Search by title or content...">

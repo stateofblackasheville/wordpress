@@ -14,11 +14,19 @@
 
 	$all_content_ids = wp_list_pluck($all_content->posts, 'ID'); 
 
-	// $available_tags = wp_get_object_terms($all_content_ids, 'post_tag');
+	$available_tags = wp_get_object_terms($all_content_ids, 'post_tag');
 
-	$available_tags = get_terms(array(
-		'taxonomy' => 'post_tag'
+	// $available_tags = get_terms(array(
+	// 	'taxonomy' => 'post_tag'
+	// ));
+
+	$all_visualizations = get_posts(array(
+		'post_type' =>  'visualization',
+		'posts_per_page'  => -1,
 	));
+
+	// var_dump(count($all_visualizations));
+
 ?>
 
 <?php get_template_part('templates/page', 'header'); ?>
@@ -29,7 +37,8 @@
 	  <!-- </div> -->
 	  <?php //get_search_form(); ?>
 	<?php //endif; ?>	
-	<div class="row">
+	<div class="row">	
+		<?php Roots\Sage\Extras\content_totals(); ?>	
 		<div class="archive-listings-filters archive-listings-filters--visualization">
 			<form action="/visualizations" method="get">
 				<div class="form-group">
@@ -69,13 +78,15 @@
 				</h3>				
 				<?php if(!empty($available_tags)): ?>					
 					<?php foreach($available_tags as $tag): ?>
-						<div class="form-check">
-							<input type="checkbox" class="form-check-input" id="<?php echo sanitize_title($tag->name); ?>" name="tags[]" value="<?php echo $tag->term_id; ?>" 
-							<?php if(isset($_GET['tags']) && in_array($tag->term_id, $_GET['tags'])): ?>checked<?php endif; ?>>			
-							<label class="filter filter--needs-visualization" for="<?php echo sanitize_title($tag->name); ?>">
-								<?php echo $tag->name; ?>
-							</label>
-						</div>
+						<?php if($tag->count > 0): ?>
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="<?php echo sanitize_title($tag->name); ?>" name="tags[]" value="<?php echo $tag->term_id; ?>" 
+								<?php if(isset($_GET['tags']) && in_array($tag->term_id, $_GET['tags'])): ?>checked<?php endif; ?>>			
+								<label class="filter filter--needs-visualization" for="<?php echo sanitize_title($tag->name); ?>">
+									<?php echo $tag->name; ?>
+								</label>
+							</div>
+						<?php endif; ?>
 					<?php endforeach; ?>
 				<?php else: ?>
 					<small class="form-text text-muted">

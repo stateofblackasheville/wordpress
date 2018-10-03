@@ -27,7 +27,7 @@ $purple: #662d91;
 $text-grey: #4d4d4d;
 $off-white: #efebee;
 $green: #007a4d;
-$earth: #6d280b;
+$earth: #5f4e47;
 /*END*/
 
 a{
@@ -1189,10 +1189,10 @@ body.home,
 
 /*ARCHIVE*/
 .archive-listings{
-	margin-top: 3rem;
+	/*margin-top: 3rem;*/
 	@include make-col-ready();
-	@include make-col-offset(2);
-	@include make-col(8);
+	/*@include make-col-offset(2);*/
+	@include make-col(9);
 	h2{
 		/*font-size: 1rem;*/
 	}
@@ -1214,8 +1214,8 @@ body.home,
 
 .archive-listings--student-papers{
 	/*text-align: center;	*/
-	@include make-col-offset(1);
-	@include make-col(8); 
+	/*@include make-col-offset(1);*/
+	@include make-col(9); 
 	@include media-breakpoint-down(md){
 		@include make-col-offset(0);
 		@include make-col(12); 
@@ -1277,7 +1277,7 @@ body.home,
 .archive-listings-filters{
 	@include make-col-ready();
 	@include make-col(3);
-	margin-top: 3rem;
+	/*margin-top: 3rem;*/
 	.soba-btn{
 		margin-top: 1rem;
 	}
@@ -1426,5 +1426,22 @@ body.home,
 		/*font-weight: bold;*/
 		font-size: 2em;
 	}
+}
+
+/*ARCHIVE CONTENT TOTALS*/
+.content-totals--archive{
+	@include make-col-ready();
+	@include make-col(12);
+	font-size: 1rem;
+	color: #9a9699;
+	.inner{
+		@extend .soba-alert;
+		/*padding: 1rem 0;*/
+		/*background: $off-white;*/
+		margin: 1rem 0;
+		text-align: center;		
+	}
+	/*background: $off-white;*/
+
 }
 

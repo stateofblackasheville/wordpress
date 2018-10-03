@@ -43,7 +43,7 @@ function filter_archive( $query ) {
   } 
   
   // only modify queries for 'event' post type
-  if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'visualization' ):
+  if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'visualization' && $query->is_main_query() ):
     
     // allow the url to alter the query
     if(isset($_GET['visualization_needed']) ):
@@ -57,7 +57,7 @@ function filter_archive( $query ) {
     
   endif;
 
-  if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'student_paper' ):
+  if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'student_paper' && $query->is_main_query()):
 
     $query->set('posts_per_page', 50);
 
@@ -73,7 +73,7 @@ function filter_archive( $query ) {
   
   endif;  
 
-  if( isset($query->query_vars['post_type']) && ($query->query_vars['post_type'] == 'student_paper' || $query->query_vars['post_type'] == 'visualization')):
+  if( isset($query->query_vars['post_type']) && ($query->query_vars['post_type'] == 'student_paper' || $query->query_vars['post_type'] == 'visualization') && $query->is_main_query()):
     if(isset($_GET['archive_search']) && $_GET['archive_search'] !== null):
       // $meta_query[] = array(
       //     'key'   => 'author',
@@ -214,14 +214,21 @@ function render_acf_image_alt($field, $options = false){
 
 // add_action('check_stats', __NAMESPACE__.'\\tally_stats');
 
+// global $all_visualizations;
+// global $visualizations_complete;
+// global $all_student_papers;
+// global $student_papers_with_index;
+
 function content_totals() {
   $all_visualizations = get_posts(array(
     'post_type' =>  'visualization',
     'posts_per_page'  => -1,
+    'suppress_filters' => true
   ));
   $visualizations_complete = get_posts(array(
     'post_type' =>  'visualization',
     'posts_per_page'  => -1,
+    'suppress_filters' => true,
     'meta_query' => array(
       array(
         'key'     => 'embed',
@@ -233,10 +240,12 @@ function content_totals() {
   $all_student_papers = get_posts(array(
     'post_type' =>  'student_paper',
     'posts_per_page'  => -1,
+    'suppress_filters' => true,
   ));
   $student_papers_with_index = get_posts(array(
     'post_type' =>  'student_paper',
     'posts_per_page'  => -1,
+    'suppress_filters' => true,
     'meta_query' => array(
       // 'relation' => 'OR',
       array(
@@ -249,7 +258,7 @@ function content_totals() {
   include(locate_template('templates/content-totals.php'));
 } 
 
-// add_action( 'wp_loaded', __NAMESPACE__.'\\tally_stats' );
+// add_action( 'wp_loaded', __NAMESPACE__.'\\content_totals' );
 // 
 
 // CREATE OPTIONS PAGE

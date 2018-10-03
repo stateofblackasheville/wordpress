@@ -69,7 +69,7 @@
 						<?php echo $category_title; ?>
 					</span>
 				<?php endif; ?>			
-				<h3>
+				<h3 class="rte rte--georgia">
 					<a href="<?php echo get_the_permalink($post_item->ID); ?>">
 					<span class="grid-item__title">
 						<?php echo get_the_title($post_item->ID); ?>
