@@ -96,7 +96,7 @@ h3{
 }
 
 .rte{
-	font-family: Georgia;
+	/*font-family: Georgia;*/
 	p{
 		font-size: 1rem;
 		color: $text-grey;
@@ -127,7 +127,7 @@ h3{
 		}		
 	}	
 	a{
-		color: $red;
+		/*color: $red;*/
 	}
 }
 
@@ -159,8 +159,9 @@ main.main{
 
 .soba-btn{
 	/*@include button-variant(#DE3831, lighten(#DE3831, 10%), darken(#DE3831, 10%), lighten(#DE3831, 20%));*/
+	@extend .btn;
 	@include button-variant($red, lighten($red, 10%), darken($red, 10%), lighten($red, 20%));
-	@include button-size(1rem, 2rem, 1.25rem, .1rem, .1rem);
+	@include button-size(.5rem, 2rem, 1rem, 1em, .1rem);
 /*	display: inline-block;
 	padding: .75rem 1rem;
 	width: 300px;*/
@@ -871,12 +872,15 @@ footer.content-info{
 	}
 }
 
-.visualization__header h3,
-.student-paper-content__inner h2.entry-title{
-	padding-top: .5rem;
-	a{
-		color: $earth;
-		/*text-decoration: underline; */
+.visualization__header,
+.student-paper-content__inner{
+	h2.entry-title,
+	h3{
+		padding-top: .5rem;
+		a{
+			color: $earth;
+			/*text-decoration: underline; */
+		}
 	}
 }
 
@@ -920,18 +924,17 @@ footer.content-info{
 }
 
 .visualization__call-to-action{
-	padding-top: 2rem;
-	margin-top: 2rem;
+	padding-top: 1rem;
+	margin-top: 1rem;
 	/*margin-bottom: 1rem;*/
-	padding-bottom: 1rem;
+	padding-bottom: 0rem;
 	border-top: 1px solid $off-white;
 	@include make-col(12);
 	@include make-col-ready();
 	/*text-align: right;*/
 	a{
 		/*@extend .soba-btn;*/
-		@include button-variant($off-white, darken($off-white, 10%), $off-white, darken($off-white, 10%));
-		@include button-size(.5rem, 2rem, 1rem, .1rem, .1rem);
+
 	}
 }
 
@@ -946,6 +949,12 @@ footer.content-info{
 	    background: white;
 	    /*border-radius: 3px;		*/
 	}
+	.soba-btn,
+	.visualization__call-to-action a{
+		@extend .btn;
+		@include button-variant($off-white, darken($off-white, 10%), $off-white, darken($off-white, 10%));
+		@include button-size(.5rem, 2rem, 1rem, 1em, .1rem);
+	}	
 }
 
 

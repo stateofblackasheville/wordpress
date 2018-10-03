@@ -11,6 +11,9 @@ jQuery('.soba-visualization').each(function(){
 	var datasetLabels = jQuery(this).attr('data-datasetLabels');
 	var labelX = jQuery(this).attr('data-labelX');
 	var labelY = jQuery(this).attr('data-labelY');
+
+	var spreadsheetChartColumns = jQuery(this).attr('data-spreadsheetChartColumns');
+	var summaryText = jQuery(this).attr('data-summaryText');
 	
 	if(filters){
 		filters = JSON.parse(filters);	
@@ -18,6 +21,10 @@ jQuery('.soba-visualization').each(function(){
 
 	if(datasetLabels){
 		datasetLabels = JSON.parse(datasetLabels);	
+	}
+
+	if(spreadsheetChartColumns){
+		spreadsheetChartColumns = JSON.parse(spreadsheetChartColumns);	
 	}
 
 	var props = {
@@ -29,10 +36,12 @@ jQuery('.soba-visualization').each(function(){
 		groupBy: groupBy,
 		chartType: chartType,
 		showChartTypeSelect: showChartTypeSelect,
+		spreadsheetChartColumns: spreadsheetChartColumns,
 		filters: filters,
 		datasetLabels: datasetLabels,
 		labelX: labelX,
-		labelY: labelY
+		labelY: labelY,
+		summaryText: summaryText
 	};
 
 	var elm = jQuery(this)[0];

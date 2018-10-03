@@ -1536,14 +1536,30 @@ select.form-control:focus::-ms-value, .search-form select.search-field:focus::-m
   .input-group-sm > .input-group-append > .form-control-plaintext.input-group-text,
   .input-group-sm > .input-group-prepend > .form-control-plaintext.btn, .comment-form
   .input-group-sm > .input-group-prepend > input.form-control-plaintext[type="submit"], .search-form
-  .input-group-sm > .input-group-prepend > .form-control-plaintext.search-submit, .content-section__slider_content .slider-content
+  .input-group-sm > .input-group-prepend > .form-control-plaintext.search-submit,
+  .input-group-sm > .input-group-prepend > .form-control-plaintext.soba-btn, .content-section__slider_content .slider-content
   .input-group-sm > .input-group-prepend > .form-control-plaintext.button, .content-section__grid_content .section__link
-  .input-group-sm > .input-group-prepend > .form-control-plaintext.button,
+  .input-group-sm > .input-group-prepend > .form-control-plaintext.button, .grid-item.visualization
+  .input-group-sm > .input-group-prepend > .form-control-plaintext.soba-btn,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-sm > .input-group-prepend > a.form-control-plaintext,
+  .student-paper-content
+  .input-group-sm > .input-group-prepend > .form-control-plaintext.soba-btn,
+  .student-paper-content .visualization__call-to-action
+  .input-group-sm > .input-group-prepend > a.form-control-plaintext,
   .input-group-sm > .input-group-append > .form-control-plaintext.btn, .comment-form
   .input-group-sm > .input-group-append > input.form-control-plaintext[type="submit"], .search-form
-  .input-group-sm > .input-group-append > .form-control-plaintext.search-submit, .content-section__slider_content .slider-content
+  .input-group-sm > .input-group-append > .form-control-plaintext.search-submit,
+  .input-group-sm > .input-group-append > .form-control-plaintext.soba-btn, .content-section__slider_content .slider-content
   .input-group-sm > .input-group-append > .form-control-plaintext.button, .content-section__grid_content .section__link
-  .input-group-sm > .input-group-append > .form-control-plaintext.button, .form-control-plaintext.form-control-lg, .input-group-lg > .form-control-plaintext.form-control, .comment-form .input-group-lg > input.form-control-plaintext[type="text"],
+  .input-group-sm > .input-group-append > .form-control-plaintext.button, .grid-item.visualization
+  .input-group-sm > .input-group-append > .form-control-plaintext.soba-btn,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-sm > .input-group-append > a.form-control-plaintext,
+  .student-paper-content
+  .input-group-sm > .input-group-append > .form-control-plaintext.soba-btn,
+  .student-paper-content .visualization__call-to-action
+  .input-group-sm > .input-group-append > a.form-control-plaintext, .form-control-plaintext.form-control-lg, .input-group-lg > .form-control-plaintext.form-control, .comment-form .input-group-lg > input.form-control-plaintext[type="text"],
   .comment-form .input-group-lg > input.form-control-plaintext[type="email"],
   .comment-form .input-group-lg > input.form-control-plaintext[type="url"],
   .comment-form .input-group-lg > textarea.form-control-plaintext, .search-form .input-group-lg > .form-control-plaintext.search-field,
@@ -1551,14 +1567,30 @@ select.form-control:focus::-ms-value, .search-form select.search-field:focus::-m
   .input-group-lg > .input-group-append > .form-control-plaintext.input-group-text,
   .input-group-lg > .input-group-prepend > .form-control-plaintext.btn, .comment-form
   .input-group-lg > .input-group-prepend > input.form-control-plaintext[type="submit"], .search-form
-  .input-group-lg > .input-group-prepend > .form-control-plaintext.search-submit, .content-section__slider_content .slider-content
+  .input-group-lg > .input-group-prepend > .form-control-plaintext.search-submit,
+  .input-group-lg > .input-group-prepend > .form-control-plaintext.soba-btn, .content-section__slider_content .slider-content
   .input-group-lg > .input-group-prepend > .form-control-plaintext.button, .content-section__grid_content .section__link
-  .input-group-lg > .input-group-prepend > .form-control-plaintext.button,
+  .input-group-lg > .input-group-prepend > .form-control-plaintext.button, .grid-item.visualization
+  .input-group-lg > .input-group-prepend > .form-control-plaintext.soba-btn,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-lg > .input-group-prepend > a.form-control-plaintext,
+  .student-paper-content
+  .input-group-lg > .input-group-prepend > .form-control-plaintext.soba-btn,
+  .student-paper-content .visualization__call-to-action
+  .input-group-lg > .input-group-prepend > a.form-control-plaintext,
   .input-group-lg > .input-group-append > .form-control-plaintext.btn, .comment-form
   .input-group-lg > .input-group-append > input.form-control-plaintext[type="submit"], .search-form
-  .input-group-lg > .input-group-append > .form-control-plaintext.search-submit, .content-section__slider_content .slider-content
+  .input-group-lg > .input-group-append > .form-control-plaintext.search-submit,
+  .input-group-lg > .input-group-append > .form-control-plaintext.soba-btn, .content-section__slider_content .slider-content
   .input-group-lg > .input-group-append > .form-control-plaintext.button, .content-section__grid_content .section__link
-  .input-group-lg > .input-group-append > .form-control-plaintext.button {
+  .input-group-lg > .input-group-append > .form-control-plaintext.button, .grid-item.visualization
+  .input-group-lg > .input-group-append > .form-control-plaintext.soba-btn,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-lg > .input-group-append > a.form-control-plaintext,
+  .student-paper-content
+  .input-group-lg > .input-group-append > .form-control-plaintext.soba-btn,
+  .student-paper-content .visualization__call-to-action
+  .input-group-lg > .input-group-append > a.form-control-plaintext {
     padding-right: 0;
     padding-left: 0; }
 
@@ -1570,14 +1602,30 @@ select.form-control:focus::-ms-value, .search-form select.search-field:focus::-m
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn, .comment-form
 .input-group-sm > .input-group-prepend > input[type="submit"], .search-form
-.input-group-sm > .input-group-prepend > .search-submit, .content-section__slider_content .slider-content
+.input-group-sm > .input-group-prepend > .search-submit,
+.input-group-sm > .input-group-prepend > .soba-btn, .content-section__slider_content .slider-content
 .input-group-sm > .input-group-prepend > .button, .content-section__grid_content .section__link
-.input-group-sm > .input-group-prepend > .button,
+.input-group-sm > .input-group-prepend > .button, .grid-item.visualization
+.input-group-sm > .input-group-prepend > .soba-btn,
+.grid-item.visualization .visualization__call-to-action
+.input-group-sm > .input-group-prepend > a,
+.student-paper-content
+.input-group-sm > .input-group-prepend > .soba-btn,
+.student-paper-content .visualization__call-to-action
+.input-group-sm > .input-group-prepend > a,
 .input-group-sm > .input-group-append > .btn, .comment-form
 .input-group-sm > .input-group-append > input[type="submit"], .search-form
-.input-group-sm > .input-group-append > .search-submit, .content-section__slider_content .slider-content
+.input-group-sm > .input-group-append > .search-submit,
+.input-group-sm > .input-group-append > .soba-btn, .content-section__slider_content .slider-content
 .input-group-sm > .input-group-append > .button, .content-section__grid_content .section__link
-.input-group-sm > .input-group-append > .button {
+.input-group-sm > .input-group-append > .button, .grid-item.visualization
+.input-group-sm > .input-group-append > .soba-btn,
+.grid-item.visualization .visualization__call-to-action
+.input-group-sm > .input-group-append > a,
+.student-paper-content
+.input-group-sm > .input-group-append > .soba-btn,
+.student-paper-content .visualization__call-to-action
+.input-group-sm > .input-group-append > a {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -1587,13 +1635,21 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
 .input-group-sm > .input-group-prepend > select.input-group-text:not([size]):not([multiple]),
 .input-group-sm > .input-group-append > select.input-group-text:not([size]):not([multiple]),
 .input-group-sm > .input-group-prepend > select.btn:not([size]):not([multiple]), .search-form
-.input-group-sm > .input-group-prepend > select.search-submit:not([size]):not([multiple]), .content-section__slider_content .slider-content
+.input-group-sm > .input-group-prepend > select.search-submit:not([size]):not([multiple]),
+.input-group-sm > .input-group-prepend > select.soba-btn:not([size]):not([multiple]), .content-section__slider_content .slider-content
 .input-group-sm > .input-group-prepend > select.button:not([size]):not([multiple]), .content-section__grid_content .section__link
-.input-group-sm > .input-group-prepend > select.button:not([size]):not([multiple]),
+.input-group-sm > .input-group-prepend > select.button:not([size]):not([multiple]), .grid-item.visualization
+.input-group-sm > .input-group-prepend > select.soba-btn:not([size]):not([multiple]),
+.student-paper-content
+.input-group-sm > .input-group-prepend > select.soba-btn:not([size]):not([multiple]),
 .input-group-sm > .input-group-append > select.btn:not([size]):not([multiple]), .search-form
-.input-group-sm > .input-group-append > select.search-submit:not([size]):not([multiple]), .content-section__slider_content .slider-content
+.input-group-sm > .input-group-append > select.search-submit:not([size]):not([multiple]),
+.input-group-sm > .input-group-append > select.soba-btn:not([size]):not([multiple]), .content-section__slider_content .slider-content
 .input-group-sm > .input-group-append > select.button:not([size]):not([multiple]), .content-section__grid_content .section__link
-.input-group-sm > .input-group-append > select.button:not([size]):not([multiple]) {
+.input-group-sm > .input-group-append > select.button:not([size]):not([multiple]), .grid-item.visualization
+.input-group-sm > .input-group-append > select.soba-btn:not([size]):not([multiple]),
+.student-paper-content
+.input-group-sm > .input-group-append > select.soba-btn:not([size]):not([multiple]) {
   height: calc(1.8125rem + 2px); }
 
 .form-control-lg, .input-group-lg > .form-control, .comment-form .input-group-lg > input[type="text"],
@@ -1604,14 +1660,30 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn, .comment-form
 .input-group-lg > .input-group-prepend > input[type="submit"], .search-form
-.input-group-lg > .input-group-prepend > .search-submit, .content-section__slider_content .slider-content
+.input-group-lg > .input-group-prepend > .search-submit,
+.input-group-lg > .input-group-prepend > .soba-btn, .content-section__slider_content .slider-content
 .input-group-lg > .input-group-prepend > .button, .content-section__grid_content .section__link
-.input-group-lg > .input-group-prepend > .button,
+.input-group-lg > .input-group-prepend > .button, .grid-item.visualization
+.input-group-lg > .input-group-prepend > .soba-btn,
+.grid-item.visualization .visualization__call-to-action
+.input-group-lg > .input-group-prepend > a,
+.student-paper-content
+.input-group-lg > .input-group-prepend > .soba-btn,
+.student-paper-content .visualization__call-to-action
+.input-group-lg > .input-group-prepend > a,
 .input-group-lg > .input-group-append > .btn, .comment-form
 .input-group-lg > .input-group-append > input[type="submit"], .search-form
-.input-group-lg > .input-group-append > .search-submit, .content-section__slider_content .slider-content
+.input-group-lg > .input-group-append > .search-submit,
+.input-group-lg > .input-group-append > .soba-btn, .content-section__slider_content .slider-content
 .input-group-lg > .input-group-append > .button, .content-section__grid_content .section__link
-.input-group-lg > .input-group-append > .button {
+.input-group-lg > .input-group-append > .button, .grid-item.visualization
+.input-group-lg > .input-group-append > .soba-btn,
+.grid-item.visualization .visualization__call-to-action
+.input-group-lg > .input-group-append > a,
+.student-paper-content
+.input-group-lg > .input-group-append > .soba-btn,
+.student-paper-content .visualization__call-to-action
+.input-group-lg > .input-group-append > a {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -1621,13 +1693,21 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .input-group-lg > .input-group-prepend > select.input-group-text:not([size]):not([multiple]),
 .input-group-lg > .input-group-append > select.input-group-text:not([size]):not([multiple]),
 .input-group-lg > .input-group-prepend > select.btn:not([size]):not([multiple]), .search-form
-.input-group-lg > .input-group-prepend > select.search-submit:not([size]):not([multiple]), .content-section__slider_content .slider-content
+.input-group-lg > .input-group-prepend > select.search-submit:not([size]):not([multiple]),
+.input-group-lg > .input-group-prepend > select.soba-btn:not([size]):not([multiple]), .content-section__slider_content .slider-content
 .input-group-lg > .input-group-prepend > select.button:not([size]):not([multiple]), .content-section__grid_content .section__link
-.input-group-lg > .input-group-prepend > select.button:not([size]):not([multiple]),
+.input-group-lg > .input-group-prepend > select.button:not([size]):not([multiple]), .grid-item.visualization
+.input-group-lg > .input-group-prepend > select.soba-btn:not([size]):not([multiple]),
+.student-paper-content
+.input-group-lg > .input-group-prepend > select.soba-btn:not([size]):not([multiple]),
 .input-group-lg > .input-group-append > select.btn:not([size]):not([multiple]), .search-form
-.input-group-lg > .input-group-append > select.search-submit:not([size]):not([multiple]), .content-section__slider_content .slider-content
+.input-group-lg > .input-group-append > select.search-submit:not([size]):not([multiple]),
+.input-group-lg > .input-group-append > select.soba-btn:not([size]):not([multiple]), .content-section__slider_content .slider-content
 .input-group-lg > .input-group-append > select.button:not([size]):not([multiple]), .content-section__grid_content .section__link
-.input-group-lg > .input-group-append > select.button:not([size]):not([multiple]) {
+.input-group-lg > .input-group-append > select.button:not([size]):not([multiple]), .grid-item.visualization
+.input-group-lg > .input-group-append > select.soba-btn:not([size]):not([multiple]),
+.student-paper-content
+.input-group-lg > .input-group-append > select.soba-btn:not([size]):not([multiple]) {
   height: calc(2.875rem + 2px); }
 
 .form-group, .comment-form p, .search-form label {
@@ -1975,7 +2055,10 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     .form-inline .custom-control-label, .search-form .custom-control-label {
       margin-bottom: 0; } }
 
-.btn, .comment-form input[type="submit"], .search-form .search-submit, .content-section__slider_content .slider-content .button, .content-section__grid_content .section__link .button {
+.btn, .comment-form input[type="submit"], .search-form .search-submit, .soba-btn, .content-section__slider_content .slider-content .button, .content-section__grid_content .section__link .button, .grid-item.visualization .soba-btn,
+.grid-item.visualization .visualization__call-to-action a,
+.student-paper-content .soba-btn,
+.student-paper-content .visualization__call-to-action a {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -1989,28 +2072,62 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
-    .btn, .comment-form input[type="submit"], .search-form .search-submit, .content-section__slider_content .slider-content .button, .content-section__grid_content .section__link .button {
+    .btn, .comment-form input[type="submit"], .search-form .search-submit, .soba-btn, .content-section__slider_content .slider-content .button, .content-section__grid_content .section__link .button, .grid-item.visualization .soba-btn,
+    .grid-item.visualization .visualization__call-to-action a,
+    .student-paper-content .soba-btn,
+    .student-paper-content .visualization__call-to-action a {
       transition: none; } }
-  .btn:hover, .comment-form input[type="submit"]:hover, .search-form .search-submit:hover, .content-section__slider_content .slider-content .button:hover, .content-section__grid_content .section__link .button:hover, .btn:focus, .comment-form input[type="submit"]:focus, .search-form .search-submit:focus, .content-section__slider_content .slider-content .button:focus, .content-section__grid_content .section__link .button:focus {
+  .btn:hover, .comment-form input[type="submit"]:hover, .search-form .search-submit:hover, .soba-btn:hover, .content-section__slider_content .slider-content .button:hover, .content-section__grid_content .section__link .button:hover, .grid-item.visualization .soba-btn:hover,
+  .grid-item.visualization .visualization__call-to-action a:hover,
+  .student-paper-content .visualization__call-to-action a:hover, .btn:focus, .comment-form input[type="submit"]:focus, .search-form .search-submit:focus, .soba-btn:focus, .content-section__slider_content .slider-content .button:focus, .content-section__grid_content .section__link .button:focus, .grid-item.visualization .soba-btn:focus,
+  .grid-item.visualization .visualization__call-to-action a:focus,
+  .student-paper-content .visualization__call-to-action a:focus {
     text-decoration: none; }
-  .btn:focus, .comment-form input[type="submit"]:focus, .search-form .search-submit:focus, .content-section__slider_content .slider-content .button:focus, .content-section__grid_content .section__link .button:focus, .btn.focus, .comment-form input.focus[type="submit"], .search-form .focus.search-submit, .content-section__slider_content .slider-content .focus.button, .content-section__grid_content .section__link .focus.button {
+  .btn:focus, .comment-form input[type="submit"]:focus, .search-form .search-submit:focus, .soba-btn:focus, .content-section__slider_content .slider-content .button:focus, .content-section__grid_content .section__link .button:focus, .grid-item.visualization .soba-btn:focus,
+  .grid-item.visualization .visualization__call-to-action a:focus,
+  .student-paper-content .visualization__call-to-action a:focus, .btn.focus, .comment-form input.focus[type="submit"], .search-form .focus.search-submit, .focus.soba-btn, .content-section__slider_content .slider-content .focus.button, .content-section__grid_content .section__link .focus.button, .grid-item.visualization .focus.soba-btn,
+  .grid-item.visualization .visualization__call-to-action a.focus,
+  .student-paper-content .visualization__call-to-action a.focus {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
-  .btn.disabled, .comment-form input.disabled[type="submit"], .search-form .disabled.search-submit, .content-section__slider_content .slider-content .disabled.button, .content-section__grid_content .section__link .disabled.button, .btn:disabled, .comment-form input[type="submit"]:disabled, .search-form .search-submit:disabled, .content-section__slider_content .slider-content .button:disabled, .content-section__grid_content .section__link .button:disabled {
+  .btn.disabled, .comment-form input.disabled[type="submit"], .search-form .disabled.search-submit, .disabled.soba-btn, .content-section__slider_content .slider-content .disabled.button, .content-section__grid_content .section__link .disabled.button, .grid-item.visualization .disabled.soba-btn,
+  .grid-item.visualization .visualization__call-to-action a.disabled,
+  .student-paper-content .visualization__call-to-action a.disabled, .btn:disabled, .comment-form input[type="submit"]:disabled, .search-form .search-submit:disabled, .soba-btn:disabled, .content-section__slider_content .slider-content .button:disabled, .content-section__grid_content .section__link .button:disabled, .grid-item.visualization .soba-btn:disabled,
+  .grid-item.visualization .visualization__call-to-action a:disabled,
+  .student-paper-content .visualization__call-to-action a:disabled {
     opacity: 0.65; }
-  .btn:not(:disabled):not(.disabled), .comment-form input[type="submit"]:not(:disabled):not(.disabled), .search-form .search-submit:not(:disabled):not(.disabled), .content-section__slider_content .slider-content .button:not(:disabled):not(.disabled), .content-section__grid_content .section__link .button:not(:disabled):not(.disabled) {
+  .btn:not(:disabled):not(.disabled), .comment-form input[type="submit"]:not(:disabled):not(.disabled), .search-form .search-submit:not(:disabled):not(.disabled), .soba-btn:not(:disabled):not(.disabled), .content-section__slider_content .slider-content .button:not(:disabled):not(.disabled), .content-section__grid_content .section__link .button:not(:disabled):not(.disabled),
+  .grid-item.visualization .visualization__call-to-action a:not(:disabled):not(.disabled),
+  .student-paper-content .visualization__call-to-action a:not(:disabled):not(.disabled) {
     cursor: pointer; }
-  .btn:not(:disabled):not(.disabled):active, .comment-form input[type="submit"]:not(:disabled):not(.disabled):active, .search-form .search-submit:not(:disabled):not(.disabled):active, .content-section__slider_content .slider-content .button:not(:disabled):not(.disabled):active, .content-section__grid_content .section__link .button:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active, .comment-form input[type="submit"]:not(:disabled):not(.disabled).active, .search-form .search-submit:not(:disabled):not(.disabled).active, .content-section__slider_content .slider-content .button:not(:disabled):not(.disabled).active, .content-section__grid_content .section__link .button:not(:disabled):not(.disabled).active {
+  .btn:not(:disabled):not(.disabled):active, .comment-form input[type="submit"]:not(:disabled):not(.disabled):active, .search-form .search-submit:not(:disabled):not(.disabled):active, .soba-btn:not(:disabled):not(.disabled):active, .content-section__slider_content .slider-content .button:not(:disabled):not(.disabled):active, .content-section__grid_content .section__link .button:not(:disabled):not(.disabled):active,
+  .grid-item.visualization .visualization__call-to-action a:not(:disabled):not(.disabled):active,
+  .student-paper-content .visualization__call-to-action a:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active, .comment-form input[type="submit"]:not(:disabled):not(.disabled).active, .search-form .search-submit:not(:disabled):not(.disabled).active, .soba-btn:not(:disabled):not(.disabled).active, .content-section__slider_content .slider-content .button:not(:disabled):not(.disabled).active, .content-section__grid_content .section__link .button:not(:disabled):not(.disabled).active,
+  .grid-item.visualization .visualization__call-to-action a:not(:disabled):not(.disabled).active,
+  .student-paper-content .visualization__call-to-action a:not(:disabled):not(.disabled).active {
     background-image: none; }
 
-a.btn.disabled, .search-form a.disabled.search-submit, .content-section__slider_content .slider-content a.disabled.button, .content-section__grid_content .section__link a.disabled.button,
+a.btn.disabled, .search-form a.disabled.search-submit, a.disabled.soba-btn, .content-section__slider_content .slider-content a.disabled.button, .content-section__grid_content .section__link a.disabled.button, .grid-item.visualization a.disabled.soba-btn,
+.grid-item.visualization .visualization__call-to-action a.disabled,
+.student-paper-content .visualization__call-to-action a.disabled,
 fieldset:disabled a.btn,
 fieldset:disabled .search-form a.search-submit, .search-form
 fieldset:disabled a.search-submit,
+fieldset:disabled a.soba-btn,
 fieldset:disabled .content-section__slider_content .slider-content a.button, .content-section__slider_content .slider-content
 fieldset:disabled a.button,
 fieldset:disabled .content-section__grid_content .section__link a.button, .content-section__grid_content .section__link
-fieldset:disabled a.button {
+fieldset:disabled a.button,
+fieldset:disabled .grid-item.visualization a.soba-btn, .grid-item.visualization
+fieldset:disabled a.soba-btn,
+fieldset:disabled
+.grid-item.visualization .visualization__call-to-action a,
+.grid-item.visualization .visualization__call-to-action
+fieldset:disabled a,
+fieldset:disabled
+.student-paper-content .visualization__call-to-action a,
+.student-paper-content .visualization__call-to-action
+fieldset:disabled a {
   pointer-events: none; }
 
 .btn-primary {
@@ -2402,13 +2519,19 @@ fieldset:disabled a.button {
     color: #6c757d;
     pointer-events: none; }
 
-.btn-lg, .btn-group-lg > .btn, .comment-form .btn-group-lg > input[type="submit"], .search-form .btn-group-lg > .search-submit, .content-section__slider_content .slider-content .button, .content-section__grid_content .section__link .button {
+.btn-lg, .btn-group-lg > .btn, .comment-form .btn-group-lg > input[type="submit"], .search-form .btn-group-lg > .search-submit, .btn-group-lg > .soba-btn, .grid-item.visualization .btn-group-lg > .soba-btn,
+.grid-item.visualization .visualization__call-to-action .btn-group-lg > a,
+.student-paper-content .btn-group-lg > .soba-btn,
+.student-paper-content .visualization__call-to-action .btn-group-lg > a, .content-section__slider_content .slider-content .button, .content-section__grid_content .section__link .button {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-.btn-sm, .btn-group-sm > .btn, .comment-form .btn-group-sm > input[type="submit"], .search-form .btn-group-sm > .search-submit, .content-section__slider_content .slider-content .btn-group-sm > .button, .content-section__grid_content .section__link .btn-group-sm > .button {
+.btn-sm, .btn-group-sm > .btn, .comment-form .btn-group-sm > input[type="submit"], .search-form .btn-group-sm > .search-submit, .btn-group-sm > .soba-btn, .content-section__slider_content .slider-content .btn-group-sm > .button, .content-section__grid_content .section__link .btn-group-sm > .button, .grid-item.visualization .btn-group-sm > .soba-btn,
+.grid-item.visualization .visualization__call-to-action .btn-group-sm > a,
+.student-paper-content .btn-group-sm > .soba-btn,
+.student-paper-content .visualization__call-to-action .btn-group-sm > a {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -2624,67 +2747,253 @@ input[type="button"].btn-block {
   position: relative;
   display: inline-flex;
   vertical-align: middle; }
-  .btn-group > .btn, .comment-form .btn-group > input[type="submit"], .search-form .btn-group > .search-submit, .content-section__slider_content .slider-content .btn-group > .button, .content-section__grid_content .section__link .btn-group > .button,
+  .btn-group > .btn, .comment-form .btn-group > input[type="submit"], .search-form .btn-group > .search-submit, .btn-group > .soba-btn, .content-section__slider_content .slider-content .btn-group > .button, .content-section__grid_content .section__link .btn-group > .button, .grid-item.visualization .btn-group > .soba-btn,
+  .grid-item.visualization .visualization__call-to-action .btn-group > a,
+  .student-paper-content .btn-group > .soba-btn,
+  .student-paper-content .visualization__call-to-action .btn-group > a,
   .btn-group-vertical > .btn, .comment-form
   .btn-group-vertical > input[type="submit"], .search-form
-  .btn-group-vertical > .search-submit, .content-section__slider_content .slider-content
+  .btn-group-vertical > .search-submit,
+  .btn-group-vertical > .soba-btn, .content-section__slider_content .slider-content
   .btn-group-vertical > .button, .content-section__grid_content .section__link
-  .btn-group-vertical > .button {
+  .btn-group-vertical > .button, .grid-item.visualization
+  .btn-group-vertical > .soba-btn,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical > a,
+  .student-paper-content
+  .btn-group-vertical > .soba-btn,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical > a {
     position: relative;
     flex: 0 1 auto; }
-    .btn-group > .btn:hover, .comment-form .btn-group > input[type="submit"]:hover, .search-form .btn-group > .search-submit:hover, .content-section__slider_content .slider-content .btn-group > .button:hover, .content-section__grid_content .section__link .btn-group > .button:hover,
+    .btn-group > .btn:hover, .comment-form .btn-group > input[type="submit"]:hover, .search-form .btn-group > .search-submit:hover, .btn-group > .soba-btn:hover, .content-section__slider_content .slider-content .btn-group > .button:hover, .content-section__grid_content .section__link .btn-group > .button:hover, .grid-item.visualization .btn-group > .soba-btn:hover,
+    .grid-item.visualization .visualization__call-to-action .btn-group > a:hover,
+    .student-paper-content .btn-group > .soba-btn:hover,
+    .student-paper-content .visualization__call-to-action .btn-group > a:hover,
     .btn-group-vertical > .btn:hover, .comment-form
     .btn-group-vertical > input[type="submit"]:hover, .search-form
-    .btn-group-vertical > .search-submit:hover, .content-section__slider_content .slider-content
+    .btn-group-vertical > .search-submit:hover,
+    .btn-group-vertical > .soba-btn:hover, .content-section__slider_content .slider-content
     .btn-group-vertical > .button:hover, .content-section__grid_content .section__link
-    .btn-group-vertical > .button:hover {
+    .btn-group-vertical > .button:hover, .grid-item.visualization
+    .btn-group-vertical > .soba-btn:hover,
+    .grid-item.visualization .visualization__call-to-action
+    .btn-group-vertical > a:hover,
+    .student-paper-content
+    .btn-group-vertical > .soba-btn:hover,
+    .student-paper-content .visualization__call-to-action
+    .btn-group-vertical > a:hover {
       z-index: 1; }
-    .btn-group > .btn:focus, .comment-form .btn-group > input[type="submit"]:focus, .search-form .btn-group > .search-submit:focus, .content-section__slider_content .slider-content .btn-group > .button:focus, .content-section__grid_content .section__link .btn-group > .button:focus, .btn-group > .btn:active, .comment-form .btn-group > input[type="submit"]:active, .search-form .btn-group > .search-submit:active, .content-section__slider_content .slider-content .btn-group > .button:active, .content-section__grid_content .section__link .btn-group > .button:active, .btn-group > .btn.active, .comment-form .btn-group > input.active[type="submit"], .search-form .btn-group > .active.search-submit, .content-section__slider_content .slider-content .btn-group > .active.button, .content-section__grid_content .section__link .btn-group > .active.button,
+    .btn-group > .btn:focus, .comment-form .btn-group > input[type="submit"]:focus, .search-form .btn-group > .search-submit:focus, .btn-group > .soba-btn:focus, .content-section__slider_content .slider-content .btn-group > .button:focus, .content-section__grid_content .section__link .btn-group > .button:focus, .grid-item.visualization .btn-group > .soba-btn:focus,
+    .grid-item.visualization .visualization__call-to-action .btn-group > a:focus,
+    .student-paper-content .btn-group > .soba-btn:focus,
+    .student-paper-content .visualization__call-to-action .btn-group > a:focus, .btn-group > .btn:active, .comment-form .btn-group > input[type="submit"]:active, .search-form .btn-group > .search-submit:active, .btn-group > .soba-btn:active, .content-section__slider_content .slider-content .btn-group > .button:active, .content-section__grid_content .section__link .btn-group > .button:active, .grid-item.visualization .btn-group > .soba-btn:active,
+    .grid-item.visualization .visualization__call-to-action .btn-group > a:active,
+    .student-paper-content .btn-group > .soba-btn:active,
+    .student-paper-content .visualization__call-to-action .btn-group > a:active, .btn-group > .btn.active, .comment-form .btn-group > input.active[type="submit"], .search-form .btn-group > .active.search-submit, .btn-group > .active.soba-btn, .content-section__slider_content .slider-content .btn-group > .active.button, .content-section__grid_content .section__link .btn-group > .active.button, .grid-item.visualization .btn-group > .active.soba-btn,
+    .grid-item.visualization .visualization__call-to-action .btn-group > a.active,
+    .student-paper-content .btn-group > .active.soba-btn,
+    .student-paper-content .visualization__call-to-action .btn-group > a.active,
     .btn-group-vertical > .btn:focus, .comment-form
     .btn-group-vertical > input[type="submit"]:focus, .search-form
-    .btn-group-vertical > .search-submit:focus, .content-section__slider_content .slider-content
+    .btn-group-vertical > .search-submit:focus,
+    .btn-group-vertical > .soba-btn:focus, .content-section__slider_content .slider-content
     .btn-group-vertical > .button:focus, .content-section__grid_content .section__link
-    .btn-group-vertical > .button:focus,
+    .btn-group-vertical > .button:focus, .grid-item.visualization
+    .btn-group-vertical > .soba-btn:focus,
+    .grid-item.visualization .visualization__call-to-action
+    .btn-group-vertical > a:focus,
+    .student-paper-content
+    .btn-group-vertical > .soba-btn:focus,
+    .student-paper-content .visualization__call-to-action
+    .btn-group-vertical > a:focus,
     .btn-group-vertical > .btn:active, .comment-form
     .btn-group-vertical > input[type="submit"]:active, .search-form
-    .btn-group-vertical > .search-submit:active, .content-section__slider_content .slider-content
+    .btn-group-vertical > .search-submit:active,
+    .btn-group-vertical > .soba-btn:active, .content-section__slider_content .slider-content
     .btn-group-vertical > .button:active, .content-section__grid_content .section__link
-    .btn-group-vertical > .button:active,
+    .btn-group-vertical > .button:active, .grid-item.visualization
+    .btn-group-vertical > .soba-btn:active,
+    .grid-item.visualization .visualization__call-to-action
+    .btn-group-vertical > a:active,
+    .student-paper-content
+    .btn-group-vertical > .soba-btn:active,
+    .student-paper-content .visualization__call-to-action
+    .btn-group-vertical > a:active,
     .btn-group-vertical > .btn.active, .comment-form
     .btn-group-vertical > input.active[type="submit"], .search-form
-    .btn-group-vertical > .active.search-submit, .content-section__slider_content .slider-content
+    .btn-group-vertical > .active.search-submit,
+    .btn-group-vertical > .active.soba-btn, .content-section__slider_content .slider-content
     .btn-group-vertical > .active.button, .content-section__grid_content .section__link
-    .btn-group-vertical > .active.button {
+    .btn-group-vertical > .active.button, .grid-item.visualization
+    .btn-group-vertical > .active.soba-btn,
+    .grid-item.visualization .visualization__call-to-action
+    .btn-group-vertical > a.active,
+    .student-paper-content
+    .btn-group-vertical > .active.soba-btn,
+    .student-paper-content .visualization__call-to-action
+    .btn-group-vertical > a.active {
       z-index: 1; }
-  .btn-group .btn + .btn, .btn-group .comment-form input[type="submit"] + .btn, .comment-form .btn-group input[type="submit"] + .btn, .btn-group .search-form .search-submit + .btn, .search-form .btn-group .search-submit + .btn, .btn-group .content-section__slider_content .slider-content .button + .btn, .content-section__slider_content .slider-content .btn-group .button + .btn, .btn-group .content-section__grid_content .section__link .button + .btn, .content-section__grid_content .section__link .btn-group .button + .btn, .btn-group .comment-form .btn + input[type="submit"], .comment-form .btn-group .btn + input[type="submit"], .btn-group .comment-form input[type="submit"] + input[type="submit"], .comment-form .btn-group input[type="submit"] + input[type="submit"], .btn-group .search-form .comment-form .search-submit + input[type="submit"], .comment-form .btn-group .search-form .search-submit + input[type="submit"], .search-form .btn-group .comment-form .search-submit + input[type="submit"], .comment-form .search-form .btn-group .search-submit + input[type="submit"], .btn-group .content-section__slider_content .slider-content .comment-form .button + input[type="submit"], .comment-form .btn-group .content-section__slider_content .slider-content .button + input[type="submit"], .content-section__slider_content .slider-content .btn-group .comment-form .button + input[type="submit"], .comment-form .content-section__slider_content .slider-content .btn-group .button + input[type="submit"], .btn-group .content-section__grid_content .section__link .comment-form .button + input[type="submit"], .comment-form .btn-group .content-section__grid_content .section__link .button + input[type="submit"], .content-section__grid_content .section__link .btn-group .comment-form .button + input[type="submit"], .comment-form .content-section__grid_content .section__link .btn-group .button + input[type="submit"], .btn-group .search-form .btn + .search-submit, .search-form .btn-group .btn + .search-submit, .btn-group .comment-form .search-form input[type="submit"] + .search-submit, .search-form .btn-group .comment-form input[type="submit"] + .search-submit, .comment-form .btn-group .search-form input[type="submit"] + .search-submit, .search-form .comment-form .btn-group input[type="submit"] + .search-submit, .btn-group .search-form .search-submit + .search-submit, .search-form .btn-group .search-submit + .search-submit, .btn-group .content-section__slider_content .slider-content .search-form .button + .search-submit, .search-form .btn-group .content-section__slider_content .slider-content .button + .search-submit, .content-section__slider_content .slider-content .btn-group .search-form .button + .search-submit, .search-form .content-section__slider_content .slider-content .btn-group .button + .search-submit, .btn-group .content-section__grid_content .section__link .search-form .button + .search-submit, .search-form .btn-group .content-section__grid_content .section__link .button + .search-submit, .content-section__grid_content .section__link .btn-group .search-form .button + .search-submit, .search-form .content-section__grid_content .section__link .btn-group .button + .search-submit, .btn-group .content-section__slider_content .slider-content .btn + .button, .content-section__slider_content .slider-content .btn-group .btn + .button, .btn-group .comment-form .content-section__slider_content .slider-content input[type="submit"] + .button, .content-section__slider_content .slider-content .btn-group .comment-form input[type="submit"] + .button, .comment-form .btn-group .content-section__slider_content .slider-content input[type="submit"] + .button, .content-section__slider_content .slider-content .comment-form .btn-group input[type="submit"] + .button, .btn-group .search-form .content-section__slider_content .slider-content .search-submit + .button, .content-section__slider_content .slider-content .btn-group .search-form .search-submit + .button, .search-form .btn-group .content-section__slider_content .slider-content .search-submit + .button, .content-section__slider_content .slider-content .search-form .btn-group .search-submit + .button, .btn-group .content-section__slider_content .slider-content .button + .button, .content-section__slider_content .slider-content .btn-group .button + .button, .btn-group .content-section__grid_content .section__link .btn + .button, .content-section__grid_content .section__link .btn-group .btn + .button, .btn-group .comment-form .content-section__grid_content .section__link input[type="submit"] + .button, .content-section__grid_content .section__link .btn-group .comment-form input[type="submit"] + .button, .comment-form .btn-group .content-section__grid_content .section__link input[type="submit"] + .button, .content-section__grid_content .section__link .comment-form .btn-group input[type="submit"] + .button, .btn-group .search-form .content-section__grid_content .section__link .search-submit + .button, .content-section__grid_content .section__link .btn-group .search-form .search-submit + .button, .search-form .btn-group .content-section__grid_content .section__link .search-submit + .button, .content-section__grid_content .section__link .search-form .btn-group .search-submit + .button, .btn-group .content-section__grid_content .section__link .button + .button, .content-section__grid_content .section__link .btn-group .button + .button,
+  .btn-group .btn + .btn, .btn-group .comment-form input[type="submit"] + .btn, .comment-form .btn-group input[type="submit"] + .btn, .btn-group .search-form .search-submit + .btn, .search-form .btn-group .search-submit + .btn, .btn-group .soba-btn + .btn, .btn-group .content-section__slider_content .slider-content .button + .btn, .content-section__slider_content .slider-content .btn-group .button + .btn, .btn-group .content-section__grid_content .section__link .button + .btn, .content-section__grid_content .section__link .btn-group .button + .btn, .btn-group .grid-item.visualization .soba-btn + .btn, .btn-group
+  .grid-item.visualization .visualization__call-to-action a + .btn,
+  .grid-item.visualization .visualization__call-to-action .btn-group a + .btn, .btn-group
+  .student-paper-content .soba-btn + .btn, .btn-group
+  .student-paper-content .visualization__call-to-action a + .btn,
+  .student-paper-content .visualization__call-to-action .btn-group a + .btn, .btn-group .comment-form .btn + input[type="submit"], .comment-form .btn-group .btn + input[type="submit"], .btn-group .comment-form input[type="submit"] + input[type="submit"], .comment-form .btn-group input[type="submit"] + input[type="submit"], .btn-group .search-form .comment-form .search-submit + input[type="submit"], .comment-form .btn-group .search-form .search-submit + input[type="submit"], .search-form .btn-group .comment-form .search-submit + input[type="submit"], .comment-form .search-form .btn-group .search-submit + input[type="submit"], .btn-group .comment-form .soba-btn + input[type="submit"], .comment-form .btn-group .soba-btn + input[type="submit"], .btn-group .content-section__slider_content .slider-content .comment-form .button + input[type="submit"], .comment-form .btn-group .content-section__slider_content .slider-content .button + input[type="submit"], .content-section__slider_content .slider-content .btn-group .comment-form .button + input[type="submit"], .comment-form .content-section__slider_content .slider-content .btn-group .button + input[type="submit"], .btn-group .content-section__grid_content .section__link .comment-form .button + input[type="submit"], .comment-form .btn-group .content-section__grid_content .section__link .button + input[type="submit"], .content-section__grid_content .section__link .btn-group .comment-form .button + input[type="submit"], .comment-form .content-section__grid_content .section__link .btn-group .button + input[type="submit"], .comment-form .btn-group .grid-item.visualization .soba-btn + input[type="submit"], .btn-group
+  .grid-item.visualization .visualization__call-to-action .comment-form a + input[type="submit"], .comment-form .btn-group
+  .grid-item.visualization .visualization__call-to-action a + input[type="submit"],
+  .grid-item.visualization .visualization__call-to-action .btn-group .comment-form a + input[type="submit"], .comment-form
+  .grid-item.visualization .visualization__call-to-action .btn-group a + input[type="submit"], .comment-form .btn-group
+  .student-paper-content .soba-btn + input[type="submit"], .btn-group
+  .student-paper-content .visualization__call-to-action .comment-form a + input[type="submit"], .comment-form .btn-group
+  .student-paper-content .visualization__call-to-action a + input[type="submit"],
+  .student-paper-content .visualization__call-to-action .btn-group .comment-form a + input[type="submit"], .comment-form
+  .student-paper-content .visualization__call-to-action .btn-group a + input[type="submit"], .btn-group .search-form .btn + .search-submit, .search-form .btn-group .btn + .search-submit, .btn-group .comment-form .search-form input[type="submit"] + .search-submit, .search-form .btn-group .comment-form input[type="submit"] + .search-submit, .comment-form .btn-group .search-form input[type="submit"] + .search-submit, .search-form .comment-form .btn-group input[type="submit"] + .search-submit, .btn-group .search-form .search-submit + .search-submit, .search-form .btn-group .search-submit + .search-submit, .btn-group .search-form .soba-btn + .search-submit, .search-form .btn-group .soba-btn + .search-submit, .btn-group .content-section__slider_content .slider-content .search-form .button + .search-submit, .search-form .btn-group .content-section__slider_content .slider-content .button + .search-submit, .content-section__slider_content .slider-content .btn-group .search-form .button + .search-submit, .search-form .content-section__slider_content .slider-content .btn-group .button + .search-submit, .btn-group .content-section__grid_content .section__link .search-form .button + .search-submit, .search-form .btn-group .content-section__grid_content .section__link .button + .search-submit, .content-section__grid_content .section__link .btn-group .search-form .button + .search-submit, .search-form .content-section__grid_content .section__link .btn-group .button + .search-submit, .search-form .btn-group .grid-item.visualization .soba-btn + .search-submit, .btn-group
+  .grid-item.visualization .visualization__call-to-action .search-form a + .search-submit, .search-form .btn-group
+  .grid-item.visualization .visualization__call-to-action a + .search-submit,
+  .grid-item.visualization .visualization__call-to-action .btn-group .search-form a + .search-submit, .search-form
+  .grid-item.visualization .visualization__call-to-action .btn-group a + .search-submit, .search-form .btn-group
+  .student-paper-content .soba-btn + .search-submit, .btn-group
+  .student-paper-content .visualization__call-to-action .search-form a + .search-submit, .search-form .btn-group
+  .student-paper-content .visualization__call-to-action a + .search-submit,
+  .student-paper-content .visualization__call-to-action .btn-group .search-form a + .search-submit, .search-form
+  .student-paper-content .visualization__call-to-action .btn-group a + .search-submit, .btn-group .btn + .soba-btn, .btn-group .comment-form input[type="submit"] + .soba-btn, .comment-form .btn-group input[type="submit"] + .soba-btn, .btn-group .search-form .search-submit + .soba-btn, .search-form .btn-group .search-submit + .soba-btn, .btn-group .soba-btn + .soba-btn, .btn-group .content-section__slider_content .slider-content .button + .soba-btn, .content-section__slider_content .slider-content .btn-group .button + .soba-btn, .btn-group .content-section__grid_content .section__link .button + .soba-btn, .content-section__grid_content .section__link .btn-group .button + .soba-btn, .btn-group .content-section__slider_content .slider-content .btn + .button, .content-section__slider_content .slider-content .btn-group .btn + .button, .btn-group .comment-form .content-section__slider_content .slider-content input[type="submit"] + .button, .content-section__slider_content .slider-content .btn-group .comment-form input[type="submit"] + .button, .comment-form .btn-group .content-section__slider_content .slider-content input[type="submit"] + .button, .content-section__slider_content .slider-content .comment-form .btn-group input[type="submit"] + .button, .btn-group .search-form .content-section__slider_content .slider-content .search-submit + .button, .content-section__slider_content .slider-content .btn-group .search-form .search-submit + .button, .search-form .btn-group .content-section__slider_content .slider-content .search-submit + .button, .content-section__slider_content .slider-content .search-form .btn-group .search-submit + .button, .btn-group .content-section__slider_content .slider-content .soba-btn + .button, .content-section__slider_content .slider-content .btn-group .soba-btn + .button, .btn-group .content-section__slider_content .slider-content .button + .button, .content-section__slider_content .slider-content .btn-group .button + .button, .content-section__slider_content .slider-content .btn-group .grid-item.visualization .soba-btn + .button, .btn-group
+  .grid-item.visualization .visualization__call-to-action .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content .btn-group
+  .grid-item.visualization .visualization__call-to-action a + .button,
+  .grid-item.visualization .visualization__call-to-action .btn-group .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .grid-item.visualization .visualization__call-to-action .btn-group a + .button, .content-section__slider_content .slider-content .btn-group
+  .student-paper-content .soba-btn + .button, .btn-group
+  .student-paper-content .visualization__call-to-action .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content .btn-group
+  .student-paper-content .visualization__call-to-action a + .button,
+  .student-paper-content .visualization__call-to-action .btn-group .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .student-paper-content .visualization__call-to-action .btn-group a + .button, .btn-group .content-section__grid_content .section__link .btn + .button, .content-section__grid_content .section__link .btn-group .btn + .button, .btn-group .comment-form .content-section__grid_content .section__link input[type="submit"] + .button, .content-section__grid_content .section__link .btn-group .comment-form input[type="submit"] + .button, .comment-form .btn-group .content-section__grid_content .section__link input[type="submit"] + .button, .content-section__grid_content .section__link .comment-form .btn-group input[type="submit"] + .button, .btn-group .search-form .content-section__grid_content .section__link .search-submit + .button, .content-section__grid_content .section__link .btn-group .search-form .search-submit + .button, .search-form .btn-group .content-section__grid_content .section__link .search-submit + .button, .content-section__grid_content .section__link .search-form .btn-group .search-submit + .button, .btn-group .content-section__grid_content .section__link .soba-btn + .button, .content-section__grid_content .section__link .btn-group .soba-btn + .button, .btn-group .content-section__grid_content .section__link .button + .button, .content-section__grid_content .section__link .btn-group .button + .button, .content-section__grid_content .section__link .btn-group .grid-item.visualization .soba-btn + .button, .btn-group
+  .grid-item.visualization .visualization__call-to-action .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link .btn-group
+  .grid-item.visualization .visualization__call-to-action a + .button,
+  .grid-item.visualization .visualization__call-to-action .btn-group .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .grid-item.visualization .visualization__call-to-action .btn-group a + .button, .content-section__grid_content .section__link .btn-group
+  .student-paper-content .soba-btn + .button, .btn-group
+  .student-paper-content .visualization__call-to-action .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link .btn-group
+  .student-paper-content .visualization__call-to-action a + .button,
+  .student-paper-content .visualization__call-to-action .btn-group .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .student-paper-content .visualization__call-to-action .btn-group a + .button, .btn-group .grid-item.visualization .btn + .soba-btn, .btn-group .comment-form .grid-item.visualization input[type="submit"] + .soba-btn, .comment-form .btn-group .grid-item.visualization input[type="submit"] + .soba-btn, .btn-group .search-form .grid-item.visualization .search-submit + .soba-btn, .search-form .btn-group .grid-item.visualization .search-submit + .soba-btn, .btn-group .content-section__slider_content .slider-content .grid-item.visualization .button + .soba-btn, .content-section__slider_content .slider-content .btn-group .grid-item.visualization .button + .soba-btn, .btn-group .content-section__grid_content .section__link .grid-item.visualization .button + .soba-btn, .content-section__grid_content .section__link .btn-group .grid-item.visualization .button + .soba-btn, .btn-group .grid-item.visualization .soba-btn + .soba-btn, .btn-group .grid-item.visualization .visualization__call-to-action a + .soba-btn, .grid-item.visualization .visualization__call-to-action .btn-group a + .soba-btn, .btn-group
+  .student-paper-content .visualization__call-to-action .grid-item.visualization a + .soba-btn,
+  .student-paper-content .visualization__call-to-action .btn-group .grid-item.visualization a + .soba-btn, .btn-group
+  .grid-item.visualization .visualization__call-to-action .btn + a,
+  .grid-item.visualization .visualization__call-to-action .btn-group .btn + a, .btn-group .comment-form
+  .grid-item.visualization .visualization__call-to-action input[type="submit"] + a,
+  .grid-item.visualization .visualization__call-to-action .btn-group .comment-form input[type="submit"] + a, .comment-form .btn-group
+  .grid-item.visualization .visualization__call-to-action input[type="submit"] + a,
+  .grid-item.visualization .visualization__call-to-action .comment-form .btn-group input[type="submit"] + a, .btn-group .search-form
+  .grid-item.visualization .visualization__call-to-action .search-submit + a,
+  .grid-item.visualization .visualization__call-to-action .btn-group .search-form .search-submit + a, .search-form .btn-group
+  .grid-item.visualization .visualization__call-to-action .search-submit + a,
+  .grid-item.visualization .visualization__call-to-action .search-form .btn-group .search-submit + a, .btn-group .content-section__slider_content .slider-content
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .btn-group .content-section__slider_content .slider-content .button + a, .content-section__slider_content .slider-content .btn-group
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .content-section__slider_content .slider-content .btn-group .button + a, .btn-group .content-section__grid_content .section__link
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .btn-group .content-section__grid_content .section__link .button + a, .content-section__grid_content .section__link .btn-group
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .content-section__grid_content .section__link .btn-group .button + a, .btn-group .grid-item.visualization .visualization__call-to-action .soba-btn + a, .grid-item.visualization .btn-group .visualization__call-to-action .soba-btn + a, .grid-item.visualization .visualization__call-to-action .btn-group .soba-btn + a, .btn-group .grid-item.visualization .visualization__call-to-action a + a, .grid-item.visualization .visualization__call-to-action .btn-group a + a,
+  .grid-item.visualization .visualization__call-to-action .btn-group
+  .student-paper-content .soba-btn + a, .btn-group
+  .student-paper-content .btn + .soba-btn, .btn-group .comment-form
+  .student-paper-content input[type="submit"] + .soba-btn, .comment-form .btn-group
+  .student-paper-content input[type="submit"] + .soba-btn, .btn-group .search-form
+  .student-paper-content .search-submit + .soba-btn, .search-form .btn-group
+  .student-paper-content .search-submit + .soba-btn, .btn-group .content-section__slider_content .slider-content
+  .student-paper-content .button + .soba-btn, .content-section__slider_content .slider-content .btn-group
+  .student-paper-content .button + .soba-btn, .btn-group .content-section__grid_content .section__link
+  .student-paper-content .button + .soba-btn, .content-section__grid_content .section__link .btn-group
+  .student-paper-content .button + .soba-btn, .btn-group
+  .grid-item.visualization .visualization__call-to-action
+  .student-paper-content a + .soba-btn,
+  .grid-item.visualization .visualization__call-to-action .btn-group
+  .student-paper-content a + .soba-btn, .btn-group .student-paper-content .soba-btn + .soba-btn, .btn-group .student-paper-content .visualization__call-to-action a + .soba-btn, .student-paper-content .visualization__call-to-action .btn-group a + .soba-btn, .btn-group
+  .student-paper-content .visualization__call-to-action .btn + a,
+  .student-paper-content .visualization__call-to-action .btn-group .btn + a, .btn-group .comment-form
+  .student-paper-content .visualization__call-to-action input[type="submit"] + a,
+  .student-paper-content .visualization__call-to-action .btn-group .comment-form input[type="submit"] + a, .comment-form .btn-group
+  .student-paper-content .visualization__call-to-action input[type="submit"] + a,
+  .student-paper-content .visualization__call-to-action .comment-form .btn-group input[type="submit"] + a, .btn-group .search-form
+  .student-paper-content .visualization__call-to-action .search-submit + a,
+  .student-paper-content .visualization__call-to-action .btn-group .search-form .search-submit + a, .search-form .btn-group
+  .student-paper-content .visualization__call-to-action .search-submit + a,
+  .student-paper-content .visualization__call-to-action .search-form .btn-group .search-submit + a, .btn-group .content-section__slider_content .slider-content
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .btn-group .content-section__slider_content .slider-content .button + a, .content-section__slider_content .slider-content .btn-group
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .content-section__slider_content .slider-content .btn-group .button + a, .btn-group .content-section__grid_content .section__link
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .btn-group .content-section__grid_content .section__link .button + a, .content-section__grid_content .section__link .btn-group
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .content-section__grid_content .section__link .btn-group .button + a,
+  .student-paper-content .visualization__call-to-action .btn-group .grid-item.visualization .soba-btn + a, .btn-group .student-paper-content .visualization__call-to-action .soba-btn + a, .student-paper-content .btn-group .visualization__call-to-action .soba-btn + a, .student-paper-content .visualization__call-to-action .btn-group .soba-btn + a, .btn-group .student-paper-content .visualization__call-to-action a + a, .student-paper-content .visualization__call-to-action .btn-group a + a,
   .btn-group .btn + .btn-group,
   .btn-group .comment-form input[type="submit"] + .btn-group, .comment-form
   .btn-group input[type="submit"] + .btn-group,
   .btn-group .search-form .search-submit + .btn-group, .search-form
   .btn-group .search-submit + .btn-group,
+  .btn-group .soba-btn + .btn-group,
   .btn-group .content-section__slider_content .slider-content .button + .btn-group, .content-section__slider_content .slider-content
   .btn-group .button + .btn-group,
   .btn-group .content-section__grid_content .section__link .button + .btn-group, .content-section__grid_content .section__link
   .btn-group .button + .btn-group,
+  .btn-group .grid-item.visualization .soba-btn + .btn-group,
+  .btn-group
+  .grid-item.visualization .visualization__call-to-action a + .btn-group,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group a + .btn-group,
+  .btn-group
+  .student-paper-content .soba-btn + .btn-group,
+  .btn-group
+  .student-paper-content .visualization__call-to-action a + .btn-group,
+  .student-paper-content .visualization__call-to-action
+  .btn-group a + .btn-group,
   .btn-group .btn-group + .btn,
   .btn-group .comment-form .btn-group + input[type="submit"], .comment-form
   .btn-group .btn-group + input[type="submit"],
   .btn-group .search-form .btn-group + .search-submit, .search-form
   .btn-group .btn-group + .search-submit,
+  .btn-group .btn-group + .soba-btn,
   .btn-group .content-section__slider_content .slider-content .btn-group + .button, .content-section__slider_content .slider-content
   .btn-group .btn-group + .button,
   .btn-group .content-section__grid_content .section__link .btn-group + .button, .content-section__grid_content .section__link
   .btn-group .btn-group + .button,
+  .btn-group .grid-item.visualization .btn-group + .soba-btn,
+  .btn-group
+  .grid-item.visualization .visualization__call-to-action .btn-group + a,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group .btn-group + a,
+  .btn-group
+  .student-paper-content .btn-group + .soba-btn,
+  .btn-group
+  .student-paper-content .visualization__call-to-action .btn-group + a,
+  .student-paper-content .visualization__call-to-action
+  .btn-group .btn-group + a,
   .btn-group .btn-group + .btn-group,
   .btn-group-vertical .btn + .btn,
   .btn-group-vertical .comment-form input[type="submit"] + .btn, .comment-form
   .btn-group-vertical input[type="submit"] + .btn,
   .btn-group-vertical .search-form .search-submit + .btn, .search-form
   .btn-group-vertical .search-submit + .btn,
+  .btn-group-vertical .soba-btn + .btn,
   .btn-group-vertical .content-section__slider_content .slider-content .button + .btn, .content-section__slider_content .slider-content
   .btn-group-vertical .button + .btn,
   .btn-group-vertical .content-section__grid_content .section__link .button + .btn, .content-section__grid_content .section__link
   .btn-group-vertical .button + .btn,
+  .btn-group-vertical .grid-item.visualization .soba-btn + .btn,
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action a + .btn,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical a + .btn,
+  .btn-group-vertical
+  .student-paper-content .soba-btn + .btn,
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action a + .btn,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical a + .btn,
   .btn-group-vertical .comment-form .btn + input[type="submit"], .comment-form
   .btn-group-vertical .btn + input[type="submit"],
   .btn-group-vertical .comment-form input[type="submit"] + input[type="submit"], .comment-form
@@ -2693,6 +3002,8 @@ input[type="button"].btn-block {
   .btn-group-vertical .search-form .search-submit + input[type="submit"], .search-form
   .btn-group-vertical .comment-form .search-submit + input[type="submit"], .comment-form .search-form
   .btn-group-vertical .search-submit + input[type="submit"],
+  .btn-group-vertical .comment-form .soba-btn + input[type="submit"], .comment-form
+  .btn-group-vertical .soba-btn + input[type="submit"],
   .btn-group-vertical .content-section__slider_content .slider-content .comment-form .button + input[type="submit"], .comment-form
   .btn-group-vertical .content-section__slider_content .slider-content .button + input[type="submit"], .content-section__slider_content .slider-content
   .btn-group-vertical .comment-form .button + input[type="submit"], .comment-form .content-section__slider_content .slider-content
@@ -2700,7 +3011,26 @@ input[type="button"].btn-block {
   .btn-group-vertical .content-section__grid_content .section__link .comment-form .button + input[type="submit"], .comment-form
   .btn-group-vertical .content-section__grid_content .section__link .button + input[type="submit"], .content-section__grid_content .section__link
   .btn-group-vertical .comment-form .button + input[type="submit"], .comment-form .content-section__grid_content .section__link
-  .btn-group-vertical .button + input[type="submit"],
+  .btn-group-vertical .button + input[type="submit"], .comment-form
+  .btn-group-vertical .grid-item.visualization .soba-btn + input[type="submit"],
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action .comment-form a + input[type="submit"], .comment-form
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action a + input[type="submit"],
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical .comment-form a + input[type="submit"], .comment-form
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical a + input[type="submit"], .comment-form
+  .btn-group-vertical
+  .student-paper-content .soba-btn + input[type="submit"],
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action .comment-form a + input[type="submit"], .comment-form
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action a + input[type="submit"],
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .comment-form a + input[type="submit"], .comment-form
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical a + input[type="submit"],
   .btn-group-vertical .search-form .btn + .search-submit, .search-form
   .btn-group-vertical .btn + .search-submit,
   .btn-group-vertical .comment-form .search-form input[type="submit"] + .search-submit, .search-form
@@ -2709,6 +3039,8 @@ input[type="button"].btn-block {
   .btn-group-vertical input[type="submit"] + .search-submit,
   .btn-group-vertical .search-form .search-submit + .search-submit, .search-form
   .btn-group-vertical .search-submit + .search-submit,
+  .btn-group-vertical .search-form .soba-btn + .search-submit, .search-form
+  .btn-group-vertical .soba-btn + .search-submit,
   .btn-group-vertical .content-section__slider_content .slider-content .search-form .button + .search-submit, .search-form
   .btn-group-vertical .content-section__slider_content .slider-content .button + .search-submit, .content-section__slider_content .slider-content
   .btn-group-vertical .search-form .button + .search-submit, .search-form .content-section__slider_content .slider-content
@@ -2716,7 +3048,36 @@ input[type="button"].btn-block {
   .btn-group-vertical .content-section__grid_content .section__link .search-form .button + .search-submit, .search-form
   .btn-group-vertical .content-section__grid_content .section__link .button + .search-submit, .content-section__grid_content .section__link
   .btn-group-vertical .search-form .button + .search-submit, .search-form .content-section__grid_content .section__link
-  .btn-group-vertical .button + .search-submit,
+  .btn-group-vertical .button + .search-submit, .search-form
+  .btn-group-vertical .grid-item.visualization .soba-btn + .search-submit,
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action .search-form a + .search-submit, .search-form
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action a + .search-submit,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical .search-form a + .search-submit, .search-form
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical a + .search-submit, .search-form
+  .btn-group-vertical
+  .student-paper-content .soba-btn + .search-submit,
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action .search-form a + .search-submit, .search-form
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action a + .search-submit,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .search-form a + .search-submit, .search-form
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical a + .search-submit,
+  .btn-group-vertical .btn + .soba-btn,
+  .btn-group-vertical .comment-form input[type="submit"] + .soba-btn, .comment-form
+  .btn-group-vertical input[type="submit"] + .soba-btn,
+  .btn-group-vertical .search-form .search-submit + .soba-btn, .search-form
+  .btn-group-vertical .search-submit + .soba-btn,
+  .btn-group-vertical .soba-btn + .soba-btn,
+  .btn-group-vertical .content-section__slider_content .slider-content .button + .soba-btn, .content-section__slider_content .slider-content
+  .btn-group-vertical .button + .soba-btn,
+  .btn-group-vertical .content-section__grid_content .section__link .button + .soba-btn, .content-section__grid_content .section__link
+  .btn-group-vertical .button + .soba-btn,
   .btn-group-vertical .content-section__slider_content .slider-content .btn + .button, .content-section__slider_content .slider-content
   .btn-group-vertical .btn + .button,
   .btn-group-vertical .comment-form .content-section__slider_content .slider-content input[type="submit"] + .button, .content-section__slider_content .slider-content
@@ -2727,8 +3088,29 @@ input[type="button"].btn-block {
   .btn-group-vertical .search-form .search-submit + .button, .search-form
   .btn-group-vertical .content-section__slider_content .slider-content .search-submit + .button, .content-section__slider_content .slider-content .search-form
   .btn-group-vertical .search-submit + .button,
+  .btn-group-vertical .content-section__slider_content .slider-content .soba-btn + .button, .content-section__slider_content .slider-content
+  .btn-group-vertical .soba-btn + .button,
   .btn-group-vertical .content-section__slider_content .slider-content .button + .button, .content-section__slider_content .slider-content
-  .btn-group-vertical .button + .button,
+  .btn-group-vertical .button + .button, .content-section__slider_content .slider-content
+  .btn-group-vertical .grid-item.visualization .soba-btn + .button,
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action a + .button,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical a + .button, .content-section__slider_content .slider-content
+  .btn-group-vertical
+  .student-paper-content .soba-btn + .button,
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action a + .button,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical a + .button,
   .btn-group-vertical .content-section__grid_content .section__link .btn + .button, .content-section__grid_content .section__link
   .btn-group-vertical .btn + .button,
   .btn-group-vertical .comment-form .content-section__grid_content .section__link input[type="submit"] + .button, .content-section__grid_content .section__link
@@ -2739,26 +3121,201 @@ input[type="button"].btn-block {
   .btn-group-vertical .search-form .search-submit + .button, .search-form
   .btn-group-vertical .content-section__grid_content .section__link .search-submit + .button, .content-section__grid_content .section__link .search-form
   .btn-group-vertical .search-submit + .button,
+  .btn-group-vertical .content-section__grid_content .section__link .soba-btn + .button, .content-section__grid_content .section__link
+  .btn-group-vertical .soba-btn + .button,
   .btn-group-vertical .content-section__grid_content .section__link .button + .button, .content-section__grid_content .section__link
-  .btn-group-vertical .button + .button,
+  .btn-group-vertical .button + .button, .content-section__grid_content .section__link
+  .btn-group-vertical .grid-item.visualization .soba-btn + .button,
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action a + .button,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical a + .button, .content-section__grid_content .section__link
+  .btn-group-vertical
+  .student-paper-content .soba-btn + .button,
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action a + .button,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical a + .button,
+  .btn-group-vertical .grid-item.visualization .btn + .soba-btn,
+  .btn-group-vertical .comment-form .grid-item.visualization input[type="submit"] + .soba-btn, .comment-form
+  .btn-group-vertical .grid-item.visualization input[type="submit"] + .soba-btn,
+  .btn-group-vertical .search-form .grid-item.visualization .search-submit + .soba-btn, .search-form
+  .btn-group-vertical .grid-item.visualization .search-submit + .soba-btn,
+  .btn-group-vertical .content-section__slider_content .slider-content .grid-item.visualization .button + .soba-btn, .content-section__slider_content .slider-content
+  .btn-group-vertical .grid-item.visualization .button + .soba-btn,
+  .btn-group-vertical .content-section__grid_content .section__link .grid-item.visualization .button + .soba-btn, .content-section__grid_content .section__link
+  .btn-group-vertical .grid-item.visualization .button + .soba-btn,
+  .btn-group-vertical .grid-item.visualization .soba-btn + .soba-btn,
+  .btn-group-vertical .grid-item.visualization .visualization__call-to-action a + .soba-btn, .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical a + .soba-btn,
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action .grid-item.visualization a + .soba-btn,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .grid-item.visualization a + .soba-btn,
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action .btn + a,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical .btn + a,
+  .btn-group-vertical .comment-form
+  .grid-item.visualization .visualization__call-to-action input[type="submit"] + a,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical .comment-form input[type="submit"] + a, .comment-form
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action input[type="submit"] + a,
+  .grid-item.visualization .visualization__call-to-action .comment-form
+  .btn-group-vertical input[type="submit"] + a,
+  .btn-group-vertical .search-form
+  .grid-item.visualization .visualization__call-to-action .search-submit + a,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical .search-form .search-submit + a, .search-form
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action .search-submit + a,
+  .grid-item.visualization .visualization__call-to-action .search-form
+  .btn-group-vertical .search-submit + a,
+  .btn-group-vertical .content-section__slider_content .slider-content
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical .content-section__slider_content .slider-content .button + a, .content-section__slider_content .slider-content
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .content-section__slider_content .slider-content
+  .btn-group-vertical .button + a,
+  .btn-group-vertical .content-section__grid_content .section__link
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical .content-section__grid_content .section__link .button + a, .content-section__grid_content .section__link
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .content-section__grid_content .section__link
+  .btn-group-vertical .button + a,
+  .btn-group-vertical .grid-item.visualization .visualization__call-to-action .soba-btn + a, .grid-item.visualization
+  .btn-group-vertical .visualization__call-to-action .soba-btn + a, .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical .soba-btn + a,
+  .btn-group-vertical .grid-item.visualization .visualization__call-to-action a + a, .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical a + a,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical
+  .student-paper-content .soba-btn + a,
+  .btn-group-vertical
+  .student-paper-content .btn + .soba-btn,
+  .btn-group-vertical .comment-form
+  .student-paper-content input[type="submit"] + .soba-btn, .comment-form
+  .btn-group-vertical
+  .student-paper-content input[type="submit"] + .soba-btn,
+  .btn-group-vertical .search-form
+  .student-paper-content .search-submit + .soba-btn, .search-form
+  .btn-group-vertical
+  .student-paper-content .search-submit + .soba-btn,
+  .btn-group-vertical .content-section__slider_content .slider-content
+  .student-paper-content .button + .soba-btn, .content-section__slider_content .slider-content
+  .btn-group-vertical
+  .student-paper-content .button + .soba-btn,
+  .btn-group-vertical .content-section__grid_content .section__link
+  .student-paper-content .button + .soba-btn, .content-section__grid_content .section__link
+  .btn-group-vertical
+  .student-paper-content .button + .soba-btn,
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action
+  .student-paper-content a + .soba-btn,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical
+  .student-paper-content a + .soba-btn,
+  .btn-group-vertical .student-paper-content .soba-btn + .soba-btn,
+  .btn-group-vertical .student-paper-content .visualization__call-to-action a + .soba-btn, .student-paper-content .visualization__call-to-action
+  .btn-group-vertical a + .soba-btn,
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action .btn + a,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .btn + a,
+  .btn-group-vertical .comment-form
+  .student-paper-content .visualization__call-to-action input[type="submit"] + a,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .comment-form input[type="submit"] + a, .comment-form
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action input[type="submit"] + a,
+  .student-paper-content .visualization__call-to-action .comment-form
+  .btn-group-vertical input[type="submit"] + a,
+  .btn-group-vertical .search-form
+  .student-paper-content .visualization__call-to-action .search-submit + a,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .search-form .search-submit + a, .search-form
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action .search-submit + a,
+  .student-paper-content .visualization__call-to-action .search-form
+  .btn-group-vertical .search-submit + a,
+  .btn-group-vertical .content-section__slider_content .slider-content
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .content-section__slider_content .slider-content .button + a, .content-section__slider_content .slider-content
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .content-section__slider_content .slider-content
+  .btn-group-vertical .button + a,
+  .btn-group-vertical .content-section__grid_content .section__link
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .content-section__grid_content .section__link .button + a, .content-section__grid_content .section__link
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .content-section__grid_content .section__link
+  .btn-group-vertical .button + a,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .grid-item.visualization .soba-btn + a,
+  .btn-group-vertical .student-paper-content .visualization__call-to-action .soba-btn + a, .student-paper-content
+  .btn-group-vertical .visualization__call-to-action .soba-btn + a, .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .soba-btn + a,
+  .btn-group-vertical .student-paper-content .visualization__call-to-action a + a, .student-paper-content .visualization__call-to-action
+  .btn-group-vertical a + a,
   .btn-group-vertical .btn + .btn-group,
   .btn-group-vertical .comment-form input[type="submit"] + .btn-group, .comment-form
   .btn-group-vertical input[type="submit"] + .btn-group,
   .btn-group-vertical .search-form .search-submit + .btn-group, .search-form
   .btn-group-vertical .search-submit + .btn-group,
+  .btn-group-vertical .soba-btn + .btn-group,
   .btn-group-vertical .content-section__slider_content .slider-content .button + .btn-group, .content-section__slider_content .slider-content
   .btn-group-vertical .button + .btn-group,
   .btn-group-vertical .content-section__grid_content .section__link .button + .btn-group, .content-section__grid_content .section__link
   .btn-group-vertical .button + .btn-group,
+  .btn-group-vertical .grid-item.visualization .soba-btn + .btn-group,
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action a + .btn-group,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical a + .btn-group,
+  .btn-group-vertical
+  .student-paper-content .soba-btn + .btn-group,
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action a + .btn-group,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical a + .btn-group,
   .btn-group-vertical .btn-group + .btn,
   .btn-group-vertical .comment-form .btn-group + input[type="submit"], .comment-form
   .btn-group-vertical .btn-group + input[type="submit"],
   .btn-group-vertical .search-form .btn-group + .search-submit, .search-form
   .btn-group-vertical .btn-group + .search-submit,
+  .btn-group-vertical .btn-group + .soba-btn,
   .btn-group-vertical .content-section__slider_content .slider-content .btn-group + .button, .content-section__slider_content .slider-content
   .btn-group-vertical .btn-group + .button,
   .btn-group-vertical .content-section__grid_content .section__link .btn-group + .button, .content-section__grid_content .section__link
   .btn-group-vertical .btn-group + .button,
+  .btn-group-vertical .grid-item.visualization .btn-group + .soba-btn,
+  .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action .btn-group + a,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical .btn-group + a,
+  .btn-group-vertical
+  .student-paper-content .btn-group + .soba-btn,
+  .btn-group-vertical
+  .student-paper-content .visualization__call-to-action .btn-group + a,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical .btn-group + a,
   .btn-group-vertical .btn-group + .btn-group {
     margin-left: -1px; }
 
@@ -2769,24 +3326,49 @@ input[type="button"].btn-block {
   .btn-toolbar .input-group {
     width: auto; }
 
-.btn-group > .btn:first-child, .comment-form .btn-group > input[type="submit"]:first-child, .search-form .btn-group > .search-submit:first-child, .content-section__slider_content .slider-content .btn-group > .button:first-child, .content-section__grid_content .section__link .btn-group > .button:first-child {
+.btn-group > .btn:first-child, .comment-form .btn-group > input[type="submit"]:first-child, .search-form .btn-group > .search-submit:first-child, .btn-group > .soba-btn:first-child, .content-section__slider_content .slider-content .btn-group > .button:first-child, .content-section__grid_content .section__link .btn-group > .button:first-child, .grid-item.visualization .btn-group > .soba-btn:first-child,
+.grid-item.visualization .visualization__call-to-action .btn-group > a:first-child,
+.student-paper-content .btn-group > .soba-btn:first-child,
+.student-paper-content .visualization__call-to-action .btn-group > a:first-child {
   margin-left: 0; }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .comment-form .btn-group > input[type="submit"]:not(:last-child):not(.dropdown-toggle), .search-form .btn-group > .search-submit:not(:last-child):not(.dropdown-toggle), .content-section__slider_content .slider-content .btn-group > .button:not(:last-child):not(.dropdown-toggle), .content-section__grid_content .section__link .btn-group > .button:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .comment-form .btn-group > input[type="submit"]:not(:last-child):not(.dropdown-toggle), .search-form .btn-group > .search-submit:not(:last-child):not(.dropdown-toggle), .btn-group > .soba-btn:not(:last-child):not(.dropdown-toggle), .content-section__slider_content .slider-content .btn-group > .button:not(:last-child):not(.dropdown-toggle), .content-section__grid_content .section__link .btn-group > .button:not(:last-child):not(.dropdown-toggle), .grid-item.visualization .btn-group > .soba-btn:not(:last-child):not(.dropdown-toggle),
+.grid-item.visualization .visualization__call-to-action .btn-group > a:not(:last-child):not(.dropdown-toggle),
+.student-paper-content .btn-group > .soba-btn:not(:last-child):not(.dropdown-toggle),
+.student-paper-content .visualization__call-to-action .btn-group > a:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn, .comment-form
 .btn-group > .btn-group:not(:last-child) > input[type="submit"], .search-form
-.btn-group > .btn-group:not(:last-child) > .search-submit, .content-section__slider_content .slider-content
+.btn-group > .btn-group:not(:last-child) > .search-submit,
+.btn-group > .btn-group:not(:last-child) > .soba-btn, .content-section__slider_content .slider-content
 .btn-group > .btn-group:not(:last-child) > .button, .content-section__grid_content .section__link
-.btn-group > .btn-group:not(:last-child) > .button {
+.btn-group > .btn-group:not(:last-child) > .button, .grid-item.visualization
+.btn-group > .btn-group:not(:last-child) > .soba-btn,
+.grid-item.visualization .visualization__call-to-action
+.btn-group > .btn-group:not(:last-child) > a,
+.student-paper-content
+.btn-group > .btn-group:not(:last-child) > .soba-btn,
+.student-paper-content .visualization__call-to-action
+.btn-group > .btn-group:not(:last-child) > a {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.btn-group > .btn:not(:first-child), .comment-form .btn-group > input[type="submit"]:not(:first-child), .search-form .btn-group > .search-submit:not(:first-child), .content-section__slider_content .slider-content .btn-group > .button:not(:first-child), .content-section__grid_content .section__link .btn-group > .button:not(:first-child),
+.btn-group > .btn:not(:first-child), .comment-form .btn-group > input[type="submit"]:not(:first-child), .search-form .btn-group > .search-submit:not(:first-child), .btn-group > .soba-btn:not(:first-child), .content-section__slider_content .slider-content .btn-group > .button:not(:first-child), .content-section__grid_content .section__link .btn-group > .button:not(:first-child), .grid-item.visualization .btn-group > .soba-btn:not(:first-child),
+.grid-item.visualization .visualization__call-to-action .btn-group > a:not(:first-child),
+.student-paper-content .btn-group > .soba-btn:not(:first-child),
+.student-paper-content .visualization__call-to-action .btn-group > a:not(:first-child),
 .btn-group > .btn-group:not(:first-child) > .btn, .comment-form
 .btn-group > .btn-group:not(:first-child) > input[type="submit"], .search-form
-.btn-group > .btn-group:not(:first-child) > .search-submit, .content-section__slider_content .slider-content
+.btn-group > .btn-group:not(:first-child) > .search-submit,
+.btn-group > .btn-group:not(:first-child) > .soba-btn, .content-section__slider_content .slider-content
 .btn-group > .btn-group:not(:first-child) > .button, .content-section__grid_content .section__link
-.btn-group > .btn-group:not(:first-child) > .button {
+.btn-group > .btn-group:not(:first-child) > .button, .grid-item.visualization
+.btn-group > .btn-group:not(:first-child) > .soba-btn,
+.grid-item.visualization .visualization__call-to-action
+.btn-group > .btn-group:not(:first-child) > a,
+.student-paper-content
+.btn-group > .btn-group:not(:first-child) > .soba-btn,
+.student-paper-content .visualization__call-to-action
+.btn-group > .btn-group:not(:first-child) > a {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -2800,11 +3382,17 @@ input[type="button"].btn-block {
   .dropleft .dropdown-toggle-split::before {
     margin-right: 0; }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .comment-form .btn-group-sm > input[type="submit"] + .dropdown-toggle-split, .search-form .btn-group-sm > .search-submit + .dropdown-toggle-split, .content-section__slider_content .slider-content .btn-group-sm > .button + .dropdown-toggle-split, .content-section__grid_content .section__link .btn-group-sm > .button + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .comment-form .btn-group-sm > input[type="submit"] + .dropdown-toggle-split, .search-form .btn-group-sm > .search-submit + .dropdown-toggle-split, .btn-group-sm > .soba-btn + .dropdown-toggle-split, .content-section__slider_content .slider-content .btn-group-sm > .button + .dropdown-toggle-split, .content-section__grid_content .section__link .btn-group-sm > .button + .dropdown-toggle-split, .grid-item.visualization .btn-group-sm > .soba-btn + .dropdown-toggle-split,
+.grid-item.visualization .visualization__call-to-action .btn-group-sm > a + .dropdown-toggle-split,
+.student-paper-content .btn-group-sm > .soba-btn + .dropdown-toggle-split,
+.student-paper-content .visualization__call-to-action .btn-group-sm > a + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem; }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .comment-form .btn-group-lg > input[type="submit"] + .dropdown-toggle-split, .search-form .btn-group-lg > .search-submit + .dropdown-toggle-split, .content-section__slider_content .slider-content .btn-group-lg > .button + .dropdown-toggle-split, .content-section__grid_content .section__link .btn-group-lg > .button + .dropdown-toggle-split, .content-section__slider_content .slider-content .button + .dropdown-toggle-split, .content-section__grid_content .section__link .button + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .comment-form .btn-group-lg > input[type="submit"] + .dropdown-toggle-split, .search-form .btn-group-lg > .search-submit + .dropdown-toggle-split, .btn-group-lg > .soba-btn + .dropdown-toggle-split, .content-section__slider_content .slider-content .btn-group-lg > .button + .dropdown-toggle-split, .content-section__grid_content .section__link .btn-group-lg > .button + .dropdown-toggle-split, .grid-item.visualization .btn-group-lg > .soba-btn + .dropdown-toggle-split,
+.grid-item.visualization .visualization__call-to-action .btn-group-lg > a + .dropdown-toggle-split,
+.student-paper-content .btn-group-lg > .soba-btn + .dropdown-toggle-split,
+.student-paper-content .visualization__call-to-action .btn-group-lg > a + .dropdown-toggle-split, .content-section__slider_content .slider-content .button + .dropdown-toggle-split, .content-section__grid_content .section__link .button + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
 
@@ -2812,63 +3400,195 @@ input[type="button"].btn-block {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  .btn-group-vertical .btn, .btn-group-vertical .comment-form input[type="submit"], .comment-form .btn-group-vertical input[type="submit"], .btn-group-vertical .search-form .search-submit, .search-form .btn-group-vertical .search-submit, .btn-group-vertical .content-section__slider_content .slider-content .button, .content-section__slider_content .slider-content .btn-group-vertical .button, .btn-group-vertical .content-section__grid_content .section__link .button, .content-section__grid_content .section__link .btn-group-vertical .button,
+  .btn-group-vertical .btn, .btn-group-vertical .comment-form input[type="submit"], .comment-form .btn-group-vertical input[type="submit"], .btn-group-vertical .search-form .search-submit, .search-form .btn-group-vertical .search-submit, .btn-group-vertical .soba-btn, .btn-group-vertical .content-section__slider_content .slider-content .button, .content-section__slider_content .slider-content .btn-group-vertical .button, .btn-group-vertical .content-section__grid_content .section__link .button, .content-section__grid_content .section__link .btn-group-vertical .button, .btn-group-vertical .grid-item.visualization .soba-btn, .grid-item.visualization .btn-group-vertical .soba-btn, .btn-group-vertical
+  .grid-item.visualization .visualization__call-to-action a,
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical a, .btn-group-vertical
+  .student-paper-content .visualization__call-to-action a,
+  .student-paper-content .visualization__call-to-action .btn-group-vertical a,
   .btn-group-vertical .btn-group {
     width: 100%; }
-  .btn-group-vertical > .btn + .btn, .comment-form .btn-group-vertical > input[type="submit"] + .btn, .search-form .btn-group-vertical > .search-submit + .btn, .content-section__slider_content .slider-content .btn-group-vertical > .button + .btn, .content-section__grid_content .section__link .btn-group-vertical > .button + .btn, .comment-form .btn-group-vertical > .btn + input[type="submit"], .comment-form .btn-group-vertical > input[type="submit"] + input[type="submit"], .search-form .comment-form .btn-group-vertical > .search-submit + input[type="submit"], .comment-form .search-form .btn-group-vertical > .search-submit + input[type="submit"], .content-section__slider_content .slider-content .comment-form .btn-group-vertical > .button + input[type="submit"], .comment-form .content-section__slider_content .slider-content .btn-group-vertical > .button + input[type="submit"], .content-section__grid_content .section__link .comment-form .btn-group-vertical > .button + input[type="submit"], .comment-form .content-section__grid_content .section__link .btn-group-vertical > .button + input[type="submit"], .search-form .btn-group-vertical > .btn + .search-submit, .comment-form .search-form .btn-group-vertical > input[type="submit"] + .search-submit, .search-form .comment-form .btn-group-vertical > input[type="submit"] + .search-submit, .search-form .btn-group-vertical > .search-submit + .search-submit, .content-section__slider_content .slider-content .search-form .btn-group-vertical > .button + .search-submit, .search-form .content-section__slider_content .slider-content .btn-group-vertical > .button + .search-submit, .content-section__grid_content .section__link .search-form .btn-group-vertical > .button + .search-submit, .search-form .content-section__grid_content .section__link .btn-group-vertical > .button + .search-submit, .content-section__slider_content .slider-content .btn-group-vertical > .btn + .button, .comment-form .content-section__slider_content .slider-content .btn-group-vertical > input[type="submit"] + .button, .content-section__slider_content .slider-content .comment-form .btn-group-vertical > input[type="submit"] + .button, .search-form .content-section__slider_content .slider-content .btn-group-vertical > .search-submit + .button, .content-section__slider_content .slider-content .search-form .btn-group-vertical > .search-submit + .button, .content-section__slider_content .slider-content .btn-group-vertical > .button + .button, .content-section__grid_content .section__link .btn-group-vertical > .btn + .button, .comment-form .content-section__grid_content .section__link .btn-group-vertical > input[type="submit"] + .button, .content-section__grid_content .section__link .comment-form .btn-group-vertical > input[type="submit"] + .button, .search-form .content-section__grid_content .section__link .btn-group-vertical > .search-submit + .button, .content-section__grid_content .section__link .search-form .btn-group-vertical > .search-submit + .button, .content-section__grid_content .section__link .btn-group-vertical > .button + .button,
+  .btn-group-vertical > .btn + .btn, .comment-form .btn-group-vertical > input[type="submit"] + .btn, .search-form .btn-group-vertical > .search-submit + .btn, .btn-group-vertical > .soba-btn + .btn, .content-section__slider_content .slider-content .btn-group-vertical > .button + .btn, .content-section__grid_content .section__link .btn-group-vertical > .button + .btn, .grid-item.visualization .btn-group-vertical > .soba-btn + .btn,
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > a + .btn,
+  .student-paper-content .btn-group-vertical > .soba-btn + .btn,
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > a + .btn, .comment-form .btn-group-vertical > .btn + input[type="submit"], .comment-form .btn-group-vertical > input[type="submit"] + input[type="submit"], .search-form .comment-form .btn-group-vertical > .search-submit + input[type="submit"], .comment-form .search-form .btn-group-vertical > .search-submit + input[type="submit"], .comment-form .btn-group-vertical > .soba-btn + input[type="submit"], .content-section__slider_content .slider-content .comment-form .btn-group-vertical > .button + input[type="submit"], .comment-form .content-section__slider_content .slider-content .btn-group-vertical > .button + input[type="submit"], .content-section__grid_content .section__link .comment-form .btn-group-vertical > .button + input[type="submit"], .comment-form .content-section__grid_content .section__link .btn-group-vertical > .button + input[type="submit"], .comment-form .grid-item.visualization .btn-group-vertical > .soba-btn + input[type="submit"],
+  .grid-item.visualization .visualization__call-to-action .comment-form .btn-group-vertical > a + input[type="submit"], .comment-form
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > a + input[type="submit"], .comment-form
+  .student-paper-content .btn-group-vertical > .soba-btn + input[type="submit"],
+  .student-paper-content .visualization__call-to-action .comment-form .btn-group-vertical > a + input[type="submit"], .comment-form
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > a + input[type="submit"], .search-form .btn-group-vertical > .btn + .search-submit, .comment-form .search-form .btn-group-vertical > input[type="submit"] + .search-submit, .search-form .comment-form .btn-group-vertical > input[type="submit"] + .search-submit, .search-form .btn-group-vertical > .search-submit + .search-submit, .search-form .btn-group-vertical > .soba-btn + .search-submit, .content-section__slider_content .slider-content .search-form .btn-group-vertical > .button + .search-submit, .search-form .content-section__slider_content .slider-content .btn-group-vertical > .button + .search-submit, .content-section__grid_content .section__link .search-form .btn-group-vertical > .button + .search-submit, .search-form .content-section__grid_content .section__link .btn-group-vertical > .button + .search-submit, .search-form .grid-item.visualization .btn-group-vertical > .soba-btn + .search-submit,
+  .grid-item.visualization .visualization__call-to-action .search-form .btn-group-vertical > a + .search-submit, .search-form
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > a + .search-submit, .search-form
+  .student-paper-content .btn-group-vertical > .soba-btn + .search-submit,
+  .student-paper-content .visualization__call-to-action .search-form .btn-group-vertical > a + .search-submit, .search-form
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > a + .search-submit, .btn-group-vertical > .btn + .soba-btn, .comment-form .btn-group-vertical > input[type="submit"] + .soba-btn, .search-form .btn-group-vertical > .search-submit + .soba-btn, .btn-group-vertical > .soba-btn + .soba-btn, .content-section__slider_content .slider-content .btn-group-vertical > .button + .soba-btn, .content-section__grid_content .section__link .btn-group-vertical > .button + .soba-btn, .content-section__slider_content .slider-content .btn-group-vertical > .btn + .button, .comment-form .content-section__slider_content .slider-content .btn-group-vertical > input[type="submit"] + .button, .content-section__slider_content .slider-content .comment-form .btn-group-vertical > input[type="submit"] + .button, .search-form .content-section__slider_content .slider-content .btn-group-vertical > .search-submit + .button, .content-section__slider_content .slider-content .search-form .btn-group-vertical > .search-submit + .button, .content-section__slider_content .slider-content .btn-group-vertical > .soba-btn + .button, .content-section__slider_content .slider-content .btn-group-vertical > .button + .button, .content-section__slider_content .slider-content .grid-item.visualization .btn-group-vertical > .soba-btn + .button,
+  .grid-item.visualization .visualization__call-to-action .content-section__slider_content .slider-content .btn-group-vertical > a + .button, .content-section__slider_content .slider-content
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > a + .button, .content-section__slider_content .slider-content
+  .student-paper-content .btn-group-vertical > .soba-btn + .button,
+  .student-paper-content .visualization__call-to-action .content-section__slider_content .slider-content .btn-group-vertical > a + .button, .content-section__slider_content .slider-content
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > a + .button, .content-section__grid_content .section__link .btn-group-vertical > .btn + .button, .comment-form .content-section__grid_content .section__link .btn-group-vertical > input[type="submit"] + .button, .content-section__grid_content .section__link .comment-form .btn-group-vertical > input[type="submit"] + .button, .search-form .content-section__grid_content .section__link .btn-group-vertical > .search-submit + .button, .content-section__grid_content .section__link .search-form .btn-group-vertical > .search-submit + .button, .content-section__grid_content .section__link .btn-group-vertical > .soba-btn + .button, .content-section__grid_content .section__link .btn-group-vertical > .button + .button, .content-section__grid_content .section__link .grid-item.visualization .btn-group-vertical > .soba-btn + .button,
+  .grid-item.visualization .visualization__call-to-action .content-section__grid_content .section__link .btn-group-vertical > a + .button, .content-section__grid_content .section__link
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > a + .button, .content-section__grid_content .section__link
+  .student-paper-content .btn-group-vertical > .soba-btn + .button,
+  .student-paper-content .visualization__call-to-action .content-section__grid_content .section__link .btn-group-vertical > a + .button, .content-section__grid_content .section__link
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > a + .button, .grid-item.visualization .btn-group-vertical > .btn + .soba-btn, .comment-form .grid-item.visualization .btn-group-vertical > input[type="submit"] + .soba-btn, .search-form .grid-item.visualization .btn-group-vertical > .search-submit + .soba-btn, .content-section__slider_content .slider-content .grid-item.visualization .btn-group-vertical > .button + .soba-btn, .content-section__grid_content .section__link .grid-item.visualization .btn-group-vertical > .button + .soba-btn, .grid-item.visualization .btn-group-vertical > .soba-btn + .soba-btn, .grid-item.visualization .visualization__call-to-action .btn-group-vertical > a + .soba-btn,
+  .student-paper-content .visualization__call-to-action .grid-item.visualization .btn-group-vertical > a + .soba-btn,
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > .btn + a, .comment-form
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > input[type="submit"] + a,
+  .grid-item.visualization .visualization__call-to-action .comment-form .btn-group-vertical > input[type="submit"] + a, .search-form
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > .search-submit + a,
+  .grid-item.visualization .visualization__call-to-action .search-form .btn-group-vertical > .search-submit + a, .content-section__slider_content .slider-content
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > .button + a,
+  .grid-item.visualization .visualization__call-to-action .content-section__slider_content .slider-content .btn-group-vertical > .button + a, .content-section__grid_content .section__link
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > .button + a,
+  .grid-item.visualization .visualization__call-to-action .content-section__grid_content .section__link .btn-group-vertical > .button + a, .grid-item.visualization .visualization__call-to-action .btn-group-vertical > .soba-btn + a, .grid-item.visualization .visualization__call-to-action .btn-group-vertical > a + a,
+  .grid-item.visualization .visualization__call-to-action
+  .student-paper-content .btn-group-vertical > .soba-btn + a,
+  .student-paper-content .btn-group-vertical > .btn + .soba-btn, .comment-form
+  .student-paper-content .btn-group-vertical > input[type="submit"] + .soba-btn, .search-form
+  .student-paper-content .btn-group-vertical > .search-submit + .soba-btn, .content-section__slider_content .slider-content
+  .student-paper-content .btn-group-vertical > .button + .soba-btn, .content-section__grid_content .section__link
+  .student-paper-content .btn-group-vertical > .button + .soba-btn,
+  .grid-item.visualization .visualization__call-to-action
+  .student-paper-content .btn-group-vertical > a + .soba-btn, .student-paper-content .btn-group-vertical > .soba-btn + .soba-btn, .student-paper-content .visualization__call-to-action .btn-group-vertical > a + .soba-btn,
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > .btn + a, .comment-form
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > input[type="submit"] + a,
+  .student-paper-content .visualization__call-to-action .comment-form .btn-group-vertical > input[type="submit"] + a, .search-form
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > .search-submit + a,
+  .student-paper-content .visualization__call-to-action .search-form .btn-group-vertical > .search-submit + a, .content-section__slider_content .slider-content
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > .button + a,
+  .student-paper-content .visualization__call-to-action .content-section__slider_content .slider-content .btn-group-vertical > .button + a, .content-section__grid_content .section__link
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > .button + a,
+  .student-paper-content .visualization__call-to-action .content-section__grid_content .section__link .btn-group-vertical > .button + a,
+  .student-paper-content .visualization__call-to-action .grid-item.visualization .btn-group-vertical > .soba-btn + a, .student-paper-content .visualization__call-to-action .btn-group-vertical > .soba-btn + a, .student-paper-content .visualization__call-to-action .btn-group-vertical > a + a,
   .btn-group-vertical > .btn + .btn-group, .comment-form
   .btn-group-vertical > input[type="submit"] + .btn-group, .search-form
-  .btn-group-vertical > .search-submit + .btn-group, .content-section__slider_content .slider-content
+  .btn-group-vertical > .search-submit + .btn-group,
+  .btn-group-vertical > .soba-btn + .btn-group, .content-section__slider_content .slider-content
   .btn-group-vertical > .button + .btn-group, .content-section__grid_content .section__link
-  .btn-group-vertical > .button + .btn-group,
+  .btn-group-vertical > .button + .btn-group, .grid-item.visualization
+  .btn-group-vertical > .soba-btn + .btn-group,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical > a + .btn-group,
+  .student-paper-content
+  .btn-group-vertical > .soba-btn + .btn-group,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical > a + .btn-group,
   .btn-group-vertical > .btn-group + .btn, .comment-form
   .btn-group-vertical > .btn-group + input[type="submit"], .search-form
-  .btn-group-vertical > .btn-group + .search-submit, .content-section__slider_content .slider-content
+  .btn-group-vertical > .btn-group + .search-submit,
+  .btn-group-vertical > .btn-group + .soba-btn, .content-section__slider_content .slider-content
   .btn-group-vertical > .btn-group + .button, .content-section__grid_content .section__link
-  .btn-group-vertical > .btn-group + .button,
+  .btn-group-vertical > .btn-group + .button, .grid-item.visualization
+  .btn-group-vertical > .btn-group + .soba-btn,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical > .btn-group + a,
+  .student-paper-content
+  .btn-group-vertical > .btn-group + .soba-btn,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical > .btn-group + a,
   .btn-group-vertical > .btn-group + .btn-group {
     margin-top: -1px;
     margin-left: 0; }
-  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .comment-form .btn-group-vertical > input[type="submit"]:not(:last-child):not(.dropdown-toggle), .search-form .btn-group-vertical > .search-submit:not(:last-child):not(.dropdown-toggle), .content-section__slider_content .slider-content .btn-group-vertical > .button:not(:last-child):not(.dropdown-toggle), .content-section__grid_content .section__link .btn-group-vertical > .button:not(:last-child):not(.dropdown-toggle),
+  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .comment-form .btn-group-vertical > input[type="submit"]:not(:last-child):not(.dropdown-toggle), .search-form .btn-group-vertical > .search-submit:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .soba-btn:not(:last-child):not(.dropdown-toggle), .content-section__slider_content .slider-content .btn-group-vertical > .button:not(:last-child):not(.dropdown-toggle), .content-section__grid_content .section__link .btn-group-vertical > .button:not(:last-child):not(.dropdown-toggle), .grid-item.visualization .btn-group-vertical > .soba-btn:not(:last-child):not(.dropdown-toggle),
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle),
+  .student-paper-content .btn-group-vertical > .soba-btn:not(:last-child):not(.dropdown-toggle),
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle),
   .btn-group-vertical > .btn-group:not(:last-child) > .btn, .comment-form
   .btn-group-vertical > .btn-group:not(:last-child) > input[type="submit"], .search-form
-  .btn-group-vertical > .btn-group:not(:last-child) > .search-submit, .content-section__slider_content .slider-content
+  .btn-group-vertical > .btn-group:not(:last-child) > .search-submit,
+  .btn-group-vertical > .btn-group:not(:last-child) > .soba-btn, .content-section__slider_content .slider-content
   .btn-group-vertical > .btn-group:not(:last-child) > .button, .content-section__grid_content .section__link
-  .btn-group-vertical > .btn-group:not(:last-child) > .button {
+  .btn-group-vertical > .btn-group:not(:last-child) > .button, .grid-item.visualization
+  .btn-group-vertical > .btn-group:not(:last-child) > .soba-btn,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical > .btn-group:not(:last-child) > a,
+  .student-paper-content
+  .btn-group-vertical > .btn-group:not(:last-child) > .soba-btn,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical > .btn-group:not(:last-child) > a {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
-  .btn-group-vertical > .btn:not(:first-child), .comment-form .btn-group-vertical > input[type="submit"]:not(:first-child), .search-form .btn-group-vertical > .search-submit:not(:first-child), .content-section__slider_content .slider-content .btn-group-vertical > .button:not(:first-child), .content-section__grid_content .section__link .btn-group-vertical > .button:not(:first-child),
+  .btn-group-vertical > .btn:not(:first-child), .comment-form .btn-group-vertical > input[type="submit"]:not(:first-child), .search-form .btn-group-vertical > .search-submit:not(:first-child), .btn-group-vertical > .soba-btn:not(:first-child), .content-section__slider_content .slider-content .btn-group-vertical > .button:not(:first-child), .content-section__grid_content .section__link .btn-group-vertical > .button:not(:first-child), .grid-item.visualization .btn-group-vertical > .soba-btn:not(:first-child),
+  .grid-item.visualization .visualization__call-to-action .btn-group-vertical > a:not(:first-child),
+  .student-paper-content .btn-group-vertical > .soba-btn:not(:first-child),
+  .student-paper-content .visualization__call-to-action .btn-group-vertical > a:not(:first-child),
   .btn-group-vertical > .btn-group:not(:first-child) > .btn, .comment-form
   .btn-group-vertical > .btn-group:not(:first-child) > input[type="submit"], .search-form
-  .btn-group-vertical > .btn-group:not(:first-child) > .search-submit, .content-section__slider_content .slider-content
+  .btn-group-vertical > .btn-group:not(:first-child) > .search-submit,
+  .btn-group-vertical > .btn-group:not(:first-child) > .soba-btn, .content-section__slider_content .slider-content
   .btn-group-vertical > .btn-group:not(:first-child) > .button, .content-section__grid_content .section__link
-  .btn-group-vertical > .btn-group:not(:first-child) > .button {
+  .btn-group-vertical > .btn-group:not(:first-child) > .button, .grid-item.visualization
+  .btn-group-vertical > .btn-group:not(:first-child) > .soba-btn,
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-vertical > .btn-group:not(:first-child) > a,
+  .student-paper-content
+  .btn-group-vertical > .btn-group:not(:first-child) > .soba-btn,
+  .student-paper-content .visualization__call-to-action
+  .btn-group-vertical > .btn-group:not(:first-child) > a {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group-toggle > .btn, .comment-form .btn-group-toggle > input[type="submit"], .search-form .btn-group-toggle > .search-submit, .content-section__slider_content .slider-content .btn-group-toggle > .button, .content-section__grid_content .section__link .btn-group-toggle > .button,
+.btn-group-toggle > .btn, .comment-form .btn-group-toggle > input[type="submit"], .search-form .btn-group-toggle > .search-submit, .btn-group-toggle > .soba-btn, .content-section__slider_content .slider-content .btn-group-toggle > .button, .content-section__grid_content .section__link .btn-group-toggle > .button, .grid-item.visualization .btn-group-toggle > .soba-btn,
+.grid-item.visualization .visualization__call-to-action .btn-group-toggle > a,
+.student-paper-content .btn-group-toggle > .soba-btn,
+.student-paper-content .visualization__call-to-action .btn-group-toggle > a,
 .btn-group-toggle > .btn-group > .btn, .comment-form
 .btn-group-toggle > .btn-group > input[type="submit"], .search-form
-.btn-group-toggle > .btn-group > .search-submit, .content-section__slider_content .slider-content
+.btn-group-toggle > .btn-group > .search-submit,
+.btn-group-toggle > .btn-group > .soba-btn, .content-section__slider_content .slider-content
 .btn-group-toggle > .btn-group > .button, .content-section__grid_content .section__link
-.btn-group-toggle > .btn-group > .button {
+.btn-group-toggle > .btn-group > .button, .grid-item.visualization
+.btn-group-toggle > .btn-group > .soba-btn,
+.grid-item.visualization .visualization__call-to-action
+.btn-group-toggle > .btn-group > a,
+.student-paper-content
+.btn-group-toggle > .btn-group > .soba-btn,
+.student-paper-content .visualization__call-to-action
+.btn-group-toggle > .btn-group > a {
   margin-bottom: 0; }
-  .btn-group-toggle > .btn input[type="radio"], .comment-form .btn-group-toggle > input[type="submit"] input[type="radio"], .search-form .btn-group-toggle > .search-submit input[type="radio"], .content-section__slider_content .slider-content .btn-group-toggle > .button input[type="radio"], .content-section__grid_content .section__link .btn-group-toggle > .button input[type="radio"],
+  .btn-group-toggle > .btn input[type="radio"], .comment-form .btn-group-toggle > input[type="submit"] input[type="radio"], .search-form .btn-group-toggle > .search-submit input[type="radio"], .btn-group-toggle > .soba-btn input[type="radio"], .content-section__slider_content .slider-content .btn-group-toggle > .button input[type="radio"], .content-section__grid_content .section__link .btn-group-toggle > .button input[type="radio"], .grid-item.visualization .btn-group-toggle > .soba-btn input[type="radio"],
+  .grid-item.visualization .visualization__call-to-action .btn-group-toggle > a input[type="radio"],
+  .student-paper-content .btn-group-toggle > .soba-btn input[type="radio"],
+  .student-paper-content .visualization__call-to-action .btn-group-toggle > a input[type="radio"],
   .btn-group-toggle > .btn input[type="checkbox"], .comment-form
   .btn-group-toggle > input[type="submit"] input[type="checkbox"], .search-form
-  .btn-group-toggle > .search-submit input[type="checkbox"], .content-section__slider_content .slider-content
+  .btn-group-toggle > .search-submit input[type="checkbox"],
+  .btn-group-toggle > .soba-btn input[type="checkbox"], .content-section__slider_content .slider-content
   .btn-group-toggle > .button input[type="checkbox"], .content-section__grid_content .section__link
-  .btn-group-toggle > .button input[type="checkbox"],
+  .btn-group-toggle > .button input[type="checkbox"], .grid-item.visualization
+  .btn-group-toggle > .soba-btn input[type="checkbox"],
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-toggle > a input[type="checkbox"],
+  .student-paper-content
+  .btn-group-toggle > .soba-btn input[type="checkbox"],
+  .student-paper-content .visualization__call-to-action
+  .btn-group-toggle > a input[type="checkbox"],
   .btn-group-toggle > .btn-group > .btn input[type="radio"], .comment-form
   .btn-group-toggle > .btn-group > input[type="submit"] input[type="radio"], .search-form
-  .btn-group-toggle > .btn-group > .search-submit input[type="radio"], .content-section__slider_content .slider-content
+  .btn-group-toggle > .btn-group > .search-submit input[type="radio"],
+  .btn-group-toggle > .btn-group > .soba-btn input[type="radio"], .content-section__slider_content .slider-content
   .btn-group-toggle > .btn-group > .button input[type="radio"], .content-section__grid_content .section__link
-  .btn-group-toggle > .btn-group > .button input[type="radio"],
+  .btn-group-toggle > .btn-group > .button input[type="radio"], .grid-item.visualization
+  .btn-group-toggle > .btn-group > .soba-btn input[type="radio"],
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-toggle > .btn-group > a input[type="radio"],
+  .student-paper-content
+  .btn-group-toggle > .btn-group > .soba-btn input[type="radio"],
+  .student-paper-content .visualization__call-to-action
+  .btn-group-toggle > .btn-group > a input[type="radio"],
   .btn-group-toggle > .btn-group > .btn input[type="checkbox"], .comment-form
   .btn-group-toggle > .btn-group > input[type="submit"] input[type="checkbox"], .search-form
-  .btn-group-toggle > .btn-group > .search-submit input[type="checkbox"], .content-section__slider_content .slider-content
+  .btn-group-toggle > .btn-group > .search-submit input[type="checkbox"],
+  .btn-group-toggle > .btn-group > .soba-btn input[type="checkbox"], .content-section__slider_content .slider-content
   .btn-group-toggle > .btn-group > .button input[type="checkbox"], .content-section__grid_content .section__link
-  .btn-group-toggle > .btn-group > .button input[type="checkbox"] {
+  .btn-group-toggle > .btn-group > .button input[type="checkbox"], .grid-item.visualization
+  .btn-group-toggle > .btn-group > .soba-btn input[type="checkbox"],
+  .grid-item.visualization .visualization__call-to-action
+  .btn-group-toggle > .btn-group > a input[type="checkbox"],
+  .student-paper-content
+  .btn-group-toggle > .btn-group > .soba-btn input[type="checkbox"],
+  .student-paper-content .visualization__call-to-action
+  .btn-group-toggle > .btn-group > a input[type="checkbox"] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none; }
@@ -2985,47 +3705,193 @@ input[type="button"].btn-block {
 .input-group-prepend,
 .input-group-append {
   display: flex; }
-  .input-group-prepend .btn, .input-group-prepend .comment-form input[type="submit"], .comment-form .input-group-prepend input[type="submit"], .input-group-prepend .search-form .search-submit, .search-form .input-group-prepend .search-submit, .input-group-prepend .content-section__slider_content .slider-content .button, .content-section__slider_content .slider-content .input-group-prepend .button, .input-group-prepend .content-section__grid_content .section__link .button, .content-section__grid_content .section__link .input-group-prepend .button,
+  .input-group-prepend .btn, .input-group-prepend .comment-form input[type="submit"], .comment-form .input-group-prepend input[type="submit"], .input-group-prepend .search-form .search-submit, .search-form .input-group-prepend .search-submit, .input-group-prepend .soba-btn, .input-group-prepend .content-section__slider_content .slider-content .button, .content-section__slider_content .slider-content .input-group-prepend .button, .input-group-prepend .content-section__grid_content .section__link .button, .content-section__grid_content .section__link .input-group-prepend .button, .input-group-prepend .grid-item.visualization .soba-btn, .grid-item.visualization .input-group-prepend .soba-btn, .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action a,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend a, .input-group-prepend
+  .student-paper-content .visualization__call-to-action a,
+  .student-paper-content .visualization__call-to-action .input-group-prepend a,
   .input-group-append .btn,
   .input-group-append .comment-form input[type="submit"], .comment-form
   .input-group-append input[type="submit"],
   .input-group-append .search-form .search-submit, .search-form
   .input-group-append .search-submit,
+  .input-group-append .soba-btn,
   .input-group-append .content-section__slider_content .slider-content .button, .content-section__slider_content .slider-content
   .input-group-append .button,
   .input-group-append .content-section__grid_content .section__link .button, .content-section__grid_content .section__link
-  .input-group-append .button {
+  .input-group-append .button,
+  .input-group-append .grid-item.visualization .soba-btn, .grid-item.visualization
+  .input-group-append .soba-btn,
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action a,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append a,
+  .input-group-append
+  .student-paper-content .visualization__call-to-action a,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append a {
     position: relative;
     z-index: 2; }
-  .input-group-prepend .btn + .btn, .input-group-prepend .comment-form input[type="submit"] + .btn, .comment-form .input-group-prepend input[type="submit"] + .btn, .input-group-prepend .search-form .search-submit + .btn, .search-form .input-group-prepend .search-submit + .btn, .input-group-prepend .content-section__slider_content .slider-content .button + .btn, .content-section__slider_content .slider-content .input-group-prepend .button + .btn, .input-group-prepend .content-section__grid_content .section__link .button + .btn, .content-section__grid_content .section__link .input-group-prepend .button + .btn, .input-group-prepend .comment-form .btn + input[type="submit"], .comment-form .input-group-prepend .btn + input[type="submit"], .input-group-prepend .comment-form input[type="submit"] + input[type="submit"], .comment-form .input-group-prepend input[type="submit"] + input[type="submit"], .input-group-prepend .search-form .comment-form .search-submit + input[type="submit"], .comment-form .input-group-prepend .search-form .search-submit + input[type="submit"], .search-form .input-group-prepend .comment-form .search-submit + input[type="submit"], .comment-form .search-form .input-group-prepend .search-submit + input[type="submit"], .input-group-prepend .content-section__slider_content .slider-content .comment-form .button + input[type="submit"], .comment-form .input-group-prepend .content-section__slider_content .slider-content .button + input[type="submit"], .content-section__slider_content .slider-content .input-group-prepend .comment-form .button + input[type="submit"], .comment-form .content-section__slider_content .slider-content .input-group-prepend .button + input[type="submit"], .input-group-prepend .content-section__grid_content .section__link .comment-form .button + input[type="submit"], .comment-form .input-group-prepend .content-section__grid_content .section__link .button + input[type="submit"], .content-section__grid_content .section__link .input-group-prepend .comment-form .button + input[type="submit"], .comment-form .content-section__grid_content .section__link .input-group-prepend .button + input[type="submit"], .input-group-prepend .search-form .btn + .search-submit, .search-form .input-group-prepend .btn + .search-submit, .input-group-prepend .comment-form .search-form input[type="submit"] + .search-submit, .search-form .input-group-prepend .comment-form input[type="submit"] + .search-submit, .comment-form .input-group-prepend .search-form input[type="submit"] + .search-submit, .search-form .comment-form .input-group-prepend input[type="submit"] + .search-submit, .input-group-prepend .search-form .search-submit + .search-submit, .search-form .input-group-prepend .search-submit + .search-submit, .input-group-prepend .content-section__slider_content .slider-content .search-form .button + .search-submit, .search-form .input-group-prepend .content-section__slider_content .slider-content .button + .search-submit, .content-section__slider_content .slider-content .input-group-prepend .search-form .button + .search-submit, .search-form .content-section__slider_content .slider-content .input-group-prepend .button + .search-submit, .input-group-prepend .content-section__grid_content .section__link .search-form .button + .search-submit, .search-form .input-group-prepend .content-section__grid_content .section__link .button + .search-submit, .content-section__grid_content .section__link .input-group-prepend .search-form .button + .search-submit, .search-form .content-section__grid_content .section__link .input-group-prepend .button + .search-submit, .input-group-prepend .content-section__slider_content .slider-content .btn + .button, .content-section__slider_content .slider-content .input-group-prepend .btn + .button, .input-group-prepend .comment-form .content-section__slider_content .slider-content input[type="submit"] + .button, .content-section__slider_content .slider-content .input-group-prepend .comment-form input[type="submit"] + .button, .comment-form .input-group-prepend .content-section__slider_content .slider-content input[type="submit"] + .button, .content-section__slider_content .slider-content .comment-form .input-group-prepend input[type="submit"] + .button, .input-group-prepend .search-form .content-section__slider_content .slider-content .search-submit + .button, .content-section__slider_content .slider-content .input-group-prepend .search-form .search-submit + .button, .search-form .input-group-prepend .content-section__slider_content .slider-content .search-submit + .button, .content-section__slider_content .slider-content .search-form .input-group-prepend .search-submit + .button, .input-group-prepend .content-section__slider_content .slider-content .button + .button, .content-section__slider_content .slider-content .input-group-prepend .button + .button, .input-group-prepend .content-section__grid_content .section__link .btn + .button, .content-section__grid_content .section__link .input-group-prepend .btn + .button, .input-group-prepend .comment-form .content-section__grid_content .section__link input[type="submit"] + .button, .content-section__grid_content .section__link .input-group-prepend .comment-form input[type="submit"] + .button, .comment-form .input-group-prepend .content-section__grid_content .section__link input[type="submit"] + .button, .content-section__grid_content .section__link .comment-form .input-group-prepend input[type="submit"] + .button, .input-group-prepend .search-form .content-section__grid_content .section__link .search-submit + .button, .content-section__grid_content .section__link .input-group-prepend .search-form .search-submit + .button, .search-form .input-group-prepend .content-section__grid_content .section__link .search-submit + .button, .content-section__grid_content .section__link .search-form .input-group-prepend .search-submit + .button, .input-group-prepend .content-section__grid_content .section__link .button + .button, .content-section__grid_content .section__link .input-group-prepend .button + .button,
+  .input-group-prepend .btn + .btn, .input-group-prepend .comment-form input[type="submit"] + .btn, .comment-form .input-group-prepend input[type="submit"] + .btn, .input-group-prepend .search-form .search-submit + .btn, .search-form .input-group-prepend .search-submit + .btn, .input-group-prepend .soba-btn + .btn, .input-group-prepend .content-section__slider_content .slider-content .button + .btn, .content-section__slider_content .slider-content .input-group-prepend .button + .btn, .input-group-prepend .content-section__grid_content .section__link .button + .btn, .content-section__grid_content .section__link .input-group-prepend .button + .btn, .input-group-prepend .grid-item.visualization .soba-btn + .btn, .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action a + .btn,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend a + .btn, .input-group-prepend
+  .student-paper-content .soba-btn + .btn, .input-group-prepend
+  .student-paper-content .visualization__call-to-action a + .btn,
+  .student-paper-content .visualization__call-to-action .input-group-prepend a + .btn, .input-group-prepend .comment-form .btn + input[type="submit"], .comment-form .input-group-prepend .btn + input[type="submit"], .input-group-prepend .comment-form input[type="submit"] + input[type="submit"], .comment-form .input-group-prepend input[type="submit"] + input[type="submit"], .input-group-prepend .search-form .comment-form .search-submit + input[type="submit"], .comment-form .input-group-prepend .search-form .search-submit + input[type="submit"], .search-form .input-group-prepend .comment-form .search-submit + input[type="submit"], .comment-form .search-form .input-group-prepend .search-submit + input[type="submit"], .input-group-prepend .comment-form .soba-btn + input[type="submit"], .comment-form .input-group-prepend .soba-btn + input[type="submit"], .input-group-prepend .content-section__slider_content .slider-content .comment-form .button + input[type="submit"], .comment-form .input-group-prepend .content-section__slider_content .slider-content .button + input[type="submit"], .content-section__slider_content .slider-content .input-group-prepend .comment-form .button + input[type="submit"], .comment-form .content-section__slider_content .slider-content .input-group-prepend .button + input[type="submit"], .input-group-prepend .content-section__grid_content .section__link .comment-form .button + input[type="submit"], .comment-form .input-group-prepend .content-section__grid_content .section__link .button + input[type="submit"], .content-section__grid_content .section__link .input-group-prepend .comment-form .button + input[type="submit"], .comment-form .content-section__grid_content .section__link .input-group-prepend .button + input[type="submit"], .comment-form .input-group-prepend .grid-item.visualization .soba-btn + input[type="submit"], .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action .comment-form a + input[type="submit"], .comment-form .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action a + input[type="submit"],
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend .comment-form a + input[type="submit"], .comment-form
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend a + input[type="submit"], .comment-form .input-group-prepend
+  .student-paper-content .soba-btn + input[type="submit"], .input-group-prepend
+  .student-paper-content .visualization__call-to-action .comment-form a + input[type="submit"], .comment-form .input-group-prepend
+  .student-paper-content .visualization__call-to-action a + input[type="submit"],
+  .student-paper-content .visualization__call-to-action .input-group-prepend .comment-form a + input[type="submit"], .comment-form
+  .student-paper-content .visualization__call-to-action .input-group-prepend a + input[type="submit"], .input-group-prepend .search-form .btn + .search-submit, .search-form .input-group-prepend .btn + .search-submit, .input-group-prepend .comment-form .search-form input[type="submit"] + .search-submit, .search-form .input-group-prepend .comment-form input[type="submit"] + .search-submit, .comment-form .input-group-prepend .search-form input[type="submit"] + .search-submit, .search-form .comment-form .input-group-prepend input[type="submit"] + .search-submit, .input-group-prepend .search-form .search-submit + .search-submit, .search-form .input-group-prepend .search-submit + .search-submit, .input-group-prepend .search-form .soba-btn + .search-submit, .search-form .input-group-prepend .soba-btn + .search-submit, .input-group-prepend .content-section__slider_content .slider-content .search-form .button + .search-submit, .search-form .input-group-prepend .content-section__slider_content .slider-content .button + .search-submit, .content-section__slider_content .slider-content .input-group-prepend .search-form .button + .search-submit, .search-form .content-section__slider_content .slider-content .input-group-prepend .button + .search-submit, .input-group-prepend .content-section__grid_content .section__link .search-form .button + .search-submit, .search-form .input-group-prepend .content-section__grid_content .section__link .button + .search-submit, .content-section__grid_content .section__link .input-group-prepend .search-form .button + .search-submit, .search-form .content-section__grid_content .section__link .input-group-prepend .button + .search-submit, .search-form .input-group-prepend .grid-item.visualization .soba-btn + .search-submit, .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action .search-form a + .search-submit, .search-form .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action a + .search-submit,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend .search-form a + .search-submit, .search-form
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend a + .search-submit, .search-form .input-group-prepend
+  .student-paper-content .soba-btn + .search-submit, .input-group-prepend
+  .student-paper-content .visualization__call-to-action .search-form a + .search-submit, .search-form .input-group-prepend
+  .student-paper-content .visualization__call-to-action a + .search-submit,
+  .student-paper-content .visualization__call-to-action .input-group-prepend .search-form a + .search-submit, .search-form
+  .student-paper-content .visualization__call-to-action .input-group-prepend a + .search-submit, .input-group-prepend .btn + .soba-btn, .input-group-prepend .comment-form input[type="submit"] + .soba-btn, .comment-form .input-group-prepend input[type="submit"] + .soba-btn, .input-group-prepend .search-form .search-submit + .soba-btn, .search-form .input-group-prepend .search-submit + .soba-btn, .input-group-prepend .soba-btn + .soba-btn, .input-group-prepend .content-section__slider_content .slider-content .button + .soba-btn, .content-section__slider_content .slider-content .input-group-prepend .button + .soba-btn, .input-group-prepend .content-section__grid_content .section__link .button + .soba-btn, .content-section__grid_content .section__link .input-group-prepend .button + .soba-btn, .input-group-prepend .content-section__slider_content .slider-content .btn + .button, .content-section__slider_content .slider-content .input-group-prepend .btn + .button, .input-group-prepend .comment-form .content-section__slider_content .slider-content input[type="submit"] + .button, .content-section__slider_content .slider-content .input-group-prepend .comment-form input[type="submit"] + .button, .comment-form .input-group-prepend .content-section__slider_content .slider-content input[type="submit"] + .button, .content-section__slider_content .slider-content .comment-form .input-group-prepend input[type="submit"] + .button, .input-group-prepend .search-form .content-section__slider_content .slider-content .search-submit + .button, .content-section__slider_content .slider-content .input-group-prepend .search-form .search-submit + .button, .search-form .input-group-prepend .content-section__slider_content .slider-content .search-submit + .button, .content-section__slider_content .slider-content .search-form .input-group-prepend .search-submit + .button, .input-group-prepend .content-section__slider_content .slider-content .soba-btn + .button, .content-section__slider_content .slider-content .input-group-prepend .soba-btn + .button, .input-group-prepend .content-section__slider_content .slider-content .button + .button, .content-section__slider_content .slider-content .input-group-prepend .button + .button, .content-section__slider_content .slider-content .input-group-prepend .grid-item.visualization .soba-btn + .button, .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action a + .button,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend a + .button, .content-section__slider_content .slider-content .input-group-prepend
+  .student-paper-content .soba-btn + .button, .input-group-prepend
+  .student-paper-content .visualization__call-to-action .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content .input-group-prepend
+  .student-paper-content .visualization__call-to-action a + .button,
+  .student-paper-content .visualization__call-to-action .input-group-prepend .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .student-paper-content .visualization__call-to-action .input-group-prepend a + .button, .input-group-prepend .content-section__grid_content .section__link .btn + .button, .content-section__grid_content .section__link .input-group-prepend .btn + .button, .input-group-prepend .comment-form .content-section__grid_content .section__link input[type="submit"] + .button, .content-section__grid_content .section__link .input-group-prepend .comment-form input[type="submit"] + .button, .comment-form .input-group-prepend .content-section__grid_content .section__link input[type="submit"] + .button, .content-section__grid_content .section__link .comment-form .input-group-prepend input[type="submit"] + .button, .input-group-prepend .search-form .content-section__grid_content .section__link .search-submit + .button, .content-section__grid_content .section__link .input-group-prepend .search-form .search-submit + .button, .search-form .input-group-prepend .content-section__grid_content .section__link .search-submit + .button, .content-section__grid_content .section__link .search-form .input-group-prepend .search-submit + .button, .input-group-prepend .content-section__grid_content .section__link .soba-btn + .button, .content-section__grid_content .section__link .input-group-prepend .soba-btn + .button, .input-group-prepend .content-section__grid_content .section__link .button + .button, .content-section__grid_content .section__link .input-group-prepend .button + .button, .content-section__grid_content .section__link .input-group-prepend .grid-item.visualization .soba-btn + .button, .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action a + .button,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend a + .button, .content-section__grid_content .section__link .input-group-prepend
+  .student-paper-content .soba-btn + .button, .input-group-prepend
+  .student-paper-content .visualization__call-to-action .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link .input-group-prepend
+  .student-paper-content .visualization__call-to-action a + .button,
+  .student-paper-content .visualization__call-to-action .input-group-prepend .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .student-paper-content .visualization__call-to-action .input-group-prepend a + .button, .input-group-prepend .grid-item.visualization .btn + .soba-btn, .input-group-prepend .comment-form .grid-item.visualization input[type="submit"] + .soba-btn, .comment-form .input-group-prepend .grid-item.visualization input[type="submit"] + .soba-btn, .input-group-prepend .search-form .grid-item.visualization .search-submit + .soba-btn, .search-form .input-group-prepend .grid-item.visualization .search-submit + .soba-btn, .input-group-prepend .content-section__slider_content .slider-content .grid-item.visualization .button + .soba-btn, .content-section__slider_content .slider-content .input-group-prepend .grid-item.visualization .button + .soba-btn, .input-group-prepend .content-section__grid_content .section__link .grid-item.visualization .button + .soba-btn, .content-section__grid_content .section__link .input-group-prepend .grid-item.visualization .button + .soba-btn, .input-group-prepend .grid-item.visualization .soba-btn + .soba-btn, .input-group-prepend .grid-item.visualization .visualization__call-to-action a + .soba-btn, .grid-item.visualization .visualization__call-to-action .input-group-prepend a + .soba-btn, .input-group-prepend
+  .student-paper-content .visualization__call-to-action .grid-item.visualization a + .soba-btn,
+  .student-paper-content .visualization__call-to-action .input-group-prepend .grid-item.visualization a + .soba-btn, .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action .btn + a,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend .btn + a, .input-group-prepend .comment-form
+  .grid-item.visualization .visualization__call-to-action input[type="submit"] + a,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend .comment-form input[type="submit"] + a, .comment-form .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action input[type="submit"] + a,
+  .grid-item.visualization .visualization__call-to-action .comment-form .input-group-prepend input[type="submit"] + a, .input-group-prepend .search-form
+  .grid-item.visualization .visualization__call-to-action .search-submit + a,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend .search-form .search-submit + a, .search-form .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action .search-submit + a,
+  .grid-item.visualization .visualization__call-to-action .search-form .input-group-prepend .search-submit + a, .input-group-prepend .content-section__slider_content .slider-content
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend .content-section__slider_content .slider-content .button + a, .content-section__slider_content .slider-content .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .content-section__slider_content .slider-content .input-group-prepend .button + a, .input-group-prepend .content-section__grid_content .section__link
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend .content-section__grid_content .section__link .button + a, .content-section__grid_content .section__link .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .content-section__grid_content .section__link .input-group-prepend .button + a, .input-group-prepend .grid-item.visualization .visualization__call-to-action .soba-btn + a, .grid-item.visualization .input-group-prepend .visualization__call-to-action .soba-btn + a, .grid-item.visualization .visualization__call-to-action .input-group-prepend .soba-btn + a, .input-group-prepend .grid-item.visualization .visualization__call-to-action a + a, .grid-item.visualization .visualization__call-to-action .input-group-prepend a + a,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend
+  .student-paper-content .soba-btn + a, .input-group-prepend
+  .student-paper-content .btn + .soba-btn, .input-group-prepend .comment-form
+  .student-paper-content input[type="submit"] + .soba-btn, .comment-form .input-group-prepend
+  .student-paper-content input[type="submit"] + .soba-btn, .input-group-prepend .search-form
+  .student-paper-content .search-submit + .soba-btn, .search-form .input-group-prepend
+  .student-paper-content .search-submit + .soba-btn, .input-group-prepend .content-section__slider_content .slider-content
+  .student-paper-content .button + .soba-btn, .content-section__slider_content .slider-content .input-group-prepend
+  .student-paper-content .button + .soba-btn, .input-group-prepend .content-section__grid_content .section__link
+  .student-paper-content .button + .soba-btn, .content-section__grid_content .section__link .input-group-prepend
+  .student-paper-content .button + .soba-btn, .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action
+  .student-paper-content a + .soba-btn,
+  .grid-item.visualization .visualization__call-to-action .input-group-prepend
+  .student-paper-content a + .soba-btn, .input-group-prepend .student-paper-content .soba-btn + .soba-btn, .input-group-prepend .student-paper-content .visualization__call-to-action a + .soba-btn, .student-paper-content .visualization__call-to-action .input-group-prepend a + .soba-btn, .input-group-prepend
+  .student-paper-content .visualization__call-to-action .btn + a,
+  .student-paper-content .visualization__call-to-action .input-group-prepend .btn + a, .input-group-prepend .comment-form
+  .student-paper-content .visualization__call-to-action input[type="submit"] + a,
+  .student-paper-content .visualization__call-to-action .input-group-prepend .comment-form input[type="submit"] + a, .comment-form .input-group-prepend
+  .student-paper-content .visualization__call-to-action input[type="submit"] + a,
+  .student-paper-content .visualization__call-to-action .comment-form .input-group-prepend input[type="submit"] + a, .input-group-prepend .search-form
+  .student-paper-content .visualization__call-to-action .search-submit + a,
+  .student-paper-content .visualization__call-to-action .input-group-prepend .search-form .search-submit + a, .search-form .input-group-prepend
+  .student-paper-content .visualization__call-to-action .search-submit + a,
+  .student-paper-content .visualization__call-to-action .search-form .input-group-prepend .search-submit + a, .input-group-prepend .content-section__slider_content .slider-content
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .input-group-prepend .content-section__slider_content .slider-content .button + a, .content-section__slider_content .slider-content .input-group-prepend
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .content-section__slider_content .slider-content .input-group-prepend .button + a, .input-group-prepend .content-section__grid_content .section__link
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .input-group-prepend .content-section__grid_content .section__link .button + a, .content-section__grid_content .section__link .input-group-prepend
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .content-section__grid_content .section__link .input-group-prepend .button + a,
+  .student-paper-content .visualization__call-to-action .input-group-prepend .grid-item.visualization .soba-btn + a, .input-group-prepend .student-paper-content .visualization__call-to-action .soba-btn + a, .student-paper-content .input-group-prepend .visualization__call-to-action .soba-btn + a, .student-paper-content .visualization__call-to-action .input-group-prepend .soba-btn + a, .input-group-prepend .student-paper-content .visualization__call-to-action a + a, .student-paper-content .visualization__call-to-action .input-group-prepend a + a,
   .input-group-prepend .btn + .input-group-text,
   .input-group-prepend .comment-form input[type="submit"] + .input-group-text, .comment-form
   .input-group-prepend input[type="submit"] + .input-group-text,
   .input-group-prepend .search-form .search-submit + .input-group-text, .search-form
   .input-group-prepend .search-submit + .input-group-text,
+  .input-group-prepend .soba-btn + .input-group-text,
   .input-group-prepend .content-section__slider_content .slider-content .button + .input-group-text, .content-section__slider_content .slider-content
   .input-group-prepend .button + .input-group-text,
   .input-group-prepend .content-section__grid_content .section__link .button + .input-group-text, .content-section__grid_content .section__link
   .input-group-prepend .button + .input-group-text,
+  .input-group-prepend .grid-item.visualization .soba-btn + .input-group-text,
+  .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action a + .input-group-text,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-prepend a + .input-group-text,
+  .input-group-prepend
+  .student-paper-content .soba-btn + .input-group-text,
+  .input-group-prepend
+  .student-paper-content .visualization__call-to-action a + .input-group-text,
+  .student-paper-content .visualization__call-to-action
+  .input-group-prepend a + .input-group-text,
   .input-group-prepend .input-group-text + .input-group-text,
   .input-group-prepend .input-group-text + .btn,
   .input-group-prepend .comment-form .input-group-text + input[type="submit"], .comment-form
   .input-group-prepend .input-group-text + input[type="submit"],
   .input-group-prepend .search-form .input-group-text + .search-submit, .search-form
   .input-group-prepend .input-group-text + .search-submit,
+  .input-group-prepend .input-group-text + .soba-btn,
   .input-group-prepend .content-section__slider_content .slider-content .input-group-text + .button, .content-section__slider_content .slider-content
   .input-group-prepend .input-group-text + .button,
   .input-group-prepend .content-section__grid_content .section__link .input-group-text + .button, .content-section__grid_content .section__link
   .input-group-prepend .input-group-text + .button,
+  .input-group-prepend .grid-item.visualization .input-group-text + .soba-btn,
+  .input-group-prepend
+  .grid-item.visualization .visualization__call-to-action .input-group-text + a,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-prepend .input-group-text + a,
+  .input-group-prepend
+  .student-paper-content .input-group-text + .soba-btn,
+  .input-group-prepend
+  .student-paper-content .visualization__call-to-action .input-group-text + a,
+  .student-paper-content .visualization__call-to-action
+  .input-group-prepend .input-group-text + a,
   .input-group-append .btn + .btn,
   .input-group-append .comment-form input[type="submit"] + .btn, .comment-form
   .input-group-append input[type="submit"] + .btn,
   .input-group-append .search-form .search-submit + .btn, .search-form
   .input-group-append .search-submit + .btn,
+  .input-group-append .soba-btn + .btn,
   .input-group-append .content-section__slider_content .slider-content .button + .btn, .content-section__slider_content .slider-content
   .input-group-append .button + .btn,
   .input-group-append .content-section__grid_content .section__link .button + .btn, .content-section__grid_content .section__link
   .input-group-append .button + .btn,
+  .input-group-append .grid-item.visualization .soba-btn + .btn,
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action a + .btn,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append a + .btn,
+  .input-group-append
+  .student-paper-content .soba-btn + .btn,
+  .input-group-append
+  .student-paper-content .visualization__call-to-action a + .btn,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append a + .btn,
   .input-group-append .comment-form .btn + input[type="submit"], .comment-form
   .input-group-append .btn + input[type="submit"],
   .input-group-append .comment-form input[type="submit"] + input[type="submit"], .comment-form
@@ -3034,6 +3900,8 @@ input[type="button"].btn-block {
   .input-group-append .search-form .search-submit + input[type="submit"], .search-form
   .input-group-append .comment-form .search-submit + input[type="submit"], .comment-form .search-form
   .input-group-append .search-submit + input[type="submit"],
+  .input-group-append .comment-form .soba-btn + input[type="submit"], .comment-form
+  .input-group-append .soba-btn + input[type="submit"],
   .input-group-append .content-section__slider_content .slider-content .comment-form .button + input[type="submit"], .comment-form
   .input-group-append .content-section__slider_content .slider-content .button + input[type="submit"], .content-section__slider_content .slider-content
   .input-group-append .comment-form .button + input[type="submit"], .comment-form .content-section__slider_content .slider-content
@@ -3041,7 +3909,26 @@ input[type="button"].btn-block {
   .input-group-append .content-section__grid_content .section__link .comment-form .button + input[type="submit"], .comment-form
   .input-group-append .content-section__grid_content .section__link .button + input[type="submit"], .content-section__grid_content .section__link
   .input-group-append .comment-form .button + input[type="submit"], .comment-form .content-section__grid_content .section__link
-  .input-group-append .button + input[type="submit"],
+  .input-group-append .button + input[type="submit"], .comment-form
+  .input-group-append .grid-item.visualization .soba-btn + input[type="submit"],
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action .comment-form a + input[type="submit"], .comment-form
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action a + input[type="submit"],
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append .comment-form a + input[type="submit"], .comment-form
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append a + input[type="submit"], .comment-form
+  .input-group-append
+  .student-paper-content .soba-btn + input[type="submit"],
+  .input-group-append
+  .student-paper-content .visualization__call-to-action .comment-form a + input[type="submit"], .comment-form
+  .input-group-append
+  .student-paper-content .visualization__call-to-action a + input[type="submit"],
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .comment-form a + input[type="submit"], .comment-form
+  .student-paper-content .visualization__call-to-action
+  .input-group-append a + input[type="submit"],
   .input-group-append .search-form .btn + .search-submit, .search-form
   .input-group-append .btn + .search-submit,
   .input-group-append .comment-form .search-form input[type="submit"] + .search-submit, .search-form
@@ -3050,6 +3937,8 @@ input[type="button"].btn-block {
   .input-group-append input[type="submit"] + .search-submit,
   .input-group-append .search-form .search-submit + .search-submit, .search-form
   .input-group-append .search-submit + .search-submit,
+  .input-group-append .search-form .soba-btn + .search-submit, .search-form
+  .input-group-append .soba-btn + .search-submit,
   .input-group-append .content-section__slider_content .slider-content .search-form .button + .search-submit, .search-form
   .input-group-append .content-section__slider_content .slider-content .button + .search-submit, .content-section__slider_content .slider-content
   .input-group-append .search-form .button + .search-submit, .search-form .content-section__slider_content .slider-content
@@ -3057,7 +3946,36 @@ input[type="button"].btn-block {
   .input-group-append .content-section__grid_content .section__link .search-form .button + .search-submit, .search-form
   .input-group-append .content-section__grid_content .section__link .button + .search-submit, .content-section__grid_content .section__link
   .input-group-append .search-form .button + .search-submit, .search-form .content-section__grid_content .section__link
-  .input-group-append .button + .search-submit,
+  .input-group-append .button + .search-submit, .search-form
+  .input-group-append .grid-item.visualization .soba-btn + .search-submit,
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action .search-form a + .search-submit, .search-form
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action a + .search-submit,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append .search-form a + .search-submit, .search-form
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append a + .search-submit, .search-form
+  .input-group-append
+  .student-paper-content .soba-btn + .search-submit,
+  .input-group-append
+  .student-paper-content .visualization__call-to-action .search-form a + .search-submit, .search-form
+  .input-group-append
+  .student-paper-content .visualization__call-to-action a + .search-submit,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .search-form a + .search-submit, .search-form
+  .student-paper-content .visualization__call-to-action
+  .input-group-append a + .search-submit,
+  .input-group-append .btn + .soba-btn,
+  .input-group-append .comment-form input[type="submit"] + .soba-btn, .comment-form
+  .input-group-append input[type="submit"] + .soba-btn,
+  .input-group-append .search-form .search-submit + .soba-btn, .search-form
+  .input-group-append .search-submit + .soba-btn,
+  .input-group-append .soba-btn + .soba-btn,
+  .input-group-append .content-section__slider_content .slider-content .button + .soba-btn, .content-section__slider_content .slider-content
+  .input-group-append .button + .soba-btn,
+  .input-group-append .content-section__grid_content .section__link .button + .soba-btn, .content-section__grid_content .section__link
+  .input-group-append .button + .soba-btn,
   .input-group-append .content-section__slider_content .slider-content .btn + .button, .content-section__slider_content .slider-content
   .input-group-append .btn + .button,
   .input-group-append .comment-form .content-section__slider_content .slider-content input[type="submit"] + .button, .content-section__slider_content .slider-content
@@ -3068,8 +3986,29 @@ input[type="button"].btn-block {
   .input-group-append .search-form .search-submit + .button, .search-form
   .input-group-append .content-section__slider_content .slider-content .search-submit + .button, .content-section__slider_content .slider-content .search-form
   .input-group-append .search-submit + .button,
+  .input-group-append .content-section__slider_content .slider-content .soba-btn + .button, .content-section__slider_content .slider-content
+  .input-group-append .soba-btn + .button,
   .input-group-append .content-section__slider_content .slider-content .button + .button, .content-section__slider_content .slider-content
-  .input-group-append .button + .button,
+  .input-group-append .button + .button, .content-section__slider_content .slider-content
+  .input-group-append .grid-item.visualization .soba-btn + .button,
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action a + .button,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append a + .button, .content-section__slider_content .slider-content
+  .input-group-append
+  .student-paper-content .soba-btn + .button,
+  .input-group-append
+  .student-paper-content .visualization__call-to-action .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .input-group-append
+  .student-paper-content .visualization__call-to-action a + .button,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .content-section__slider_content .slider-content a + .button, .content-section__slider_content .slider-content
+  .student-paper-content .visualization__call-to-action
+  .input-group-append a + .button,
   .input-group-append .content-section__grid_content .section__link .btn + .button, .content-section__grid_content .section__link
   .input-group-append .btn + .button,
   .input-group-append .comment-form .content-section__grid_content .section__link input[type="submit"] + .button, .content-section__grid_content .section__link
@@ -3080,27 +4019,202 @@ input[type="button"].btn-block {
   .input-group-append .search-form .search-submit + .button, .search-form
   .input-group-append .content-section__grid_content .section__link .search-submit + .button, .content-section__grid_content .section__link .search-form
   .input-group-append .search-submit + .button,
+  .input-group-append .content-section__grid_content .section__link .soba-btn + .button, .content-section__grid_content .section__link
+  .input-group-append .soba-btn + .button,
   .input-group-append .content-section__grid_content .section__link .button + .button, .content-section__grid_content .section__link
-  .input-group-append .button + .button,
+  .input-group-append .button + .button, .content-section__grid_content .section__link
+  .input-group-append .grid-item.visualization .soba-btn + .button,
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action a + .button,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append a + .button, .content-section__grid_content .section__link
+  .input-group-append
+  .student-paper-content .soba-btn + .button,
+  .input-group-append
+  .student-paper-content .visualization__call-to-action .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .input-group-append
+  .student-paper-content .visualization__call-to-action a + .button,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .content-section__grid_content .section__link a + .button, .content-section__grid_content .section__link
+  .student-paper-content .visualization__call-to-action
+  .input-group-append a + .button,
+  .input-group-append .grid-item.visualization .btn + .soba-btn,
+  .input-group-append .comment-form .grid-item.visualization input[type="submit"] + .soba-btn, .comment-form
+  .input-group-append .grid-item.visualization input[type="submit"] + .soba-btn,
+  .input-group-append .search-form .grid-item.visualization .search-submit + .soba-btn, .search-form
+  .input-group-append .grid-item.visualization .search-submit + .soba-btn,
+  .input-group-append .content-section__slider_content .slider-content .grid-item.visualization .button + .soba-btn, .content-section__slider_content .slider-content
+  .input-group-append .grid-item.visualization .button + .soba-btn,
+  .input-group-append .content-section__grid_content .section__link .grid-item.visualization .button + .soba-btn, .content-section__grid_content .section__link
+  .input-group-append .grid-item.visualization .button + .soba-btn,
+  .input-group-append .grid-item.visualization .soba-btn + .soba-btn,
+  .input-group-append .grid-item.visualization .visualization__call-to-action a + .soba-btn, .grid-item.visualization .visualization__call-to-action
+  .input-group-append a + .soba-btn,
+  .input-group-append
+  .student-paper-content .visualization__call-to-action .grid-item.visualization a + .soba-btn,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .grid-item.visualization a + .soba-btn,
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action .btn + a,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append .btn + a,
+  .input-group-append .comment-form
+  .grid-item.visualization .visualization__call-to-action input[type="submit"] + a,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append .comment-form input[type="submit"] + a, .comment-form
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action input[type="submit"] + a,
+  .grid-item.visualization .visualization__call-to-action .comment-form
+  .input-group-append input[type="submit"] + a,
+  .input-group-append .search-form
+  .grid-item.visualization .visualization__call-to-action .search-submit + a,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append .search-form .search-submit + a, .search-form
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action .search-submit + a,
+  .grid-item.visualization .visualization__call-to-action .search-form
+  .input-group-append .search-submit + a,
+  .input-group-append .content-section__slider_content .slider-content
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append .content-section__slider_content .slider-content .button + a, .content-section__slider_content .slider-content
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .content-section__slider_content .slider-content
+  .input-group-append .button + a,
+  .input-group-append .content-section__grid_content .section__link
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append .content-section__grid_content .section__link .button + a, .content-section__grid_content .section__link
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action .button + a,
+  .grid-item.visualization .visualization__call-to-action .content-section__grid_content .section__link
+  .input-group-append .button + a,
+  .input-group-append .grid-item.visualization .visualization__call-to-action .soba-btn + a, .grid-item.visualization
+  .input-group-append .visualization__call-to-action .soba-btn + a, .grid-item.visualization .visualization__call-to-action
+  .input-group-append .soba-btn + a,
+  .input-group-append .grid-item.visualization .visualization__call-to-action a + a, .grid-item.visualization .visualization__call-to-action
+  .input-group-append a + a,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append
+  .student-paper-content .soba-btn + a,
+  .input-group-append
+  .student-paper-content .btn + .soba-btn,
+  .input-group-append .comment-form
+  .student-paper-content input[type="submit"] + .soba-btn, .comment-form
+  .input-group-append
+  .student-paper-content input[type="submit"] + .soba-btn,
+  .input-group-append .search-form
+  .student-paper-content .search-submit + .soba-btn, .search-form
+  .input-group-append
+  .student-paper-content .search-submit + .soba-btn,
+  .input-group-append .content-section__slider_content .slider-content
+  .student-paper-content .button + .soba-btn, .content-section__slider_content .slider-content
+  .input-group-append
+  .student-paper-content .button + .soba-btn,
+  .input-group-append .content-section__grid_content .section__link
+  .student-paper-content .button + .soba-btn, .content-section__grid_content .section__link
+  .input-group-append
+  .student-paper-content .button + .soba-btn,
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action
+  .student-paper-content a + .soba-btn,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append
+  .student-paper-content a + .soba-btn,
+  .input-group-append .student-paper-content .soba-btn + .soba-btn,
+  .input-group-append .student-paper-content .visualization__call-to-action a + .soba-btn, .student-paper-content .visualization__call-to-action
+  .input-group-append a + .soba-btn,
+  .input-group-append
+  .student-paper-content .visualization__call-to-action .btn + a,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .btn + a,
+  .input-group-append .comment-form
+  .student-paper-content .visualization__call-to-action input[type="submit"] + a,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .comment-form input[type="submit"] + a, .comment-form
+  .input-group-append
+  .student-paper-content .visualization__call-to-action input[type="submit"] + a,
+  .student-paper-content .visualization__call-to-action .comment-form
+  .input-group-append input[type="submit"] + a,
+  .input-group-append .search-form
+  .student-paper-content .visualization__call-to-action .search-submit + a,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .search-form .search-submit + a, .search-form
+  .input-group-append
+  .student-paper-content .visualization__call-to-action .search-submit + a,
+  .student-paper-content .visualization__call-to-action .search-form
+  .input-group-append .search-submit + a,
+  .input-group-append .content-section__slider_content .slider-content
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .content-section__slider_content .slider-content .button + a, .content-section__slider_content .slider-content
+  .input-group-append
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .content-section__slider_content .slider-content
+  .input-group-append .button + a,
+  .input-group-append .content-section__grid_content .section__link
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .content-section__grid_content .section__link .button + a, .content-section__grid_content .section__link
+  .input-group-append
+  .student-paper-content .visualization__call-to-action .button + a,
+  .student-paper-content .visualization__call-to-action .content-section__grid_content .section__link
+  .input-group-append .button + a,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .grid-item.visualization .soba-btn + a,
+  .input-group-append .student-paper-content .visualization__call-to-action .soba-btn + a, .student-paper-content
+  .input-group-append .visualization__call-to-action .soba-btn + a, .student-paper-content .visualization__call-to-action
+  .input-group-append .soba-btn + a,
+  .input-group-append .student-paper-content .visualization__call-to-action a + a, .student-paper-content .visualization__call-to-action
+  .input-group-append a + a,
   .input-group-append .btn + .input-group-text,
   .input-group-append .comment-form input[type="submit"] + .input-group-text, .comment-form
   .input-group-append input[type="submit"] + .input-group-text,
   .input-group-append .search-form .search-submit + .input-group-text, .search-form
   .input-group-append .search-submit + .input-group-text,
+  .input-group-append .soba-btn + .input-group-text,
   .input-group-append .content-section__slider_content .slider-content .button + .input-group-text, .content-section__slider_content .slider-content
   .input-group-append .button + .input-group-text,
   .input-group-append .content-section__grid_content .section__link .button + .input-group-text, .content-section__grid_content .section__link
   .input-group-append .button + .input-group-text,
+  .input-group-append .grid-item.visualization .soba-btn + .input-group-text,
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action a + .input-group-text,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append a + .input-group-text,
+  .input-group-append
+  .student-paper-content .soba-btn + .input-group-text,
+  .input-group-append
+  .student-paper-content .visualization__call-to-action a + .input-group-text,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append a + .input-group-text,
   .input-group-append .input-group-text + .input-group-text,
   .input-group-append .input-group-text + .btn,
   .input-group-append .comment-form .input-group-text + input[type="submit"], .comment-form
   .input-group-append .input-group-text + input[type="submit"],
   .input-group-append .search-form .input-group-text + .search-submit, .search-form
   .input-group-append .input-group-text + .search-submit,
+  .input-group-append .input-group-text + .soba-btn,
   .input-group-append .content-section__slider_content .slider-content .input-group-text + .button, .content-section__slider_content .slider-content
   .input-group-append .input-group-text + .button,
   .input-group-append .content-section__grid_content .section__link .input-group-text + .button, .content-section__grid_content .section__link
-  .input-group-append .input-group-text + .button {
+  .input-group-append .input-group-text + .button,
+  .input-group-append .grid-item.visualization .input-group-text + .soba-btn,
+  .input-group-append
+  .grid-item.visualization .visualization__call-to-action .input-group-text + a,
+  .grid-item.visualization .visualization__call-to-action
+  .input-group-append .input-group-text + a,
+  .input-group-append
+  .student-paper-content .input-group-text + .soba-btn,
+  .input-group-append
+  .student-paper-content .visualization__call-to-action .input-group-text + a,
+  .student-paper-content .visualization__call-to-action
+  .input-group-append .input-group-text + a {
     margin-left: -1px; }
 
 .input-group-prepend {
@@ -3127,36 +4241,74 @@ input[type="button"].btn-block {
   .input-group-text input[type="checkbox"] {
     margin-top: 0; }
 
-.input-group > .input-group-prepend > .btn, .comment-form .input-group > .input-group-prepend > input[type="submit"], .search-form .input-group > .input-group-prepend > .search-submit, .content-section__slider_content .slider-content .input-group > .input-group-prepend > .button, .content-section__grid_content .section__link .input-group > .input-group-prepend > .button,
+.input-group > .input-group-prepend > .btn, .comment-form .input-group > .input-group-prepend > input[type="submit"], .search-form .input-group > .input-group-prepend > .search-submit, .input-group > .input-group-prepend > .soba-btn, .content-section__slider_content .slider-content .input-group > .input-group-prepend > .button, .content-section__grid_content .section__link .input-group > .input-group-prepend > .button, .grid-item.visualization .input-group > .input-group-prepend > .soba-btn,
+.grid-item.visualization .visualization__call-to-action .input-group > .input-group-prepend > a,
+.student-paper-content .input-group > .input-group-prepend > .soba-btn,
+.student-paper-content .visualization__call-to-action .input-group > .input-group-prepend > a,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn, .comment-form
 .input-group > .input-group-append:not(:last-child) > input[type="submit"], .search-form
-.input-group > .input-group-append:not(:last-child) > .search-submit, .content-section__slider_content .slider-content
+.input-group > .input-group-append:not(:last-child) > .search-submit,
+.input-group > .input-group-append:not(:last-child) > .soba-btn, .content-section__slider_content .slider-content
 .input-group > .input-group-append:not(:last-child) > .button, .content-section__grid_content .section__link
-.input-group > .input-group-append:not(:last-child) > .button,
+.input-group > .input-group-append:not(:last-child) > .button, .grid-item.visualization
+.input-group > .input-group-append:not(:last-child) > .soba-btn,
+.grid-item.visualization .visualization__call-to-action
+.input-group > .input-group-append:not(:last-child) > a,
+.student-paper-content
+.input-group > .input-group-append:not(:last-child) > .soba-btn,
+.student-paper-content .visualization__call-to-action
+.input-group > .input-group-append:not(:last-child) > a,
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle), .comment-form
 .input-group > .input-group-append:last-child > input[type="submit"]:not(:last-child):not(.dropdown-toggle), .search-form
-.input-group > .input-group-append:last-child > .search-submit:not(:last-child):not(.dropdown-toggle), .content-section__slider_content .slider-content
+.input-group > .input-group-append:last-child > .search-submit:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .soba-btn:not(:last-child):not(.dropdown-toggle), .content-section__slider_content .slider-content
 .input-group > .input-group-append:last-child > .button:not(:last-child):not(.dropdown-toggle), .content-section__grid_content .section__link
-.input-group > .input-group-append:last-child > .button:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .button:not(:last-child):not(.dropdown-toggle), .grid-item.visualization
+.input-group > .input-group-append:last-child > .soba-btn:not(:last-child):not(.dropdown-toggle),
+.grid-item.visualization .visualization__call-to-action
+.input-group > .input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
+.student-paper-content
+.input-group > .input-group-append:last-child > .soba-btn:not(:last-child):not(.dropdown-toggle),
+.student-paper-content .visualization__call-to-action
+.input-group > .input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.input-group > .input-group-append > .btn, .comment-form .input-group > .input-group-append > input[type="submit"], .search-form .input-group > .input-group-append > .search-submit, .content-section__slider_content .slider-content .input-group > .input-group-append > .button, .content-section__grid_content .section__link .input-group > .input-group-append > .button,
+.input-group > .input-group-append > .btn, .comment-form .input-group > .input-group-append > input[type="submit"], .search-form .input-group > .input-group-append > .search-submit, .input-group > .input-group-append > .soba-btn, .content-section__slider_content .slider-content .input-group > .input-group-append > .button, .content-section__grid_content .section__link .input-group > .input-group-append > .button, .grid-item.visualization .input-group > .input-group-append > .soba-btn,
+.grid-item.visualization .visualization__call-to-action .input-group > .input-group-append > a,
+.student-paper-content .input-group > .input-group-append > .soba-btn,
+.student-paper-content .visualization__call-to-action .input-group > .input-group-append > a,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn, .comment-form
 .input-group > .input-group-prepend:not(:first-child) > input[type="submit"], .search-form
-.input-group > .input-group-prepend:not(:first-child) > .search-submit, .content-section__slider_content .slider-content
+.input-group > .input-group-prepend:not(:first-child) > .search-submit,
+.input-group > .input-group-prepend:not(:first-child) > .soba-btn, .content-section__slider_content .slider-content
 .input-group > .input-group-prepend:not(:first-child) > .button, .content-section__grid_content .section__link
-.input-group > .input-group-prepend:not(:first-child) > .button,
+.input-group > .input-group-prepend:not(:first-child) > .button, .grid-item.visualization
+.input-group > .input-group-prepend:not(:first-child) > .soba-btn,
+.grid-item.visualization .visualization__call-to-action
+.input-group > .input-group-prepend:not(:first-child) > a,
+.student-paper-content
+.input-group > .input-group-prepend:not(:first-child) > .soba-btn,
+.student-paper-content .visualization__call-to-action
+.input-group > .input-group-prepend:not(:first-child) > a,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child), .comment-form
 .input-group > .input-group-prepend:first-child > input[type="submit"]:not(:first-child), .search-form
-.input-group > .input-group-prepend:first-child > .search-submit:not(:first-child), .content-section__slider_content .slider-content
+.input-group > .input-group-prepend:first-child > .search-submit:not(:first-child),
+.input-group > .input-group-prepend:first-child > .soba-btn:not(:first-child), .content-section__slider_content .slider-content
 .input-group > .input-group-prepend:first-child > .button:not(:first-child), .content-section__grid_content .section__link
-.input-group > .input-group-prepend:first-child > .button:not(:first-child),
+.input-group > .input-group-prepend:first-child > .button:not(:first-child), .grid-item.visualization
+.input-group > .input-group-prepend:first-child > .soba-btn:not(:first-child),
+.grid-item.visualization .visualization__call-to-action
+.input-group > .input-group-prepend:first-child > a:not(:first-child),
+.student-paper-content
+.input-group > .input-group-prepend:first-child > .soba-btn:not(:first-child),
+.student-paper-content .visualization__call-to-action
+.input-group > .input-group-prepend:first-child > a:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -4040,7 +5192,9 @@ input[type="button"].btn-block {
   .badge:empty {
     display: none; }
 
-.btn .badge, .comment-form input[type="submit"] .badge, .search-form .search-submit .badge, .content-section__slider_content .slider-content .button .badge, .content-section__grid_content .section__link .button .badge {
+.btn .badge, .comment-form input[type="submit"] .badge, .search-form .search-submit .badge, .soba-btn .badge, .content-section__slider_content .slider-content .button .badge, .content-section__grid_content .section__link .button .badge, .grid-item.visualization .soba-btn .badge,
+.grid-item.visualization .visualization__call-to-action a .badge,
+.student-paper-content .visualization__call-to-action a .badge {
   position: relative;
   top: -1px; }
 
@@ -6923,7 +8077,10 @@ a.text-dark:hover, a.text-dark:focus {
   *::after {
     text-shadow: none !important;
     box-shadow: none !important; }
-  a:not(.btn):not(.comment-form input[type="submit"]):not(.search-form .search-submit):not(.content-section__slider_content .slider-content .button):not(.content-section__grid_content .section__link .button) {
+  a:not(.btn):not(.comment-form input[type="submit"]):not(.search-form .search-submit):not(.soba-btn):not(.content-section__slider_content .slider-content .button):not(.content-section__grid_content .section__link .button):not(.grid-item.visualization .soba-btn):not(
+  .grid-item.visualization .visualization__call-to-action a):not(
+  .student-paper-content .soba-btn):not(
+  .student-paper-content .visualization__call-to-action a) {
     text-decoration: underline; }
   abbr[title]::after {
     content: " (" attr(title) ")"; }
@@ -7288,7 +8445,7 @@ h3 {
   max-width: 100%; }
 
 .rte {
-  font-family: Georgia; }
+  /*font-family: Georgia;*/ }
   .rte p {
     font-size: 1rem;
     color: #4d4d4d;
@@ -7310,7 +8467,7 @@ h3 {
     .rte.rte--large p {
       font-size: inherit; }
   .rte a {
-    color: #b21823; }
+    /*color: $red;*/ }
 
 .custom-content-color .rte * {
   color: inherit; }
@@ -7332,9 +8489,9 @@ main.main {
   color: #fff;
   background-color: #b21823;
   border-color: #df1e2c;
-  padding: 1rem 2rem;
-  font-size: 1.25rem;
-  line-height: 0.1rem;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  line-height: 1em;
   border-radius: 0.1rem;
   /*	display: inline-block;
 	padding: .75rem 1rem;
@@ -7932,11 +9089,15 @@ footer.content-info {
     padding-left: 1rem;
     margin-bottom: 0; }
 
+.visualization__header h2.entry-title,
 .visualization__header h3,
-.student-paper-content__inner h2.entry-title {
+.student-paper-content__inner h2.entry-title,
+.student-paper-content__inner h3 {
   padding-top: .5rem; }
+  .visualization__header h2.entry-title a,
   .visualization__header h3 a,
-  .student-paper-content__inner h2.entry-title a {
+  .student-paper-content__inner h2.entry-title a,
+  .student-paper-content__inner h3 a {
     color: #5f4e47;
     /*text-decoration: underline; */ }
 
@@ -7980,10 +9141,10 @@ footer.content-info {
   max-width: 100%; }
 
 .visualization__call-to-action {
-  padding-top: 2rem;
-  margin-top: 2rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
   /*margin-bottom: 1rem;*/
-  padding-bottom: 1rem;
+  padding-bottom: 0rem;
   border-top: 1px solid #efebee;
   flex: 0 0 100%;
   max-width: 100%;
@@ -7994,32 +9155,7 @@ footer.content-info {
   padding-left: 15px;
   /*text-align: right;*/ }
   .visualization__call-to-action a {
-    /*@extend .soba-btn;*/
-    color: #212529;
-    background-color: #efebee;
-    border-color: #d8cfd6;
-    padding: 0.5rem 2rem;
-    font-size: 1rem;
-    line-height: 0.1rem;
-    border-radius: 0.1rem; }
-    .visualization__call-to-action a:hover {
-      color: #212529;
-      background-color: #efebee;
-      border-color: #d8cfd6; }
-    .visualization__call-to-action a:focus, .visualization__call-to-action a.focus {
-      box-shadow: 0 0 0 0.2rem rgba(216, 207, 214, 0.5); }
-    .visualization__call-to-action a.disabled, .visualization__call-to-action a:disabled {
-      color: #212529;
-      background-color: #efebee;
-      border-color: #d8cfd6; }
-    .visualization__call-to-action a:not(:disabled):not(.disabled):active, .visualization__call-to-action a:not(:disabled):not(.disabled).active,
-    .show > .visualization__call-to-action a.dropdown-toggle {
-      color: #212529;
-      background-color: #d8cfd6;
-      border-color: #bcabb8; }
-      .visualization__call-to-action a:not(:disabled):not(.disabled):active:focus, .visualization__call-to-action a:not(:disabled):not(.disabled).active:focus,
-      .show > .visualization__call-to-action a.dropdown-toggle:focus {
-        box-shadow: 0 0 0 0.2rem rgba(216, 207, 214, 0.5); }
+    /*@extend .soba-btn;*/ }
 
 .grid-item.visualization .grid-item__inner,
 .grid-item.visualization .student-paper-content__inner,
@@ -8031,6 +9167,75 @@ footer.content-info {
   border: 1px solid #ddd;
   background: white;
   /*border-radius: 3px;		*/ }
+
+.grid-item.visualization .soba-btn,
+.grid-item.visualization .visualization__call-to-action a,
+.student-paper-content .soba-btn,
+.student-paper-content .visualization__call-to-action a {
+  color: #212529;
+  background-color: #efebee;
+  border-color: #d8cfd6;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  line-height: 1em;
+  border-radius: 0.1rem; }
+  .grid-item.visualization .soba-btn:hover,
+  .grid-item.visualization .visualization__call-to-action a:hover,
+  .student-paper-content .soba-btn:hover,
+  .student-paper-content .visualization__call-to-action a:hover {
+    color: #212529;
+    background-color: #efebee;
+    border-color: #d8cfd6; }
+  .grid-item.visualization .soba-btn:focus, .grid-item.visualization .soba-btn.focus,
+  .grid-item.visualization .visualization__call-to-action a:focus,
+  .grid-item.visualization .visualization__call-to-action a.focus,
+  .student-paper-content .soba-btn:focus,
+  .student-paper-content .soba-btn.focus,
+  .student-paper-content .visualization__call-to-action a:focus,
+  .student-paper-content .visualization__call-to-action a.focus {
+    box-shadow: 0 0 0 0.2rem rgba(216, 207, 214, 0.5); }
+  .grid-item.visualization .soba-btn.disabled, .grid-item.visualization .soba-btn:disabled,
+  .grid-item.visualization .visualization__call-to-action a.disabled,
+  .grid-item.visualization .visualization__call-to-action a:disabled,
+  .student-paper-content .soba-btn.disabled,
+  .student-paper-content .soba-btn:disabled,
+  .student-paper-content .visualization__call-to-action a.disabled,
+  .student-paper-content .visualization__call-to-action a:disabled {
+    color: #212529;
+    background-color: #efebee;
+    border-color: #d8cfd6; }
+  .grid-item.visualization .soba-btn:not(:disabled):not(.disabled):active, .grid-item.visualization .soba-btn:not(:disabled):not(.disabled).active,
+  .show > .grid-item.visualization .soba-btn.dropdown-toggle,
+  .grid-item.visualization .visualization__call-to-action a:not(:disabled):not(.disabled):active,
+  .grid-item.visualization .visualization__call-to-action a:not(:disabled):not(.disabled).active,
+  .show >
+  .grid-item.visualization .visualization__call-to-action a.dropdown-toggle,
+  .student-paper-content .soba-btn:not(:disabled):not(.disabled):active,
+  .student-paper-content .soba-btn:not(:disabled):not(.disabled).active,
+  .show >
+  .student-paper-content .soba-btn.dropdown-toggle,
+  .student-paper-content .visualization__call-to-action a:not(:disabled):not(.disabled):active,
+  .student-paper-content .visualization__call-to-action a:not(:disabled):not(.disabled).active,
+  .show >
+  .student-paper-content .visualization__call-to-action a.dropdown-toggle {
+    color: #212529;
+    background-color: #d8cfd6;
+    border-color: #bcabb8; }
+    .grid-item.visualization .soba-btn:not(:disabled):not(.disabled):active:focus, .grid-item.visualization .soba-btn:not(:disabled):not(.disabled).active:focus,
+    .show > .grid-item.visualization .soba-btn.dropdown-toggle:focus,
+    .grid-item.visualization .visualization__call-to-action a:not(:disabled):not(.disabled):active:focus,
+    .grid-item.visualization .visualization__call-to-action a:not(:disabled):not(.disabled).active:focus,
+    .show >
+    .grid-item.visualization .visualization__call-to-action a.dropdown-toggle:focus,
+    .student-paper-content .soba-btn:not(:disabled):not(.disabled):active:focus,
+    .student-paper-content .soba-btn:not(:disabled):not(.disabled).active:focus,
+    .show >
+    .student-paper-content .soba-btn.dropdown-toggle:focus,
+    .student-paper-content .visualization__call-to-action a:not(:disabled):not(.disabled):active:focus,
+    .student-paper-content .visualization__call-to-action a:not(:disabled):not(.disabled).active:focus,
+    .show >
+    .student-paper-content .visualization__call-to-action a.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(216, 207, 214, 0.5); }
 
 .grid-item.visualization.visualization--stacked .visualization__notes--side {
   display: none; }
