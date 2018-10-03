@@ -7980,8 +7980,10 @@ footer.content-info {
   max-width: 100%; }
 
 .visualization__call-to-action {
-  padding-top: 1rem;
-  margin-top: 1rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  /*margin-bottom: 1rem;*/
+  padding-bottom: 1rem;
   border-top: 1px solid #efebee;
   flex: 0 0 100%;
   max-width: 100%;
@@ -7990,7 +7992,34 @@ footer.content-info {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-  text-align: right; }
+  /*text-align: right;*/ }
+  .visualization__call-to-action a {
+    /*@extend .soba-btn;*/
+    color: #212529;
+    background-color: #efebee;
+    border-color: #d8cfd6;
+    padding: 0.5rem 2rem;
+    font-size: 1.25rem;
+    line-height: 0.1rem;
+    border-radius: 0.1rem; }
+    .visualization__call-to-action a:hover {
+      color: #212529;
+      background-color: #d8cfd6;
+      border-color: #d8cfd6; }
+    .visualization__call-to-action a:focus, .visualization__call-to-action a.focus {
+      box-shadow: 0 0 0 0.2rem rgba(216, 207, 214, 0.5); }
+    .visualization__call-to-action a.disabled, .visualization__call-to-action a:disabled {
+      color: #212529;
+      background-color: #efebee;
+      border-color: #d8cfd6; }
+    .visualization__call-to-action a:not(:disabled):not(.disabled):active, .visualization__call-to-action a:not(:disabled):not(.disabled).active,
+    .show > .visualization__call-to-action a.dropdown-toggle {
+      color: #212529;
+      background-color: #d8cfd6;
+      border-color: #bcabb8; }
+      .visualization__call-to-action a:not(:disabled):not(.disabled):active:focus, .visualization__call-to-action a:not(:disabled):not(.disabled).active:focus,
+      .show > .visualization__call-to-action a.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgba(216, 207, 214, 0.5); }
 
 .grid-item.visualization .grid-item__inner,
 .grid-item.visualization .student-paper-content__inner,

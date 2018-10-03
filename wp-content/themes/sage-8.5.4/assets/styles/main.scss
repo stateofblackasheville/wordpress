@@ -920,12 +920,19 @@ footer.content-info{
 }
 
 .visualization__call-to-action{
-	padding-top: 1rem;
-	margin-top: 1rem;
+	padding-top: 2rem;
+	margin-top: 2rem;
+	/*margin-bottom: 1rem;*/
+	padding-bottom: 1rem;
 	border-top: 1px solid $off-white;
 	@include make-col(12);
 	@include make-col-ready();
-	text-align: right;
+	/*text-align: right;*/
+	a{
+		/*@extend .soba-btn;*/
+		@include button-variant($off-white, darken($off-white, 10%), darken($off-white, 10%), darken($off-white, 10%));
+		@include button-size(.5rem, 2rem, 1.25rem, .1rem, .1rem);
+	}
 }
 
 .grid-item.visualization,
