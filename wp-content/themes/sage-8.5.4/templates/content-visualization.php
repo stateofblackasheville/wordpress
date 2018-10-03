@@ -87,13 +87,13 @@
 					<?php echo $post_item->post_content; ?>
 				</div>	
 				<?php if(!get_field('embed', $post_item->ID)): ?>
-					<div class="rte rte--georgia rte--small work-in-progress">
+<!-- 					<div class="rte rte--georgia rte--small work-in-progress">
 						<span class="link" data-toggle="tooltip" title="This visualization hasn't been made dynamic yet, but is in the works!">
 							<span>
 								Work in progress <ion-icon name="information-circle"></ion-icon>
 							</span> 						
 						</span>
-					</div>
+					</div> -->
 				<?php endif; ?>	
 				<?php if(!$stacked): ?>	
 					<div class="visualization__notes visualization__notes--side">		
@@ -104,7 +104,7 @@
 						<?php //endif; ?>
 					</div>
 				<?php endif; ?>
-			</div>
+			</div>		
 			<?php if(!$no_visual): ?>
 				<div class="visualization__content grid-item-content">		
 					<?php if(get_field('embed', $post_item->ID)): ?>
@@ -113,7 +113,7 @@
 								<?php the_field('embed', $post_item->ID); ?> 	
 							</div>
 						</div>
-						<a class="rte rte--georgia rte--small" data-fancybox data-options='{"caption" : "<?php echo wp_strip_all_tags($post_item->post_content); ?>" }' data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
+						<a class="rte rte--georgia rte--small" data-fancybox data-options='{"caption" : "<?php echo wp_strip_all_tags($post_item->post_content, true); ?>" }' data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
 							[+] Expand Visualization
 						</a>					
 					<?php elseif(has_post_thumbnail($post_item->ID)): ?>

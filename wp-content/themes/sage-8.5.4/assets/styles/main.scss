@@ -160,8 +160,8 @@ main.main{
 .soba-btn{
 	/*@include button-variant(#DE3831, lighten(#DE3831, 10%), darken(#DE3831, 10%), lighten(#DE3831, 20%));*/
 	@extend .btn;
-	@include button-variant($red, lighten($red, 10%), darken($red, 10%), lighten($red, 20%));
-	@include button-size(.5rem, 2rem, 1rem, 1em, .1rem);
+	@include button-variant($red, lighten($red, 10%), darken($red, 10%));
+	@include button-size(.75rem, 2rem, 1rem, 1em, .1rem);
 /*	display: inline-block;
 	padding: .75rem 1rem;
 	width: 300px;*/
@@ -176,7 +176,7 @@ main.main{
 	font-family: 'proxima-nova' !important;
 	max-width: 100%;*/
 	&.soba-btn--white{
-		@include button-variant($off-white, $off-white, $off-white, $off-white);
+		@include button-variant($off-white, darken($off-white, 10%), darken($off-white, 10%));
 /*		color: white;
 		border-color: white;
 		&:hover{
@@ -608,7 +608,7 @@ main.main{
 			/*@include button-variant($background, $border, $active-background: darken($background, 7.5%), $active-border: darken($border, 10%));*/
 			@extend .btn;
 			@extend .btn-lg;
-			@include button-variant(#DE3831, lighten(#DE3831, 10%), darken(#DE3831, 10%), lighten(#DE3831, 20%));
+			@include button-variant($off-white, darken($off-white, 10%), $off-white, darken($off-white, 10%));
 		}
 	}
 	.content-section__item{
@@ -665,7 +665,7 @@ main.main{
 			/*@include button-variant($background, $border, $active-background: darken($background, 7.5%), $active-border: darken($border, 10%));*/
 			@extend .btn;
 			@extend .btn-lg;
-			@include button-variant(#DE3831, lighten(#DE3831, 10%), darken(#DE3831, 10%), lighten(#DE3831, 20%));
+			@include button-variant($off-white, darken($off-white, 10%), $off-white, darken($off-white, 10%));
 		}		
 		z-index: 10;
 		position: relative;
@@ -952,7 +952,7 @@ footer.content-info{
 	.soba-btn,
 	.visualization__call-to-action a{
 		@extend .btn;
-		@include button-variant($off-white, darken($off-white, 10%), $off-white, darken($off-white, 10%));
+		@include button-variant($off-white, darken($off-white, 10%), darken($off-white, 10%));
 		@include button-size(.5rem, 2rem, 1rem, 1em, .1rem);
 	}	
 }
