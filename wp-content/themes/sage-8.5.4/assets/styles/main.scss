@@ -158,40 +158,46 @@ main.main{
 }
 
 .soba-btn{
-	display: inline-block;
+	/*@include button-variant(#DE3831, lighten(#DE3831, 10%), darken(#DE3831, 10%), lighten(#DE3831, 20%));*/
+	@include button-variant($red, lighten($red, 10%), darken($red, 10%), lighten($red, 20%));
+	@include button-size(1rem, 2rem, 1.25rem, .1rem, .1rem);
+/*	display: inline-block;
 	padding: .75rem 1rem;
-	width: 300px;
-	font-size: 1.25rem;
+	width: 300px;*/
+	/*font-size: 1.25rem;*/
 	/*text-transform: uppercase;*/
 	/*transition: all .2s;*/
-	color: $red;
-	border: 3px solid $red;
+/*	color: $red;
+	border-color: $red;
+	border-width: 1px;
+	border-style: solid;
 	text-align: center;
 	font-family: 'proxima-nova' !important;
-	max-width: 100%;
+	max-width: 100%;*/
 	&.soba-btn--white{
-		color: white;
-		border: 3px solid white;
+		@include button-variant($off-white, $off-white, $off-white, $off-white);
+/*		color: white;
+		border-color: white;
 		&:hover{
-			/*background: rgba(255, 255, 255, .1);*/
+			background: rgba(255, 255, 255, .1);
 			color: white;
-		}
+		}*/
 	}
 	ion-icon{
-		font-size: 2rem;
-		vertical-align: middle; 
+/*		font-size: 1rem;
+		vertical-align: middle; */
 	}
 	&:hover{
-		text-decoration: none;
+/*		text-decoration: none;
 		opacity: .8;
-		color: $red;
+		color: $red;*/
 	}
 	@include media-breakpoint-down(md){
 		min-width: 0;
 		font-size: 1rem;
 		padding: .5rem;
 		clear: left;
-	}	
+	}		
 }
 
 
@@ -233,6 +239,7 @@ main.main{
 	}
 	.content-section__call-to-action{
 		margin-bottom: 2rem;
+		margin-top: 2rem;
 	}
 	&.header-border{
 		h2, h3{

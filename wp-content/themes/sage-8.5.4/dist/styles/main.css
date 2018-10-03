@@ -7328,30 +7328,80 @@ main.main {
   padding: 0; }
 
 .soba-btn {
-  display: inline-block;
-  padding: .75rem 1rem;
-  width: 300px;
+  /*@include button-variant(#DE3831, lighten(#DE3831, 10%), darken(#DE3831, 10%), lighten(#DE3831, 20%));*/
+  color: #fff;
+  background-color: #b21823;
+  border-color: #df1e2c;
+  padding: 1rem 2rem;
   font-size: 1.25rem;
+  line-height: 0.1rem;
+  border-radius: 0.1rem;
+  /*	display: inline-block;
+	padding: .75rem 1rem;
+	width: 300px;*/
+  /*font-size: 1.25rem;*/
   /*text-transform: uppercase;*/
   /*transition: all .2s;*/
-  color: #b21823;
-  border: 3px solid #b21823;
-  text-align: center;
-  font-family: 'proxima-nova' !important;
-  max-width: 100%; }
-  .soba-btn.soba-btn--white {
-    color: white;
-    border: 3px solid white; }
-    .soba-btn.soba-btn--white:hover {
-      /*background: rgba(255, 255, 255, .1);*/
-      color: white; }
-  .soba-btn ion-icon {
-    font-size: 2rem;
-    vertical-align: middle; }
+  /*	color: $red;
+	border-color: $red;
+	border-width: 1px;
+	border-style: solid;
+	text-align: center;
+	font-family: 'proxima-nova' !important;
+	max-width: 100%;*/ }
   .soba-btn:hover {
-    text-decoration: none;
-    opacity: .8;
-    color: #b21823; }
+    color: #fff;
+    background-color: #85121a;
+    border-color: #e74955; }
+  .soba-btn:focus, .soba-btn.focus {
+    box-shadow: 0 0 0 0.2rem rgba(223, 30, 44, 0.5); }
+  .soba-btn.disabled, .soba-btn:disabled {
+    color: #fff;
+    background-color: #b21823;
+    border-color: #df1e2c; }
+  .soba-btn:not(:disabled):not(.disabled):active, .soba-btn:not(:disabled):not(.disabled).active,
+  .show > .soba-btn.dropdown-toggle {
+    color: #fff;
+    background-color: #85121a;
+    border-color: #a71621; }
+    .soba-btn:not(:disabled):not(.disabled):active:focus, .soba-btn:not(:disabled):not(.disabled).active:focus,
+    .show > .soba-btn.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(223, 30, 44, 0.5); }
+  .soba-btn.soba-btn--white {
+    color: #212529;
+    background-color: #efebee;
+    border-color: #efebee;
+    /*		color: white;
+		border-color: white;
+		&:hover{
+			background: rgba(255, 255, 255, .1);
+			color: white;
+		}*/ }
+    .soba-btn.soba-btn--white:hover {
+      color: #212529;
+      background-color: #efebee;
+      border-color: #efebee; }
+    .soba-btn.soba-btn--white:focus, .soba-btn.soba-btn--white.focus {
+      box-shadow: 0 0 0 0.2rem rgba(239, 235, 238, 0.5); }
+    .soba-btn.soba-btn--white.disabled, .soba-btn.soba-btn--white:disabled {
+      color: #212529;
+      background-color: #efebee;
+      border-color: #efebee; }
+    .soba-btn.soba-btn--white:not(:disabled):not(.disabled):active, .soba-btn.soba-btn--white:not(:disabled):not(.disabled).active,
+    .show > .soba-btn.soba-btn--white.dropdown-toggle {
+      color: #212529;
+      background-color: #d8cfd6;
+      border-color: #d3c8d0; }
+      .soba-btn.soba-btn--white:not(:disabled):not(.disabled):active:focus, .soba-btn.soba-btn--white:not(:disabled):not(.disabled).active:focus,
+      .show > .soba-btn.soba-btn--white.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgba(239, 235, 238, 0.5); }
+  .soba-btn ion-icon {
+    /*		font-size: 1rem;
+		vertical-align: middle; */ }
+  .soba-btn:hover {
+    /*		text-decoration: none;
+		opacity: .8;
+		color: $red;*/ }
   @media (max-width: 991.98px) {
     .soba-btn {
       min-width: 0;
@@ -7391,7 +7441,8 @@ main.main {
       width: 100%;
       max-width: 400px; }
   .content-section .content-section__call-to-action {
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    margin-top: 2rem; }
   .content-section.header-border h2, .content-section.header-border h3 {
     border-bottom: 1px solid #eee; }
   @media (min-width: 768px) {
