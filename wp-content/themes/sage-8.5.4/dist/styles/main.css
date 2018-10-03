@@ -7999,12 +7999,12 @@ footer.content-info {
     background-color: #efebee;
     border-color: #d8cfd6;
     padding: 0.5rem 2rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 0.1rem;
     border-radius: 0.1rem; }
     .visualization__call-to-action a:hover {
       color: #212529;
-      background-color: #d8cfd6;
+      background-color: #efebee;
       border-color: #d8cfd6; }
     .visualization__call-to-action a:focus, .visualization__call-to-action a.focus {
       box-shadow: 0 0 0 0.2rem rgba(216, 207, 214, 0.5); }

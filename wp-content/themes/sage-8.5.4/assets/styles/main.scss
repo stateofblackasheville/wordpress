@@ -930,8 +930,8 @@ footer.content-info{
 	/*text-align: right;*/
 	a{
 		/*@extend .soba-btn;*/
-		@include button-variant($off-white, darken($off-white, 10%), darken($off-white, 10%), darken($off-white, 10%));
-		@include button-size(.5rem, 2rem, 1.25rem, .1rem, .1rem);
+		@include button-variant($off-white, darken($off-white, 10%), $off-white, darken($off-white, 10%));
+		@include button-size(.5rem, 2rem, 1rem, .1rem, .1rem);
 	}
 }
 
