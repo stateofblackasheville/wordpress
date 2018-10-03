@@ -38,32 +38,33 @@
 			<?php endforeach; ?>
 		<?php endif; ?>
 	<?php elseif( $content_section_type == 'Relational Curated'): ?>
-		<?php $content = get_sub_field('curated_content_custom', false, false); ?>
+		<?php $content_filtered = get_sub_field('curated_content_custom', false, false); ?>
 
 		<?php 	
 
-			if(isset($_GET['data_year'])):
-				$data_year = $_GET['data_year'];
-			else:
-				$data_year = '';
-			endif;
+			// if(isset($_GET['data_year'])):
+			// 	$data_year = $_GET['data_year'];
+			// else:
+			// 	$data_year = '';
+			// endif;
 
-			$args = array(
-				'post_type' => 'any',
-			    'post__in' => $content,
-			    'tag' => $data_year,
-			    'orderby' => 'post__in'
-			); 
+			// $args = array(
+			// 	'post_type' => 'any',
+			//     'post__in' => $content,
+			//     'tag' => $data_year,
+			//     'orderby' => 'post__in'
+			// ); 
 
-			$content_filtered = get_posts($args);
+			// $content_filtered = get_posts($args);
 
 			//var_dump($content); 
 
 		?>
-
-		<?php foreach($content_filtered as $content): ?>
-			<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
-		<?php endforeach; ?>
+		<?php if(!empty($content_filtered)): ?>
+			<?php foreach($content_filtered as $content): ?>
+				<?php Roots\Sage\Extras\render_content_grid_item(get_post($content)); ?>
+			<?php endforeach; ?>
+		<?php endif; ?>
 	<?php elseif( $content_section_type == 'Tabs'): ?>
 		<div class="tab-container">
 			<?php if( have_rows('tabs') ): ?>
@@ -80,24 +81,24 @@
 				</ul>
 				<div class="tab-content" id="pills-tabContent">
 			    <?php while ( have_rows('tabs') ) : the_row(); ?>
-					<?php $content = get_sub_field('tab_content', false, false); ?>
+					<?php $content_filtered = get_sub_field('tab_content', false, false); ?>
 					<?php $tab_id = sanitize_title(get_sub_field('tab_title')); ?>
 					<?php 	
 
-						if(isset($_GET['data_year'])):
-							$data_year = $_GET['data_year'];
-						else:
-							$data_year = '';
-						endif;
+						// if(isset($_GET['data_year'])):
+						// 	$data_year = $_GET['data_year'];
+						// else:
+						// 	$data_year = '';
+						// endif;
 
-						$args = array(
-							'post_type' => 'any',
-						    'post__in' => $content,
-						    'tag' => $data_year,
-						    'orderby' => 'post__in'
-						); 
+						// $args = array(
+						// 	'post_type' => 'any',
+						//     'post__in' => $content,
+						//     'tag' => $data_year,
+						//     'orderby' => 'post__in'
+						// ); 
 
-						$content_filtered = get_posts($args);
+						// $content_filtered = get_posts($args);
 						// var_dump($content_filtered);
 
 					?>		    	
