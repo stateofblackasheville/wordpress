@@ -127,9 +127,6 @@
 					<div class="visualization__notes visualization__notes--stacked">		
 						<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>	
 						<?php Roots\Sage\Extras\render_tags($post_item); ?>	
-						<?php //if(get_field('student_paper', $post_item->ID)): ?>
-							<?php //Roots\Sage\Extras\render_student_paper('visualization-student-paper', $post_item); ?>							
-						<?php //endif; ?>
 					</div>							
 				</div>
 			<?php else: ?>

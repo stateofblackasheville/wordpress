@@ -112,7 +112,7 @@
 				    			<hr>
 				    		</div>
 							<?php foreach($content_filtered as $content): ?>
-								<?php Roots\Sage\Extras\render_content_grid_item($content); ?>
+								<?php Roots\Sage\Extras\render_content_grid_item(get_post($content)); ?>
 							<?php endforeach; ?>
 						</div>
 					</div>				
