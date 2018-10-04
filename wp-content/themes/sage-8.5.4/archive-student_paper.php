@@ -17,6 +17,7 @@
 	// $available_tags = get_terms(array(
 	// 	'taxonomy' => 'post_tag'
 	// ));	
+	$index_status = $_GET['index_status'];
 ?>
 
 <?php get_template_part('templates/page', 'header'); ?>
@@ -29,14 +30,40 @@
 					<input type="text" class="form-control" name="archive_search" value="<?php if(isset($_GET['archive_search'])): ?><?php echo $_GET['archive_search']; ?><?php endif; ?>" placeholder="Search by title or content...">
 				</div>
 				<div class="form-check">
-					<input type="checkbox" class="form-check-input" id="needs-index" name="index_needed" value="true" <?php if($index_needed_mode): ?>checked<?php endif; ?>>			
-					<label class="form-check-label filter filter--needs-visualization" for="needs-index">
-						Needs to be indexed
-						<br>
-						<small class="form-text text-muted">
-							We are creating digital, interactive visualizations from the content of these papers. You can help us by <a href="/how-to-index-student-papers/">indexing a student paper</a>.
-						</small>
+					<input type="radio" class="form-check-input" id="all" name="index_status" value="All" <?php if($index_status == 'All'): ?>checked<?php endif; ?>>			
+					<label class="form-check-label filter filter--needs-visualization" for="all">
+						All
+					</label>				
+				</div>		
+				<br>			
+				<div class="form-check">
+					<input type="radio" class="form-check-input" id="created" name="index_status" value="Created" <?php if($index_status == 'Created'): ?>checked<?php endif; ?>>			
+					<label class="form-check-label filter filter--needs-visualization" for="created">
+						Created
 					</label>
+					<small class="form-text text-muted">
+						These items exist, but have not been indexed or visualized.
+					</small>					
+				</div>	
+				<br>				
+				<div class="form-check">
+					<input type="radio" class="form-check-input" id="static-visualization" name="index_status" value="Indexed" <?php if($index_status == 'Indexed'): ?>checked<?php endif; ?>>			
+					<label class="form-check-label filter filter--needs-visualization" for="static-visualization">
+						Indexed
+					</label>
+					<small class="form-text text-muted">
+						These items contain an index that shows the page number of each visualization, but the visualizations haven't been added to the system. <a href="/how-to-index-student-papers">Help us index <ion-icon name="arrow-forward"></ion-icon> </a>
+					</small>					
+				</div>
+				<br>
+				<div class="form-check">
+					<input type="radio" class="form-check-input" id="dynamic-visualization" name="index_status" value="Visualized" <?php if($index_status == 'Visualized'): ?>checked<?php endif; ?>>			
+					<label class="form-check-label filter filter--needs-visualization" for="dynamic-visualization">
+						Visualized
+					</label>
+					<small class="form-text text-muted">
+						The visualizations contained within this item have been added to the system and attached to this item. This is the end goal for all Student Papers.
+					</small>					
 				</div>
 				<br>	
 				<h3 class="rte">

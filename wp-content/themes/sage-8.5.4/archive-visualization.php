@@ -27,6 +27,8 @@
 
 	// var_dump(count($all_visualizations));
 
+	$visualization_status = $_GET['visualization_status'];
+
 ?>
 
 <?php get_template_part('templates/page', 'header'); ?>
@@ -43,17 +45,43 @@
 			<form action="/visualizations" method="get">
 				<div class="form-group">
 					<input type="text" class="form-control" name="archive_search" value="<?php if(isset($_GET['archive_search'])): ?><?php echo $_GET['archive_search']; ?><?php endif; ?>" placeholder="Search by title or content...">				
-				</div>	
+				</div>
 				<div class="form-check">
-					<input type="checkbox" class="form-check-input" id="needs-visualization" name="visualization_needed" value="true" <?php if($visualization_needed_mode): ?>checked<?php endif; ?>>			
-					<label class="form-check-label filter filter--needs-visualization" for="needs-index">
-						Work in Progress
-						<br>
-						<small class="form-text text-muted">
-							You can help build tools for community analysis by creating a Google Sheet that we will turn into interactive visualization. <a href="#intercom">Contact us to get started</a>.
-						</small>
+					<input type="radio" class="form-check-input" id="all" name="visualization_status" value="All" <?php if($visualization_status == 'All'): ?>checked<?php endif; ?>>			
+					<label class="form-check-label filter filter--needs-visualization" for="all">
+						All
+					</label>				
+				</div>		
+				<br>			
+				<div class="form-check">
+					<input type="radio" class="form-check-input" id="created" name="visualization_status" value="Created" <?php if($visualization_status == 'Created'): ?>checked<?php endif; ?>>			
+					<label class="form-check-label filter filter--needs-visualization" for="created">
+						Created
 					</label>
-				</div>							
+					<small class="form-text text-muted">
+						These items exist, but have not been visualizated.
+					</small>					
+				</div>	
+				<br>				
+				<div class="form-check">
+					<input type="radio" class="form-check-input" id="static-visualization" name="visualization_status" value="Static" <?php if($visualization_status == 'Static'): ?>checked<?php endif; ?>>			
+					<label class="form-check-label filter filter--needs-visualization" for="static-visualization">
+						Visualization
+					</label>
+					<small class="form-text text-muted">
+						These items contain a visualization, but it hasn't been made dynamic yet.
+					</small>					
+				</div>
+				<br>
+				<div class="form-check">
+					<input type="radio" class="form-check-input" id="dynamic-visualization" name="visualization_status" value="Dynamic" <?php if($visualization_status == 'Dynamic'): ?>checked<?php endif; ?>>			
+					<label class="form-check-label filter filter--needs-visualization" for="dynamic-visualization">
+						Dynamic Visualization
+					</label>
+					<small class="form-text text-muted">
+						These items contain a dynamic visualization, which is the goal for all visualizations on the website.
+					</small>					
+				</div>											
 				<?php if(false): ?>		
 					<h3 class="rte">
 						Filters:

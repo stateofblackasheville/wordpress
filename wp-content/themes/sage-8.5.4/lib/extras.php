@@ -44,17 +44,47 @@ function filter_archive( $query ) {
   
   // only modify queries for 'event' post type
   if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'visualization' && $query->is_main_query() ):
-    
-    // allow the url to alter the query
-    if(isset($_GET['visualization_needed']) ):
-      $meta_query[] = array(
-          'key'   => 'embed',
-          'value' => '',
-          'compare' => '='
-      );
-      $query->set('meta_query', $meta_query);
-    endif;              
-    
+
+    if(isset($_GET['visualization_status']) ):
+      if($_GET['visualization_status'] == 'All'):
+
+      elseif($_GET['visualization_status'] == 'Created'):
+        $meta_query[] = array(
+          'relation' => 'AND',
+          array(
+            'key'   => '_thumbnail_id',
+            'compare' => 'NOT EXISTS'
+          ),
+          array(
+            'key'     => 'embed',
+            'compare' => '=',
+            'value'   => ''        
+          )
+        );
+      elseif($_GET['visualization_status'] == 'Static'):
+        $meta_query[] = array(
+          'relation' => 'AND',
+          array(
+            'key'   => '_thumbnail_id',
+          ),
+          array(
+            'key'     => 'embed',
+            'compare' => '=',
+            'value'   => ''        
+          )
+        );        
+      elseif($_GET['visualization_status'] == 'Dynamic'):
+        $meta_query[] = array(
+          'relation' => 'AND',
+          array(
+            'key'     => 'embed',
+            'compare' => '!=',
+            'value'   => ''        
+          )
+        ); 
+      endif;
+    endif;     
+
   endif;
 
   if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'student_paper' && $query->is_main_query()):
@@ -62,25 +92,57 @@ function filter_archive( $query ) {
     $query->set('posts_per_page', 50);
 
     // allow the url to alter the query
-    if(isset($_GET['index_needed'])):
-      $meta_query[] = array(
-          'key'   => 'status',
-          'value' => 'Needs Index',
-          'compare' => '='
-      );
-      $query->set('meta_query', $meta_query);
-    endif;   
+    if(isset($_GET['index_status']) ):
+      if($_GET['index_status'] == 'All'):
+
+      elseif($_GET['index_status'] == 'Created'):
+        $meta_query[] = array(
+            'relation'  => 'AND',
+            array(
+              'key' => 'document_reference',
+              'compare' => 'NOT EXISTS'  
+            ),
+            array(
+              'key' => 'index_document',
+              'compare' => '=',
+              'value'   => ''  
+            )
+        );
+
+      elseif($_GET['index_status'] == 'Indexed'):
+        $meta_query[] = array(
+            'relation'  => 'AND',
+            array(
+              'key' => 'document_reference',
+              'compare' => 'NOT EXISTS'  
+            ),
+            array(
+              'key' => 'index_document',
+              'compare' => '!=',
+              'value'   => ''  
+            )
+        );       
+      elseif($_GET['index_status'] == 'Visualized'):
+        $meta_query[] = array(
+            'relation'  => 'AND',
+            array(
+              'key' => 'document_reference',
+              'compare' => 'EXISTS'  
+            ),
+            array(
+              'key' => 'index_document',
+              'compare' => '!=',
+              'value'   => ''  
+            )
+        );  
+      endif;
+    endif;             
+
   
   endif;  
 
   if( isset($query->query_vars['post_type']) && ($query->query_vars['post_type'] == 'student_paper' || $query->query_vars['post_type'] == 'visualization') && $query->is_main_query()):
     if(isset($_GET['archive_search']) && $_GET['archive_search'] !== null):
-      // $meta_query[] = array(
-      //     'key'   => 'author',
-      //     'value' => $_GET['archive_search'],
-      //     'compare' => 'LIKE'
-      // );
-      // $query->set('meta_query', $meta_query);
       $query->set('s', $_GET['archive_search']);
     endif;     
     
@@ -95,6 +157,9 @@ function filter_archive( $query ) {
       endif;
     endif;
 
+    if(isset($meta_query)):
+      $query->set('meta_query', $meta_query);
+    endif;
     // var_dump($query);
 
   endif;
@@ -104,6 +169,103 @@ function filter_archive( $query ) {
 
 }
 add_action('pre_get_posts', __NAMESPACE__ . '\\filter_archive');
+
+function bidirectional_acf_update_value($value, $post_id, $field) {
+  
+  // vars
+  $field_name = $field['name'];
+  $field_key = $field['key'];
+  $global_name = 'is_updating_' . $field_name;
+  
+  
+  // bail early if this filter was triggered from the update_field() function called within the loop below
+  // - this prevents an inifinte loop
+  if( !empty($GLOBALS[ $global_name ]) ) return $value;
+  
+  
+  // set global variable to avoid inifite loop
+  // - could also remove_filter() then add_filter() again, but this is simpler
+  $GLOBALS[ $global_name ] = 1;
+  
+  
+  // loop over selected posts and add this $post_id
+  if( is_array($value) ) {
+  
+    foreach( $value as $post_id2 ) {
+      
+      // load existing related posts
+      $value2 = get_field($field_name, $post_id2, false);
+      
+      
+      // allow for selected posts to not contain a value
+      if( empty($value2) ) {
+        
+        $value2 = array();
+        
+      }
+      
+      
+      // bail early if the current $post_id is already found in selected post's $value2
+      if( in_array($post_id, $value2) ) continue;
+      
+      
+      // append the current $post_id to the selected post's 'related_posts' value
+      $value2[] = $post_id;
+      
+      
+      // update the selected post's value (use field's key for performance)
+      update_field($field_key, $value2, $post_id2);
+      
+    }
+  
+  }
+  
+  
+  // find posts which have been removed
+  $old_value = get_field($field_name, $post_id, false);
+  
+  if( is_array($old_value) ) {
+    
+    foreach( $old_value as $post_id2 ) {
+      
+      // bail early if this value has not been removed
+      if( is_array($value) && in_array($post_id2, $value) ) continue;
+      
+      
+      // load existing related posts
+      $value2 = get_field($field_name, $post_id2, false);
+      
+      
+      // bail early if no value
+      if( empty($value2) ) continue;
+      
+      
+      // find the position of $post_id within $value2 so we can remove it
+      $pos = array_search($post_id, $value2);
+      
+      
+      // remove
+      unset( $value2[ $pos] );
+      
+      
+      // update the un-selected post's value (use field's key for performance)
+      update_field($field_key, $value2, $post_id2);
+      
+    }
+    
+  }
+  
+  
+  // reset global varibale to allow this filter to function as per normal
+  $GLOBALS[ $global_name ] = 0;
+  
+  
+  // return
+    return $value;
+    
+}
+
+add_filter('acf/update_value/name=document_reference', __NAMESPACE__ . '\\bidirectional_acf_update_value', 10, 3);
 
 function get_page_template(){
   $template = get_page_template_slug();

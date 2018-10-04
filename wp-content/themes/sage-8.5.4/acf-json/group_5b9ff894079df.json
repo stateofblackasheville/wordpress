@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5b9ff8cf27807",
-            "label": "Document Reference",
+            "label": "Document Reference (Optional)",
             "name": "",
             "type": "accordion",
             "instructions": "If you have a student paper or another document that this visualization references, please add it here.",
@@ -21,7 +21,7 @@
         },
         {
             "key": "field_5b9ff89a27805",
-            "label": "Select Document",
+            "label": "Document\/Visualization Relationship",
             "name": "document_reference",
             "type": "relationship",
             "instructions": "",
@@ -33,12 +33,13 @@
                 "id": ""
             },
             "post_type": [
-                "student_paper"
+                "student_paper",
+                "visualization"
             ],
             "taxonomy": [],
             "filters": [
                 "search",
-                "taxonomy"
+                "post_type"
             ],
             "elements": [
                 "featured_image"
@@ -76,6 +77,13 @@
                 "operator": "==",
                 "value": "visualization"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "student_paper"
+            }
         ]
     ],
     "menu_order": 0,
@@ -86,5 +94,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537211120
+    "modified": 1538692346
 }
