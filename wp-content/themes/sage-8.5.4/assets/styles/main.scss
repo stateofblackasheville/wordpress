@@ -255,34 +255,48 @@ main.main{
 		&.content-align--left,
 		&.content-align--right{
 			.content-section__header{
-				@include make-col(6);
+				@include media-breakpoint-up(xl){
+					@include make-col(6);
+				}
 			}	
 		}		
 		&.header-width--one-third{
 			.content-section__header{
-				@include make-col(4); 
+				@include media-breakpoint-up(xl){
+					@include make-col(4); 
+				}
 			}
 			.content-section__inner,
 			.content-section__image{
-				@include make-col(8);
+				@include media-breakpoint-up(xl){
+					@include make-col(8);
+				}
 			}		
 		}
 		&.header-width--one-half{
 			.content-section__header{
-				@include make-col(6);
+				@include media-breakpoint-up(xl){
+					@include make-col(6);
+				}
 			}
 			.content-section__inner,
 			.content-section__image{
-				@include make-col(6);
+				@include media-breakpoint-up(xl){
+					@include make-col(6);
+				}
 			}		
 		}
 		&.header-width--two-thirds{
 			.content-section__header{
-				@include make-col(8);
+				@include media-breakpoint-up(xl){
+					@include make-col(8);
+				}
 			}
 			.content-section__inner,
 			.content-section__image{
-				@include make-col(4);
+				@include media-breakpoint-up(xl){
+					@include make-col(4);
+				}
 			}		
 		}		
 	}
@@ -309,7 +323,7 @@ main.main{
 		&.header-width--two-thirds{
 			.content-section__header{
 				@include make-col-offset(2);
-				@include media-breakpoint-down(md){
+				@include media-breakpoint-down(lg){
 					@include make-col-offset(0);
 					@include make-col(12);
 				}				
@@ -318,7 +332,7 @@ main.main{
 		&.header-width--one-half{
 			.content-section__header{
 				@include make-col-offset(3);
-				@include media-breakpoint-down(md){
+				@include media-breakpoint-down(lg){
 					@include make-col-offset(0);
 					@include make-col(12);
 				}
@@ -804,7 +818,7 @@ footer.content-info{
 		@include make-col(12);
 	}		
 	&.grid-item--width-one-half{
-		@include media-breakpoint-up(md){
+		@include media-breakpoint-up(lg){
 			@include make-col(6);
 		}
 	}
@@ -876,7 +890,7 @@ footer.content-info{
 		padding-left: 1rem; 
 		margin-bottom: 0;
 	}
-	@include media-breakpoint-down(sm){
+	@include media-breakpoint-down(md){
 		@include make-col(12);
 	}
 	iframe{
@@ -898,7 +912,7 @@ footer.content-info{
 
 .page-content-container.no-sidebar{
 	.grid-item.visualization.grid-item--width-one-whole{
-		@include media-breakpoint-up(md){
+		@include media-breakpoint-up(xl){
 			@include make-col(6);
 		}
 	}
