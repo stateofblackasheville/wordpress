@@ -98,7 +98,8 @@ function filter_archive( $query ) {
             'relation'  => 'AND',
             array(
               'key' => 'document_reference',
-              'compare' => 'NOT EXISTS'  
+              'compare' => '=',
+              'value'   => ''  
             ),
             array(
               'key' => 'index_document',
@@ -143,12 +144,14 @@ function filter_archive( $query ) {
 
     $query->set('posts_per_page', 10);
 
-    if(isset($_GET['archive_search']) && $_GET['archive_search'] !== null):
+    if(isset($_GET['archive_search']) && $_GET['archive_search'] !== null && $_GET['archive_search'] !== ''):
       $query->set('s', $_GET['archive_search']);
+        $query->set('posts_per_page', -1);
     endif;     
     
     if(isset($_GET['tags'])):
       $query->set('tag__and', $_GET['tags']);
+      $query->set('posts_per_page', -1);
     endif;    
     
     if(isset($_GET['category']) ):
@@ -160,6 +163,7 @@ function filter_archive( $query ) {
 
     if(isset($meta_query)):
       $query->set('meta_query', $meta_query);
+      $query->set('posts_per_page', -1);
     endif;
     // var_dump($query);
 
