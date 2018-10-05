@@ -8407,6 +8407,9 @@ body {
 .proxima-nova, .badge {
   font-family: 'proxima-nova'; }
 
+iframe {
+  max-width: 100%; }
+
 h1, h2 {
   /*font-family: 'Montserrat';*/ }
 
@@ -9031,9 +9034,10 @@ footer.content-info {
   .grid-item.grid-item--width-two-thirds {
     flex: 0 0 100%;
     max-width: 100%; }
-  .grid-item.grid-item--width-one-half {
-    flex: 0 0 50%;
-    max-width: 50%; }
+  @media (min-width: 768px) {
+    .grid-item.grid-item--width-one-half {
+      flex: 0 0 50%;
+      max-width: 50%; } }
   @media (min-width: 768px) and (max-width: 991.98px) {
     .grid-item.grid-item--width-one-half, .grid-item.grid-item--width-one-third {
       flex: 0 0 100%;
@@ -9088,6 +9092,12 @@ footer.content-info {
   .grid-item .sources-list {
     padding-left: 1rem;
     margin-bottom: 0; }
+  @media (max-width: 767.98px) {
+    .grid-item {
+      flex: 0 0 100%;
+      max-width: 100%; } }
+  .grid-item iframe {
+    max-width: 100% !important; }
 
 .visualization__header h2.entry-title,
 .visualization__header h3,
@@ -9101,9 +9111,10 @@ footer.content-info {
     color: #5f4e47;
     /*text-decoration: underline; */ }
 
-.page-content-container.no-sidebar .grid-item.visualization.grid-item--width-one-whole {
-  flex: 0 0 50%;
-  max-width: 50%; }
+@media (min-width: 768px) {
+  .page-content-container.no-sidebar .grid-item.visualization.grid-item--width-one-whole {
+    flex: 0 0 50%;
+    max-width: 50%; } }
 
 /*VISUALIZATION GRID ITEMS*/
 .grid-item.visualization .grid-item__row {
@@ -9140,7 +9151,8 @@ footer.content-info {
   flex: 0 0 100%;
   max-width: 100%; }
 
-.visualization__call-to-action {
+.visualization__call-to-action,
+.visualization__notes {
   padding-top: 1rem;
   margin-top: 1rem;
   /*margin-bottom: 1rem;*/
@@ -9154,7 +9166,8 @@ footer.content-info {
   padding-right: 15px;
   padding-left: 15px;
   /*text-align: right;*/ }
-  .visualization__call-to-action a {
+  .visualization__call-to-action a,
+  .visualization__notes a {
     /*@extend .soba-btn;*/ }
 
 .grid-item.visualization .grid-item__inner,
@@ -9297,6 +9310,10 @@ footer.content-info {
     display: block; }
   .page-header__content p {
     max-width: 600px; }
+  @media (max-width: 991.98px) {
+    .page-header__content {
+      padding-top: 2rem;
+      padding-bottom: 2rem; } }
 
 ion-icon {
   vertical-align: middle; }

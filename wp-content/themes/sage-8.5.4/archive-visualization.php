@@ -26,10 +26,11 @@
 	));
 
 	// var_dump(count($all_visualizations));
-
-	$visualization_status = false;
-
-	$visualization_status = $_GET['visualization_status'];
+	if(isset($_GET['visualization_status'])):
+		$visualization_status = $_GET['visualization_status'];		
+	else:
+		$visualization_status = false;
+	endif; 
 
 ?>
 

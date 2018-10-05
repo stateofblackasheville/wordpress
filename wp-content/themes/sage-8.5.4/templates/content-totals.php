@@ -22,14 +22,14 @@
 
 			Showing <?php echo $wp_query->found_posts; ?> student papers of <?php echo count($all_student_papers); ?> total. 
 			<?php if($wp_query->query_vars['posts_per_page'] > 0): ?> 
-				by <?php echo $wp_query->query_vars['posts_per_page']; ?>.
+				Paginated by <?php echo $wp_query->query_vars['posts_per_page']; ?>.
 			<?php endif; ?>
 
 		<?php elseif(is_post_type_archive('visualization')): ?>
 
 			Showing <?php echo $wp_query->found_posts; ?> visualization of <?php echo count($all_visualizations); ?> total. 
 			<?php if($wp_query->query_vars['posts_per_page'] > 0): ?> 
-				by <?php echo $wp_query->query_vars['posts_per_page']; ?>.
+				Paginated by <?php echo $wp_query->query_vars['posts_per_page']; ?>.
 			<?php endif; ?>
 
 		<?php else: ?>
