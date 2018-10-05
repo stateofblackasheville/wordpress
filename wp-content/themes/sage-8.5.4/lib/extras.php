@@ -163,7 +163,6 @@ function filter_archive( $query ) {
 
     if(isset($meta_query)):
       $query->set('meta_query', $meta_query);
-      $query->set('posts_per_page', -1);
     endif;
     // var_dump($query);
 
