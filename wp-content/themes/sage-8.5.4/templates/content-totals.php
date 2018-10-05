@@ -10,7 +10,9 @@
 
 	global $wp_query;
 
-	// var_dump(count($wp_query->posts));
+	// echo '<pre>';
+	// var_dump($wp_query->query_vars);
+	// echo '</pre>';
 
 ?>
 
@@ -18,11 +20,11 @@
 	<div class="inner">
 		<?php if(is_post_type_archive('student_paper')): ?>
 
-			Showing <?php echo count($wp_query->posts); ?> student papers of <?php echo count($all_student_papers); ?> total. 
+			Showing <?php echo $wp_query->found_posts; ?> student papers of <?php echo count($all_student_papers); ?> total. Paginated by <?php echo $wp_query->query_vars['posts_per_page']; ?>.
 
 		<?php elseif(is_post_type_archive('visualization')): ?>
 
-			Showing <?php echo count($wp_query->posts); ?> visualization of <?php echo count($all_visualizations); ?> total. 
+			Showing <?php echo $wp_query->found_posts; ?> visualization of <?php echo count($all_visualizations); ?> total. Paginated by <?php echo $wp_query->query_vars['posts_per_page']; ?>.
 
 		<?php else: ?>
 

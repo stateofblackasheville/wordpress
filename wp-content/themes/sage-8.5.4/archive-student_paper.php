@@ -17,7 +17,11 @@
 	// $available_tags = get_terms(array(
 	// 	'taxonomy' => 'post_tag'
 	// ));	
-	$index_status = $_GET['index_status'];
+	if(isset($_GET['index_status'])):
+		$index_status = $_GET['index_status'];		
+	else:
+		$index_status = false;
+	endif; 
 ?>
 
 <?php get_template_part('templates/page', 'header'); ?>
@@ -30,7 +34,7 @@
 					<input type="text" class="form-control" name="archive_search" value="<?php if(isset($_GET['archive_search'])): ?><?php echo $_GET['archive_search']; ?><?php endif; ?>" placeholder="Search by title or content...">
 				</div>
 				<div class="form-check">
-					<input type="radio" class="form-check-input" id="all" name="index_status" value="All" <?php if($index_status == 'All'): ?>checked<?php endif; ?>>			
+					<input type="radio" class="form-check-input" id="all" name="index_status" value="All" <?php if($index_status == 'All' || !$index_status): ?>checked<?php endif; ?>>			
 					<label class="form-check-label filter filter--needs-visualization" for="all">
 						All
 					</label>				

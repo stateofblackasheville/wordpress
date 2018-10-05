@@ -89,8 +89,6 @@ function filter_archive( $query ) {
 
   if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'student_paper' && $query->is_main_query()):
 
-    $query->set('posts_per_page', 50);
-
     // allow the url to alter the query
     if(isset($_GET['index_status']) ):
       if($_GET['index_status'] == 'All'):
@@ -142,6 +140,9 @@ function filter_archive( $query ) {
   endif;  
 
   if( isset($query->query_vars['post_type']) && ($query->query_vars['post_type'] == 'student_paper' || $query->query_vars['post_type'] == 'visualization') && $query->is_main_query()):
+
+    $query->set('posts_per_page', 10);
+
     if(isset($_GET['archive_search']) && $_GET['archive_search'] !== null):
       $query->set('s', $_GET['archive_search']);
     endif;     
@@ -163,6 +164,10 @@ function filter_archive( $query ) {
     // var_dump($query);
 
   endif;
+
+  if(isset($_GET['index_status']) && $_GET['index_status'] !== 'All'):
+    
+  endif;  
   
   // return
   return $query;

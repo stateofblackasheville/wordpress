@@ -9238,18 +9238,18 @@ footer.content-info {
       box-shadow: 0 0 0 0.2rem rgba(216, 207, 214, 0.5); }
 
 .grid-item.visualization.visualization--stacked .visualization__notes--side {
-  display: none; }
+  /*display: none;*/ }
 
 .grid-item.visualization.visualization--stacked .visualization__notes--stacked {
   display: block; }
 
 @media (max-width: 991.98px) {
   .visualization__notes--side {
-    display: none; } }
+    /*display: none;*/ } }
 
 @media (min-width: 992px) {
   .visualization__notes--stacked {
-    display: none; } }
+    /*display: none; */ } }
 
 .visualization__student-paper-inner a {
   margin-top: .5rem;

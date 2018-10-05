@@ -27,6 +27,8 @@
 
 	// var_dump(count($all_visualizations));
 
+	$visualization_status = false;
+
 	$visualization_status = $_GET['visualization_status'];
 
 ?>
@@ -47,7 +49,7 @@
 					<input type="text" class="form-control" name="archive_search" value="<?php if(isset($_GET['archive_search'])): ?><?php echo $_GET['archive_search']; ?><?php endif; ?>" placeholder="Search by title or content...">				
 				</div>
 				<div class="form-check">
-					<input type="radio" class="form-check-input" id="all" name="visualization_status" value="All" <?php if($visualization_status == 'All'): ?>checked<?php endif; ?>>			
+					<input type="radio" class="form-check-input" id="all" name="visualization_status" value="All" <?php if($visualization_status == 'All' || !$visualization_status ): ?>checked<?php endif; ?>>			
 					<label class="form-check-label filter filter--needs-visualization" for="all">
 						All
 					</label>				

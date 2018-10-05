@@ -86,24 +86,6 @@
 				<div class="content rte rte--georgia">
 					<?php echo $post_item->post_content; ?>
 				</div>	
-				<?php if(!get_field('embed', $post_item->ID)): ?>
-<!-- 					<div class="rte rte--georgia rte--small work-in-progress">
-						<span class="link" data-toggle="tooltip" title="This visualization hasn't been made dynamic yet, but is in the works!">
-							<span>
-								Work in progress <ion-icon name="information-circle"></ion-icon>
-							</span> 						
-						</span>
-					</div> -->
-				<?php endif; ?>	
-				<?php if(!$stacked): ?>	
-					<div class="visualization__notes visualization__notes--side">		
-						<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>	
-						<?php Roots\Sage\Extras\render_tags($post_item); ?>	
-						<?php //if(get_field('student_paper', $post_item->ID)): ?>
-							<?php //Roots\Sage\Extras\render_student_paper('visualization-student-paper', $post_item); ?>							
-						<?php //endif; ?>
-					</div>
-				<?php endif; ?>
 			</div>		
 			<?php if(!$no_visual): ?>
 				<div class="visualization__content grid-item-content">		
@@ -123,15 +105,17 @@
 						<a class="rte rte--georgia rte--small" href="<?php echo get_the_post_thumbnail_url($post_item->ID, 'large'); ?>" data-fancybox data-caption="<?php echo wp_strip_all_tags($post_item->post_content); ?>">
 							[+] Expand Visualization
 						</a>			
-					<?php endif; ?>
-					<div class="visualization__notes visualization__notes--stacked">		
-						<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>	
-						<?php Roots\Sage\Extras\render_tags($post_item); ?>	
-					</div>							
+					<?php endif; ?>						
 				</div>
 			<?php else: ?>
 
 			<?php endif; ?>
+
+			<div class="visualization__notes visualization__notes--stacked">		
+				<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>	
+				<?php Roots\Sage\Extras\render_tags($post_item); ?>	
+			</div>	
+
 			<?php if(get_field('call_to_action', $post_item->ID)): ?>
 				<div class="visualization__call-to-action">
 					<?php $visualization_cta = get_field('call_to_action', $post_item->ID); ?>

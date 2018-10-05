@@ -960,7 +960,7 @@ footer.content-info{
 
 .grid-item.visualization.visualization--stacked{
 	.visualization__notes--side{
-		display: none;
+		/*display: none;*/
 	}
 	.visualization__notes--stacked{
 		display: block;
@@ -969,13 +969,13 @@ footer.content-info{
 
 .visualization__notes--side{
 	@include media-breakpoint-down(md){ 
-		display: none;
+		/*display: none;*/
 	}
 }
 
 .visualization__notes--stacked{
 	@include media-breakpoint-up(lg){ 
-		display: none; 
+		/*display: none; */
 	}
 }
 
