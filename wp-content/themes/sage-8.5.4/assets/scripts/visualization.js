@@ -14,7 +14,9 @@ jQuery('.soba-visualization').each(function(){
 
 	var spreadsheetChartColumns = jQuery(this).attr('data-spreadsheetChartColumns');
 	var summaryText = jQuery(this).attr('data-summaryText');
-	
+	if(summaryText){
+		summaryText = JSON.parse(summaryText);	
+	}
 	if(filters){
 		filters = JSON.parse(filters);	
 	}
@@ -48,3 +50,4 @@ jQuery('.soba-visualization').each(function(){
 
 	ReactDOM.render(React.createElement(SobaVisualization, props), elm);
 });
+//# sourceMappingURL=visualization.js.map
