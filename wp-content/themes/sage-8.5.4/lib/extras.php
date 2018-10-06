@@ -98,8 +98,8 @@ function filter_archive( $query ) {
             'relation'  => 'AND',
             array(
               'key' => 'document_reference',
-              'compare' => '=',
-              'value'   => ''  
+              'compare' => 'NOT EXISTS',
+              // 'value'   => ''  
             ),
             array(
               'key' => 'index_document',

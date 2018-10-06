@@ -27,7 +27,10 @@
 <?php get_template_part('templates/page', 'header'); ?>
 <div class="container">
 	<div class="row">
-		<?php Roots\Sage\Extras\content_totals(); ?>		
+		<?php Roots\Sage\Extras\content_totals(); ?>	
+		<div class="archive-pagination">
+			<?php echo paginate_links(); ?>	
+		</div>
 		<div class="archive-listings-filters archive-listings-filters--student-papers">			
 			<form action="/student-papers" method="get">
 				<div class="form-group">
@@ -107,6 +110,7 @@
 			<?php endif; ?>
 		</div>
 	</div>
+	<div class="archive-pagination">
+		<?php echo paginate_links(); ?>	
+	</div>	
 </div>
-
-<?php the_posts_navigation(); ?>

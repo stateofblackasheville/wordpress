@@ -1271,6 +1271,12 @@ body.home,
 	}	
 }
 
+.archive-pagination{
+	@include make-col-ready();
+	text-align: center;
+	padding: 1rem 0; 
+}
+
 /*STUDENT PAPER*/
 .student-paper-content{
 	/*padding-top: 3rem;*/

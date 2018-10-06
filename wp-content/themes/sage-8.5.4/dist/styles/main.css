@@ -9070,6 +9070,11 @@ footer.content-info {
   .grid-item .sources,
   .grid-item .tags,
   .grid-item .visualization__student-paper {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
     padding: .5rem 0; }
     .grid-item .sources h4,
     .grid-item .tags h4,
@@ -9527,6 +9532,15 @@ body.home .content-section__inner-container,
       margin-left: 0;
       flex: 0 0 100%;
       max-width: 100%; } }
+
+.archive-pagination {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align: center;
+  padding: 1rem 0; }
 
 /*STUDENT PAPER*/
 .student-paper-content {
