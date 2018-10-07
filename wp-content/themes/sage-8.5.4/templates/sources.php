@@ -56,24 +56,18 @@
 		?>
 		</ol>
 		<?php if(get_field('document_reference', $post_item->ID)): ?>
-			<?php
-				$paper = get_field('document_reference', $post_item->ID);
-				$paper = get_post($paper);
-				$file = get_field('file', $paper->ID);
-			?>
-
+			<?php $student_papers = get_field('document_reference', $post_item->ID); ?>
 			<div class="visualization__student-paper">
-				<h4>
-					Student Paper:
-				</h4>
 				<div class="visualization__student-paper-inner">
-					<i><?php echo $paper->post_title; ?></i>
-					<br>
-					<span>by <?php the_field('author', $paper->ID); ?></span>
-					<br>
-					<a href="<?php the_permalink($paper->ID); ?>">
-						Download Paper
-					</a>
+					<h4>
+						Student Paper(s):
+					</h4>
+					<?php foreach($student_papers as $student_paper): ?>
+						<a href="<?php echo get_the_permalink($paper->ID); ?>">
+							<?php echo $student_paper->post_title; ?>
+						</a>
+						<br>
+					<?php endforeach; ?>
 				</div>
 			</div>
 		<?php endif; ?>
