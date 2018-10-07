@@ -39,7 +39,7 @@ jQuery('.soba-visualization').each(function(){
 		chartType: chartType,
 		showChartTypeSelect: showChartTypeSelect,
 		spreadsheetChartColumns: spreadsheetChartColumns,
-		filters: filters,
+		filters: filters, 
 		datasetLabels: datasetLabels,
 		labelX: labelX,
 		labelY: labelY,
