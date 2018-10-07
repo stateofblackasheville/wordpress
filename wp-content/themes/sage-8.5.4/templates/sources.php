@@ -55,22 +55,6 @@
 			endwhile;
 		?>
 		</ol>
-		<?php if(get_field('document_reference', $post_item->ID)): ?>
-			<?php $student_papers = get_field('document_reference', $post_item->ID); ?>
-			<div class="visualization__student-paper">
-				<div class="visualization__student-paper-inner">
-					<h4>
-						Student Paper(s):
-					</h4>
-					<?php foreach($student_papers as $student_paper): ?>
-						<a href="<?php echo get_the_permalink($paper->ID); ?>">
-							<?php echo $student_paper->post_title; ?>
-						</a>
-						<br>
-					<?php endforeach; ?>
-				</div>
-			</div>
-		<?php endif; ?>
 	</div>	
 	<?php
 	else :

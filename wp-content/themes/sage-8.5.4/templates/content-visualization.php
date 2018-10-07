@@ -111,6 +111,22 @@
 
 			<?php endif; ?>
 		
+			<?php if(get_field('document_reference', $post_item->ID)): ?>
+				<?php $student_papers = get_field('document_reference', $post_item->ID); ?>
+				<div class="visualization__student-paper">
+					<div class="visualization__student-paper-inner">
+						<span>
+							Student Paper:
+						</span>
+						<?php foreach($student_papers as $student_paper): ?>
+							<a href="<?php echo get_permalink($paper->ID); ?>">
+								<?php echo $student_paper->post_title; ?>
+							</a>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			<?php endif; ?>
+
 			<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>	
 			<?php Roots\Sage\Extras\render_tags($post_item); ?>	
 

@@ -836,7 +836,7 @@ footer.content-info{
 		h4{
 			margin: .5rem 0;
 		}
-		padding: .5rem 0;
+		/*padding: .5rem 0;*/
 		ion-icon[name='ios-arrow-down'],
 		ion-icon[name='ios-arrow-up']{
 			float: right;
@@ -940,7 +940,8 @@ footer.content-info{
 
 .visualization__call-to-action,
 .grid-item.visualization .sources,
-.grid-item.visualization .tags{
+.grid-item.visualization .tags,
+.visualization__student-paper{
 	padding-top: 1rem;
 	margin-top: 1rem;
 	/*margin-bottom: 1rem;*/

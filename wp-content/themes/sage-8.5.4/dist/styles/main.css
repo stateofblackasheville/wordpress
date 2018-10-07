@@ -9056,7 +9056,7 @@ footer.content-info {
   .grid-item .sources,
   .grid-item .tags,
   .grid-item .visualization__student-paper {
-    padding: .5rem 0; }
+    /*padding: .5rem 0;*/ }
     .grid-item .sources h4,
     .grid-item .tags h4,
     .grid-item .visualization__student-paper h4 {
@@ -9157,7 +9157,8 @@ footer.content-info {
 
 .visualization__call-to-action,
 .grid-item.visualization .sources,
-.grid-item.visualization .tags {
+.grid-item.visualization .tags,
+.visualization__student-paper {
   padding-top: 1rem;
   margin-top: 1rem;
   /*margin-bottom: 1rem;*/
@@ -9166,7 +9167,8 @@ footer.content-info {
   /*text-align: right;*/ }
   .visualization__call-to-action a,
   .grid-item.visualization .sources a,
-  .grid-item.visualization .tags a {
+  .grid-item.visualization .tags a,
+  .visualization__student-paper a {
     /*@extend .soba-btn;*/ }
 
 .visualization__call-to-action {
