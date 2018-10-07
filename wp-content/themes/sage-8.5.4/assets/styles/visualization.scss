@@ -75,6 +75,16 @@
 	canvas{
 		
 	}
+	@media(max-width:600px){
+		.user-controls{
+			float: none !important;
+			margin-top: 1rem;
+			select{
+				margin-right: .5rem;
+				margin-left: 0;
+			}
+		}
+	}
 
 }
 

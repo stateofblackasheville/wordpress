@@ -453,3 +453,10 @@
       background: #c5c5c5; }
     #like_button_container .react-tabs__tab:first-child, .soba-visualization .react-tabs__tab:first-child {
       border-left-width: 1px; }
+  @media (max-width: 600px) {
+    #like_button_container .user-controls, .soba-visualization .user-controls {
+      float: none !important;
+      margin-top: 1rem; }
+      #like_button_container .user-controls select, .soba-visualization .user-controls select {
+        margin-right: .5rem;
+        margin-left: 0; } }
