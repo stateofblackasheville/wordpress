@@ -39,7 +39,7 @@ jQuery('.soba-visualization').each(function(){
 		chartType: chartType,
 		showChartTypeSelect: showChartTypeSelect,
 		spreadsheetChartColumns: spreadsheetChartColumns,
-		filters: filters, 
+		filters: filters,
 		datasetLabels: datasetLabels,
 		labelX: labelX,
 		labelY: labelY,
@@ -51,5 +51,4 @@ jQuery('.soba-visualization').each(function(){
 	ReactDOM.render(React.createElement(SobaVisualization, props), elm);
 });
 //# sourceMappingURL=visualization.js.map
-
 //# sourceMappingURL=visualization.js.map
