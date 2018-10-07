@@ -30,7 +30,7 @@
 
 	$categories = get_the_category($post_item->ID);
 
-	$student_papers = get_field('student_papers', $post_item->ID);
+	$student_papers = get_field('document_reference', $post_item->ID);
 
 	// var_dump($categories);
 
@@ -110,11 +110,9 @@
 			<?php else: ?>
 
 			<?php endif; ?>
-
-			<div class="visualization__notes visualization__notes--stacked">		
-				<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>	
-				<?php Roots\Sage\Extras\render_tags($post_item); ?>	
-			</div>	
+		
+			<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>	
+			<?php Roots\Sage\Extras\render_tags($post_item); ?>	
 
 			<?php if(get_field('call_to_action', $post_item->ID)): ?>
 				<div class="visualization__call-to-action">

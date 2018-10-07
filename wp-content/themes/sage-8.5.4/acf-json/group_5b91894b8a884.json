@@ -29,22 +29,6 @@
             "placeholder": ""
         },
         {
-            "key": "field_5ba28acc18aa5",
-            "label": "Index Document",
-            "name": "index_document",
-            "type": "url",
-            "instructions": "Add the link to the google document where the index for this paper lives.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
             "key": "field_5b9189505a4d8",
             "label": "Author",
             "name": "author",
@@ -79,44 +63,6 @@
             "display_format": "F j, Y",
             "return_format": "m\/d\/Y",
             "first_day": 1
-        },
-        {
-            "key": "field_5b91897971dc7",
-            "label": "School",
-            "name": "school",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5b91896d22b66",
-            "label": "POLS #",
-            "name": "pols_#",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -136,5 +82,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1538691441
+    "modified": 1538929435
 }

@@ -9066,15 +9066,10 @@ footer.content-info {
     /*margin-top: .5rem;*/ }
   .grid-item .tags {
     /*margin-top: 1rem; */
-    border-top: 1px solid #eee; }
+    /*border-top: 1px solid #eee;*/ }
   .grid-item .sources,
   .grid-item .tags,
   .grid-item .visualization__student-paper {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
     padding: .5rem 0; }
     .grid-item .sources h4,
     .grid-item .tags h4,
@@ -9088,7 +9083,12 @@ footer.content-info {
     .grid-item .visualization__student-paper ion-icon[name='ios-arrow-up'] {
       float: right; }
   .grid-item .visualization__student-paper {
-    border-bottom: 0; }
+    border-bottom: 0;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; }
   .grid-item .content {
     padding-bottom: .5rem;
     border-bottom: 1px solid #eee; }
@@ -9170,23 +9170,52 @@ footer.content-info {
   max-width: 100%; }
 
 .visualization__call-to-action,
-.visualization__notes {
+.grid-item.visualization .sources,
+.grid-item.visualization .tags {
   padding-top: 1rem;
   margin-top: 1rem;
   /*margin-bottom: 1rem;*/
   padding-bottom: 0rem;
   border-top: 1px solid #efebee;
+  /*text-align: right;*/ }
+  .visualization__call-to-action a,
+  .grid-item.visualization .sources a,
+  .grid-item.visualization .tags a {
+    /*@extend .soba-btn;*/ }
+
+.visualization__call-to-action {
+  margin-bottom: 0; }
+
+.grid-item.visualization .sources {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; }
+
+.grid-item.visualization .tags {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; }
+
+/*.visualization__notes{
+	@include make-row();
+	.sources,
+	.tags{
+		
+		@include make-col(12);
+	}
+}*/
+.visualization__call-to-action {
   flex: 0 0 100%;
   max-width: 100%;
   position: relative;
   width: 100%;
   min-height: 1px;
   padding-right: 15px;
-  padding-left: 15px;
-  /*text-align: right;*/ }
-  .visualization__call-to-action a,
-  .visualization__notes a {
-    /*@extend .soba-btn;*/ }
+  padding-left: 15px; }
 
 .grid-item.visualization .grid-item__inner,
 .grid-item.visualization .student-paper-content__inner,

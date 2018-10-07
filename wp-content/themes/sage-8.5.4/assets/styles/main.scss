@@ -841,12 +841,11 @@ footer.content-info{
 	}
 	.tags{
 		/*margin-top: 1rem; */
-		border-top: 1px solid #eee;
+		/*border-top: 1px solid #eee;*/
 	}
 	.sources,
 	.tags,
 	.visualization__student-paper{
-		@include make-col-ready();
 		h4{
 			margin: .5rem 0;
 		}
@@ -858,6 +857,7 @@ footer.content-info{
 	}
 	.visualization__student-paper{
 		border-bottom: 0;
+		@include make-col-ready(); 
 	}	
 	.content{
 		padding-bottom: .5rem;
@@ -952,19 +952,45 @@ footer.content-info{
 }
 
 .visualization__call-to-action,
-.visualization__notes{
+.grid-item.visualization .sources,
+.grid-item.visualization .tags{
 	padding-top: 1rem;
 	margin-top: 1rem;
 	/*margin-bottom: 1rem;*/
 	padding-bottom: 0rem;
 	border-top: 1px solid $off-white;
-	@include make-col(12);
-	@include make-col-ready();
 	/*text-align: right;*/
 	a{
 		/*@extend .soba-btn;*/
 
 	}
+}
+
+.visualization__call-to-action{
+	margin-bottom: 0;
+}
+
+.grid-item.visualization .sources{
+	@include make-col-ready();
+}
+
+.grid-item.visualization .tags{
+	@include make-col-ready();
+}
+
+/*.visualization__notes{
+	@include make-row();
+	.sources,
+	.tags{
+		
+		@include make-col(12);
+	}
+}*/
+
+.visualization__call-to-action{
+	@include make-col(12);
+	@include make-col-ready();	
+
 }
 
 .grid-item.visualization,

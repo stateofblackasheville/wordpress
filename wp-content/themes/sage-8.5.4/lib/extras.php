@@ -113,7 +113,8 @@ function filter_archive( $query ) {
             'relation'  => 'AND',
             array(
               'key' => 'document_reference',
-              'compare' => 'NOT EXISTS'  
+              'compare' => '=',
+              'value'   => ''   
             ),
             array(
               'key' => 'index_document',
@@ -126,7 +127,8 @@ function filter_archive( $query ) {
             'relation'  => 'AND',
             array(
               'key' => 'document_reference',
-              'compare' => 'EXISTS'  
+              'compare' => '!=',
+              'value'   => ''  
             ),
             array(
               'key' => 'index_document',

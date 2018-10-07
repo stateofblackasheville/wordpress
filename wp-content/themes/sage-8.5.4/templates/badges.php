@@ -1,14 +1,5 @@
 <?php
-  $related_visualizations = get_posts(array(
-    'post_type' => 'visualization',  
-    'meta_query' => array(
-      array(
-        'key' => 'document_reference', // name of custom field
-        'value' => '"' . get_the_ID() . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
-        'compare' => 'LIKE'
-      )
-    )
-  ));
+  $related_visualizations = get_field('document_reference', $post_item->ID);
 
   if(!empty($related_visualizations)): 
   	$visualized = true;

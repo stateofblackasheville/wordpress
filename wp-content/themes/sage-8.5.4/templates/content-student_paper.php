@@ -1,19 +1,35 @@
 <?php
   $file = get_field('files');
 
-  $related_visualizations = get_posts(array(
-    'post_type' => 'visualization',
-    'meta_key'      => 'page_number',
-    'orderby'     => 'meta_value',
-    'order'       => 'ASC',    
-    'meta_query' => array(
-      array(
-        'key' => 'document_reference', // name of custom field
-        'value' => '"' . get_the_ID() . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
-        'compare' => 'LIKE'
-      )
-    )
-  ));
+  // $related_visualizations = get_posts(array(
+  //   'post_type' => 'visualization',
+  //   'meta_key'      => 'page_number',
+  //   'orderby'     => 'meta_value',
+  //   'order'       => 'ASC',    
+  //   'meta_query' => array(
+  //     array(
+  //       'key' => 'document_reference', // name of custom field
+  //       'value' => '"' . get_the_ID() . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
+  //       'compare' => 'LIKE'
+  //     )
+  //   )
+  // ));
+
+  $related_visualizations_field = get_field('document_reference');
+
+  $related_visualizations = false;
+
+  if(!empty($related_visualizations_field)):
+
+	$related_visualization_ids = wp_list_pluck($related_visualizations_field, 'ID');
+	$related_visualizations = get_posts(array(
+	'post_type' => 'visualization',
+	'post__in'	=> $related_visualization_ids
+	));  
+
+
+  endif;
+  // var_dump($related_visualizations);
 
   $post_type_name = get_post_type_object(get_post_type());
 
@@ -81,7 +97,7 @@
           </h2>
         </div>
         <?php if($related_visualizations): ?>
-	        <div class="visulizations-listings__listings">
+	        <div class="visualizations-listings__listings">
 	          <?php foreach($related_visualizations as $visualization): ?>
 	            <div class="visualization-listings__item">
 	              <div class="visualization-listings__page-number">

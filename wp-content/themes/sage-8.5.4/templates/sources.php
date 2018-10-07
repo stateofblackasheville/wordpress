@@ -22,7 +22,6 @@
 		    	$source_title = get_sub_field('source_title');
 		    	$source_link = get_sub_field('source_link');
 		    	$source_file = get_sub_field('source_file');
-		    	$student_papers = get_sub_field('source_student_paper');
 		    	$count++;
 		?>
 		  	
@@ -48,16 +47,7 @@
 		  				<a href="<?php echo $source_file['url']; ?>" target="_blank">
 		  					<?php echo $source_file['title']; ?> <ion-icon name="document"></ion-icon>
 		  				</a>
-		  			<?php endif; ?>
-		  			<?php if($student_papers): ?>
-		  				<?php foreach($student_papers as $student_paper): ?>
-		  					<?php $student_paper_download = get_field('files', $student_paper->ID); ?>
-		  					<?php //var_dump($student_paper_download); ?>
-			  				<a href="<?php echo $student_paper_download['url']; ?>" target="_blank">
-			  					<?php echo $student_paper->post_title; ?> (download)
-			  				</a>
-		  				<?php endforeach; ?>
-		  			<?php endif; ?>			  			
+		  			<?php endif; ?>		  			
 		  		</li>
 		  	<?php //endif; ?>
 
@@ -65,9 +55,9 @@
 			endwhile;
 		?>
 		</ol>
-		<?php if(get_field('student_paper', $post_item->ID)): ?>
+		<?php if(get_field('document_reference', $post_item->ID)): ?>
 			<?php
-				$paper = get_field('student_paper', $post_item->ID);
+				$paper = get_field('document_reference', $post_item->ID);
 				$paper = get_post($paper);
 				$file = get_field('file', $paper->ID);
 			?>
