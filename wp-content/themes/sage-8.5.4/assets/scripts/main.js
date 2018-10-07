@@ -41,10 +41,10 @@ var PRC = {};
         };
 
         PRC.filterSearchMode = function(){
-          if(window.location.href){
+          if(window.location.href.includes('?')){
             if($('.archive-listings-filters').length){
               var results_pos = $('.archive-listings').position();
-              $('html').scrollTop(results_pos.top);
+              $('html').scrollTop(results_pos.top - 20);
               // console.log('hi!');
             }
           }
