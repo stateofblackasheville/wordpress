@@ -8388,10 +8388,10 @@ body#tinymce {
 /*VARIABLES*/
 /*END*/
 a {
-  color: #ad7159;
+  color: #866a5f;
   word-wrap: break-word; }
   a:hover {
-    color: #8d5a46; }
+    color: #68524a; }
 
 ul {
   padding-left: 1rem; }
@@ -8441,7 +8441,7 @@ h3 {
     color: #5d4b59; }
 
 .link {
-  color: #ad7159;
+  color: #866a5f;
   cursor: pointer; }
 
 .highcharts-container {
@@ -9014,14 +9014,14 @@ footer.content-info {
       display: block;
       clear: both; }
   .grid-item .grid-item__category {
-    color: #ad7159;
+    color: #866a5f;
     /*font-size: .8rem;*/ }
     .grid-item .grid-item__category ion-icon {
       /*color: $red;*/
       font-size: 1.5em;
       margin-right: .25rem;
       vertical-align: bottom;
-      color: #ad7159; }
+      color: #866a5f; }
   .grid-item iframe {
     width: 100%;
     min-height: 350px;
@@ -9112,7 +9112,7 @@ footer.content-info {
   .visualization__header h3 a,
   .student-paper-content__inner h2.entry-title a,
   .student-paper-content__inner h3 a {
-    color: #ad7159;
+    color: #866a5f;
     /*text-decoration: underline; */ }
 
 @media (min-width: 1200px) {
@@ -9818,7 +9818,7 @@ body.home .content-section__inner-container,
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-  color: #ad7159; }
+  color: #866a5f; }
   .content-totals span.content-total {
     /*font-weight: bold;*/
     font-size: 2em; }
