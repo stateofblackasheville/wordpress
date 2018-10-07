@@ -27,7 +27,7 @@ $purple: #662d91;
 $text-grey: #4d4d4d;
 $off-white: #efebee;
 $green: #007a4d;
-$earth: #5f4e47;
+$earth: #ad7159;
 /*END*/
 
 a{
@@ -162,23 +162,10 @@ main.main{
 }
 
 .soba-btn{
-	/*@include button-variant(#DE3831, lighten(#DE3831, 10%), darken(#DE3831, 10%), lighten(#DE3831, 20%));*/
+	@extend .georgia;
 	@extend .btn;
 	@include button-variant($red, lighten($red, 10%), darken($red, 10%));
 	@include button-size(.75rem, 2rem, 1rem, 1em, .1rem);
-/*	display: inline-block;
-	padding: .75rem 1rem;
-	width: 300px;*/
-	/*font-size: 1.25rem;*/
-	/*text-transform: uppercase;*/
-	/*transition: all .2s;*/
-/*	color: $red;
-	border-color: $red;
-	border-width: 1px;
-	border-style: solid;
-	text-align: center;
-	font-family: 'proxima-nova' !important;
-	max-width: 100%;*/
 	&.soba-btn--white{
 		@include button-variant($off-white, darken($off-white, 10%), darken($off-white, 10%));
 /*		color: white;
@@ -1522,10 +1509,15 @@ body.home,
 .content-totals{
 	font-size: 2rem;
 	line-height: 1.5em;
+	@include make-col-ready();
 	color: $earth;
 	span.content-total{
 		/*font-weight: bold;*/
 		font-size: 2em;
+	}
+	@include media-breakpoint-down(sm){ 
+		font-size: 1rem;
+		span.content-total{}
 	}
 }
 
