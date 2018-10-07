@@ -3,11 +3,11 @@
     "title": "Student Paper",
     "fields": [
         {
-            "key": "field_5ba2895e78682",
-            "label": "Status",
-            "name": "status",
-            "type": "select",
-            "instructions": "",
+            "key": "field_5bba408feffa5",
+            "label": "Document Index URL",
+            "name": "index_document",
+            "type": "url",
+            "instructions": "Add the link to the google document where the index for this paper lives.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,17 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "Needs Index": "Needs Index",
-                "Indexed": "Indexed",
-                "Visualizations Published": "Visualizations Published"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "return_format": "value",
+            "default_value": "",
             "placeholder": ""
         },
         {
@@ -82,5 +72,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1538929435
+    "modified": 1538932928
 }
