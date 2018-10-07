@@ -27,7 +27,7 @@ $purple: #662d91;
 $text-grey: #4d4d4d;
 $off-white: #efebee;
 $green: #007a4d;
-$earth: #866a5f;
+$earth: darken(#866a5f, 5%);
 /*END*/
 
 a{
@@ -1518,6 +1518,9 @@ body.home,
 	@include media-breakpoint-down(sm){ 
 		font-size: 1rem;
 		span.content-total{}
+	}
+	.content-totals__cta{
+		margin-top: 2rem;
 	}
 }
 

@@ -53,10 +53,11 @@
 				<?php echo count($student_papers_with_index); ?>
 			</span>	
 			of them.
-			<br>
-			<a class="soba-btn" href="/how-to-index">
-				Help us build a complete resource <ion-icon name="arrow-forward"></ion-icon>
-			</a>
+			<div class="content-totals__cta">
+				<a class="soba-btn" href="/how-to-index">
+					Help us build a complete resource <ion-icon name="arrow-forward"></ion-icon>
+				</a>
+			</div>
 		<?php endif; ?>
 	</div>
 </div>
