@@ -43,10 +43,25 @@
 	<?php endif; ?>  	
 	<div class="student-paper-content">
 		<div class="student-paper-content__inner">
-			<header>
+			<header class="rte rte--georgia">
 				<?php Roots\Sage\Extras\render_badges(get_post()); ?>
 				<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			</header>
+			<div class="archive__student-paper-inner rte rte--georgia">
+				<?php if(get_field('author')): ?>
+					<i>Authored by <b><?php the_field('author'); ?></b></i>
+					<br>
+				<?php endif; ?>
+				<?php if(get_field('date_of_publication')): ?>
+					<i>Original Date of Publication: <b><?php the_field('date_of_publication'); ?></b></i>
+					<br>
+				<?php endif; ?>	
+				<?php if(get_field('indexed_by')): ?>
+					<i>Special thanks to <b><?php the_field('indexed_by'); ?></b> for indexing this paper</i>
+					<br>
+				<?php endif; ?>								
+			</div>
+			<br>
 			<div class="entry-summary rte rte--georgia">
 				<?php if(is_single() && get_post_type() == 'student_paper'): ?>
 					<?php the_content(); ?>
@@ -54,15 +69,9 @@
 					<?php the_excerpt(); ?>
 				<?php endif; ?>
 			</div>
-			<div class="archive__student-paper-inner">
-				<?php if(get_field('author')): ?>
-				<span>by <?php the_field('author'); ?></span>
-				<br>
-				<?php endif; ?>
-				<a href="<?php the_permalink(); ?>" class="soba-btn">
-					Download Paper
-				</a>
-			</div>	
+			<a href="<?php the_permalink(); ?>" class="soba-btn">
+				Download Paper
+			</a>							
 		</div>	
 	</div>
     <?php if(is_single() && get_post_type() == 'student_paper'): ?>

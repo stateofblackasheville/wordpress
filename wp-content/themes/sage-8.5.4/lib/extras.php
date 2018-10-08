@@ -147,8 +147,24 @@ function filter_archive( $query ) {
     $query->set('posts_per_page', 10);
 
     if(isset($_GET['archive_search']) && $_GET['archive_search'] !== null && $_GET['archive_search'] !== ''):
+      $query->set('posts_per_page', -1);
+
+      // $query->set( 'post_type', array( 
+      //       'student_paper', 
+      //       'visualization',
+      //   ) );      
+
+      // $meta_query[] = array(
+      //     'relation'  => 'OR',
+      //     array(
+      //       'key' => 'author',
+      //       'compare' => 'LIKE',
+      //       'value'   => $_GET['archive_search']  
+      //     )
+      // );
+
       $query->set('s', $_GET['archive_search']);
-        $query->set('posts_per_page', -1);
+
     endif;     
     
     if(isset($_GET['tags'])):
