@@ -47,7 +47,7 @@
 				<?php Roots\Sage\Extras\render_badges(get_post()); ?>
 				<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			</header>
-			<div class="archive__student-paper-inner rte rte--georgia">
+			<div class="archive__student-paper-inner rte rte--georgia rte--small">
 				<?php if(get_field('author')): ?>
 					<i>Authored by <b><?php the_field('author'); ?></b></i>
 					<br>
