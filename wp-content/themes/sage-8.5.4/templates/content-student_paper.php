@@ -69,9 +69,11 @@
 					<?php the_excerpt(); ?>
 				<?php endif; ?>
 			</div>
-			<a href="<?php the_permalink(); ?>" class="soba-btn">
-				Download Paper
-			</a>							
+			<?php if(get_field('files')): ?>
+				<a href="<?php echo $file['url'] ?>" class="soba-btn">
+					View & Download Paper
+				</a>	
+			<?php endif; ?>						
 		</div>	
 	</div>
     <?php if(is_single() && get_post_type() == 'student_paper'): ?>
