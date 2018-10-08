@@ -33,8 +33,10 @@ $earth: darken(#866a5f, 5%);
 a{
 	color: $earth;
 	word-wrap: break-word;
+	text-decoration: underline; 
 	&:hover{
 		color: darken($earth, 10%);
+		text-decoration: none;
 	}
 }
 
@@ -60,7 +62,10 @@ iframe{
 	max-width: 100%;
 }
 
-h1, h2{
+h1, h2, h3{
+	a{
+
+	}
 	/*font-family: 'Montserrat';*/
 }
 

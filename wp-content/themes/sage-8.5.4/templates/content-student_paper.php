@@ -56,8 +56,8 @@
 					<i>Original Date of Publication: <b><?php the_field('date_of_publication'); ?></b></i>
 					<br>
 				<?php endif; ?>	
-				<?php if(get_field('indexed_by')): ?>
-					<i>Special thanks to <b><?php the_field('indexed_by'); ?></b> for indexing this paper</i>
+				<?php if(get_field('indexed_by') && get_field('index_document')): ?>
+					<i>Special thanks to <b><?php the_field('indexed_by'); ?></b> for <a href="<?php the_field('index_document'); ?>">indexing this paper</a></i>
 					<br>
 				<?php endif; ?>								
 			</div>

@@ -8389,9 +8389,11 @@ body#tinymce {
 /*END*/
 a {
   color: #775e54;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  text-decoration: underline; }
   a:hover {
-    color: #59473f; }
+    color: #59473f;
+    text-decoration: none; }
 
 ul {
   padding-left: 1rem; }
@@ -8410,7 +8412,7 @@ body {
 iframe {
   max-width: 100%; }
 
-h1, h2 {
+h1, h2, h3 {
   /*font-family: 'Montserrat';*/ }
 
 h1 {
