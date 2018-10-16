@@ -8559,9 +8559,9 @@ main.main {
 
 /*HEADER STYLES*/
 .navbar.nav-primary a.brand {
-  padding: .5rem; }
+  padding: 0; }
   .navbar.nav-primary a.brand img {
-    max-width: 200px; }
+    max-width: 150px; }
 
 .navbar.nav-primary .navbar-collapse a {
   color: #7c8492; }
