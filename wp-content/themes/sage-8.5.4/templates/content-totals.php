@@ -27,7 +27,7 @@
 
 		<?php elseif(is_post_type_archive('visualization')): ?>
 
-			Showing <?php echo $wp_query->found_posts; ?> visualization of <?php echo count($all_visualizations); ?> total. 
+			Showing <?php echo $wp_query->found_posts; ?> visualizations of <?php echo count($all_visualizations); ?> total. 
 			<?php if($wp_query->query_vars['posts_per_page'] > 0): ?> 
 				Paginated by <?php echo $wp_query->query_vars['posts_per_page']; ?>.
 			<?php endif; ?>
