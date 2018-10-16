@@ -660,6 +660,33 @@
                             "placeholder": ""
                         },
                         {
+                            "key": "field_5bc610825b7be",
+                            "label": "Header Vertical Alignment",
+                            "name": "header_vertical_alignment",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "top": "Top",
+                                "center": "Center"
+                            },
+                            "default_value": [
+                                "top"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
                             "key": "field_5b873b1548d50",
                             "label": "Header Width",
                             "name": "header_width",
@@ -865,5 +892,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1538683110
+    "modified": 1539707038
 }

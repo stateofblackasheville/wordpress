@@ -310,6 +310,12 @@ main.main{
 	&.content-align--right{
 		flex-flow: row-reverse;
 	}
+	&.header-vertical-align--top{
+		align-items: flex-start;
+	}
+	&.header-vertical-align--top{
+		align-items: center;
+	}	
 	&.content-align--center{
 		text-align: center;
 		&.header-width--two-thirds{

@@ -47,6 +47,9 @@
 <?php if(get_sub_field('header_alignment') && is_string(get_sub_field('header_alignment'))): ?>
 	<?php $classes .= ' header-align--'.get_sub_field('header_alignment'); ?>
 <?php endif; ?>
+<?php if(get_sub_field('header_vertical_alignment') && is_string(get_sub_field('header_vertical_alignment'))): ?>
+	<?php $classes .= ' header-vertical-align--'.get_sub_field('header_vertical_alignment'); ?>
+<?php endif; ?>
 <?php if(get_sub_field('content_alignment') && is_string(get_sub_field('content_alignment'))): ?>
 	<?php $classes .= ' content-align--'.get_sub_field('content_alignment'); ?>
 <?php endif; ?>
