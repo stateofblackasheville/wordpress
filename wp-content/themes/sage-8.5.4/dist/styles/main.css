@@ -8824,7 +8824,7 @@ main.main {
   background-attachment: fixed !important; }
 
 .background-type__pattern .content-section__bg--image {
-  z-index: 0; }
+  z-index: 5; }
 
 .background-type__pattern .content-section__bg--color {
   z-index: 0; }
@@ -8841,6 +8841,10 @@ main.main {
 
 .background-type__stretch .content-section__bg--color {
   z-index: 5; }
+
+.content-section__inner,
+.content-section__header {
+  z-index: 10; }
 
 /*FLEX CONTENT SLIDER*/
 .content-section__slider_content .slider-content {
