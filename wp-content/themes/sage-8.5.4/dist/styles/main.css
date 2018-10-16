@@ -8643,9 +8643,9 @@ main.main {
     /*@include make-col(12);*/ }
   .content-section.content-align--right {
     flex-flow: row-reverse; }
-  .content-section.header-vertical-align--top {
+  .content-section.header-vertical-align--top .content-section__row {
     align-items: flex-start; }
-  .content-section.header-vertical-align--top {
+  .content-section.header-vertical-align--center .content-section__row {
     align-items: center; }
   .content-section.content-align--center {
     text-align: center; }

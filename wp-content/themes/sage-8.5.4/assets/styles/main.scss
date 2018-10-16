@@ -311,12 +311,16 @@ main.main{
 		flex-flow: row-reverse;
 	}
 	&.header-vertical-align--top{
-		align-items: flex-start;
+		.content-section__row{
+			align-items: flex-start;
+		}
 	}
 	&.header-vertical-align--center{
-		align-items: center;
+		.content-section__row{
+			align-items: center;
+		}
 	}	
-	&.content-align--center{
+	&.content-align--center{ 
 		text-align: center;
 		&.header-width--two-thirds{
 			.content-section__header{
