@@ -9461,6 +9461,9 @@ body.home .content-section__inner-container,
 
 .page-template-page-borderless-sections .page-header__content {
   text-align: center; }
+  .page-template-page-borderless-sections .page-header__content > * {
+    margin-left: auto;
+    margin-right: auto; }
 
 .page-template-page-borderless-sections .main-page-content__inner {
   margin-top: 2rem;

@@ -69,7 +69,7 @@
 						Visualized
 					</label>
 					<small class="form-text text-muted">
-						The visualizations contained within this item have been added to the system and attached to this item. This is the end goal for all Student Papers.
+						At least one of the visualizations contained within each of these items have been added to the system. This is the end goal for all Student Papers.
 					</small>					
 				</div>
 				<br>	

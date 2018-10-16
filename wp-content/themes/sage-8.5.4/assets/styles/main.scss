@@ -1207,6 +1207,10 @@ body.home,
 .page-template-page-borderless-sections{
 	.page-header__content{ 
 		text-align: center;
+		>*{
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 	.main-page-content__inner{
 		margin-top: 2rem;
