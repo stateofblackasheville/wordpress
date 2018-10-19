@@ -94,7 +94,7 @@ endif;
 			<div class="content-section__bg content-section__bg--color" style="<?php echo $background_color_styles; ?>">
 			</div>
 		<?php endif; ?>
-		<div class="container page-header__content">
+		<div class="container page-header__content <?php if(!$background_image): ?>page-header__content--basic<?php endif; ?>">
 			<?php if ( function_exists('yoast_breadcrumb') ): ?>
 				<?php yoast_breadcrumb('<div class="breadcrumbs rte rte--georgia" style="'.$content_color_styles.';">','</div>'); ?>
 			<?php endif; ?>

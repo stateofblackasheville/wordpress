@@ -46,10 +46,10 @@
 				<div class="form-check">
 					<input type="radio" class="form-check-input" id="created" name="index_status" value="Created" <?php if($index_status == 'Created'): ?>checked<?php endif; ?>>			
 					<label class="form-check-label filter filter--needs-visualization" for="created">
-						Created
+						Needs Index 
 					</label>
 					<small class="form-text text-muted">
-						These items exist, but have not been indexed or visualized.
+						These items exist, but have not been indexed or visualized. <a href="/how-to-index-student-papers">Help us index <ion-icon name="arrow-forward"></ion-icon> </a>
 					</small>					
 				</div>	
 				<br>				
@@ -59,7 +59,7 @@
 						Indexed
 					</label>
 					<small class="form-text text-muted">
-						These items contain an index that shows the page number of each visualization, but the visualizations haven't been added to the system. <a href="/how-to-index-student-papers">Help us index <ion-icon name="arrow-forward"></ion-icon> </a>
+						These items contain an index that shows the page number of each visualization, but the visualizations haven't been added to the system.
 					</small>					
 				</div>
 				<br>
