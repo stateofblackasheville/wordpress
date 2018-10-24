@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ company.name }} &mdash; - Download bestelling {{ order.number }}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="https://decorrespondent.nl/static/images/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <style>
+
+        body {
+            font-family: "Georgia", serif;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: #f6f6f6;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: "Arial", sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: #df5b57;
+        }
+
+        .container {
+            width: auto;
+            max-width: 760px;
+            padding: 30px;
+            margin: 50px auto 50px;
+        }
+
+        .logo {
+            background-image: url("https://decorrespondent.nl/static/images/nl/logo/logo_nl.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 189px;
+            height: 45px;
+            margin: 0 0 35px;
+            padding: 0;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 10px 30px 20px;
+            border-radius: 5px;
+        }
+
+.content.mod-margin {
+ margin-top: 20px;
+}
+
+        .products {
+            padding: 20px 0;
+            margin: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product ul li {
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .product ul li span {
+            color: #999;
+        }
+
+        a {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #df5b57;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="logo"></div>
+        <div class="content">
+
+        {% for product in order.products %}
+            {% unless product.sku contains 'audioboek' %}
+                <h1>Je kunt bijna beginnen met lezen!</h1> 
+                <p>
+                    Hieronder kun je je e-book downloaden. Je kunt kiezen uit de bestandsformaten epub, mobi en pdf.
+                </p> 
+                {% break %}               
+            {% endunless %}        
+        {% endfor %}
+
+            <div class="products">
+                {% for product in order.products %}
+                <div class="product">
+                    <p>{{ product.name }}</p>
+
+                    
+
+                    <ul>
+                        {% if product.license_key %}
+                            <li>Licentienummer: {{ product.license_key }}</li>
+                        {% endif %}
+                        {% for file in product.files %}
+                            <li>
+                                <a href="{{ file.link }}">{{ file.filename }}</a>{% if file.filesize %} <span>({{ file.filesize}})</span>{% endif %}
+                                {% if company.uses_readmill %}
+                                    {% if file.extension == ".epub" or file.extension == ".pdf" or file.extension == ".acsm" %}
+                                        <div class="readmill">
+                                            <a class="send-to-readmill" data-display="small" data-download-url="{{ file.url }}" data-buy-url="{{ product.store_url }}">Send to Readmill</a>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+
+            <p>
+                Lukt het downloaden niet? Klik dan met je rechtermuisknop op de link(s) en kies ‘Link opslaan als…’ of probeer het in een andere browser. Je kunt ons ook altijd bereiken via kiosk@decorrespondent.nl.</a>
+            </p>
+  
+
+            <p>
+                Veel leesplezier gewenst!
+            </p>
+
+            {% if company.uses_readmill %}
+                <script type="text/javascript">
+                    (function () {
+                        var st = document.createElement('script');
+                        st.type = 'text/javascript';
+                        st.async = true;
+                        st.src = 'https://platform.readmill.com/send.js';
+                        var p = document.getElementsByTagName('script')[0];
+                        p.parentNode.insertBefore(st, p);
+                    })();
+                </script>
+            {% endif %}
+
+        </div>
+    </div>
+
+</body>
