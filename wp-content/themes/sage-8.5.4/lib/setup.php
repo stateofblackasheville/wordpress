@@ -118,9 +118,9 @@ function assets() {
   wp_enqueue_style('ionicons_css', 'https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css', false, null);
 
   // REACT JS
-  wp_enqueue_script('react', 'https://unpkg.com/react@16/umd/react.development.js?v=1.1.2', ['jquery'], null, true);
-  wp_enqueue_script('react_dom', 'https://unpkg.com/react-dom@16/umd/react-dom.development.js?v=1.1.2', ['jquery'], null, true);
-  wp_enqueue_script('react_soba', 'https://unpkg.com/soba-visualization@latest/umd/soba-visualization.js?v=1.1.2', ['jquery'], null, true);
+  wp_enqueue_script('react', 'https://unpkg.com/react@16/umd/react.production.min.js?v=1.1.2', ['jquery'], null, true);
+  wp_enqueue_script('react_dom', 'https://unpkg.com/react-dom@16.6.0/umd/react-dom.production.min.js', ['jquery'], null, true);
+  wp_enqueue_script('react_soba', 'https://unpkg.com/soba-visualization@latest/umd/soba-visualization.min.js?v=1.1.2', ['jquery'], null, true);
   wp_enqueue_script('visualization', Assets\asset_path('scripts/visualization.js?v=1.1.2'),['react_soba'], null, true);
 
   // INTERCOM
