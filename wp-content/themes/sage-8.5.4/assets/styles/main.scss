@@ -192,6 +192,7 @@ main.main{
 	@extend .btn;
 	@include button-variant($red, lighten($red, 10%), darken($red, 10%));
 	@include button-size(.75rem, 2rem, 1rem, 1em, .1rem);
+	white-space: normal;
 	&.soba-btn--large{
 		@include button-size(1.25rem, 2.5rem, 1.25rem, 1em, .1rem);
 	}

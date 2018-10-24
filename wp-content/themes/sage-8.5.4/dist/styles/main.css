@@ -8512,6 +8512,7 @@ main.main {
   font-size: 1rem;
   line-height: 1em;
   border-radius: 0.1rem;
+  white-space: normal;
   text-decoration: none !important; }
   .soba-btn:hover {
     color: #fff;
