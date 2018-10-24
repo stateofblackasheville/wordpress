@@ -8621,6 +8621,26 @@ main.main {
       .content-section.section-width--one-whole .grid-item {
         flex: 0 0 50%;
         max-width: 50%; } }
+  .content-section.section-content-width--one-third .grid-item {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; }
+    @media (min-width: 992px) {
+      .content-section.section-content-width--one-third .grid-item {
+        flex: 0 0 33.3333333333%;
+        max-width: 33.3333333333%; } }
+  .content-section.section-content-width--one-half.section-width--one-whole .grid-item {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; }
+    @media (min-width: 992px) {
+      .content-section.section-content-width--one-half.section-width--one-whole .grid-item {
+        flex: 0 0 50%;
+        max-width: 50%; } }
   .content-section .content-section__header,
   .content-section .content-section__inner,
   .content-section .content-section__image {

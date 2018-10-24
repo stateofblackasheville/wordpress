@@ -416,10 +416,12 @@
 	.soba-visualization{
 		min-height: 400px;
 		position: relative;
-	}*/ }
+	}*/
+  /*@media(max-width:600px){*/
+  /*}*/ }
   #like_button_container select, .soba-visualization select {
-    min-height: 2rem;
-    margin-bottom: 1rem; }
+    /*min-height: 2rem;*/
+    /*margin-top: 1rem;*/ }
   #like_button_container .soba-table table, .soba-visualization .soba-table table {
     width: 100%; }
     #like_button_container .soba-table table td, .soba-visualization .soba-table table td {
@@ -431,8 +433,10 @@
     display: none; }
   #like_button_container .inputs label, .soba-visualization .inputs label {
     width: 150px; }
-  #like_button_container .user-controls select, .soba-visualization .user-controls select {
-    margin-left: .5rem; }
+  #like_button_container .user-controls, .soba-visualization .user-controls {
+    display: block; }
+    #like_button_container .user-controls select, .soba-visualization .user-controls select {
+      margin-left: .5rem; }
   #like_button_container .react-tabs__tab-panel--selected, .soba-visualization .react-tabs__tab-panel--selected {
     position: relative;
     min-height: 300px;
@@ -453,10 +457,9 @@
       background: #c5c5c5; }
     #like_button_container .react-tabs__tab:first-child, .soba-visualization .react-tabs__tab:first-child {
       border-left-width: 1px; }
-  @media (max-width: 600px) {
-    #like_button_container .user-controls, .soba-visualization .user-controls {
-      float: none !important;
-      margin-top: 1rem; }
-      #like_button_container .user-controls select, .soba-visualization .user-controls select {
-        margin-right: .5rem;
-        margin-left: 0; } }
+  #like_button_container .user-controls, .soba-visualization .user-controls {
+    float: none !important;
+    margin-top: 1rem; }
+    #like_button_container .user-controls select, .soba-visualization .user-controls select {
+      margin-right: .5rem;
+      margin-left: 0; }

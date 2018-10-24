@@ -91,16 +91,16 @@
 							<?php the_field('embed', $post_item->ID); ?> 	
 						</div>
 					</div>
-					<a class="rte rte--georgia rte--small" data-fancybox data-options='{"caption" : "<?php echo wp_strip_all_tags($post_item->post_content); ?>" }' data-src="#visualization-<?php echo $post_item->ID; ?>" href="javascript:;">
+<!-- 					<a class="rte rte--georgia rte--small" data-fancybox data-options='{"caption" : "<?php //echo wp_strip_all_tags($post_item->post_content); ?>" }' data-src="#visualization-<?php //echo $post_item->ID; ?>" href="javascript:;">
 						[+] Expand Visualization
-					</a>					
+					</a> -->					
 				<?php elseif(has_post_thumbnail($post_item->ID)): ?>
 					<div class="grid-item-content__image rte rte--georgia">
 						<?php echo get_the_post_thumbnail($post_item->ID); ?>
 					</div>
-					<a class="rte rte--georgia rte--small" href="<?php echo get_the_post_thumbnail_url($post_item->ID, 'large'); ?>" data-fancybox data-caption="<?php echo wp_strip_all_tags($post_item->post_content); ?>">
+<!-- 					<a class="rte rte--georgia rte--small" href="<?php //echo get_the_post_thumbnail_url($post_item->ID, 'large'); ?>" data-fancybox data-caption="<?php //echo wp_strip_all_tags($post_item->post_content); ?>">
 						[+] Expand Visualization
-					</a>			
+					</a> -->			
 				<?php endif; ?>
 				<div class="visualization__notes visualization__notes--stacked">		
 					<?php Roots\Sage\Extras\render_sources('sources', $post_item); ?>	

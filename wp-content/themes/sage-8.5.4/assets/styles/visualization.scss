@@ -3,8 +3,8 @@
 #like_button_container, .soba-visualization{
 	width: 100%;
 	select{
-		min-height: 2rem;
-		margin-bottom: 1rem;
+		/*min-height: 2rem;*/
+		/*margin-top: 1rem;*/
 	}
 	.soba-table{
 		table{
@@ -29,6 +29,7 @@
 		}
 	}
 	.user-controls{
+		display: block; 
 		select{
 			margin-left: .5rem;
 		}
@@ -75,7 +76,7 @@
 	canvas{
 		
 	}
-	@media(max-width:600px){
+	/*@media(max-width:600px){*/
 		.user-controls{
 			float: none !important;
 			margin-top: 1rem;
@@ -84,7 +85,7 @@
 				margin-left: 0;
 			}
 		}
-	}
+	/*}*/
 
 }
 

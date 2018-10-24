@@ -267,7 +267,24 @@ main.main{
 				@include make-col(6);  
 			}
 		}	
+	}
+	&.section-content-width--one-third{
+		.grid-item{
+			@include make-col-ready();
+			@include media-breakpoint-up(lg){
+				@include make-col(4);   
+			}
+		}		
+	}
+	&.section-content-width--one-half.section-width--one-whole{
+		.grid-item{
+			@include make-col-ready();
+			@include media-breakpoint-up(lg){
+				@include make-col(6);   
+			}
+		}		
 	}	
+
 	.content-section__header,
 	.content-section__inner,
 	.content-section__image{

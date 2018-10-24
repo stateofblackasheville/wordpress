@@ -37,7 +37,7 @@
 		</span>
 		<ion-icon name="arrow-forward"></ion-icon>
 		<span class="badge badge--stage-three <?php if(get_field('embed', $post_item->ID)): ?>badge--active<?php endif; ?>" data-toggle="tooltip">
-			Dynamic Visualization
+			Dynamic
 			<?php if(get_field('embed', $post_item->ID)): ?>
 				&nbsp; <ion-icon name="checkmark-circle-outline"></ion-icon> 
 			<?php endif; ?>
