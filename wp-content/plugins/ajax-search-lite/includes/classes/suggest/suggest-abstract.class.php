@@ -19,7 +19,6 @@ if (!class_exists('wpd_keywordSuggestAbstract')) {
     abstract class wpd_keywordSuggestAbstract {
 
         protected  $maxCount;
-
         protected  $maxCharsPerWord;
 
         /**
@@ -51,39 +50,5 @@ if (!class_exists('wpd_keywordSuggestAbstract')) {
                 return $output;
             }
         }
-
-        /**
-         * Performs a full escape
-         *
-         * @uses wd_mysql_escape_mimic()
-         * @param $string
-         * @return array|mixed
-         */
-        protected function escape( $string ) {
-            global $wpdb;
-
-            // recursively go through if it is an array
-            if ( is_array($string) ) {
-                foreach ($string as $k => $v) {
-                    $string[$k] = $this->escape($v);
-                }
-                return $string;
-            }
-
-            if ( is_float( $string ) )
-                return $string;
-
-            // Extra escape for 4.0 >=
-            if ( method_exists( $wpdb, 'esc_like' ) )
-                return esc_sql( $wpdb->esc_like( $string ) );
-
-            // Escape support for WP < 4.0
-            if ( function_exists( 'like_escape' ) )
-                return esc_sql( like_escape($string) );
-
-            // Okay, what? Not one function is present, use the one we have
-            return wd_mysql_escape_mimic($string);
-        }
-
     }
 }

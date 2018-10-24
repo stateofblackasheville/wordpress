@@ -41,9 +41,23 @@ if (!class_exists('wpdreams_search')) {
 		 */
 		protected $s;
 		/**
+		 * @var string the reverse search phrase
+		 */
+		protected $sr;
+		/**
 		 * @var array of each search phrase
 		 */
 		protected $_s;
+		/**
+		 * @var array of each search phrase in reverse
+		 */
+		protected $_sr;
+
+        protected $pre_field = '';
+        protected $suf_field = '';
+        protected $pre_like  = '';
+        protected $suf_like  = '';
+        protected $imageSettings;
 
 		/**
 		 * Create the class
@@ -76,7 +90,7 @@ if (!class_exists('wpdreams_search')) {
 			$this->options = $options;
 			$this->searchId = 1;
 			$this->searchData = $params['data'];
-			if (isset($this->searchData['image_options']))
+			if ( isset($this->searchData['image_options']) )
 				$this->imageSettings = $this->searchData['image_options'];
 
 		}
@@ -88,12 +102,8 @@ if (!class_exists('wpdreams_search')) {
 		 * @return array
 		 */
 		public function search($keyword) {
-			global $wpdb;
 
-			$this->s = $this->escape( $keyword );
-
-			$this->_s = $this->escape( array_unique( explode(" ", $keyword) ) );
-
+            $this->prepare_keywords($keyword);
 			$this->do_search();
 			$this->post_process();
 			$this->group();
@@ -101,125 +111,131 @@ if (!class_exists('wpdreams_search')) {
 			return is_array($this->results) ? $this->results : array();
 		}
 
+        public function prepare_keywords($s) {
+
+		    $keyword = $s;
+            $keyword = $this->compatibility($keyword);
+            $keyword_rev = ASL_Helpers::reverseString($keyword);
+
+            $this->s = ASL_Helpers::escape( $keyword );
+            $this->sr = ASL_Helpers::escape( $keyword_rev );
+
+            /**
+             * Avoid double escape, explode the $keyword instead of $this->s
+             * Regex to match individual words and phrases between double quotes
+             **/
+			if ( preg_match_all( '/".*?("|$)|((?<=[\t ",+])|^)[^\t ",+]+/', $keyword, $matches ) ) {
+				$this->_s = $this->parse_search_terms(  $matches[0] );
+			} else {
+				$this->_s = $this->parse_search_terms( explode(" ", $keyword) );
+			}
+			if ( preg_match_all( '/".*?("|$)|((?<=[\t ",+])|^)[^\t ",+]+/', $keyword_rev, $matches ) ) {
+				$this->_sr = $this->parse_search_terms(  array_reverse($matches[0]) );
+			} else {
+				$this->_sr = $this->parse_search_terms( array_reverse( explode(" ", $keyword_rev ) ) );
+			}
+
+			// Reserved for future use
+			$min_word_length = 0;
+
+            foreach ($this->_s as $k=>$w) {
+                if ( ASL_mb::strlen($w) < $min_word_length ) {
+                    unset($this->_s[$k]);
+                }
+            }
+
+            foreach ($this->_sr as $k=>$w) {
+                if ( ASL_mb::strlen($w) < $min_word_length ) {
+                    unset($this->_sr[$k]);
+                }
+            }
+        }
+
+        /**
+         * Check if the terms are suitable for searching.
+         *
+         * @param array $terms Terms to check.
+         * @return array Terms
+         */
+        protected function parse_search_terms( $terms ) {
+            $checked = array();
+
+            foreach ( $terms as $term ) {
+                // keep before/after spaces when term is for exact match
+                if ( preg_match( '/^".+"$/', $term ) )
+                    $term = trim( $term, "\"'" );
+                else
+                    $term = trim( $term, "\"' " );
+
+                if ( $term != '' )
+                    $checked[] = $term;
+            }
+
+            if ( count($checked) > 0 )
+                $checked = ASL_Helpers::escape(
+                    array_slice(array_unique($checked), 0, 10)
+                );
+
+            return $checked;
+        }
+
+        /**
+         * Converts the keyword to the correct case and sets up the pre-suff fields.
+         *
+         * @param $s
+         * @return string
+         */
+        protected function compatibility($s) {
+            $comp_options   = get_option( 'asl_compatibility' );
+
+            /**
+             *  On forced case sensitivity: Let's add BINARY keyword before the LIKE
+             *  On forced case in-sensitivity: Append the lower() function around each field
+             */
+            if ( $comp_options['db_force_case'] === 'sensitivity' ) {
+                $this->pre_like = 'BINARY ';
+            } else if ( $comp_options['db_force_case'] === 'insensitivity' ) {
+                if ( function_exists( 'mb_convert_case' ) )
+                    $s = mb_convert_case( $s, MB_CASE_LOWER, "UTF-8" );
+                else
+                    $s = strtoupper( $s );
+                // if no mb_ functions :(
+
+                $this->pre_field .= 'lower(';
+                $this->suf_field .= ')';
+            }
+
+            /**
+             *  Check if utf8 is forced on LIKE
+             */
+            if ( w_isset_def( $comp_options['db_force_utf8_like'], 0 ) == 1 )
+                $this->pre_like .= '_utf8';
+
+            /**
+             *  Check if unicode is forced on LIKE, but only apply if utf8 is not
+             */
+            if ( w_isset_def( $comp_options['db_force_unicode'], 0 ) == 1
+                && w_isset_def( $comp_options['db_force_utf8_like'], 0 ) == 0
+            )
+                $this->pre_like .= 'N';
+
+            return $s;
+        }
+
 		/**
 		 * The search function
 		 */
-		protected function do_search() {
-			global $wpdb;
-
-			if (isset($wpdb->base_prefix)) {
-				$_prefix = $wpdb->base_prefix;
-			} else {
-				$_prefix = $wpdb->prefix;
-			}
-
-			$options = $this->options;
-			$searchData = $this->searchData;
-			$s = $this->s;
-			$_s = $this->_s;
-
-		}
+		protected function do_search() {}
 
 		/**
 		 * Post processing abstract
 		 */
-		protected function post_process() {
-
-			$commentsresults = $this->results;
-			$options = $this->options;
-			$searchData = $this->searchData;
-			$s = $this->s;
-			$_s = $this->_s;
-
-			if (is_array($this->results) && count($this->results) > 0) {
-				foreach ($this->results as $k => $v) {
-
-					$r = & $this->results[$k];
-
-					if (!is_object($r) || count($r) <= 0) continue;
-					if (!isset($r->id)) $r->id = 0;
-					$r->image = isset($r->image) ? $r->image : "";
-					$r->title = apply_filters('asl_result_title_before_prostproc', $r->title, $r->id);
-					$r->content = apply_filters('asl_result_content_before_prostproc', $r->content, $r->id);
-					$r->image = apply_filters('asl_result_image_before_prostproc', $r->image, $r->id);
-					$r->author = apply_filters('asl_result_author_before_prostproc', $r->author, $r->id);
-					$r->date = apply_filters('asl_result_date_before_prostproc', $r->date, $r->id);
-
-
-					$r->title = apply_filters('asl_result_title_after_prostproc', $r->title, $r->id);
-					$r->content = apply_filters('asl_result_content_after_prostproc', $r->content, $r->id);
-					$r->image = apply_filters('asl_result_image_after_prostproc', $r->image, $r->id);
-					$r->author = apply_filters('asl_result_author_after_prostproc', $r->author, $r->id);
-					$r->date = apply_filters('asl_result_date_after_prostproc', $r->date, $r->id);
-
-				}
-			}
-
-		}
-
-		/**
-		 * Performs a safe sanitation and escape
-		 *
-		 * @uses wd_mysql_escape_mimic()
-		 * @param $string
-		 * @return array|mixed
-		 */
-		protected function escape( $string ) {
-			global $wpdb;
-
-			// recursively go through if it is an array
-			if ( is_array($string) ) {
-				foreach ($string as $k => $v) {
-					$string[$k] = $this->escape($v);
-				}
-				return $string;
-			}
-
-			if ( is_float( $string ) )
-				return $string;
-
-			// Extra escape for 4.0 >=
-			if ( method_exists( $wpdb, 'esc_like' ) )
-				return esc_sql( $wpdb->esc_like( $string ) );
-
-			// Escape support for WP < 4.0
-			if ( function_exists( 'like_escape' ) )
-				return esc_sql( like_escape($string) );
-
-			// Okay, what? Not one function is present, use the one we have
-			return wd_mysql_escape_mimic($string);
-		}
-
-		/**
-		 * Converts a string to number, array of strings to array of numbers
-		 *
-		 * Since esc_like() does not escape numeric values, casting them is the easiest way to go
-		 *
-		 * @param $number string or array of strings
-		 * @return mixed number or array of numbers
-		 */
-		protected function force_numeric ( $number ) {
-			if ( is_array($number) )
-				foreach ($number as $k => $v)
-					$number[$k] = $v + 0;
-			else
-				$number = $number + 0;
-
-			return $number;
-		}
+		protected function post_process() {}
 
 		/**
 		 * Grouping abstract
 		 */
-		protected function group() {
-
-			$commentsresults = $this->results;
-			$options = $this->options;
-			$searchData = $this->searchData;
-			$s = $this->s;
-			$_s = $this->_s;
-
-		}
+		protected function group() {}
 
 	}
 }

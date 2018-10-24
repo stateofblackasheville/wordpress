@@ -3,22 +3,22 @@ Contributors: mateuszgbiorczyk
 Donate link: https://www.paypal.me/mateuszgbiorczyk/
 Tags: acf, acf search, advanced custom fields, better search, search
 Requires at least: 4.7.0
-Tested up to: 4.9.5
-Stable tag: 3.0.1
+Tested up to: 5.0.0
+Stable tag: 3.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin adds to default WordPress search engine the ability to search by content from selected fields of Advanced Custom Fields PRO plugin.
+This plugin adds to default WordPress search engine the ability to search by content from selected fields of Advanced Custom Fields plugin.
 
 == Description ==
 
-This plugin adds to default WordPress search engine the ability to search by content from selected fields of Advanced Custom Fields PRO plugin.
+This plugin adds to default WordPress search engine the ability to search by content from selected fields of Advanced Custom Fields plugin.
 
 Everything works automatically, no need to add any additional code.
 
 Additionally you can search for whole phrases instead of each single word of phrase. As a result, search will be more accurate than before.
 
-**New feature:** Lite mode available! Now search content on your site may be even faster.
+**New search core:** We modified the code of search engine. Content search is now faster by about 75% (depending on the level of complexity of searched phrase)!
 
 == Installation ==
 
@@ -52,15 +52,31 @@ Our plugin supports the following fields: Text, Text Area, Number, Email, Url, F
 
 The default search in WordPress is to search for each of words listed. This feature allows you to search for occurrences of the whole phrase entered in the search field without word division.
 
+= How does Lite mode work? =
+
+In this mode, the plugin does not check the field types. Phrases are searched in all ACF fields. Thanks to this, the query to the database is smaller and faster by about 25%. However, we do not have control over which fields are taken into account when searching.
+
 = What version of Advanced Custom Fields is supported? =
 
-All versions of Advanced Custom Fields PRO. ACF below version 5 has a different data structure in database and is not supported.
+Advanced Custom Fields in version 5 (also free). ACF below version 5 has a different data structure in database and is not supported.
 
 == Screenshots ==
 
 1. Screenshot of the options panel
 
 == Changelog ==
+
+= 3.1.2 =
+* Support for free version of ACF 5
+
+= 3.1.1 =
+* Default hidden admin notice
+
+= 3.1.0 =
+* Improved search engine
+* Support for AUTO_INCREMENT field in database other than 1
+* Possibility of permanent turn off admin notice
+* Modifications on settings page
 
 = 3.0.1 =
 * Withdrawal of support for old WordPress versions
@@ -86,7 +102,7 @@ All versions of Advanced Custom Fields PRO. ACF below version 5 has a different 
 
 = 2.1.0 =
 * Faster search using lite mode
-* Improve PHP code
+* Improved PHP code
 
 = 2.0.7 =
 * Turn off plugin core while searching uploads media items
@@ -111,7 +127,7 @@ All versions of Advanced Custom Fields PRO. ACF below version 5 has a different 
 * Fixes for PHP 7
 
 = 2.0.0 =
-* Improve search engine
+* Improved search engine
 * The ability to search whole phrases
 * Changed plugin settings page
 * Notifications in admin panel

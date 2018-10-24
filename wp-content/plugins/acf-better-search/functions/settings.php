@@ -4,21 +4,15 @@
 
     function __construct() {
 
-      $this->initActions();
+      $this->loadSettings();
+
+      add_action('admin_menu', [$this, 'addSettingsPage']);
 
     }
 
     /* ---
-      Actions
+      Settings
     --- */
-
-      private function initActions() {
-
-        $this->loadSettings();
-
-        add_action('admin_menu', [$this, 'addSettingsPage']);
-
-      }
 
       private function loadSettings() {
 
@@ -64,7 +58,7 @@
         $this->getSelectedFieldsTypes();
         $this->getSelectedFeatures();
 
-        require_once ACFBS_PATH . 'includes/settings.php';
+        require_once ACFBS_PATH . 'components/_core.php';
 
       }
 
@@ -96,13 +90,9 @@
             $this->$key = (isset($_POST['acfbs_features']) && in_array($key, $_POST['acfbs_features']));
             $this->saveOption('acfbs_' . $key, $this->$key);
 
-          } elseif (get_option('acfbs_' . $key) !== false) {
-
-            $this->$key = get_option('acfbs_' . $key);
-
           } else {
 
-            $this->$key = false;
+            $this->$key = get_option('acfbs_' . $key, false);
 
           }
 
@@ -112,7 +102,7 @@
 
       private function saveOption($key, $value) {
 
-        if (get_option($key) !== false)
+        if (get_option($key, false) !== false)
           update_option($key, $value);
         else
           add_option($key, $value);
@@ -129,7 +119,7 @@
 
           $id         = 'acfbs_fields_' . $key;
           $isChecked  = in_array($key, $this->selected) ? 'checked' : '';
-          $isDisabled = $this->lite_mode ? 'disabled' : '';
+          $isDisabled = $this->lite_mode ? 'data-disabled disabled' : '';
           
           ?>
             <tr>

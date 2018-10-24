@@ -41,7 +41,7 @@
     <?php do_action('asl_layout_before_input', $id); ?>
 
     <div class='proinput'>
-        <form autocomplete="off" title='Ajax serch form'>
+        <form autocomplete="off" aria-label='Ajax search form'>
             <input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='<?php echo asl_icl_t( "Search bar placeholder text", w_isset_def($style['defaultsearchtext'], '') ); ?>' value='<?php echo apply_filters('asl_print_search_query', get_search_query()); ?>' autocomplete="off"/>
             <input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
             <span class='loading'></span>
@@ -328,7 +328,7 @@ if ( function_exists('qtranxf_getLanguage') ) {
     <?php if ($style['showmoreresults'] == 1): ?>
         <?php do_action('asl_layout_before_showmore', $id); ?>
         <p class='showmore'>
-            <a><?php echo $style['showmoreresultstext']; ?></a>
+            <a><?php echo asl_icl_t('Show more results text', $style['showmoreresultstext']); ?></a>
         </p>
     <?php do_action('asl_layout_after_showmore', $id); ?>
     <?php endif; ?>

@@ -4,24 +4,18 @@
 
     function __construct() {
 
-      $this->initActions();
+      $this->loadSettings();
+
+      add_filter('pre_get_posts', [$this, 'queryArgs']); 
+      add_filter('posts_search',  [$this, 'sqlWhere'],    10, 2); 
+      add_filter('posts_join',    [$this, 'sqlJoin'],     10, 2);
+      add_filter('posts_request', [$this, 'sqlDistinct'], 10, 2); 
 
     }
 
     /* ---
-      Actions
+      Settings
     --- */
-
-      private function initActions() {
-
-        $this->loadSettings();
-
-        add_filter('pre_get_posts', [$this, 'queryArgs']); 
-        add_filter('posts_search',  [$this, 'sqlWhere'],    10, 2); 
-        add_filter('posts_join',    [$this, 'sqlJoin'],     10, 2);
-        add_filter('posts_request', [$this, 'sqlDistinct'], 10, 2); 
-
-      }
 
       private function loadSettings() {
 
@@ -57,15 +51,14 @@
         if (!isset($query->query_vars['s']) || empty($query->query_vars['s']))
           return $where;
 
-        $acfConditions       = $this->getACFConditions($query->query_vars['s']);
-        $wordpressConditions = $this->getDefaultWordPressConditions($query->query_vars['s']);
-        $conditions          = [$acfConditions, $wordpressConditions];
+        $list   = [];
+        $list[] = $this->getACFConditions($query->query_vars['s']);
+        $list[] = $this->getDefaultWordPressConditions($query->query_vars['s']);
 
         if (in_array('file', $this->fieldsTypes))
-          $conditions[] = $this->getFileConditions($query->query_vars['s']);
+          $list[] = $this->getFileConditions($query->query_vars['s']);
 
-        $where = 'AND (' . implode(' OR ', $conditions) . ')';
-
+        $where = 'AND (' . implode(' OR ', $list) . ')';
         return $where;
 
       }
@@ -75,69 +68,76 @@
         if (!$this->fieldsTypes && !$this->liteMode)
           return '(1 = 2)';
 
-        $words           = !$this->wholePhrases ? explode(' ', $words) : [$words];
-        $wordsConditions = [];
+        $words = !$this->wholePhrases ? explode(' ', $words) : [$words];
+        $list  = [];
 
         foreach ($words as $word) {
 
-          $word              = addslashes($word);
-          $wordsConditions[] = 'a.meta_value LIKE \'%' . $word . '%\'';
+          $word   = addslashes($word);
+          $list[] = 'a.meta_value LIKE \'%' . $word . '%\'';
 
         }
 
-        $wordsConditions = '(' . implode(') AND (', $wordsConditions) . ')';
+        $list = '(' . implode(') AND (', $list) . ')';
 
         if (!$this->liteMode)
-          $conditions = '(' . $wordsConditions . ' AND (b.meta_id = a.meta_id + 1) AND (c.post_name = b.meta_value))';
+          $list = '((c.post_name = b.meta_value) AND ' . $list . ')';
         else
-          $conditions = '(' . $wordsConditions . ' AND (b.meta_id = a.meta_id + 1) AND (b.meta_value LIKE \'field_%\'))';
+          $list = '((b.meta_value LIKE \'field_%\') AND ' . $list . ')';
 
-        return $conditions;
+        return $list;
 
       }
 
       private function getDefaultWordPressConditions($words) {
 
-        $words           = !$this->wholePhrases ? explode(' ', $words) : [$words];
-        $wordsConditions = [];
+        $words   = !$this->wholePhrases ? explode(' ', $words) : [$words];
+        $columns = ['post_title', 'post_content', 'post_excerpt'];
+        $list    = [];
 
         foreach ($words as $word) {
 
-          $word = addslashes($word);
+          $word       = addslashes($word);
+          $conditions = [];
 
-          $wordConditions   = [];
-          $wordConditions[] = '(' . $this->wpdb->posts . '.post_title LIKE \'%' . $word . '%\')';
-          $wordConditions[] = '(' . $this->wpdb->posts . '.post_content LIKE \'%' . $word . '%\')';
-          $wordConditions[] = '(' . $this->wpdb->posts . '.post_excerpt LIKE \'%' . $word . '%\')';
+          foreach ($columns as $column) {
 
-          $wordsConditions[] = '(' . implode(' OR ', $wordConditions) . ')';
+            $conditions[] = sprintf(
+              '(%s.%s LIKE %s)',
+              $this->wpdb->posts,
+              $column,
+              '\'%' . $word . '%\''
+            );
+
+          }
+
+          $list[] = '(' . implode(' OR ', $conditions) . ')';
 
         }
 
-        if (count($wordsConditions) > 1)
-          $conditions = '(' . implode(' AND ', $wordsConditions) . ')';
+        if (count($list) > 1)
+          $list = '(' . implode(' AND ', $list) . ')';
         else
-          $conditions = $wordsConditions[0];
+          $list = $list[0];
 
-        return $conditions;
+        return $list;
 
       }
 
       private function getFileConditions($words) {
 
-        $words           = !$this->wholePhrases ? explode(' ', $words) : [$words];
-        $wordsConditions = [];
+        $words = !$this->wholePhrases ? explode(' ', $words) : [$words];
+        $list  = [];
 
         foreach ($words as $word) {
 
-          $word              = addslashes($word);
-          $wordsConditions[] = 'd.post_title LIKE \'%' . $word . '%\'';
+          $word   = addslashes($word);
+          $list[] = 'd.post_title LIKE \'%' . $word . '%\'';
 
         }
 
-        $wordsConditions = '(' . implode(') AND (', $wordsConditions) . ')';
-
-        return $wordsConditions;
+        $list = '(' . implode(') AND (', $list) . ')';
+        return $list;
 
       }
 
@@ -150,40 +150,61 @@
         if (empty($query->query_vars['s']) || (!$this->fieldsTypes && !$this->liteMode))
           return $join;
 
-        $parts   = [];
-        $parts[] = 'LEFT JOIN ' . $this->wpdb->postmeta . ' AS a ON (a.post_id = ' . $this->wpdb->posts . '.ID)';
-        $parts[] = 'LEFT JOIN ' . $this->wpdb->postmeta . ' AS b ON (b.post_id = ' . $this->wpdb->posts . '.ID)';
+        $parts = [];
 
-        if (!$this->liteMode || in_array('file', $this->fieldsTypes))
-          $parts[] = 'LEFT JOIN ' . $this->wpdb->posts . ' AS c ON ' . $this->getFieldsTypesConditions();
+        $parts[] = sprintf(
+          'INNER JOIN %s AS a ON (a.post_id = %s.ID)',
+          $this->wpdb->postmeta,
+          $this->wpdb->posts
+        );
+        $parts[] = sprintf(
+          'INNER JOIN %s AS b ON ((b.meta_id = a.meta_id + @@auto_increment_increment) AND (b.post_id = %s.ID))',
+          $this->wpdb->postmeta,
+          $this->wpdb->posts
+        );
 
-        if (in_array('file', $this->fieldsTypes))
-          $parts[] = 'LEFT JOIN ' . $this->wpdb->posts . ' AS d ON ((c.post_content LIKE \'%:"file"%\') AND (d.ID = b.meta_value))';
+        if (!$this->liteMode || in_array('file', $this->fieldsTypes)) {
+
+          $parts[] = sprintf(
+            'INNER JOIN %s AS c ON %s',
+            $this->wpdb->posts,
+            $this->getFieldsTypesConditions()
+          );
+
+        }
+
+        if (in_array('file', $this->fieldsTypes)) {
+
+          $parts[] = sprintf(
+            'LEFT JOIN %s AS d ON (d.ID = a.meta_value)',
+            $this->wpdb->posts,
+            '\'%:"file"%\''
+          );
+
+        }
 
         $join .= ' ' . implode(' ', $parts);
-
         return $join;
 
       }
 
       private function getFieldsTypesConditions() {
 
-        $typesConditions  = [];
-        $conditions       = [];
+        $types = [];
+        $list  = [];
 
         foreach ($this->fieldsTypes as $type)
-          $typesConditions[] = '(c.post_content LIKE \'%:"' . $type. '"%\')';
+          $types[] = '(c.post_content LIKE \'%:"' . $type . '"%\')';
 
-        $conditions[] = '(c.post_type = \'acf-field\')';
+        $list[] = '(c.post_type = \'acf-field\')';
 
-        if (count($typesConditions) > 1)
-          $conditions[] = '(' . implode(' OR ', $typesConditions) . ')';
+        if (count($types) > 1)
+          $list[] = '(' . implode(' OR ', $types) . ')';
         else
-          $conditions[] = $typesConditions[0];
+          $list[] = $types[0];
         
-        $conditions = '(' . implode(' AND ', $conditions) . ')';
-
-        return $conditions;
+        $list = '(' . implode(' AND ', $list) . ')';
+        return $list;
 
       }
 
@@ -196,8 +217,7 @@
         if (empty($query->query_vars['s']))
           return $sql;
 
-        $sql = str_replace('SELECT', 'SELECT DISTINCT', $sql);
-
+        $sql = preg_replace('/SELECT/', 'SELECT DISTINCT', $sql, 1);
         return $sql;
 
       }

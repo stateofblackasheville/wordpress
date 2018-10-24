@@ -4,7 +4,7 @@ Donate link: http://wp-dreams.com
 Tags: search, better wordpress search, search plugin, relevance search, widget, Post, ajax search, search filter, wp ajax search, custom fields search, better search, ajax search plugin, wp search, wp search plugin, filter, relevant search plugin, wordpress search, Live Search, shortcode, google, autocomplete, suggest, woocommerce, woocommerce search, product, product search, custom search, ajax, suggest, autosuggest, search autocomplete, live, plugin, sidebar, product tag search, products, woocommerce tag search, WooCommerce Plugin, shop, search by sku, relevant search, highlight, term, image, custom search, ecommerce, Predictive Search, search product, shop, typehead, suggest, instant-search
 Requires at least: 3.5
 Tested up to: 4.9
-Stable tag: 4.7.16
+Stable tag: 4.7.18
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,13 +107,21 @@ and will let you know what to do.
 2. Administrator area - nice and smooth
 
 == Changelog ==
+= 4.7.18 =
+* Fix - Minification issue causing a scrollbar malfunction fixed
+
+= 4.7.17 =
+* Change - Main LIKE query re-worked: better cross-field (title, content etc..) matching, better relevance calculation and faster execution
+* Change - Words within double quotes will now be matched exactly (in order), and can be combined with other keywords. For example, entering phrase - "nobel prize" 2018 - will use keywords: "nobel prize" and "2018"
+* Change - The default keyword logic set to AND
+* Fix - Remaining form title labels moved to aria-label attributes
+* Fix - Other minor code bugfixes
+
 = 4.7.16 =
 * Input font now can be changed
 * Additional theme options: search box background color, icon colors, icon background colors and border
-Changes & Improvements
 * Theme Chooser option moved to Layout Options -> Search box layout panel
 * Theme Chooser option now displays a static preview of the original themes
-Fixes
 * WCAG improvements: some title labels replaced with aria-labels instead
 * Some redundant options removed from the front-end script, fixing apostrophe related issues
 

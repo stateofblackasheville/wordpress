@@ -155,13 +155,11 @@ if (!class_exists("WD_ASL_Manager")) {
             require_once(ASL_FUNCTIONS_PATH . "functions.php");
             require_once(ASL_CLASSES_PATH . "ajax/ajax.inc.php");
             require_once(ASL_CLASSES_PATH . "filters/filters.inc.php");
+            require_once(ASL_CLASSES_PATH . "etc/class-asl_helpers.php");
             require_once(ASL_CLASSES_PATH . "cache/cache.inc.php");
             require_once(ASL_CLASSES_PATH . "suggest/suggest.inc.php");
             require_once(ASL_CLASSES_PATH . "search/search.inc.php");
             require_once(ASL_CLASSES_PATH . "shortcodes/shortcodes.inc.php");
-
-            // This must be here!! If it's in a conditional statement, it will fail..
-            //require_once(ASL_PATH . "/backend/vc/vc.extend.php");
 
             switch ($this->context) {
                 case "special":

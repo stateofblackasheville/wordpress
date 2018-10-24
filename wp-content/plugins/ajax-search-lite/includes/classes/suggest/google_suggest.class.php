@@ -13,6 +13,8 @@ if (!class_exists('wpd_googleKeywordSuggest')) {
      * @author      Ernest Marcinko
      */
     class wpd_googleKeywordSuggest extends wpd_keywordSuggestAbstract {
+        private $lang, $matchStart, $url;
+
         function __construct( $args = array() ) {
 	        $defaults = array(
 		        'maxCount' => 10,
@@ -84,4 +86,3 @@ if (!class_exists('wpd_googleKeywordSuggest')) {
         }
     }
 }
-?>

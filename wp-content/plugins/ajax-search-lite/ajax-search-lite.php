@@ -3,14 +3,13 @@
 Plugin Name: Ajax Search Lite
 Plugin URI: http://wp-dreams.com
 Description: The lite version of the most powerful ajax powered search engine for WordPress.
-Version: 4.7.16
+Version: 4.7.18
 Author: Ernest Marcinko
 Author URI: http://wp-dreams.com
 Text Domain: ajax-search-lite
 Domain Path: /languages/
 */
-?>
-<?php
+
 /* Prevent direct access */
 defined('ABSPATH') or die("You can't access this file directly.");
 
@@ -22,8 +21,8 @@ define('ASL_FUNCTIONS_PATH', plugin_dir_path(__FILE__)."/includes/functions/");
 define('ASL_DIR', 'ajax-search-lite');
 define('ASL_URL',  plugin_dir_url(__FILE__));
 define('ASL_URL_NP',  str_replace(array("http://", "https://"), "//", plugin_dir_url(__FILE__)));
-define('ASL_CURRENT_VERSION', 4726);
-define('ASL_CURR_VER_STRING', "4.7.16");
+define('ASL_CURRENT_VERSION', 4728);
+define('ASL_CURR_VER_STRING', "4.7.18");
 define('ASL_DEBUG', 0);
 define('ASL_DEMO', get_option('wd_asl_demo', 0) );
 

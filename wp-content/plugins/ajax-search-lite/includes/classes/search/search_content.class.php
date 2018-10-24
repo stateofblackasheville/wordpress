@@ -4,66 +4,33 @@ defined( 'ABSPATH' ) or die( "You can't access this file directly." );
 
 if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 	class wpdreams_searchContent extends wpdreams_search {
+	    private $remaining_limit;
+        /**
+         * @var array of query parts
+         */
+        private $parts = array();
 
 		protected function do_search() {
 			global $wpdb;
 			global $q_config;
 
 			$options        = $this->options;
-            $comp_options   = get_option( 'asl_compatibility' );
 			$sd     = $this->searchData;
 
-			$parts           = array();
-			$relevance_parts = array();
 			$types           = array();
-			$post_types      = "";
+			//$post_types      = "";
 			$term_query      = "(1)";
-			$post_statuses   = "";
-			$term_join       = "";
+			//$post_statuses   = "";
+			//$term_join       = "";
 			$postmeta_join   = "";
 
+			$kw_logic = strtolower( $sd['keyword_logic'] );
+
             // Prefixes and suffixes
-            $pre_field = '';
-            $suf_field = '';
-            $pre_like  = '';
-            $suf_like  = '';
-
-			$kw_logic = $sd['keyword_logic'];
-			$op = strtoupper( $kw_logic );
-
-            /**
-             *  On forced case sensitivity: Let's add BINARY keyword before the LIKE
-             *  On forced case in-sensitivity: Append the lower() function around each field
-             */
-            if ( w_isset_def( $comp_options['db_force_case'], 'none' ) == 'sensitivity' ) {
-                $pre_like = 'BINARY ';
-            } else if ( w_isset_def( $comp_options['db_force_case'], 'none' ) == 'insensitivity' ) {
-                if ( function_exists( 'mb_convert_case' ) ) {
-                    $this->s = mb_convert_case( $this->s, MB_CASE_LOWER, "UTF-8" );
-                } else {
-                    $this->s = strtoupper( $this->s );
-                } // if no mb_ functions :(
-                $this->_s = array_unique( explode( " ", $this->s ) );
-
-                $pre_field .= 'lower(';
-                $suf_field .= ')';
-            }
-
-            /**
-             *  Check if utf8 is forced on LIKE
-             */
-            if ( w_isset_def( $comp_options['db_force_utf8_like'], 0 ) == 1 ) {
-                $pre_like .= '_utf8';
-            }
-
-            /**
-             *  Check if unicode is forced on LIKE, but only apply if utf8 is not
-             */
-            if ( w_isset_def( $comp_options['db_force_unicode'], 0 ) == 1
-                && w_isset_def( $comp_options['db_force_utf8_like'], 0 ) == 0
-            ) {
-                $pre_like .= 'N';
-            }
+            $pre_field = $this->pre_field;
+            $suf_field = $this->suf_field;
+            $pre_like  = $this->pre_like;
+            $suf_like  = $this->suf_like;
 
             $s  = $this->s; // full keyword
             $_s = $this->_s;    // array of keywords
@@ -77,7 +44,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
                     $wcr = '';
             }
 
-			if (isset($options['non_ajax_search']))
+			if ( isset($options['non_ajax_search']) )
 				$this->remaining_limit = 500;
 			else
 				$this->remaining_limit = $sd['maxresults'];
@@ -138,139 +105,176 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
             }
             /*---------------------------------------------------------------*/
 
-			/*----------------------- Title query ---------------------------*/
-			if ( $options['set_intitle'] ) {
-				$words = $options['set_exactonly'] == 1 ? array( $s ) : $_s;
 
-                if ( count( $_s ) > 0 ) {
-                    $_like = implode( "%'$suf_like " . $op . " " . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE $pre_like'%", $words );
-                } else {
-                    $_like = $s;
+            $words = $options['set_exactonly'] == 1 && $s != '' ? array($s) : $_s;
+            /**
+             * Ex.: When the minimum word count is 2, and the user enters 'a' then $_s is empty.
+             *      But $s is not actually empty, thus the wrong query will be executed.
+             */
+            if ( count($words) == 0 && $s != '' ) {
+                $words = array($s);
+                // Allow only beginnings
+                if ( $options['set_exactonly'] == 0 )
+                    $wcl = '';
+            }
+            if ( $s != '' )
+                $words = !in_array($s, $words) ? array_merge(array($s), $words) : $words;
+
+            $relevance_added = false;
+            foreach ( $words as $k => $word ) {
+                $parts           = array();
+                $relevance_parts = array();
+                $is_exact = $options['set_exactonly'] == 1 || ( count($words) > 1 && $k == 0 && ($kw_logic == 'or' || $kw_logic == 'and') );
+
+                /*----------------------- Title query ---------------------------*/
+                if ( $options['set_intitle'] ) {
+                    if ( $kw_logic == 'or' || $kw_logic == 'and' || $is_exact ) {
+                        $parts[] = "( " . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE $pre_like'$wcl" . $word . "$wcr'$suf_like )";
+                    } else {
+                        $parts[] = "
+                               ( " . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE $pre_like'% " . $word . " %'$suf_like
+                            OR  " . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE $pre_like'" . $word . " %'$suf_like
+                            OR  " . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE $pre_like'% " . $word . "'$suf_like
+                            OR  " . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " = '" . $word . "')";
+                    }
+                    if ( !$relevance_added ) {
+                        $relevance_parts[] = "(case when
+                    (" . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE '$s%')
+                     then " . (w_isset_def($sd['etitleweight'], 10) * 2) . " else 0 end)";
+
+                        $relevance_parts[] = "(case when
+                    (" . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE '%$s%')
+                     then " . w_isset_def($sd['etitleweight'], 10) . " else 0 end)";
+
+                        // The first word relevance is higher
+                        if ( isset($_s[0]) ) {
+                            $relevance_parts[] = "(case when
+                      (" . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE '%" . $_s[0] . "%')
+                       then " . w_isset_def($sd['etitleweight'], 10) . " else 0 end)";
+                        }
+                    }
                 }
-                $parts[] = "( " . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE $pre_like'$wcl" . $_like . "$wcr'$suf_like )";
+                /*---------------------------------------------------------------*/
 
-                $relevance_parts[] = "(case when
-                (" . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE '$s%')
-                 then 30 else 0 end)";
+                /*---------------------- Content query --------------------------*/
+                if ( $options['set_incontent'] ) {
+                    if ( $kw_logic == 'or' || $kw_logic == 'and' || $is_exact ) {
+                        $parts[] = "( " . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " LIKE $pre_like'$wcl" . $word . "$wcr'$suf_like )";
+                        /**
+                         * Exact matching multi line + word boundary with REGEXP
+                         *
+                         * $parts[] = "( " . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " REGEXP '([[:blank:][:punct:]]|^|\r\n)" . $word . "([[:blank:][:punct:]]|$|\r\n)' )";
+                         */
+                    } else {
+                        $parts[] = "
+                           (" . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " LIKE $pre_like'% " . $word . " %'$suf_like
+                        OR  " . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " LIKE $pre_like'" . $word . " %'$suf_like
+                        OR  " . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " LIKE $pre_like'% " . $word . "'$suf_like
+                        OR  " . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " = '" . $word . "')";
+                    }
+                    if ( !$relevance_added ) {
+                        if ( isset($_s[0]) ) {
+                            $relevance_parts[] = "(case when
+                            (" . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " LIKE '%" . $_s[0] . "%')
+                             then ".w_isset_def($sd['contentweight'], 10)." else 0 end)";
+                        }
 
-				$relevance_parts[] = "(case when
-                (" . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE '%$s%')
-                 then 10 else 0 end)";
-
-                // The first word relevance is higher
-                if ( count( $_s ) > 0 ) {
-                    $relevance_parts[] = "(case when
-                  (" . $pre_field . $wpdb->posts . ".post_title" . $suf_field . " LIKE '%" . $_s[0] . "%')
-                   then 10 else 0 end)";
+                        $relevance_parts[] = "(case when
+                    (" . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " LIKE '%$s%')
+                     then " . w_isset_def($sd['econtentweight'], 10) . " else 0 end)";
+                    }
                 }
-			}
-			/*---------------------------------------------------------------*/
+                /*---------------------------------------------------------------*/
 
-			/*---------------------- Content query --------------------------*/
-			if ( $options['set_incontent'] ) {
-				$words = $options['set_exactonly'] == 1 ? array( $s ) : $_s;
-				//$parts[] = "(lower($wpdb->posts.post_content) REGEXP '$words')";
-
-                if ( count( $_s ) > 0 ) {
-                    $_like = implode( "%'$suf_like " . $op . " " . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " LIKE $pre_like'%", $words );
-                } else {
-                    $_like = $s;
+                /*----------------- Permalink, post_name query ------------------*/
+                if ( $sd['search_in_permalinks'] ) {
+                    $parts[] = "( " . $pre_field . $wpdb->posts . ".post_name" . $suf_field . " LIKE $pre_like'$wcl" . $word . "$wcr'$suf_like )";
                 }
-                $parts[] = "( " . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " LIKE $pre_like'$wcl" . $_like . "$wcr'$suf_like )";
+                /*---------------------------------------------------------------*/
 
-                if ( count( $_s ) > 0 ) {
-                    $relevance_parts[] = "(case when
-                    (" . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " LIKE '%" . $_s[0] . "%')
-                     then 8 else 0 end)";
+                /*---------------------- Excerpt query --------------------------*/
+                if ($options['set_inexcerpt']) {
+                    if ( $kw_logic == 'or' || $kw_logic == 'and' || $is_exact ) {
+                        $parts[] = "( " . $pre_field . $wpdb->posts . ".post_excerpt" . $suf_field . " LIKE $pre_like'$wcl" . $word . "$wcr'$suf_like )";
+                    } else {
+                        $parts[] = "
+                           (" . $pre_field . $wpdb->posts . ".post_excerpt" . $suf_field . " LIKE $pre_like'% " . $word . " %'$suf_like
+                        OR  " . $pre_field . $wpdb->posts . ".post_excerpt" . $suf_field . " LIKE $pre_like'" . $word . " %'$suf_like
+                        OR  " . $pre_field . $wpdb->posts . ".post_excerpt" . $suf_field . " LIKE $pre_like'% " . $word . "'$suf_like
+                        OR  " . $pre_field . $wpdb->posts . ".post_excerpt" . $suf_field . " = '" . $word . "')";
+                    }
+                    if ( !$relevance_added ) {
+                        if ( isset($_s[0]) ) {
+                            $relevance_parts[] = "(case when
+                            (" . $pre_field . $wpdb->posts . ".post_excerpt" . $suf_field . " LIKE '%" . $_s[0] . "%')
+                             then ".w_isset_def($sd['excerptweight'], 10)." else 0 end)";
+                        }
+
+                        $relevance_parts[] = "(case when
+                    (" . $pre_field . $wpdb->posts . ".post_excerpt" . $suf_field . " LIKE '%$s%')
+                     then " . w_isset_def($sd['eexcerptweight'], 10) . " else 0 end)";
+                    }
                 }
-                $relevance_parts[] = "(case when
-                (" . $pre_field . $wpdb->posts . ".post_content" . $suf_field . " LIKE '%$s%')
-                 then 8 else 0 end)";
-			}
-			/*---------------------------------------------------------------*/
+                /*---------------------------------------------------------------*/
 
-			/*----------------- Permalink, post_name query ------------------*/
-			if ( $sd['search_in_permalinks'] ) {
-				$words = $options['set_exactonly'] == 1 ? array($s) : $_s;
+                /*------------------------ Term query ---------------------------*/
+                if ($options['searchinterms']) {
+                    if ( $kw_logic == 'or' || $kw_logic == 'and' || $is_exact ) {
+                        $parts[] = "( " . $pre_field . $wpdb->terms . ".name" . $suf_field . " LIKE $pre_like'$wcl" . $word . "$wcr'$suf_like )";
+                    } else {
+                        $parts[] = "
+                           (" . $pre_field . $wpdb->terms . ".name" . $suf_field . " LIKE $pre_like'% " . $word . " %'$suf_like
+                        OR  " . $pre_field . $wpdb->terms . ".name" . $suf_field . " LIKE $pre_like'" . $word . " %'$suf_like
+                        OR  " . $pre_field . $wpdb->terms . ".name" . $suf_field . " LIKE $pre_like'% " . $word . "'$suf_like
+                        OR  " . $pre_field . $wpdb->terms . ".name" . $suf_field . " = '" . $word . "')";
+                    }
 
-				if (count($_s) > 0) {
-					$_like = implode("%'$suf_like " . $op . " " . $pre_field . $wpdb->posts . ".post_name" . $suf_field . " LIKE $pre_like'%", $words);
-				} else {
-					$_like = $s;
-				}
-				$parts[] = "( " . $pre_field . $wpdb->posts . ".post_name" . $suf_field . " LIKE $pre_like'$wcl" . $_like . "$wcr'$suf_like )";
-			}
-			/*---------------------------------------------------------------*/
-
-			/*---------------------- Excerpt query --------------------------*/
-			if ( $options['set_inexcerpt'] ) {
-				$words = $options['set_exactonly'] == 1 ? array( $s ) : $_s;
-				//$parts[] = "(lower($wpdb->posts.post_excerpt) REGEXP '$words')";
-
-                if ( count( $_s ) > 0 ) {
-                    $_like = implode( "%'$suf_like " . $op . " " . $pre_field . $wpdb->posts . ".post_excerpt" . $suf_field . " LIKE $pre_like'%", $words );
-                } else {
-                    $_like = $s;
+                    if ( !$relevance_added ) {
+                        $relevance_parts[] = "(case when
+                    (" . $pre_field . $wpdb->terms . ".name" . $suf_field . " = '$s')
+                     then " . w_isset_def($sd['etermsweight'], 10) . " else 0 end)";
+                    }
                 }
-                $parts[] = "( " . $pre_field . $wpdb->posts . ".post_excerpt" . $suf_field . " LIKE $pre_like'$wcl" . $_like . "$wcr'$suf_like )";
+                /*---------------------------------------------------------------*/
 
-                if ( count( $_s ) > 0 ) {
-                    $relevance_parts[] = "(case when
-                    (" . $pre_field . $wpdb->posts . ".post_excerpt" . $suf_field . " LIKE '%" . $_s[0] . "%')
-                     then 7 else 0 end)";
+                /*---------------------- Custom Fields --------------------------*/
+                $selected_customfields = isset( $sd['selected-customfields'] ) ? $sd['selected-customfields'] : array();
+                if ( $sd['search_all_cf'] == 1 )
+                    $selected_customfields = array("all");
+
+                if ( is_array($selected_customfields) && count($selected_customfields) > 0 ) {
+                    $postmeta_join   = "LEFT JOIN $wpdb->postmeta ON $wpdb->postmeta.post_id = $wpdb->posts.ID";
+                    foreach ( $selected_customfields as $cfield ) {
+                        $key_part = $sd['search_all_cf'] == 1 ? "" : "$wpdb->postmeta.meta_key='$cfield' AND ";
+
+                        if ( $kw_logic == 'or' || $kw_logic == 'and' || $is_exact ) {
+                            $parts[] = "( $key_part " . $pre_field . $wpdb->postmeta . ".meta_value" . $suf_field . " LIKE $pre_like'$wcl" . $word . "$wcr'$suf_like )";
+                        } else {
+                                $parts[] = "( $key_part 
+                           (" . $pre_field . $wpdb->postmeta . ".meta_value" . $suf_field . " LIKE $pre_like'% " . $word . " %'$suf_like
+                        OR  " . $pre_field . $wpdb->postmeta . ".meta_value" . $suf_field . " LIKE $pre_like'" . $word . " %'$suf_like
+                        OR  " . $pre_field . $wpdb->postmeta . ".meta_value" . $suf_field . " LIKE $pre_like'% " . $word . "'$suf_like
+                        OR  " . $pre_field . $wpdb->postmeta . ".meta_value" . $suf_field . " = '" . $word . "') )";
+                        }
+                        if ( !$relevance_added ) {
+                            if ($cfield == 'author_field_name')
+                                $relevance_parts[] = "(case when
+                            (EXISTS (SELECT 1 FROM $wpdb->postmeta as cfre WHERE cfre.post_id = $wpdb->posts.ID AND cfre.meta_key = '$cfield' AND 
+							(cfre.meta_value" . $suf_field . " LIKE '%" . $s . "%')))
+                             then 100 else 0 end)";
+                            if ($cfield == 'fulltext_field_name')
+                                $relevance_parts[] = "(case when
+                            (EXISTS (SELECT 1 FROM $wpdb->postmeta as cfre WHERE cfre.post_id = $wpdb->posts.ID AND cfre.meta_key = '$cfield' AND 
+							(cfre.meta_value" . $suf_field . " LIKE '%" . $s . "%')))
+                             then 10 else 0 end)";
+                        }
+                    }
                 }
-                $relevance_parts[] = "(case when
-                (" . $pre_field . $wpdb->posts . ".post_excerpt" . $suf_field . " LIKE '%$s%')
-                 then 7 else 0 end)";
-			}
-			/*---------------------------------------------------------------*/
+                /*---------------------------------------------------------------*/
 
-			/*------------------------ Term query ---------------------------*/
-			if ( $options['searchinterms'] ) {
-				$words = $options['set_exactonly'] == 1 ? array( $s ) : $_s;
-				//$parts[] = "(lower($wpdb->terms.name) REGEXP '$words')";
-
-                if ( count( $_s ) > 0 ) {
-                    $_like = implode( "%'$suf_like " . $op . " " . $pre_field . $wpdb->terms . ".name" . $suf_field . " LIKE $pre_like'%", $words );
-                } else {
-                    $_like = $s;
-                }
-                $parts[] = "( " . $pre_field . $wpdb->terms . ".name" . $suf_field . " LIKE $pre_like'$wcl" . $_like . "$wcr'$suf_like )";
-
-                $relevance_parts[] = "(case when
-                (" . $pre_field . $wpdb->terms . ".name" . $suf_field . " = '$s')
-                 then 5 else 0 end)";
-			}
-			/*---------------------------------------------------------------*/
-
-			/*---------------------- Custom Fields --------------------------*/
-			if ( $sd['search_all_cf'] == 1 ) {
-				$words = $options['set_exactonly'] == 1 ? array( $s ) : $_s;
-				if ( count( $_s ) > 0 ) {
-					$_like = implode( "%'$suf_like " . $op . " " . $pre_field . $wpdb->postmeta . ".meta_value" . $suf_field . " LIKE $pre_like'%", $words );
-				} else {
-					$_like = $s;
-				}
-				$parts[] = "(  " . $pre_field . $wpdb->postmeta . ".meta_value" . $suf_field . " LIKE $pre_like'$wcl" . $_like . "$wcr'$suf_like )";
-				$postmeta_join = "LEFT JOIN $wpdb->postmeta ON $wpdb->postmeta.post_id = $wpdb->posts.ID";
-			} else if ( isset( $sd['selected-customfields'] ) ) {
-				$selected_customfields = $sd['selected-customfields'];
-				if ( is_array( $selected_customfields ) && count( $selected_customfields ) > 0 ) {
-					$words = $options['set_exactonly'] == 1 ? array( $s ) : $_s;
-
-					foreach ( $selected_customfields as $cfield ) {
-						if ( count( $_s ) > 0 ) {
-							$_like = implode( "%'$suf_like " . $op . " " . $pre_field . $wpdb->postmeta . ".meta_value" . $suf_field . " LIKE $pre_like'%", $words );
-						} else {
-							$_like = $s;
-						}
-						$parts[] = "( $wpdb->postmeta.meta_key='$cfield' AND " . $pre_field . $wpdb->postmeta . ".meta_value" . $suf_field . " LIKE $pre_like'$wcl" . $_like . "$wcr'$suf_like )";
-					}
-					$postmeta_join = "LEFT JOIN $wpdb->postmeta ON $wpdb->postmeta.post_id = $wpdb->posts.ID";
-
-				}
-			}
-			/*---------------------------------------------------------------*/
+                $this->parts[] = array( $parts, $relevance_parts );
+                $relevance_added = true;
+            }
 
 
 			// ------------------------ Categories/taxonomies ----------------------
@@ -447,21 +451,21 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 			/*---------------------------------------------------------------*/
 
 			/*------------------------- Build like --------------------------*/
-			$like_query = implode( ' OR ', $parts );
+			/*$like_query = implode( ' OR ', $parts );
 			if ( $like_query == "" ) {
 				$like_query = "(1)";
 			} else {
 				$like_query = "($like_query)";
-			}
+			}*/
 			/*---------------------------------------------------------------*/
 
 			/*---------------------- Build relevance ------------------------*/
-			$relevance = implode( ' + ', $relevance_parts );
+			/*$relevance = implode( ' + ', $relevance_parts );
 			if ( $relevance == "" ) {
 				$relevance = "(1)";
 			} else {
 				$relevance = "($relevance)";
-			}
+			}*/
 			/*---------------------------------------------------------------*/
 
 
@@ -496,7 +500,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 					FROM " . $wpdb->base_prefix . "icl_translations as wpml
 					WHERE
 	                    $_wpml_query_id_field = wpml.element_id AND
-	                    wpml.language_code = '" . $this->escape( $options['wpml_lang'] ) . "' AND
+	                    wpml.language_code = '" . ASL_Helpers::escape( $options['wpml_lang'] ) . "' AND
 	                    wpml.element_type IN ('$wpml_post_types')
                 )";
 
@@ -571,7 +575,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 			) as author,
 			'' as ttid,
 			$wpdb->posts.post_type as post_type,
-			$relevance as relevance
+			{relevance_query} as relevance
     	FROM $wpdb->posts
 			$postmeta_join
 			$term_join
@@ -582,7 +586,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
                 $cf_select
             AND $post_statuses
             AND $term_query
-            AND $like_query
+            AND {like_query}
             AND $exclude_posts
             AND ( $wpml_query )
             $polylang_query
@@ -616,6 +620,10 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 				);
 			}
 
+			$querystr = $this->build_query( $this->parts, $querystr, array(
+                'keyword_logic' => $kw_logic,
+                '_post_use_relevance' => 1
+            ));
 			$pageposts = $wpdb->get_results( $querystr, OBJECT );
 
             wd_asl()->debug->pushData(
@@ -631,6 +639,80 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 			$this->results = $pageposts;
 			return $pageposts;
 		}
+
+        /**
+         * Builds the query from the parts
+         *
+         * @param $parts array LIKE and Relevance parts
+         * @param $query string the search query
+         * @param $argp array arguments passed
+         *
+         * @return string query
+         */
+        protected function build_query( $parts, $query, $argp = array() ) {
+
+            $args = array_merge(array(
+                'keyword_logic' => 'OR',
+                '_post_use_relevance' => 1
+            ), $argp);
+            $kw_logic = str_replace('EX', '', strtoupper( $args['keyword_logic'] ) );
+            $kw_logic = $kw_logic != 'AND' && $kw_logic != 'OR' ? 'AND' : $kw_logic;
+
+            $r_parts = array(); // relevance parts
+
+            /*------------------------- Build like --------------------------*/
+            $exact_query = '';
+            $like_query_arr = array();
+            foreach ( $parts as $k=>$part ) {
+                if ( $k == 0 )
+                    $exact_query = '(' . implode(' OR ', $part[0]) . ')';
+                else
+                    $like_query_arr[] = '(' . implode(' OR ', $part[0]) . ')';
+            }
+            $like_query = implode(' ' . $kw_logic . ' ', $like_query_arr);
+
+            // When $exact query is empty, then surely $like_query must be empty too, see above
+            if ( $exact_query == '' ) {
+                $like_query = "(1)";
+            } else {
+                // Both $like_query and $exact_query set
+                if ( $like_query != '' ) {
+                    $like_query = "( $exact_query OR $like_query )";
+                } else {
+                    $like_query = "( $exact_query )";
+                }
+            }
+            /*---------------------------------------------------------------*/
+
+            /*---------------------- Build relevance ------------------------*/
+            foreach ( $parts as $part ) {
+                if ( isset($part[1]) && count($part[1]) > 0 )
+                    $r_parts = array_merge( $r_parts, $part[1] );
+            }
+            $relevance = implode( ' + ', $r_parts );
+            if ( $args['_post_use_relevance'] != 1 || $relevance == "" ) {
+                $relevance = "(1)";
+            } else {
+                $relevance = "($relevance)";
+            }
+            /*---------------------------------------------------------------*/
+
+            if ( isset($this->remaining_limit, $this->limit_start) ) {
+                if ($this->limit_start != 0)
+                    $limit = $this->limit_start . ", " . $this->remaining_limit;
+                else
+                    $limit = $this->remaining_limit;
+            } else {
+                $limit = 10;
+            }
+
+            return str_replace(
+                array( "{relevance_query}", "{like_query}", "{remaining_limit}" ),
+                array( $relevance, $like_query, $limit ),
+                $query
+            );
+
+        }
 
         protected function build_cff_query( $post_id_field, $args ) {
             global $wpdb;
@@ -816,12 +898,6 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
             $performance_options = get_option('asl_performance');
             $comp_options = wd_asl()->o['asl_compatibility'];
 
-			if ( is_multisite() ) {
-				$home_url = network_home_url();
-			} else {
-				$home_url = home_url();
-			}
-
 			foreach ( $pageposts as $k => $v ) {
 				$r          = &$pageposts[ $k ];
 				$r->title   = w_isset_def( $r->title, null );
@@ -857,7 +933,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
                 if ( isset( $options['wpml_lang'] )
                     && w_isset_def( $sd['wpml_compatibility'], 1 ) == 1
                 )
-                    $r->link = apply_filters( 'wpml_permalink', $r->link, $this->escape( $options['wpml_lang'] ) );
+                    $r->link = apply_filters( 'wpml_permalink', $r->link, ASL_Helpers::escape( $options['wpml_lang'] ) );
 
 				$image_settings = $sd['image_options'];
 				if ( $image_settings['show_images'] != 0 ) {
@@ -922,6 +998,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
                                 }
                             }
 						}
+						break;
 					default:
 						if ( isset($wc_prod_var_o) ) {
 							$r->title = $wc_prod_var_o->get_title();
@@ -935,6 +1012,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 					$sd['striptagsexclude'] = "<a><span>";
 				}
 
+				$_content = '';
 				switch ($sd['descriptionfield']) {
                     case '1':
                         if (function_exists('qtranxf_use')) {
@@ -969,6 +1047,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
                                 }
                             }
                         }
+                        break;
 					default: //including option '0', alias content
 						if ( function_exists( 'qtranxf_use' ) ) {
 							global $q_config;
@@ -1058,20 +1137,19 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 
 		/**
 		 * Fetches an image for BFI class
+         * @param $post WP_POst Post object
+         * @return string image URL
 		 */
 		function getBFIimage( $post ) {
             $sd = $this->searchData;
 
 			if ( ! isset( $post->image ) || $post->image == null ) {
-				$home_url = network_home_url();
-				$home_url = home_url();
 
 				if ( ! isset( $post->id ) ) {
 					return "";
 				}
-				$i  = 1;
 				$im = "";
-				for ( $i == 1; $i < 6; $i ++ ) {
+				for ( $i = 1; $i < 6; $i ++ ) {
 					switch ( $this->imageSettings[ 'image_source' . $i ] ) {
 						case "featured":
 							if ( $this->imageSettings['image_source_featured'] == "original" ) {
@@ -1085,7 +1163,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 							}
 							break;
 						case "content":
-                            if ($sd['showdescription'] == 0)
+                            if ( $sd['showdescription'] == 0 )
                                 $content = get_post_field('post_content', $post->id);
                             else
                                 $content = $post->content;
@@ -1146,7 +1224,8 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 		 * @param $needle string context
 		 * @param $context int length of the context
 		 * @param $maxlength int maximum length of the string in characters
-		 * @param $str_length_limit source string maximum length
+		 * @param $str_length_limit int source string maximum length
+         * @param $false_on_no_match bool to return boolean false if no matches were found
 		 * @return string
 		 */
 		public function context_find($str, $needle, $context, $maxlength, $str_length_limit = 25000, $false_on_no_match = false) {
@@ -1243,4 +1322,3 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 
 	}
 }
-?>
