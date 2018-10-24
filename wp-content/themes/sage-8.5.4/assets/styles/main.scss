@@ -62,6 +62,22 @@ iframe{
 	max-width: 100%;
 }
 
+.nav-pills{
+	.nav-link{
+		margin-right: .5rem;
+		background-color: $off-white;
+		&:hover{
+			color: white;		
+			background-color: $earth;
+		}
+		&.active{
+			color: white;
+			background-color: lighten($earth, 10%); 
+			text-decoration: none;			
+		}
+	}
+}
+
 h1, h2, h3{
 	a{
 
@@ -215,9 +231,43 @@ main.main{
 }
 
 /*FLEX CONTENT*/
+
+
+
+.main-page-content__inner{
+	.content-section{
+		@include make-col-ready();
+		@include make-col(12);
+	}
+}
+
+
 .content-section{
 	position: relative;
 	/*background: ;*/
+	&.section-width--one-half{
+		@include make-col-ready();
+		@include make-col(6); 
+	}
+	&.section-width--one-third{ 
+		@include make-col-ready();
+		@include make-col(4); 
+	}
+	&.section-width--one-third,
+	&.section-width--one-half{
+		.grid-item{
+			@include make-col(12); 
+		}	 
+	}
+	&.section-width--one-whole{
+		@include make-col-ready(); 
+		@include make-col(12); 
+		.grid-item{
+			@include media-breakpoint-up(lg){
+				@include make-col(6);  
+			}
+		}	
+	}	
 	.content-section__header,
 	.content-section__inner,
 	.content-section__image{
@@ -228,7 +278,7 @@ main.main{
 		text-align: center;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: center; 
 		img{
 			width: 100%;
 			max-width: 400px;
@@ -236,7 +286,7 @@ main.main{
 	}
 	.content-section__call-to-action{
 		margin-bottom: 2rem;
-		margin-top: 2rem;
+		margin-top: 2rem; 
 	}
 	&.header-border{
 		h2, h3{
@@ -819,14 +869,14 @@ footer.content-info{
 		background: white;
 	}
 	&.grid-item--width-one-third{
-		@include make-col(12);
+		/*@include make-col(12);*/
 	}	
 	&.grid-item--width-two-thirds{
-		@include make-col(12);
+		/*@include make-col(12);*/
 	}		
 	&.grid-item--width-one-half{
 		@include media-breakpoint-up(lg){
-			@include make-col(6);
+			/*@include make-col(6);*/
 		}
 	}
 	&.grid-item--width-one-half, 
@@ -920,7 +970,7 @@ footer.content-info{
 .page-content-container.no-sidebar{
 	.grid-item.visualization.grid-item--width-one-whole{
 		@include media-breakpoint-up(xl){
-			@include make-col(6);
+			/*@include make-col(6);*/ 
 		}
 	}
 }

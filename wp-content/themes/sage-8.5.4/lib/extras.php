@@ -77,9 +77,17 @@ function filter_archive( $query ) {
         $meta_query[] = array(
           'relation' => 'AND',
           array(
-            'key'     => 'embed',
-            'compare' => '!=',
-            'value'   => ''        
+            'relation' => 'OR',          
+            array(
+              'key'     => 'embed',
+              'compare' => '!=',
+              'value'   => ''        
+            ),
+            array(
+              'key'     => 'data_source_id',
+              'compare' => '!=',
+              'value'   => ''        
+            )
           )
         ); 
       endif;
@@ -302,6 +310,12 @@ function render_badges($post_item){
   if($post_item):
     include(locate_template('templates/badges.php'));
   endif;  
+}
+
+function render_visualization($post_item){
+  if($post_item):
+    include(locate_template('templates/visualization-embed.php'));
+  endif;    
 }
 
 function render_tags($post_item){

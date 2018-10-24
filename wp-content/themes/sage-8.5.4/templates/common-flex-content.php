@@ -38,6 +38,16 @@
 <?php else: ?>
 	<?php $classes .= 'level--sub'.get_sub_field('top_level'); ?>	
 <?php endif; ?>
+<?php if(get_sub_field('section_width') && is_string(get_sub_field('section_width'))): ?>
+	<?php $classes .= ' section-width--'.get_sub_field('section_width'); ?>
+<?php else: ?>
+	<?php $classes .= ' section-width--one-whole'; ?>
+<?php endif; ?>
+<?php if(get_sub_field('content_width') && is_string(get_sub_field('content_width'))): ?>
+	<?php $classes .= ' section-content-width--'.get_sub_field('content_width'); ?>
+<?php else: ?>
+	<?php $classes .= ' section-content-width--one-half'; ?>
+<?php endif; ?>
 <?php if(get_sub_field('image_alignment') && is_string(get_sub_field('image_alignment'))): ?>
 	<?php $classes .= ' image-align--'.get_sub_field('image_alignment'); ?>
 <?php endif; ?>

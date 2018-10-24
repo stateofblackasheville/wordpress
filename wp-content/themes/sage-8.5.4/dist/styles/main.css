@@ -8412,6 +8412,17 @@ body {
 iframe {
   max-width: 100%; }
 
+.nav-pills .nav-link {
+  margin-right: .5rem;
+  background-color: #efebee; }
+  .nav-pills .nav-link:hover {
+    color: white;
+    background-color: #775e54; }
+  .nav-pills .nav-link.active {
+    color: white;
+    background-color: #95766a;
+    text-decoration: none; }
+
 h1, h2, h3 {
   /*font-family: 'Montserrat';*/ }
 
@@ -8567,9 +8578,49 @@ main.main {
   color: #7c8492; }
 
 /*FLEX CONTENT*/
+.main-page-content__inner .content-section {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 100%;
+  max-width: 100%; }
+
 .content-section {
   position: relative;
   /*background: ;*/ }
+  .content-section.section-width--one-half {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 50%;
+    max-width: 50%; }
+  .content-section.section-width--one-third {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%; }
+  .content-section.section-width--one-third .grid-item, .content-section.section-width--one-half .grid-item {
+    flex: 0 0 100%;
+    max-width: 100%; }
+  .content-section.section-width--one-whole {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 100%;
+    max-width: 100%; }
+    @media (min-width: 992px) {
+      .content-section.section-width--one-whole .grid-item {
+        flex: 0 0 50%;
+        max-width: 50%; } }
   .content-section .content-section__header,
   .content-section .content-section__inner,
   .content-section .content-section__image {
@@ -9034,15 +9085,12 @@ footer.content-info {
     border: 1px solid #eee;
     background: white; }
   .grid-item.grid-item--width-one-third {
-    flex: 0 0 100%;
-    max-width: 100%; }
+    /*@include make-col(12);*/ }
   .grid-item.grid-item--width-two-thirds {
-    flex: 0 0 100%;
-    max-width: 100%; }
+    /*@include make-col(12);*/ }
   @media (min-width: 992px) {
     .grid-item.grid-item--width-one-half {
-      flex: 0 0 50%;
-      max-width: 50%; } }
+      /*@include make-col(6);*/ } }
   @media (min-width: 768px) and (max-width: 991.98px) {
     .grid-item.grid-item--width-one-half, .grid-item.grid-item--width-one-third {
       flex: 0 0 100%;
@@ -9123,8 +9171,7 @@ footer.content-info {
 
 @media (min-width: 1200px) {
   .page-content-container.no-sidebar .grid-item.visualization.grid-item--width-one-whole {
-    flex: 0 0 50%;
-    max-width: 50%; } }
+    /*@include make-col(6);*/ } }
 
 /*VISUALIZATION GRID ITEMS*/
 .grid-item.visualization .grid-item__row {
