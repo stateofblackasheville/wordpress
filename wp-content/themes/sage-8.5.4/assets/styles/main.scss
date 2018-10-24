@@ -195,6 +195,7 @@ main.main{
 	white-space: normal;
 	&.soba-btn--large{
 		@include button-size(1.25rem, 2.5rem, 1.25rem, 1em, .1rem);
+		margin: .5rem 0;
 	}
 	&.soba-btn--white{
 		@include button-variant($off-white, darken($off-white, 10%), darken($off-white, 10%));
