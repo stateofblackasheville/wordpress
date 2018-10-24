@@ -100,17 +100,19 @@
 			<?php endif; ?>		
 			<?php if(get_sub_field('title') || get_sub_field('description')): ?>
 				<div class="content-section__header">
-					<?php if(get_sub_field('top_level_section') || get_row_layout() == 'banner_content'): ?>
-						<h2 style="<?php echo $header_color_styles; ?>">
-					<?php else: ?>
-						<h3 style="<?php echo $header_color_styles; ?>">
+					<?php if(get_sub_field('title')): ?>
+						<?php if(get_sub_field('top_level_section') || get_row_layout() == 'banner_content'): ?>
+							<h2 style="<?php echo $header_color_styles; ?>">
+						<?php else: ?>
+							<h3 style="<?php echo $header_color_styles; ?>">
+						<?php endif; ?>
+							<?php the_sub_field('title'); ?>
+						<?php if(get_sub_field('top_level_section')): ?>						
+							</h2>
+						<?php else: ?>
+							</h3>
+						<?php endif; ?>	
 					<?php endif; ?>
-						<?php the_sub_field('title'); ?>
-					<?php if(get_sub_field('top_level_section')): ?>						
-						</h2>
-					<?php else: ?>
-						</h3>
-					<?php endif; ?>	
 					<?php if(get_sub_field('description')): ?>
 						<div style="<?php echo $content_color_styles; ?>" class="rte rte--georgia <?php echo $section_description_classes; ?>">
 							<?php the_sub_field('description'); ?>

@@ -8531,6 +8531,11 @@ main.main {
     .soba-btn:not(:disabled):not(.disabled):active:focus, .soba-btn:not(:disabled):not(.disabled).active:focus,
     .show > .soba-btn.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(223, 30, 44, 0.5); }
+  .soba-btn.soba-btn--large {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.25rem;
+    line-height: 1em;
+    border-radius: 0.1rem; }
   .soba-btn.soba-btn--white {
     color: #212529;
     background-color: #efebee;
@@ -9535,7 +9540,12 @@ body.home .content-section__inner-container,
       /*@include make-col-offset(0);*/ } }
 
 .main-page-content .main-page-content__content {
-  /*margin-top: 1rem;*/ }
+  /*margin-top: 1rem;*/
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; }
 
 .page-template-page-borderless-sections .page-header__content {
   text-align: center; }
