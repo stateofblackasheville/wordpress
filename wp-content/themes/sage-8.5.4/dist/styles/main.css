@@ -8423,6 +8423,10 @@ iframe {
     background-color: #95766a;
     text-decoration: none; }
 
+.dropdown-item.active, .dropdown-item:active {
+  background: #aa9187;
+  color: white !important; }
+
 h1, h2, h3 {
   /*font-family: 'Montserrat';*/ }
 

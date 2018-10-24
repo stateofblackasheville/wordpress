@@ -78,6 +78,11 @@ iframe{
 	}
 }
 
+.dropdown-item.active, .dropdown-item:active{
+	background: lighten($earth, 20%);
+	color: white !important;
+}
+
 h1, h2, h3{
 	a{
 
