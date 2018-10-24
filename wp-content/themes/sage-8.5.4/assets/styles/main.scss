@@ -215,7 +215,8 @@ main.main{
 		font-size: 1rem;
 		padding: .5rem;
 		clear: left;
-	}		
+	}
+	text-decoration: none !important;		
 }
 
 
@@ -252,11 +253,15 @@ main.main{
 	/*background: ;*/
 	&.section-width--one-half{
 		@include make-col-ready();
-		@include make-col(6); 
+		@include media-breakpoint-up(lg){
+			@include make-col(6); 
+		}
 	}
 	&.section-width--one-third{ 
 		@include make-col-ready();
-		@include make-col(4); 
+		@include media-breakpoint-up(lg){
+			@include make-col(4); 
+		}
 	}
 	&.section-width--one-third,
 	&.section-width--one-half{
@@ -296,7 +301,9 @@ main.main{
 		@include make-col-ready();		
 	}
 	.content-section__image{
-		@include make-col(6); 
+		@include media-breakpoint-up(lg){
+			@include make-col(6); 
+		}
 		text-align: center;
 		display: flex;
 		align-items: center;
