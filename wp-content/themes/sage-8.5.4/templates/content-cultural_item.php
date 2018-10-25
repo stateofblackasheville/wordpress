@@ -31,7 +31,9 @@
 				                <a href="<?php echo $image['url']; ?>" data-fancybox="gallery" data-caption="<?php echo $image['caption']; ?>">
 				                     <img src="<?php echo $image['sizes']['square']; ?>" alt="<?php echo $image['alt']; ?>" />
 				                </a>
-				                <p><?php echo $image['caption']; ?></p>
+				                <?php if(!empty($image['caption'])): ?>
+				                	<p><?php echo $image['caption']; ?></p>
+				                <?php endif; ?>
 				            </div>
 				        <?php endforeach; ?>
 				    </div>

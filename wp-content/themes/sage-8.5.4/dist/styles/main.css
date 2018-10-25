@@ -8403,7 +8403,7 @@ body {
   /*font-family: 'Playfair Display'; */
   font-family: 'proxima-nova'; }
 
-.georgia, .soba-btn, .tags {
+.georgia, .soba-btn, .tags, .masonry-item p {
   font-family: Georgia; }
 
 .proxima-nova, .badge {
@@ -9949,8 +9949,14 @@ body.home .content-section__inner-container,
 
 .masonry-item {
   width: 33.33%;
+  padding: .25rem;
   /*height: 300px;*/ }
   .masonry-item a {
     display: block; }
   .masonry-item img {
-    max-width: 100%; }
+    width: 100%; }
+  .masonry-item p {
+    margin-top: .5rem;
+    color: #775e54;
+    font-style: italic;
+    font-size: .75rem; }

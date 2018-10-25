@@ -1653,12 +1653,20 @@ body.home,
 
 .masonry-item{
 	width: 33.33%;
+	padding: .25rem;
 	/*height: 300px;*/ 
 	a{
 		display: block;
 	}
 	img{
-		max-width: 100%;
+		width: 100%;
+	}
+	p{
+		margin-top: .5rem;
+		color: $earth;
+		@extend .georgia;
+		font-style: italic;
+		font-size: .75rem;
 	}
 }
 
