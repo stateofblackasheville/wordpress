@@ -137,6 +137,13 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "cultural_item"
+            }
         ]
     ],
     "menu_order": -1,
@@ -147,5 +154,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1535572393
+    "modified": 1540506398
 }

@@ -64,6 +64,19 @@ var PRC = {};
           ]          
         });
 
+        var elem = document.querySelector('.masonry');
+        var msnry = new Masonry( elem, {
+          // options
+          itemSelector: '.masonry-item',
+          // percentPosition: true
+        });
+
+        // element argument can be a selector string
+        //   for an individual element
+        var msnry = new Masonry( '.masonry', {
+          // options
+        });      
+
         $(document).on('click', '[data-drop-container] a', function(e){
           e.preventDefault();
           el = $(this);

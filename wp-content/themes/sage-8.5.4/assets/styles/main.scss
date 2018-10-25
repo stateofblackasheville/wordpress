@@ -1651,3 +1651,14 @@ body.home,
 
 }
 
+.masonry-item{
+	width: 33.33%;
+	/*height: 300px;*/ 
+	a{
+		display: block;
+	}
+	img{
+		max-width: 100%;
+	}
+}
+

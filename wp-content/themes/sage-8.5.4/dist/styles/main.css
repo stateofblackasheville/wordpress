@@ -9946,3 +9946,11 @@ body.home .content-section__inner-container,
     /*background: $off-white;*/
     margin: 1rem 0;
     text-align: center; }
+
+.masonry-item {
+  width: 33.33%;
+  /*height: 300px;*/ }
+  .masonry-item a {
+    display: block; }
+  .masonry-item img {
+    max-width: 100%; }
