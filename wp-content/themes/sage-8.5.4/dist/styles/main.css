@@ -9552,6 +9552,8 @@ body.home .content-section__inner-container,
       flex: 0 0 100%;
       max-width: 100%;
       /*@include make-col-offset(0);*/ } }
+  .page-template-page-data-focus .level--top .content-section__header {
+    margin-bottom: 0 !important; }
 
 .main-page-content .main-page-content__content {
   /*margin-top: 1rem;*/

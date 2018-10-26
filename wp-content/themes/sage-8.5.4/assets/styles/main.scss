@@ -1285,6 +1285,11 @@ body.home,
 		.page-sidebar{
 			@include make-col(12);
 			/*@include make-col-offset(0);*/
+		} 
+	}
+	.level--top{
+		.content-section__header{
+			margin-bottom: 0 !important;  
 		}
 	}	
 /*	@include media-breakpoint-down(sm){
