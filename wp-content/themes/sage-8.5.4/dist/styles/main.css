@@ -9432,6 +9432,10 @@ footer.content-info {
   padding-right: 15px;
   padding-left: 15px; }
 
+.single-cultural_item .page-header--basic .page-header__content {
+  padding-top: 2rem;
+  padding-bottom: 1rem; }
+
 .page-header .content-section__bg {
   /*background-attachment: fixed;*/
   background-size: cover; }
@@ -9961,6 +9965,7 @@ body.home .content-section__inner-container,
     margin: 1rem 0;
     text-align: center; }
 
+/*CULTURAL ITEMS*/
 .masonry-item {
   width: 33.33%;
   padding: .25rem;
@@ -9974,3 +9979,12 @@ body.home .content-section__inner-container,
     color: #775e54;
     font-style: italic;
     font-size: .75rem; }
+
+.item-content.item-content--cultural-item {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; }
+  .item-content.item-content--cultural-item .item-content__inner {
+    /*border-top: 1px solid $off-white;		*/ }

@@ -1180,6 +1180,15 @@ footer.content-info{
 	}
 }
 
+.single-cultural_item{
+	.page-header--basic{	
+		.page-header__content{
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
+	}
+}
+
 .page-header{
 	.content-section__bg{
 		/*background-attachment: fixed;*/
@@ -1669,6 +1678,7 @@ body.home,
 
 }
 
+/*CULTURAL ITEMS*/
 .masonry-item{
 	width: 33.33%;
 	padding: .25rem;
@@ -1685,6 +1695,13 @@ body.home,
 		@extend .georgia;
 		font-style: italic;
 		font-size: .75rem;
+	}
+}
+
+.item-content.item-content--cultural-item{
+	@include make-col-ready();
+	.item-content__inner{
+		/*border-top: 1px solid $off-white;		*/
 	}
 }
 
