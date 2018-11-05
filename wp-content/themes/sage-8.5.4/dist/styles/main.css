@@ -9994,6 +9994,12 @@ body.home .content-section__inner-container,
   top: 0;
   width: 100%;
   z-index: 9999; }
+  #section-nav .dropdown {
+    position: static; }
+  #section-nav .dropdown-menu {
+    width: 100%; }
+  #section-nav .dropdown-item {
+    white-space: normal; }
   #section-nav .dropdown-toggle {
     display: none; }
     #section-nav .dropdown-toggle.active {

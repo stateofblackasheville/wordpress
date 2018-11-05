@@ -1710,6 +1710,15 @@ body.home,
 	top: 0;
 	width: 100%;    
 	z-index: 9999;
+	.dropdown{
+		position: static;
+	}
+	.dropdown-menu{
+		width: 100%;
+	}
+	.dropdown-item{
+		white-space: normal;
+	}
 	.dropdown-toggle{
 		display: none;
 		&.active{
