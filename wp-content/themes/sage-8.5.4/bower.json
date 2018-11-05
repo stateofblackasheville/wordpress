@@ -12,7 +12,8 @@
     "slick-carousel": "^1.8.1",
     "playfairDisplay": "https://google-fonts.azurewebsites.net/googleFonts/playfairDisplay?family=Playfair+Display:400,400i,700,700",
     "fancybox": "^3.4.1",
-    "masonry-layout": "masonry#^4.2.2"
+    "masonry-layout": "masonry#^4.2.2",
+    "jquery-sticky": "^1.0.4"
   },
   "overrides": {
     "bootstrap": {

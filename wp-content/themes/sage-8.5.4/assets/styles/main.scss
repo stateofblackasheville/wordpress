@@ -1706,24 +1706,47 @@ body.home,
 }
 
 #section-nav{
-	position: fixed;
-	top: 0;
+	/*position: fixed;*/
+	/*top: 0;*/
+	h3{
+		margin-bottom: 0;
+		max-width: 50%;
+	}
 	width: 100%;    
-	z-index: 9999;
+	z-index: 9999 !important;
+	.nav-item{
+		&.header{
+			display: none;
+			&.active{
+				display: inline-block;
+			}
+		}
+	}
 	.dropdown{
-		position: static;
+		@include media-breakpoint-down(sm){
+			position: static;
+		}
 	}
 	.dropdown-menu{
-		max-width: 100%;
+		/*max-width: 100%;*/
+		right: 0;
+		left: auto !important;
 	}
 	.dropdown-item{
-		white-space: normal;
+		@include media-breakpoint-down(sm){
+			white-space: normal;
+		}
 	}
 	.dropdown-toggle{
-		display: none;
+		/*display: none;*/
 		&.active{
-			display: inline-block;
+			/*display: inline-block;*/
 		} 
+	}
+	@include media-breakpoint-down(sm){
+		h3{
+			font-size: 1rem; 
+		}
 	}
 }
 

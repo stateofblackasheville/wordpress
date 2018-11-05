@@ -116,6 +116,9 @@ endif;
 </div>
 <?php if($data_focus && !empty($section_pages)): ?>
 <nav id="section-nav" class="navbar navbar-light bg-light">
+	<h3 class="current-section">
+
+	</h3>
   <ul class="nav nav-pills">
   	<?php if(false): ?>
 		<?php if( have_rows('content') ): ?>
@@ -124,7 +127,7 @@ endif;
 					<?php $flex_count++; ?>
 					<?php $section_id = sanitize_title(get_sub_field('title')); ?>
 					<?php if(get_sub_field('title')): ?>
-					    <li class="nav-item">
+					    <li class="nav-item header">
 					      <a class="nav-link" href="#<?php echo $section_id; ?>-<?php echo $flex_count; ?>"><?php echo get_sub_field('title'); ?></a>
 					    </li>
 					<?php endif; ?>
