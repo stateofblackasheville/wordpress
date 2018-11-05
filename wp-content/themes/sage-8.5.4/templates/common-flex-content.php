@@ -83,11 +83,11 @@
 	<?php $section_description_classes .= ' '.get_sub_field('section_description_classes'); ?> 
 <?php endif; ?>    	
 
+<?php $count = $args; ?>
 
 <?php $link = get_sub_field('section_link'); ?>	
-
-
-<div class="content-section background-type__<?php the_sub_field('background_type'); ?> content-section--<?php echo get_row_layout(); ?> <?php echo $classes; ?>">
+<?php $section_id = sanitize_title(get_sub_field('title')); ?>
+<div class="content-section background-type__<?php the_sub_field('background_type'); ?> content-section--<?php echo get_row_layout(); ?> <?php echo $classes; ?>" id="<?php echo $section_id; ?>-<?php echo $args; ?>">
 	<div class="content-section__inner-container">
 		<div class="content-section__row">
 			<?php if($background_image): ?>

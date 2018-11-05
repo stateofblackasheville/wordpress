@@ -9434,7 +9434,7 @@ footer.content-info {
 
 .single-cultural_item .page-header--basic .page-header__content {
   padding-top: 2rem;
-  padding-bottom: 1rem; }
+  padding-bottom: 2rem; }
 
 .page-header .content-section__bg {
   /*background-attachment: fixed;*/
@@ -9988,3 +9988,13 @@ body.home .content-section__inner-container,
   padding-left: 15px; }
   .item-content.item-content--cultural-item .item-content__inner {
     /*border-top: 1px solid $off-white;		*/ }
+
+#section-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999; }
+  #section-nav .dropdown-toggle {
+    display: none; }
+    #section-nav .dropdown-toggle.active {
+      display: inline-block; }

@@ -115,6 +115,47 @@ endif;
 	</div> 
 </div>
 <?php if($data_focus && !empty($section_pages)): ?>
+<nav id="section-nav" class="navbar navbar-light bg-light">
+  <ul class="nav nav-pills">
+  	<?php if(false): ?>
+		<?php if( have_rows('content') ): ?>
+			<?php $flex_count = 0; ?>
+			<?php while ( have_rows('content') ) : the_row(); ?>
+					<?php $flex_count++; ?>
+					<?php $section_id = sanitize_title(get_sub_field('title')); ?>
+					<?php if(get_sub_field('title')): ?>
+					    <li class="nav-item">
+					      <a class="nav-link" href="#<?php echo $section_id; ?>-<?php echo $flex_count; ?>"><?php echo get_sub_field('title'); ?></a>
+					    </li>
+					<?php endif; ?>
+					<!-- END COMMON CONTENT SECTION STUFF -->	
+		    <?php endwhile; ?>
+		    <?php reset_rows(); ?>
+		<?php else : ?>
+			<!-- NOTHINGNESS -->
+		<?php endif; ?>
+	<?php endif; ?>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Jump To</a>
+      <div class="dropdown-menu">
+		<?php if( have_rows('content') ): ?>
+			<?php $flex_count = 0; ?>
+			<?php while ( have_rows('content') ) : the_row(); ?>
+					<?php $flex_count++; ?>
+					<?php $section_id = sanitize_title(get_sub_field('title')); ?>
+					<?php if(get_sub_field('title')): ?>
+					     <a class="dropdown-item" href="#<?php echo $section_id; ?>-<?php echo $flex_count; ?>"><?php echo get_sub_field('title'); ?></a>
+					<?php endif; ?>
+					<!-- END COMMON CONTENT SECTION STUFF -->	
+		    <?php endwhile; ?>
+		    <?php reset_rows(); ?>
+		<?php else : ?>
+			<!-- NOTHINGNESS -->
+		<?php endif; ?>
+      </div>
+    </li>	
+  </ul>
+</nav>
 <nav class="subnavigation">
 	<div class="container">
 		<div class="row">

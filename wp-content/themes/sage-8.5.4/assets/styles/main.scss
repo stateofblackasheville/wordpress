@@ -1705,3 +1705,16 @@ body.home,
 	}
 }
 
+#section-nav{
+	position: fixed;
+	top: 0;
+	width: 100%;    
+	z-index: 9999;
+	.dropdown-toggle{
+		display: none;
+		&.active{
+			display: inline-block;
+		} 
+	}
+}
+
