@@ -114,7 +114,7 @@ endif;
 		</div>			
 	</div> 
 </div>
-<?php if($data_focus && !empty($section_pages)): ?>
+<?php if($data_focus): ?>
 <nav id="section-nav" class="navbar navbar-light bg-light">
 	<h3 class="current-section">
 
@@ -159,6 +159,8 @@ endif;
     </li>	
   </ul>
 </nav>
+<?php endif; ?>	
+<?php if($data_focus && !empty($section_pages)): ?>
 <nav class="subnavigation">
 	<div class="container">
 		<div class="row">
