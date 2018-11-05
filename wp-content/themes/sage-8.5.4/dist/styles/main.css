@@ -9997,7 +9997,7 @@ body.home .content-section__inner-container,
   #section-nav .dropdown {
     position: static; }
   #section-nav .dropdown-menu {
-    width: 100%; }
+    max-width: 100%; }
   #section-nav .dropdown-item {
     white-space: normal; }
   #section-nav .dropdown-toggle {
