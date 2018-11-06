@@ -9989,6 +9989,12 @@ body.home .content-section__inner-container,
   .item-content.item-content--cultural-item .item-content__inner {
     /*border-top: 1px solid $off-white;		*/ }
 
+.section-anchor {
+  /*visibility: hidden;*/
+  position: absolute;
+  top: -80px;
+  /*height: 1px;*/ }
+
 #section-nav {
   /*position: fixed;*/
   /*top: 0;*/

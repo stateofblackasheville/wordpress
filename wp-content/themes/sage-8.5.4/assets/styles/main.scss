@@ -1705,6 +1705,13 @@ body.home,
 	}
 }
 
+.section-anchor{
+	/*visibility: hidden;*/
+	position:absolute;
+	top: -80px;
+	/*height: 1px;*/
+}
+
 #section-nav{
 	/*position: fixed;*/
 	/*top: 0;*/
