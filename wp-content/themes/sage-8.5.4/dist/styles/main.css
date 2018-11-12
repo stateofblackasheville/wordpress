@@ -8387,6 +8387,9 @@ body#tinymce {
 
 /*VARIABLES*/
 /*END*/
+table td {
+  border: 1px solid #ddd; }
+
 a {
   color: #775e54;
   word-wrap: break-word;

@@ -30,6 +30,12 @@ $green: #007a4d;
 $earth: darken(#866a5f, 5%);
 /*END*/
 
+table{
+	td{
+		border: 1px solid #ddd;
+	}
+}
+
 a{
 	color: $earth;
 	word-wrap: break-word;
