@@ -9412,6 +9412,10 @@ footer.content-info {
 .soba-visualization h1 {
   display: none; }
 
+.page-content-container.has-sidebar .grid-item.visualization {
+  flex: 0 0 100%;
+  max-width: 100%; }
+
 /*SIDEBAR ITEM*/
 .sidebar-item {
   margin-bottom: .5rem; }

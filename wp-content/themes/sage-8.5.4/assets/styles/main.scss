@@ -1028,6 +1028,8 @@ footer.content-info{
 	}
 }
 
+
+
 /*VISUALIZATION GRID ITEMS*/
 .grid-item.visualization{
 	.grid-item__row{
@@ -1155,6 +1157,12 @@ footer.content-info{
 .soba-visualization{
 	h1{
 		display: none;
+	}
+}
+
+.page-content-container.has-sidebar{
+	.grid-item.visualization{
+		@include make-col(12);
 	}
 }
 
