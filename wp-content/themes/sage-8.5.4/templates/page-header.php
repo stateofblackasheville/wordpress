@@ -141,15 +141,35 @@ endif;
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Jump To</a>
       <div class="dropdown-menu">
+      	<h6 class="dropdown-header">Current Section:</h6>
+      	<a href="<?php echo get_the_permalink($parent_page_id); ?>" class="dropdown-item">
+      		<span><?php echo get_the_title($parent_page_id); ?></span>
+      	</a>
+      	<div class="dropdown-divider"></div>
+		<?php if($data_focus && !empty($section_pages)): ?>
+			<h6 class="dropdown-header">Also In <?php echo get_the_title($parent_page_id); ?>:</h6>
+			<?php foreach($section_pages as $section_page): ?>
+				<a class="dropdown-item<?php if($section_page->ID == get_the_ID()): ?> active-page<?php endif; ?>" href="<?php the_permalink($section_page->ID); ?>">
+					<span><?php echo get_the_title($section_page->ID); ?></span>
+				</a>
+			<?php endforeach; ?>
+			<div class="dropdown-divider"></div>			
+		<?php endif; ?>      	
 		<?php if( have_rows('content') ): ?>
 			<?php $flex_count = 0; ?>
+			<h6 class="dropdown-header">Sections on this page:</h6>
 			<?php while ( have_rows('content') ) : the_row(); ?>
-					<?php $flex_count++; ?>
-					<?php $section_id = sanitize_title(get_sub_field('title')); ?>
-					<?php if(get_sub_field('title')): ?>
-					     <a class="dropdown-item" href="#<?php echo $section_id; ?>-<?php echo $flex_count; ?>"><?php echo get_sub_field('title'); ?></a>
-					<?php endif; ?>
-					<!-- END COMMON CONTENT SECTION STUFF -->	
+				<?php $flex_count++; ?>
+				<?php $section_id = sanitize_title(get_sub_field('title')); ?>
+				<?php if(get_sub_field('title')): ?>
+				    <a class="dropdown-item" href="#<?php echo $section_id; ?>-<?php echo $flex_count; ?>">
+				    	<?php if(get_sub_field('top_level_section') !== true): ?>
+				    		&nbsp;<ion-icon name="ios-arrow-forward"></ion-icon>
+				    	<?php endif; ?>
+				     	<span><?php echo get_sub_field('title'); ?></span>
+				    </a>
+				<?php endif; ?>
+				<!-- END COMMON CONTENT SECTION STUFF -->	
 		    <?php endwhile; ?>
 		    <?php reset_rows(); ?>
 		<?php else : ?>
@@ -160,7 +180,7 @@ endif;
   </ul>
 </nav>
 <?php endif; ?>	
-<?php if($data_focus && !empty($section_pages)): ?>
+<?php if($data_focus && !empty($section_pages) && false): ?>
 <nav class="subnavigation">
 	<div class="container">
 		<div class="row">

@@ -82,6 +82,9 @@ iframe{
 			text-decoration: none;			
 		}
 	}
+	.show > .nav-link{
+		background-color: lighten($earth, 10%);  
+	}	
 }
 
 .dropdown-item.active, .dropdown-item:active{
@@ -346,55 +349,55 @@ main.main{
 			border-bottom: 1px solid #eee;
 		}
 	}	
-	@include media-breakpoint-up(md){
+	/*@include media-breakpoint-up(md){*/
 		&.content-align--left,
 		&.content-align--right{
 			.content-section__header{
-				@include media-breakpoint-up(xl){
+				@include media-breakpoint-up(lg){
 					@include make-col(6);
 				}
 			}	
 		}		
 		&.header-width--one-third{
 			.content-section__header{
-				@include media-breakpoint-up(xl){
+				@include media-breakpoint-up(lg){
 					@include make-col(4); 
 				}
 			}
 			.content-section__inner,
 			.content-section__image{
-				@include media-breakpoint-up(xl){
+				@include media-breakpoint-up(lg){
 					@include make-col(8);
 				}
 			}		
 		}
 		&.header-width--one-half{
 			.content-section__header{
-				@include media-breakpoint-up(xl){
+				@include media-breakpoint-up(lg){
 					@include make-col(6);
 				}
 			}
 			.content-section__inner,
 			.content-section__image{
-				@include media-breakpoint-up(xl){
+				@include media-breakpoint-up(lg){
 					@include make-col(6);
 				}
 			}		
 		}
 		&.header-width--two-thirds{
 			.content-section__header{
-				@include media-breakpoint-up(xl){
+				@include media-breakpoint-up(lg){
 					@include make-col(8);
 				}
 			}
 			.content-section__inner,
 			.content-section__image{
-				@include media-breakpoint-up(xl){
+				@include media-breakpoint-up(lg){
 					@include make-col(4);
 				}
 			}		
 		}		
-	}
+	/*}*/
 	&.header-width--one-whole{
 		.content-section__header{
 			@include make-col(12);
@@ -1746,6 +1749,15 @@ body.home,
 			}
 		}
 	}
+	a{
+		text-decoration: none !important;
+		span{
+
+		}
+	} 
+	a.active-page{ 
+		background: darken($off-white, 10%); 
+	}	
 	.dropdown{
 		@include media-breakpoint-down(sm){
 			position: static;
@@ -1755,6 +1767,12 @@ body.home,
 		/*max-width: 100%;*/
 		right: 0;
 		left: auto !important;
+		max-height: 80vh;
+		overflow: scroll;
+		@include media-breakpoint-down(sm){
+			border: none;
+			margin-top: 0;
+		}
 	}
 	.dropdown-item{
 		@include media-breakpoint-down(sm){
@@ -1767,6 +1785,7 @@ body.home,
 			/*display: inline-block;*/
 		} 
 	}
+
 	@include media-breakpoint-down(sm){
 		h3{
 			font-size: 1rem; 

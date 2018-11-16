@@ -8426,6 +8426,9 @@ iframe {
     background-color: #95766a;
     text-decoration: none; }
 
+.nav-pills .show > .nav-link {
+  background-color: #95766a !important; }
+
 .dropdown-item.active, .dropdown-item:active {
   background: #aa9187;
   color: white !important; }
@@ -8604,7 +8607,9 @@ main.main {
 
 .content-section {
   position: relative;
-  /*background: ;*/ }
+  /*background: ;*/
+  /*@include media-breakpoint-up(md){*/
+  /*}*/ }
   .content-section.section-width--one-half {
     position: relative;
     width: 100%;
@@ -8697,44 +8702,37 @@ main.main {
     margin-top: 2rem; }
   .content-section.header-border h2, .content-section.header-border h3 {
     border-bottom: 1px solid #eee; }
-
-@media (min-width: 768px) and (min-width: 1200px) {
-  .content-section.content-align--left .content-section__header, .content-section.content-align--right .content-section__header {
-    flex: 0 0 50%;
-    max-width: 50%; } }
-
-@media (min-width: 768px) and (min-width: 1200px) {
-  .content-section.header-width--one-third .content-section__header {
-    flex: 0 0 33.3333333333%;
-    max-width: 33.3333333333%; } }
-
-@media (min-width: 768px) and (min-width: 1200px) {
-  .content-section.header-width--one-third .content-section__inner,
-  .content-section.header-width--one-third .content-section__image {
-    flex: 0 0 66.6666666667%;
-    max-width: 66.6666666667%; } }
-
-@media (min-width: 768px) and (min-width: 1200px) {
-  .content-section.header-width--one-half .content-section__header {
-    flex: 0 0 50%;
-    max-width: 50%; } }
-
-@media (min-width: 768px) and (min-width: 1200px) {
-  .content-section.header-width--one-half .content-section__inner,
-  .content-section.header-width--one-half .content-section__image {
-    flex: 0 0 50%;
-    max-width: 50%; } }
-
-@media (min-width: 768px) and (min-width: 1200px) {
-  .content-section.header-width--two-thirds .content-section__header {
-    flex: 0 0 66.6666666667%;
-    max-width: 66.6666666667%; } }
-
-@media (min-width: 768px) and (min-width: 1200px) {
-  .content-section.header-width--two-thirds .content-section__inner,
-  .content-section.header-width--two-thirds .content-section__image {
-    flex: 0 0 33.3333333333%;
-    max-width: 33.3333333333%; } }
+  @media (min-width: 992px) {
+    .content-section.content-align--left .content-section__header, .content-section.content-align--right .content-section__header {
+      flex: 0 0 50%;
+      max-width: 50%; } }
+  @media (min-width: 992px) {
+    .content-section.header-width--one-third .content-section__header {
+      flex: 0 0 33.3333333333%;
+      max-width: 33.3333333333%; } }
+  @media (min-width: 992px) {
+    .content-section.header-width--one-third .content-section__inner,
+    .content-section.header-width--one-third .content-section__image {
+      flex: 0 0 66.6666666667%;
+      max-width: 66.6666666667%; } }
+  @media (min-width: 992px) {
+    .content-section.header-width--one-half .content-section__header {
+      flex: 0 0 50%;
+      max-width: 50%; } }
+  @media (min-width: 992px) {
+    .content-section.header-width--one-half .content-section__inner,
+    .content-section.header-width--one-half .content-section__image {
+      flex: 0 0 50%;
+      max-width: 50%; } }
+  @media (min-width: 992px) {
+    .content-section.header-width--two-thirds .content-section__header {
+      flex: 0 0 66.6666666667%;
+      max-width: 66.6666666667%; } }
+  @media (min-width: 992px) {
+    .content-section.header-width--two-thirds .content-section__inner,
+    .content-section.header-width--two-thirds .content-section__image {
+      flex: 0 0 33.3333333333%;
+      max-width: 33.3333333333%; } }
   .content-section.header-width--one-whole .content-section__header {
     flex: 0 0 100%;
     max-width: 100%; }
@@ -10017,13 +10015,23 @@ body.home .content-section__inner-container,
     display: none; }
     #section-nav .nav-item.header.active {
       display: inline-block; }
+  #section-nav a {
+    text-decoration: none !important; }
+  #section-nav a.active-page {
+    background: #d8cfd6; }
   @media (max-width: 767.98px) {
     #section-nav .dropdown {
       position: static; } }
   #section-nav .dropdown-menu {
     /*max-width: 100%;*/
     right: 0;
-    left: auto !important; }
+    left: auto !important;
+    max-height: 80vh;
+    overflow: scroll; }
+    @media (max-width: 767.98px) {
+      #section-nav .dropdown-menu {
+        border: none;
+        margin-top: 0; } }
   @media (max-width: 767.98px) {
     #section-nav .dropdown-item {
       white-space: normal; } }
