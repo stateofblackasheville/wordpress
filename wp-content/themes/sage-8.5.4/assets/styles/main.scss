@@ -250,6 +250,27 @@ main.main{
 	}
 }
 
+.dropdown.show{
+	>a{
+		background: darken($off-white, 5%);
+	}
+}
+
+.navbar{
+	a{
+		text-decoration: none;
+	}	
+	.dropdown-menu .dropdown-menu{
+		display: block !important;
+		position: relative !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		border: 0 !important;
+		border-radius: 0 !important;
+		float: none !important;
+	}
+}
+
 /*FLEX CONTENT*/
 
 

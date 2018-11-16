@@ -13,7 +13,7 @@
 
         <?php
         if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'walker' => new WP_Bootstrap_Navwalker()]);
+          wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'depth' => 5, 'walker' => new WP_Bootstrap_Navwalker()]);
         endif;
         ?>
         <?php //get_search_form(true); ?>

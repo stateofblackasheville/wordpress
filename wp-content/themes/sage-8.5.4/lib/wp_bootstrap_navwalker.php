@@ -54,10 +54,10 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
    * @param int    $id     Current item ID.
    */
   public function end_el( &$output, $item, $depth = 0, $args = array() ) {
-    if($depth === 1){
+    if($depth > 0){
       if(strcasecmp( $item->attr_title, 'divider' ) == 0 || strcasecmp( $item->title, 'divider') == 0) {
         $output .= '</div>';
-      }else if ($depth === 1 && (strcasecmp( $item->attr_title, 'header') == 0 && $depth === 1)) {
+      }else if ($depth > 0 && (strcasecmp( $item->attr_title, 'header') == 0 && $depth > 0)) {
         $output .= '</h6>';
       }
     }else{
@@ -89,9 +89,9 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
     //( strcasecmp($item->attr_title, 'disabled' ) == 0 ) 
     
-    if($depth === 1 && (strcasecmp( $item->attr_title, 'divider' ) == 0 || strcasecmp( $item->title, 'divider') == 0)) {
+    if($depth > 0 && (strcasecmp( $item->attr_title, 'divider' ) == 0 || strcasecmp( $item->title, 'divider') == 0)) {
       $output .= $indent . '<div class="dropdown-divider">';
-    }else if ((strcasecmp( $item->attr_title, 'header') == 0 && $depth === 1) && $depth === 1){
+    }else if ((strcasecmp( $item->attr_title, 'header') == 0 && $depth > 0) && $depth > 0){
       $output .= $indent . '<h6 class="dropdown-header">' . esc_attr( $item->title );
     }else{
       $class_names = $value = '';
@@ -144,7 +144,12 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
       }
 
       $item_output = $args->before;
-      $item_output .= '<a'. $attributes .'>';
+
+      if($depth > 1):
+        $item_output .= '<a'. $attributes .'><ion-icon name="ios-arrow-forward"></ion-icon>&nbsp;';
+      else:
+        $item_output .= '<a'. $attributes .'>';
+      endif;
       
       /*
        * Icons

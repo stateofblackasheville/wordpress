@@ -8427,7 +8427,7 @@ iframe {
     text-decoration: none; }
 
 .nav-pills .show > .nav-link {
-  background-color: #95766a !important; }
+  background-color: #95766a; }
 
 .dropdown-item.active, .dropdown-item:active {
   background: #aa9187;
@@ -8594,6 +8594,21 @@ main.main {
 
 .navbar.nav-primary .navbar-collapse a {
   color: #7c8492; }
+
+.dropdown.show > a {
+  background: #e4dde2; }
+
+.navbar a {
+  text-decoration: none; }
+
+.navbar .dropdown-menu .dropdown-menu {
+  display: block !important;
+  position: relative !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  float: none !important; }
 
 /*FLEX CONTENT*/
 .main-page-content__inner .content-section {

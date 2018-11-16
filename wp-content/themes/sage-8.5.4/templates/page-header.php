@@ -142,7 +142,7 @@ endif;
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Jump To</a>
       <div class="dropdown-menu">
       	<h6 class="dropdown-header">Current Section:</h6>
-      	<a href="<?php echo get_the_permalink($parent_page_id); ?>" class="dropdown-item">
+      	<a href="<?php echo get_the_permalink($parent_page_id); ?>" class="dropdown-item<?php if($parent_page_id == get_the_ID()): ?> active-page<?php endif; ?>">
       		<span><?php echo get_the_title($parent_page_id); ?></span>
       	</a>
       	<div class="dropdown-divider"></div>
@@ -164,7 +164,7 @@ endif;
 				<?php if(get_sub_field('title')): ?>
 				    <a class="dropdown-item" href="#<?php echo $section_id; ?>-<?php echo $flex_count; ?>">
 				    	<?php if(get_sub_field('top_level_section') !== true): ?>
-				    		&nbsp;<ion-icon name="ios-arrow-forward"></ion-icon>
+				    		<ion-icon name="ios-arrow-forward"></ion-icon>&nbsp;
 				    	<?php endif; ?>
 				     	<span><?php echo get_sub_field('title'); ?></span>
 				    </a>
