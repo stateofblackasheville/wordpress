@@ -1084,6 +1084,18 @@ footer.content-info{
 		.grid-item-content{
 			@include make-col(12); 
 		}		
+	}
+	[name='activeRowIndex']{
+
+	}
+	.summary-text{
+		@extend .rte;
+		@extend .rte--large;
+		@extend .rte--georgia; 
+	}
+	.summary-text,
+	[name='activeRowIndex']{
+		margin: .5rem 0; 
 	}	
 }
 

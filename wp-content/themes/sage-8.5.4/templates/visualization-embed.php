@@ -7,6 +7,8 @@
 			$data_source_id = get_field('data_source_id', $post_item->ID);
 			$chart_type = get_field('chart_type', $post_item->ID);
 			$show_chart_controls = get_field('show_chart_select', $post_item->ID);
+			$chart_columns = get_field('spreadsheet_chart_columns', $post_item->ID);
+			$summary_text = get_field('summary_text', $post_item->ID);
 			if($show_chart_controls == true):
 				$show_chart_controls = 1;
 			else:
@@ -14,8 +16,19 @@
 			endif;
 
 		?>
-		<div class="soba-visualization" data-title="<?php echo $visualization_title; ?>" data-spreadsheetid="<?php echo $data_source_id; ?>" data-charttype="<?php echo $chart_type; ?>" data-showcharttypeselect="<?php echo $show_chart_controls; ?>"></div>
-
+		<div 
+		class="soba-visualization" 
+		data-title="<?php echo $visualization_title; ?>" 
+		data-spreadsheetid="<?php echo $data_source_id; ?>" 
+		data-charttype="<?php echo $chart_type; ?>" 
+		data-showcharttypeselect="<?php echo $show_chart_controls; ?>"
+		<?php if($chart_columns): ?>
+		data-spreadsheetchartcolumns="<?php echo esc_attr($chart_columns); ?>"
+		<?php endif; ?>
+		<?php if($summary_text): ?>
+		data-summarytext="<?php echo esc_attr($summary_text); ?>"
+		<?php endif; ?>
+		></div>
 		<div class="visualization__embed-info">
 			
 		</div>

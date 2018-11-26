@@ -8470,32 +8470,32 @@ h3 {
 .highcharts-container {
   max-width: 100%; }
 
-.rte {
+.rte, .grid-item.visualization .summary-text {
   /*font-family: Georgia;*/ }
-  .rte p {
+  .rte p, .grid-item.visualization .summary-text p {
     font-size: 1rem;
     color: #4d4d4d;
     line-height: 1.5em; }
-  .rte.rte--georgia {
+  .rte.rte--georgia, .grid-item.visualization .summary-text {
     font-family: Georgia; }
-  .rte.rte--small {
+  .rte.rte--small, .grid-item.visualization .rte--small.summary-text {
     font-size: .8em !important; }
-    .rte.rte--small h4 {
+    .rte.rte--small h4, .grid-item.visualization .rte--small.summary-text h4 {
       font-size: 1rem; }
-    .rte.rte--small p {
+    .rte.rte--small p, .grid-item.visualization .rte--small.summary-text p {
       font-size: inherit; }
-  .rte.rte--large {
+  .rte.rte--large, .grid-item.visualization .summary-text {
     font-size: 1.25em; }
-    .rte.rte--large * {
+    .rte.rte--large *, .grid-item.visualization .summary-text * {
       /*font-size: 1.25rem;*/ }
-    .rte.rte--large h4 {
+    .rte.rte--large h4, .grid-item.visualization .summary-text h4 {
       /*font-size: rem;*/ }
-    .rte.rte--large p {
+    .rte.rte--large p, .grid-item.visualization .summary-text p {
       font-size: inherit; }
-  .rte a {
+  .rte a, .grid-item.visualization .summary-text a {
     /*color: $red;*/ }
 
-.custom-content-color .rte * {
+.custom-content-color .rte *, .custom-content-color .grid-item.visualization .summary-text *, .grid-item.visualization .custom-content-color .summary-text * {
   color: inherit; }
 
 .home .page-header {
@@ -8895,11 +8895,11 @@ main.main {
     margin-bottom: .25rem;
     padding-bottom: .25rem;
     /*margin-bottom: .5rem;  		*/ }
-  .content-section__header .rte {
+  .content-section__header .rte, .content-section__header .grid-item.visualization .summary-text, .grid-item.visualization .content-section__header .summary-text {
     margin-bottom: 2rem;
     line-height: 1.5em; }
     @media (min-width: 992px) {
-      .content-section__header .rte p {
+      .content-section__header .rte p, .content-section__header .grid-item.visualization .summary-text p, .grid-item.visualization .content-section__header .summary-text p {
         font-size: 1.25rem; } }
   @media (max-width: 991.98px) {
     .content-section__header h2 {
@@ -9274,6 +9274,10 @@ footer.content-info {
   flex: 0 0 100%;
   max-width: 100%; }
 
+.grid-item.visualization .summary-text,
+.grid-item.visualization [name='activeRowIndex'] {
+  margin: .5rem 0; }
+
 .visualization__call-to-action,
 .grid-item.visualization .sources,
 .grid-item.visualization .tags,
@@ -9434,7 +9438,7 @@ footer.content-info {
   margin-bottom: .5rem; }
   .sidebar-item .sources {
     margin: 0; }
-  .sidebar-item .rte {
+  .sidebar-item .rte, .sidebar-item .grid-item.visualization .summary-text, .grid-item.visualization .sidebar-item .summary-text {
     font-style: italic;
     color: #666;
     /*font-size: 1.25rem;*/ }

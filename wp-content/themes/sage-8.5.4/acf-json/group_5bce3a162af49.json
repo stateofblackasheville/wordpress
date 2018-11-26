@@ -103,6 +103,44 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_5bfc4109d66b3",
+            "label": "Spreadsheet Chart Columns",
+            "name": "spreadsheet_chart_columns",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5bfc4121d66b4",
+            "label": "Summary Text",
+            "name": "summary_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -122,5 +160,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1540242681
+    "modified": 1543258436
 }
