@@ -113,12 +113,14 @@
 			<?php Roots\Sage\Extras\render_tags($post_item); ?>	
 
 			<?php if(get_field('call_to_action', $post_item->ID)): ?>
-				<div class="visualization__call-to-action">
-					<?php $visualization_cta = get_field('call_to_action', $post_item->ID); ?>
-					<a href="<?php echo $visualization_cta['url']; ?>" target="<?php echo $visualization_cta['target']; ?>">
-						<?php echo $visualization_cta['title']; ?> <ion-icon name="arrow-forward"></ion-icon> 
-					</a>
-				</div>
+				<?php $visualization_cta = get_field('call_to_action', $post_item->ID); ?>			
+				<?php if(get_permalink() !== $visualization_cta['url']): ?>
+					<div class="visualization__call-to-action">
+						<a href="<?php echo $visualization_cta['url']; ?>" target="<?php echo $visualization_cta['target']; ?>">
+							<?php echo $visualization_cta['title']; ?> <ion-icon name="arrow-forward"></ion-icon> 
+						</a>
+					</div>
+				<?php endif; ?>
 			<?php endif; ?>			
 		</div>
 	</div>
