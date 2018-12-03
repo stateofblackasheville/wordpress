@@ -102,13 +102,13 @@ function display_sidebar() {
  * Theme assets
  */
 function assets() {
-  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css?v=1.1.5'), false, null);
+  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css?v=1.1.6'), false, null);
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js?v=1.1.5'), ['jquery'], null, true);
+  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js?v=1.1.6'), ['jquery'], null, true);
 
   // TYPEKIT
    wp_enqueue_style('typekit_proxima_nova', 'https://use.typekit.net/trp1etg.css', false, null);
@@ -118,16 +118,16 @@ function assets() {
   wp_enqueue_style('ionicons_css', 'https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css', false, null);
 
   // REACT JS
-  wp_enqueue_script('react', 'https://unpkg.com/react@16/umd/react.production.min.js?v=1.1.2', ['jquery'], null, true);
+  wp_enqueue_script('react', 'https://unpkg.com/react@16/umd/react.production.min.js?v=1.1.3', ['jquery'], null, true);
   wp_enqueue_script('react_dom', 'https://unpkg.com/react-dom@16.6.0/umd/react-dom.production.min.js', ['jquery'], null, true);
-  wp_enqueue_script('react_soba', 'https://unpkg.com/soba-visualization@latest/umd/soba-visualization.min.js?v=1.1.2', ['jquery'], null, true);
-  wp_enqueue_script('visualization', Assets\asset_path('scripts/visualization.js?v=1.1.2'),['react_soba'], null, true);
+  wp_enqueue_script('react_soba', 'https://unpkg.com/soba-visualization@latest/umd/soba-visualization.min.js?v=1.1.3', ['jquery'], null, true);
+  wp_enqueue_script('visualization', Assets\asset_path('scripts/visualization.js?v=1.1.3'),['react_soba'], null, true);
 
   // INTERCOM
   wp_enqueue_script('intercom', Assets\asset_path('scripts/intercom.js'), ['jquery'], null, true);
 
   // REACT CSS
   // wp_enqueue_style('soba_visualization', 'https://unpkg.com/soba-visualization@1.3.1/umd/main.a96e0308.css', false, null);
-  wp_enqueue_style('visualization', Assets\asset_path('styles/visualization.css?v=1.1.2'), false, null);
+  wp_enqueue_style('visualization', Assets\asset_path('styles/visualization.css?v=1.1.3'), false, null);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
