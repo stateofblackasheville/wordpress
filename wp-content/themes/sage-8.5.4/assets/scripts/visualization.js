@@ -33,7 +33,7 @@ jQuery('.soba-visualization').each(function(){
 	var props = {
 		title: title, 
 		spreadsheetId: spreadsheetID,
-		spreadsheetId: spreadsheetRange,
+		spreadsheetRange: spreadsheetRange,
 		dataset: dataset,
 		count: count,
 		byDate: byDate,
