@@ -46,6 +46,12 @@ a{
 	}
 }
 
+a.hover--bg-enlarge{
+	&:hover{
+		background-size: 110%;
+	}
+}
+
 ul{
 	padding-left: 1rem; 
 }
@@ -1750,8 +1756,26 @@ body.home,
 
 .item-content.item-content--cultural-item{
 	@include make-col-ready();
+	@include make-col(6);
+	margin-bottom: 1rem;
 	.item-content__inner{
+		position: relative;
 		/*border-top: 1px solid $off-white;		*/
+	}
+	.featured-image{
+		position: absolute;
+	}
+	header{
+		a{
+			display: block;
+			background-repeat: no-repeat;
+			padding: 10rem 0;
+			text-align: center;			
+		}
+		*{
+			color: white;
+			/*text-decoration: none;*/
+		}
 	}
 }
 

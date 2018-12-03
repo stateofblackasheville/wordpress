@@ -5,6 +5,7 @@
 
 			$visualization_title = get_field('visualization_title', $post_item->ID); 
 			$data_source_id = get_field('data_source_id', $post_item->ID);
+			$data_source_range = get_field('data_source_range', $post_item->ID);
 			$chart_type = get_field('chart_type', $post_item->ID);
 			$show_chart_controls = get_field('show_chart_select', $post_item->ID);
 			$chart_columns = get_field('spreadsheet_chart_columns', $post_item->ID);
@@ -22,6 +23,9 @@
 		data-spreadsheetid="<?php echo $data_source_id; ?>" 
 		data-charttype="<?php echo $chart_type; ?>" 
 		data-showcharttypeselect="<?php echo $show_chart_controls; ?>"
+		<?php if($data_source_range):?>
+		data-spreadsheetrange="<?php echo $data_source_range; ?>"
+		<?php endif; ?>
 		<?php if($chart_columns): ?>
 		data-spreadsheetchartcolumns="<?php echo esc_attr($chart_columns); ?>"
 		<?php endif; ?>

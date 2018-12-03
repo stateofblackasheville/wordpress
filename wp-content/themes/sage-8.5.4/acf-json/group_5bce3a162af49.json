@@ -58,6 +58,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_5c059cf24b6e7",
+            "label": "Data Source Range",
+            "name": "data_source_range",
+            "type": "text",
+            "instructions": "Example Format: SheetName!A1:Z123 or SheetName!A:Z for all ranges.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5bce3a9165e19",
             "label": "Chart Type",
             "name": "chart_type",
@@ -160,5 +179,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1543258436
+    "modified": 1543871751
 }

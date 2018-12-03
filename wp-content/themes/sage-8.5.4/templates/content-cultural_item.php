@@ -1,33 +1,43 @@
 <?php
 
-	$images = get_field('images');
+	if(is_archive()):
+		$post_item = $post;
+	endif;
+
+	if(is_single() && get_post_type() == 'visualization'):
+		$post_item = $post;
+	endif;	
+
+	$images = get_field('images', $post->ID);
+
+	// var_dump($post);
+
+	if(is_single() && get_post_type($post->ID) !== 'cultural_item')
 
 ?>
 <div class="item-content item-content--cultural-item">
 	<div class="item-content__inner">
-		<?php if(!is_single() && get_post_type() !== 'cultural_item'): ?>
+		<?php if(!is_singular('cultural_item')): ?>
 			<header class="rte rte--georgia">
-				<?php //Roots\Sage\Extras\render_badges(get_post()); ?>
-				<h2 class="entry-title">
-					<a href="<?php the_permalink(); ?>">
-						<?php the_title(); ?>
-					</a>
-				</h2>
+				<a class="hover--bg-enlarge" href="<?php echo get_permalink($post->ID); ?>" style="background-image: url(<?php echo $images[0]['sizes']['medium']; ?>)">
+					<?php //Roots\Sage\Extras\render_badges(get_post()); ?>
+					<h2 class="entry-title">
+						<?php echo get_the_title($post->ID); ?>
+					</h2>
+					<i class="rte rte--georgia rte--large">
+						<?php echo count($images); ?> Images
+					</i>
+				</a>
 			</header>
 		<?php endif; ?>
-		<br>
-			<i class="rte rte--georgia rte--large">
-				<?php echo count($images); ?> Images
-			</i>
-		<br>
 		<div class="entry-summary rte rte--georgia">
-			<?php if(is_single() && get_post_type() == 'cultural_item'): ?>
-				<?php the_content(); ?>
+			<?php if(is_single() && get_post_type($post->ID) == 'cultural_item'): ?>
+				<?php get_the_content($post->ID); ?>
 			<?php else: ?>
-				<?php the_excerpt(); ?>
+				<?php get_the_excerpt($post->ID); ?>
 			<?php endif; ?>
 		</div>					
-	    <?php if(is_single() && get_post_type() == 'cultural_item'): ?>
+	    <?php if(is_singular('cultural_item')): ?>
 			<?php 
 			if( $images ): ?>
 			    <div class="masonry">

@@ -8398,6 +8398,9 @@ a {
     color: #59473f;
     text-decoration: none; }
 
+a.hover--bg-enlarge:hover {
+  background-size: 110%; }
+
 ul {
   padding-left: 1rem; }
 
@@ -10009,9 +10012,23 @@ body.home .content-section__inner-container,
   width: 100%;
   min-height: 1px;
   padding-right: 15px;
-  padding-left: 15px; }
+  padding-left: 15px;
+  flex: 0 0 50%;
+  max-width: 50%;
+  margin-bottom: 1rem; }
   .item-content.item-content--cultural-item .item-content__inner {
+    position: relative;
     /*border-top: 1px solid $off-white;		*/ }
+  .item-content.item-content--cultural-item .featured-image {
+    position: absolute; }
+  .item-content.item-content--cultural-item header a {
+    display: block;
+    background-repeat: no-repeat;
+    padding: 10rem 0;
+    text-align: center; }
+  .item-content.item-content--cultural-item header * {
+    color: white;
+    /*text-decoration: none;*/ }
 
 .section-anchor {
   /*visibility: hidden;*/

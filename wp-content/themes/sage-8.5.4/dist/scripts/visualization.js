@@ -1,6 +1,7 @@
 jQuery('.soba-visualization').each(function(){
 	var title = jQuery(this).attr('data-title');
 	var spreadsheetID = jQuery(this).attr('data-spreadsheetid');
+	var spreadsheetRange = jQuery(this).attr('data-spreadsheetrange');
 	var dataset = jQuery(this).attr('data-dataset');
 	var count = jQuery(this).attr('data-count');
 	var byDate = jQuery(this).attr('data-bydate');
@@ -32,6 +33,7 @@ jQuery('.soba-visualization').each(function(){
 	var props = {
 		title: title, 
 		spreadsheetId: spreadsheetID,
+		spreadsheetId: spreadsheetRange,
 		dataset: dataset,
 		count: count,
 		byDate: byDate,
