@@ -3,6 +3,33 @@
     "title": "Data Sources",
     "fields": [
         {
+            "key": "field_5c116817ba2ce",
+            "label": "Use Another Visualization's Sources",
+            "name": "use_another_visualizations_sources",
+            "type": "relationship",
+            "instructions": "If you're using the same sources as another visualization, select it here to use the same sources.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "visualization"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": 1,
+            "return_format": "object"
+        },
+        {
             "key": "field_5b6b59744a40a",
             "label": "Sources",
             "name": "sources",
@@ -101,5 +128,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537210903
+    "modified": 1544644930
 }

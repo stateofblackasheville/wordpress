@@ -5,11 +5,18 @@
 			<ion-icon name="ios-arrow-down"></ion-icon>
 			<ion-icon name="ios-arrow-up"></ion-icon>
 		</a>
-	</h4>			
+	</h4>	
+
 	<?php
+	$other_sources = get_field('use_another_visualizations_sources', $post_item->ID);
+	if($other_sources):
+		$sources_post = $other_sources[0]->ID;
+	else:
+		$sources_post = $post_item->ID;
+	endif;
 
 	// check if the repeater field has rows of data
-	if( have_rows('sources', $post_item->ID) ):
+	if(have_rows('sources', $sources_post)):
 	?>
 	<div class="sources-list-container" data-drop-target>
 		<ol class="sources-list">
@@ -18,7 +25,7 @@
 		 	// loop through the rows of data
 			$count = 0;
 
-		    while ( have_rows('sources', $post_item->ID) ) : the_row();
+		    while ( have_rows('sources', $sources_post) ) : the_row();
 		    	$source_title = get_sub_field('source_title');
 		    	$source_link = get_sub_field('source_link');
 		    	$source_file = get_sub_field('source_file');
@@ -59,7 +66,7 @@
 	<?php
 	else :
 	?>
-	<div class="need-sources">
+	<div class="need-sources" data-drop-target>
 		<p>
 			This content needs a source. If you know where it came from and can provide further details,
 			<a href="#intercom">
