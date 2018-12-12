@@ -38,7 +38,7 @@
 		<ion-icon name="arrow-forward"></ion-icon>
 		<span class="badge badge--stage-three <?php if(get_field('embed', $post_item->ID) || get_field('data_source_id', $post_item->ID)): ?>badge--active<?php endif; ?>" data-toggle="tooltip">
 			Dynamic
-			<?php if(get_field('embed', $post_item->ID)): ?>
+			<?php if(get_field('embed', $post_item->ID) || get_field('data_source_id', $post_item->ID)): ?>
 				&nbsp; <ion-icon name="checkmark-circle-outline"></ion-icon> 
 			<?php endif; ?>
 		</span>		
