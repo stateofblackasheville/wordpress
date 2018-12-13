@@ -31,7 +31,7 @@
 	<?php if(get_post_type($post_item) == 'visualization'): ?>
 		<span class="badge badge--stage-two <?php if(has_post_thumbnail($post_item->ID) || get_field('embed', $post_item->ID) || get_field('data_source_id', $post_item->ID)): ?>badge--active<?php endif; ?>" data-toggle="tooltip">
 			Visualization
-			<?php if(has_post_thumbnail($post_item->ID) || get_field('embed', $post_item->ID)): ?>
+			<?php if(has_post_thumbnail($post_item->ID) || get_field('embed', $post_item->ID) || get_field('data_source_id', $post_item->ID)): ?>
 				&nbsp; <ion-icon name="checkmark-circle-outline"></ion-icon> 
 			<?php endif; ?>
 		</span>
