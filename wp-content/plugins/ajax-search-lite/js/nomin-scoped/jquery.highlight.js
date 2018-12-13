@@ -19,7 +19,7 @@ jQuery.extend({
                 if ( /\.|,|\s/.test(match[0].charAt(0)) )
                     var index = match.index + 1;
                 else
-                    var index = match.index
+                    var index = match.index;
                 var wordNode = node.splitText(index);
                 wordNode.splitText(match[1].length);
                 var wordClone = wordNode.cloneNode(true);
@@ -69,7 +69,6 @@ jQuery.fn.highlight = function (words, options) {
     if (settings.wordsOnly) {
         pattern = "(?:,|^|\\s)" + pattern + "(?:,|$|\\s)";
     }
-    //console.log(pattern);
     var re = new RegExp(pattern, flag);
 
     return this.each(function () {

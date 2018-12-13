@@ -65,9 +65,6 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
 			if (count($types) < 1) {
 				return '';
 			} else {
-				/*$words = implode("','", $types);
-				$post_types = "($wpdb->posts.post_type IN ('$words') )";*/
-
                 $words = implode("','", $types);
                 if ( in_array('product_variation', $types) && class_exists('WooCommerce') ) {
                     $_post_types = $types;
@@ -1019,7 +1016,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
                             global $q_config;
                             $r->excerpt = qtranxf_use($q_config['default_language'], $r->excerpt, false);
                         }
-                        $_content = strip_tags($r->excerpt, $sd['striptagsexclude']);
+                        $_content = $r->excerpt;
                         break;
                     case '2':
                         $_content = strip_tags(get_the_title($r->id), $sd['striptagsexclude']);
@@ -1042,7 +1039,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
                             } else {
                                 $mykey_values = get_post_custom_values($sd['descriptionfield_cf'], $r->id);
                                 if (isset($mykey_values[0])) {
-                                    $_content = strip_tags($mykey_values[0], $sd['striptagsexclude']);
+                                    $_content = $mykey_values[0];
                                     break;
                                 }
                             }
@@ -1061,7 +1058,7 @@ if ( ! class_exists( 'wpdreams_searchContent' ) ) {
                                 $r->content = $_pprod->get_description();
                             }
 						}
-						$_content = strip_tags( $r->content, $sd['striptagsexclude'] );
+						$_content = $r->content;
 						break;
 				}
 

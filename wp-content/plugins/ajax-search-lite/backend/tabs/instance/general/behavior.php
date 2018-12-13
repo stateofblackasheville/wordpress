@@ -20,14 +20,21 @@
     <?php
     $o = new wpdreamsCustomSelect("keyword_logic", __("Keyword (phrase) logic?", "ajax-search-lite"), array(
         'selects'=>array(
-            array("option" => "OR", "value" => "OR"),
-            array("option" => "AND", "value" => "AND")
+            array('option' => __('OR', 'aajax-search-lite'), 'value' => 'or'),
+            array('option' => __('OR with exact word matches', 'ajax-search-lite'), 'value' => 'orex'),
+            array('option' => __('AND', 'ajax-search-lite'), 'value' => 'and'),
+            array('option' => __('AND with exact word matches', 'ajax-search-lite'), 'value' => 'andex')
         ),
-        'value'=>$sd['keyword_logic']
+        'value'=>strtolower( $sd['keyword_logic'] )
     ));
     $params[$o->getName()] = $o->getData();
     ?>
-    <div class="descMsg">This determines if the result should match either of the entered phrases (OR logic) or all of the entered phrases (AND logic).</div>
+    <div class="descMsg">
+        <?php echo __('This determines if the result should match either of the entered phrases (OR logic) or all of the entered phrases (AND logic).', 'ajax-search-lite'); ?>
+    </div>
+    <div class="kwLogicInfo infoMsg hiddend">
+        <?php echo __('Please note: For <strong>performance rasons</strong> exact word matching in the Lite version is only able to check space-separated words. Commas, dots, question marks etc.. are not considered as word separators.', 'ajax-search-lite'); ?>
+    </div>
 </div>
 <div class="item">
     <?php

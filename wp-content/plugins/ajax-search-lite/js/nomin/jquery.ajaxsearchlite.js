@@ -188,10 +188,19 @@
 
         analytics: function(term) {
             var $this = this;
-            if ($this.o.analytics && $this.o.analyticsString != '' &&
-                typeof ga == "function") {
-                ga('send', 'pageview', {
-                    'page': '/' + $this.o.analyticsString.replace("{asl_term}", term),
+
+            // YOAST uses __gaTracker, if not defined check for ga, if nothing go null, FUN EH??
+            var fun = typeof __gaTracker == "function" ? __gaTracker : (typeof ga == "function" ? ga : null);
+            if (!window.location.origin) {
+              window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+            }
+            // Multisite Subdirectory (if exists)
+            var url = $this.o.homeurl.replace(window.location.origin, '');
+
+            if (fun != null && $this.o.analytics && $this.o.analyticsString != '') {
+                var string = $this.o.analyticsString.replace("{asl_term}", term).replace("{asp_term}", term);
+                fun('send', 'pageview', {
+                    'page': url + string,
                     'title': 'Ajax Search'
                 });
             }

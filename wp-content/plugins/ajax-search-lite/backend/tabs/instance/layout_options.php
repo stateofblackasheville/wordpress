@@ -3,6 +3,7 @@
     <li><a tabid="402" class='subtheme'><?php _e("Results layout", "ajax-search-lite"); ?></a></li>
     <li><a tabid="403" class='subtheme'><?php _e("Results Behaviour", "ajax-search-lite"); ?></a></li>
     <li><a tabid="404" class='subtheme'><?php _e("Keyword Highlighting", "ajax-search-lite"); ?></a></li>
+    <li><a tabid="405" class='subtheme'><?php _e("Custom CSS", "ajax-search-lite"); ?></a></li>
 </ul>
 <div class='tabscontent'>
     <div tabid="401">
@@ -27,6 +28,12 @@
         <fieldset>
             <legend><?php _e("Keyword Highlighting", "ajax-search-lite"); ?></legend>
             <?php include(ASL_PATH."backend/tabs/instance/layout/keyword_highlight.php"); ?>
+        </fieldset>
+    </div>
+    <div tabid="405">
+        <fieldset>
+            <legend><?php _e("Custom CSS", "ajax-search-lite"); ?></legend>
+            <?php include(ASL_PATH."backend/tabs/instance/layout/custom_css.php"); ?>
         </fieldset>
     </div>
 </div>

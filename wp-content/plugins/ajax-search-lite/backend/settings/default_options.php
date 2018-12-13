@@ -200,6 +200,7 @@ function asl_do_init_options() {
         'kw_highlight_whole_words' => 1,
         'highlight_color' => "#d9312b",
         'highlight_bg_color' => "#eee",
+        'custom_css' => "",
 
         // General/Autocomplete/KW suggestions
         'autocomplete' => 1,

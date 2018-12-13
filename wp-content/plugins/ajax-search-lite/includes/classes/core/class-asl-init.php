@@ -174,24 +174,24 @@ class WD_ASL_Init {
         if ($js_source == 'nomin' || $js_source == 'nomin-scoped') {
             if ($js_source == "nomin-scoped") {
                 $prereq = "wpdreams-asljquery";
-                wp_register_script('wpdreams-asljquery', ASL_URL_NP . 'js/' . $js_source . '/asljquery.js', array(), ASL_CURR_VER_STRING, $load_in_footer);
+                wp_register_script('wpdreams-asljquery', ASL_URL . 'js/' . $js_source . '/asljquery.js', array(), ASL_CURR_VER_STRING, $load_in_footer);
                 wp_enqueue_script('wpdreams-asljquery');
             }
-            wp_register_script('wpdreams-gestures', ASL_URL_NP . 'js/' . $js_source . '/jquery.gestures.js', array($prereq), ASL_CURR_VER_STRING, $load_in_footer);
+            wp_register_script('wpdreams-gestures', ASL_URL . 'js/' . $js_source . '/jquery.gestures.js', array($prereq), ASL_CURR_VER_STRING, $load_in_footer);
             wp_enqueue_script('wpdreams-gestures');
-            wp_register_script('wpdreams-highlight', ASL_URL_NP . 'js/' . $js_source . '/jquery.highlight.js', array($prereq), ASL_CURR_VER_STRING, $load_in_footer);
+            wp_register_script('wpdreams-highlight', ASL_URL . 'js/' . $js_source . '/jquery.highlight.js', array($prereq), ASL_CURR_VER_STRING, $load_in_footer);
             wp_enqueue_script('wpdreams-highlight');
             if ($load_mcustom) {
-                wp_register_script('wpdreams-scroll', ASL_URL_NP . 'js/' . $js_source . '/jquery.mCustomScrollbar.js', array($prereq), ASL_CURR_VER_STRING, $load_in_footer);
+                wp_register_script('wpdreams-scroll', ASL_URL . 'js/' . $js_source . '/jquery.mCustomScrollbar.js', array($prereq), ASL_CURR_VER_STRING, $load_in_footer);
                 wp_enqueue_script('wpdreams-scroll');
             }
-            wp_register_script('wpdreams-ajaxsearchlite', ASL_URL_NP . 'js/' . $js_source . '/jquery.ajaxsearchlite.js', array($prereq), ASL_CURR_VER_STRING, $load_in_footer);
+            wp_register_script('wpdreams-ajaxsearchlite', ASL_URL . 'js/' . $js_source . '/jquery.ajaxsearchlite.js', array($prereq), ASL_CURR_VER_STRING, $load_in_footer);
             wp_enqueue_script('wpdreams-ajaxsearchlite');
-            wp_register_script('wpdreams-asl-wrapper', ASL_URL_NP . 'js/' . $js_source . '/asl_wrapper.js', array($prereq, "wpdreams-ajaxsearchlite"), ASL_CURR_VER_STRING, $load_in_footer);
+            wp_register_script('wpdreams-asl-wrapper', ASL_URL . 'js/' . $js_source . '/asl_wrapper.js', array($prereq, "wpdreams-ajaxsearchlite"), ASL_CURR_VER_STRING, $load_in_footer);
             wp_enqueue_script('wpdreams-asl-wrapper');
         } else {
             wp_enqueue_script('jquery');
-            wp_register_script('wpdreams-ajaxsearchlite', ASL_URL_NP . "js/" . $js_source . "/jquery.ajaxsearchlite.min.js", array(), ASL_CURR_VER_STRING, $load_in_footer);
+            wp_register_script('wpdreams-ajaxsearchlite', ASL_URL . "js/" . $js_source . "/jquery.ajaxsearchlite.min.js", array(), ASL_CURR_VER_STRING, $load_in_footer);
             wp_enqueue_script('wpdreams-ajaxsearchlite');
         }
 

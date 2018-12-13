@@ -35,6 +35,7 @@ include('class/textarea-isparam.class.php');
 include('class/upload.class.php');
 include('class/yesno.class.php');
 include('class/wd_cf_search_callback.class.php');
+include('class/wd_textarea_b64.php');
 
 add_action('admin_print_styles', 'admin_stylesV04');
 add_action('admin_enqueue_scripts', 'admin_scriptsV04');;
@@ -81,6 +82,9 @@ if (!function_exists("admin_scriptsV04")) {
 
         wp_register_script('wpdreams-fonts-jsapi', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js', array('jquery'), ASL_CURR_VER_STRING, true);
         wp_enqueue_script('wpdreams-fonts-jsapi');
+
+        wp_register_script('wpd-modal', ASL_URL_NP . 'backend/settings/assets/wpd-modal/wpd-modal.js', array('jquery'), ASL_CURR_VER_STRING, true);
+        wp_enqueue_script('wpd-modal');
     }
 }
 
@@ -101,6 +105,8 @@ if (!function_exists("admin_stylesV04")) {
         wp_enqueue_style('wpdreams-spectrum');
         wp_register_style('wpdreams-animations', ASL_URL_NP . 'backend/settings/assets/animations.css');
         wp_enqueue_style('wpdreams-animations');
+        wp_register_style('wpd-modal', ASL_URL_NP . 'backend/settings/assets/wpd-modal/wpd-modal.css');
+        wp_enqueue_style('wpd-modal');
     }
 }
 

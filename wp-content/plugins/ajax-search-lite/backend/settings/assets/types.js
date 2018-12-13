@@ -1783,6 +1783,18 @@ jQuery(function($){
         });
     });
 
+    /**
+     * Base64 textarea wd_Textarea_B64
+     */
+    var _wd_tt = null;
+    $('textarea.wd_textarea_b64').on("keyup paste", function () {
+        clearTimeout(_wd_tt);
+        var $this = $(this);
+        _wd_tt = setTimeout(function(){
+            $this.prev().val( Base64.encode($this.val()) );
+        }, 200);
+    });
+
     // ----------------------- ACCESSIBILITY ---------------------
     if ( $('#wpdreams').hasClass('wd-accessible') ) {
         $('#wpcontent').addClass('wd-accessible');

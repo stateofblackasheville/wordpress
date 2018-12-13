@@ -190,6 +190,7 @@ if (!class_exists("WD_ASL_SearchOverride_Filter")) {
          */
         public function checkSearchOverride($check_only = true, $wp_query) {
             // Is this a search query? Has the override been executed?
+            // Is this the admin area?
             // !isset() instead of empty(), because it can be an empty string
             if (
                 isset($wp_query) && (
@@ -200,6 +201,9 @@ if (!class_exists("WD_ASL_SearchOverride_Filter")) {
             ) {
                 return false;
             }
+            // Is this the admin area?
+            if ( is_admin() )
+                return false;
 
             // If get method is used, then the cookies are not present
             if (isset($_GET['p_asl_data']) || isset($_GET['np_asl_data'])) {

@@ -3,8 +3,8 @@ Contributors: wpdreams
 Donate link: http://wp-dreams.com
 Tags: search, better wordpress search, search plugin, relevance search, widget, Post, ajax search, search filter, wp ajax search, custom fields search, better search, ajax search plugin, wp search, wp search plugin, filter, relevant search plugin, wordpress search, Live Search, shortcode, google, autocomplete, suggest, woocommerce, woocommerce search, product, product search, custom search, ajax, suggest, autosuggest, search autocomplete, live, plugin, sidebar, product tag search, products, woocommerce tag search, WooCommerce Plugin, shop, search by sku, relevant search, highlight, term, image, custom search, ecommerce, Predictive Search, search product, shop, typehead, suggest, instant-search
 Requires at least: 3.5
-Tested up to: 4.9
-Stable tag: 4.7.18
+Tested up to: 5.0
+Stable tag: 4.7.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,6 +107,20 @@ and will let you know what to do.
 2. Administrator area - nice and smooth
 
 == Changelog ==
+= 4.7.20 =
+* Custom CSS box
+* Pro and Lite version differences list
+* Analytics tracker fix
+* Protocolless resource URLs replaced with protocoled version for better compatibility
+
+= 4.7.19 =
+* Added OR and AND logic with exact word matches + notice about word boundaries for clarification
+* Added a notice for the back-end, when choosing the Post override method, that the plugin may use Cookies to store the pagination and the filter states (functional cookies only)
+* Better stripping of CSS and script contents
+* Back-end override no longer triggers, when the Post method is enabled
+* Analytics tracker - support of 3rd party plugins and the __gaTracker function
+* domDocument and multibyte functions check before use
+
 = 4.7.18 =
 * Fix - Minification issue causing a scrollbar malfunction fixed
 

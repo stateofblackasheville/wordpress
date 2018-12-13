@@ -663,23 +663,34 @@ if (!function_exists("setval_or_getoption")) {
 }
 
 if (!function_exists("wpdreams_get_image_from_content")) {
+    /**
+     * Gets an image from the HTML content
+     *
+     * @param $content
+     * @param int $number
+     * @return bool|string
+     */
     function wpdreams_get_image_from_content($content, $number = 0) {
-      if ($content=="") return false;
-      $dom = new domDocument;
-        @$dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
-      $dom->preserveWhiteSpace = false;
-      @$images = $dom->getElementsByTagName('img');
-      if ($images->length>0) {
-         if ($images->length > $number) {
-           $im = $images->item($number)->getAttribute('src');
-         } else {
-           $number = 0;
-           $im = $images->item(0)->getAttribute('src');
-         }
-         return $im;
-      } else {
-         return false;
-      }
+        if ($content == "" || !class_exists('domDocument'))
+            return false;
+
+        $dom = new domDocument;
+        if ( function_exists('mb_convert_encoding') )
+            @$dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
+        else
+            @$dom->loadHTML($content);
+        $dom->preserveWhiteSpace = false;
+        @$images = $dom->getElementsByTagName('img');
+        if ($images->length > 0) {
+            if ($images->length > $number) {
+                $im = $images->item($number)->getAttribute('src');
+            } else {
+                $im = $images->item(0)->getAttribute('src');
+            }
+            return $im;
+        } else {
+            return false;
+        }
     }
 }
 

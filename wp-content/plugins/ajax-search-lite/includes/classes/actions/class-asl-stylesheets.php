@@ -39,9 +39,9 @@ if (!class_exists("WD_ASL_StyleSheets_Action")) {
             if ( !is_admin() ) {
                 $inst = wd_asl()->instances->get(0);
                 $asl_options = $inst['data'];
-                wp_register_style('wpdreams-asl-basic', ASL_URL_NP.'css/style.basic.css', array(), ASL_CURR_VER_STRING);
+                wp_register_style('wpdreams-asl-basic', ASL_URL.'css/style.basic.css', array(), ASL_CURR_VER_STRING);
                 wp_enqueue_style('wpdreams-asl-basic');
-                wp_enqueue_style('wpdreams-ajaxsearchlite', ASL_URL_NP.'css/style-'.$asl_options['theme'].'.css', array(), ASL_CURR_VER_STRING);
+                wp_enqueue_style('wpdreams-ajaxsearchlite', ASL_URL.'css/style-'.$asl_options['theme'].'.css', array(), ASL_CURR_VER_STRING);
             }
 
             self::$inline_css = "
@@ -125,6 +125,9 @@ if (!class_exists("WD_ASL_StyleSheets_Action")) {
                 }
                 div.asl_m.asl_w .probox {border: none !important;}
                 ";
+            }
+            if ( $asl_options['custom_css'] != '' && base64_decode($asl_options['custom_css'], true) == true ) {
+                self::$inline_css .= ' ' . stripcslashes( base64_decode($asl_options['custom_css']) );
             }
         }
 
