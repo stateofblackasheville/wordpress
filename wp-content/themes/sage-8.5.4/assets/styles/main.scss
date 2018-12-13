@@ -106,16 +106,16 @@ h1, h2, h3{
 }
 
 h1{
-	font-size: 2.5rem;
+	font-size: 3rem;
 	@include media-breakpoint-down(md){
-		font-size: 2rem;
+		font-size: 2.5rem;
 	} 
 }
 
 h2{
-	font-size: 2rem;
+	font-size: 2.5rem;
 	@include media-breakpoint-down(md){
-		font-size: 1.5rem;
+		font-size: 2rem;
 	} 
 }
 
