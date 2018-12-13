@@ -72,7 +72,7 @@
 				<h3 class="rte rte--georgia">
 					<a href="<?php echo get_the_permalink($post_item->ID); ?>">
 					<span class="grid-item__title">
-						<?php echo get_the_title($post_item->ID); ?> 
+						<?php echo get_the_title($post_item->ID); ?>
 					</span>
 					<?php if($title_link && false): ?>
 						<a href="<?php echo $title_link['url']; ?>" target="<?php echo $title_link['target']; ?>">
