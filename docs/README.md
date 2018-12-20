@@ -4,7 +4,7 @@ As part of the 2018 Code for America Community Fellowship, we created a Wordpres
 
 The website also integrates with the State of Black Asheville data visualization library located here:
 
-https://github.com/stateofblackasheville/soba-visualization
+[https://github.com/stateofblackasheville/soba-visualization](https://github.com/stateofblackasheville/soba-visualization)
 
 This guide will provide information on installing the State of Black Asheville platform, and entering and updating content within the platform.
 
@@ -33,7 +33,7 @@ _Other plugins are included, but their usage is fairly self-explanatory_
 
 ## Visualization
 
-http://stateofblackasheville.com/visualizations/
+[http://stateofblackasheville.com/visualizations/](http://stateofblackasheville.com/visualizations/)
 
 "Visualizations" in the Wordpress system are a visual representation of the data that is collection for the purposes of the project.
 
@@ -65,7 +65,7 @@ This field is optional, but can be used as a separate title if the post title is
 
 Looking at our current example:
 
-https://docs.google.com/spreadsheets/d/1IbHdl_O1XC0dOWy0En4pvLePZrchTshHti3g1FS7PRQ/edit
+[https://docs.google.com/spreadsheets/d/1IbHdl_O1XC0dOWy0En4pvLePZrchTshHti3g1FS7PRQ/edit](https://docs.google.com/spreadsheets/d/1IbHdl_O1XC0dOWy0En4pvLePZrchTshHti3g1FS7PRQ/edit)
 
 This field contains just the unique ID part of the URL, so:
 
@@ -146,13 +146,13 @@ We have some cleanup to handle for the other fields. However you can also option
 
 Please refer to the visualization repo to learn how to create visualization markup:
 
-https://github.com/stateofblackasheville/wordpress/tree/master/docs
+[https://github.com/stateofblackasheville/wordpress/tree/master/docs](https://github.com/stateofblackasheville/wordpress/tree/master/docs)
 
 The visualization fields above, in essence, generate the markup for you (using the same HTML attributes you'll find in the above repo). If you're not pulling data from Google sheets, however, or you have another type of visualization you wish to embed, you can use the "embed" field to generate the visualization in a more flexible way.
 
 ## Student Papers
 
-http://stateofblackasheville.com/student-papers/
+[http://stateofblackasheville.com/student-papers/](http://stateofblackasheville.com/student-papers/)
 
 The State of Black Asheville began as a student research project at the University of North Carolina at Asheville, so a big component of the platform is cataloging the student research papers that were produced over the past 10 years, taking the visualizations therein, and making them dynamic.
 
@@ -160,7 +160,7 @@ Student papers operate the same as posts in the Wordpress platform, but like vis
 
 Let's look at an example to outline the fields within each student research paper:
 
-http://stateofblackasheville.com/student_paper/asheville-city-schools-safe-schools/
+[http://stateofblackasheville.com/student_paper/asheville-city-schools-safe-schools/](http://stateofblackasheville.com/student_paper/asheville-city-schools-safe-schools/)
 
 At the very basics, the student research papers should have a title, body, and file (of the paper itself).
 
@@ -172,11 +172,11 @@ Additionally, papers should contain the following fields.
 
 The document index indicates where each visualization lives within each paper, including the title of the visualization, the source, and the page number on which it is located. There is a process to indexing the student papers, outlined here:
 
-http://stateofblackasheville.com/how-to-index/
+[http://stateofblackasheville.com/how-to-index/](http://stateofblackasheville.com/how-to-index/)
 
 For this paper, the index is located in a Google document, here:
 
-https://docs.google.com/document/d/15u3WXl2-v_tjJ_AzQkN-hjs4HwOh8w9aX43tWkKV5qs/edit?ts=5bb23e9c#
+[https://docs.google.com/document/d/15u3WXl2-v_tjJ_AzQkN-hjs4HwOh8w9aX43tWkKV5qs/edit?ts=5bb23e9c#](https://docs.google.com/document/d/15u3WXl2-v_tjJ_AzQkN-hjs4HwOh8w9aX43tWkKV5qs/edit?ts=5bb23e9c#)
 
 #### Sources
 
