@@ -10,57 +10,51 @@
 	<?php
 	$other_sources = get_field('use_another_visualizations_sources', $post_item->ID);
 	if($other_sources):
-		$sources_post = $other_sources[0]->ID;
-	else:
-		$sources_post = $post_item->ID;
+		$other_sources_post = $other_sources[0]->ID;
 	endif;
-
-	// check if the repeater field has rows of data
-	if(have_rows('sources', $sources_post)):
+	$sources_post = $post_item->ID;	
 	?>
+	<?php if(have_rows('sources', $sources_post) || have_rows('sources', $other_sources_post)): ?>
 	<div class="sources-list-container" data-drop-target>
 		<ol class="sources-list">
-		<?php
+		<!-- Loop through this post's sources -->
+		<?php if(have_rows('sources', $sources_post)): ?>
+			<?php
 
-		 	// loop through the rows of data
-			$count = 0;
+			 	// loop through the rows of data
+				$count = 0;
 
-		    while ( have_rows('sources', $sources_post) ) : the_row();
-		    	$source_title = get_sub_field('source_title');
-		    	$source_link = get_sub_field('source_link');
-		    	$source_file = get_sub_field('source_file');
-		    	$count++;
-		?>
-		  	
-		  		<li class="sources-list__item">
-	<!-- 		  				<span class="source-item__count">
-	  					(<?php //echo $count; ?>)
-	  				</span>	 -->		  			
-		  			<?php if($source_title): ?>
-		  			<span class="item__title">
-		  				<?php echo $source_title; ?>
-		  			</span>
-		  			<?php endif; ?>
-		  			<?php if($source_link): ?>
-		  				<a href="<?php echo $source_link['url']; ?>" target="<?php echo $source_link['target']; ?>">
-		  					<?php if(!empty($source_link['title'])): ?>
-		  						<?php echo $source_link['title']; ?>
-		  					<?php else: ?>
-		  						<?php echo $source_link['url']; ?>
-		  					<?php endif; ?>
-		  				</a>
-		  			<?php endif; ?>
-		  			<?php if($source_file): ?>
-		  				<a href="<?php echo $source_file['url']; ?>" target="_blank">
-		  					<?php echo $source_file['title']; ?> <ion-icon name="document"></ion-icon>
-		  				</a>
-		  			<?php endif; ?>		  			
-		  		</li>
-		  	<?php //endif; ?>
+			    while ( have_rows('sources', $sources_post) ) : the_row();
+			    	$source = array(
+			    		'title' => get_sub_field('source_title'),
+			    		'link'	=> get_sub_field('source_link'),
+			    		'file'	=> get_sub_field('source_file')
+			    	);
+			    	$count++;
+			?>
+			  		<?php Roots\Sage\Extras\render_single_source($source); ?>	
 
-		<?php 
-			endwhile;
-		?>
+			<?php endwhile; ?>
+		<?php endif; ?>
+		<!-- Loop through other post's sources -->
+		<?php if(isset($other_sources_post) && have_rows('sources', $other_sources_post)): ?>
+			<?php
+
+			 	// loop through the rows of data
+				$count = 0;
+
+			    while ( have_rows('sources', $other_sources_post) ) : the_row();
+			    	$source = array(
+			    		'title' => get_sub_field('source_title'),
+			    		'link'	=> get_sub_field('source_link'),
+			    		'file'	=> get_sub_field('source_file')
+			    	);
+			    	$count++;
+			?>
+			  		<?php Roots\Sage\Extras\render_single_source($source); ?>	
+
+			<?php endwhile; ?>		
+		<?php endif; ?>
 		</ol>
 	</div>	
 	<?php

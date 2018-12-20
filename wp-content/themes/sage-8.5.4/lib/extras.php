@@ -380,6 +380,9 @@ function render_sources($template, $post_item = null){
     include(locate_template('templates/'.$template.'.php'));
 }
 
+function render_single_source($source){
+  include(locate_template('templates/single-source.php'));
+}
 
 function render_student_paper($template, $post_item = null){
     include(locate_template('templates/'.$template.'.php'));
