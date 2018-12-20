@@ -1,4 +1,4 @@
-# State of Black Asheville: Visualization Library
+# State of Black Asheville: Wordpress
 
 As part of the 2018 Code for America Community Fellowship, we developed a visualization library built on React + ChartJS.
 
