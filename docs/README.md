@@ -85,9 +85,9 @@ This field is optional, and only necessary if you'd like to reference a specific
 
 Select the default chart type from the following options:
 
-*Line
-*Bar
-*Pie
+* Line
+* Bar
+* Pie
 
 _Note: The pie chart functionality does not operate currently, but this feature is in the works!_
 
@@ -133,8 +133,8 @@ This field is optional, and if it is not populated, the dropdown that pulls the 
 
 You can set up data sources in two different ways:
 
-*By selecting another visualizations to pull in its sources, which can save time in cases where you have multiple visualizations from the same source.
-*By manually inputting a list of sources, which can contain an optional source title, a source link, and a source file (if applicable).
+* By selecting another visualizations to pull in its sources, which can save time in cases where you have multiple visualizations from the same source.
+* By manually inputting a list of sources, which can contain an optional source title, a source link, and a source file (if applicable).
 
 You can use both of these sourcing options in conjunction if, for example, a visualization has most of the sources of another, plus one additional source.
 
@@ -195,8 +195,8 @@ All pages can be constructed using the normal Wordpress description, or using th
 #### Data Focus
 This page type will do a few things:
 
-*It will automatically render child/parent pages in a submenu system.
-*It will create a scrollspy navigation that allows users to navigate to page sections more easily.
+* It will automatically render child/parent pages in a submenu system.
+* It will create a scrollspy navigation that allows users to navigate to page sections more easily.
 
 #### Borderless Section Page
 If you want to feature a nice big image at the top, then this template is for you.
