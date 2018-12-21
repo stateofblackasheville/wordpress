@@ -113,9 +113,9 @@ Seeing trends over time is great, but we can also generate point in time statist
 
 In our [example](http://stateofblackasheville.com/visualization/asheville-city-schools-2016-2017-school-year-white-and-black-demographics/), we see the following Statement:
 
-4,421 total students
-63.11% White — 2790 total
-20.33% Black — 899 total
+4,421 total students  
+63.11% White — 2790 total  
+20.33% Black — 899 total  
 
 With a dropdown generated from column A that will change the numbers to reflect those of each year when changed.
 
